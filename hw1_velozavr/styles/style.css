@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "ABeeZee", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #22356f;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/************************/
+/* header block  START */
+/************************/
+
+header {
+  background-color: #f4f9e2;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 17px;
+  font-size: 14px;
+  color: black;
+}
+
+nav ul {
+  width: 50%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+nav ul li:hover {
+  border-bottom: 1px solid #22356f;
+  cursor: pointer;
+}
+
+nav button {
+    cursor: pointer;
+  width: 150px;
+  height: 50px;
+  background: #f9b640;
+  border: none;
+  color: white;
+  border-radius: 50px;
+}
+
+.header_content_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header_content {
+  padding: 0 50px 0 0;
+}
+
+.header_content h2 {
+  font-size: 48px;
+  font-style: italic;
+  line-height: 54px;
+  letter-spacing: -0.1rem;
+  font-weight: 400;
+  padding-bottom: 100px;
+}
+
+.header_content p {
+  font-size: 24px;
+}
+
+/************************/
+/* header block  END     */
+/************************/
+
+/************************/
+/* section offer START   */
+/************************/
+.offer_bg {
+  background-color: #61d0df;
+  background-image: url("../images/im1.png");
+  background-repeat: no-repeat;
+
+  background-position: right;
+}
+
+.offer {
+  display: flex;
+  align-items: center;
+  height: 604px;
+
+  /* display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center; */
+}
+
+.offer_content {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.offer h3 {
+  font-size: 36px;
+  line-height: 28px;
+  color: white;
+  font-style: italic;
+  padding-bottom: 100px;
+}
+
+.offer p {
+  font-size: 24px;
+  line-height: 35px;
+  color: white;
+  font-style: italic;
+  max-width: 80%;
+}
+.offer_image {
+  width: 520px;
+}
+/* .offer img{
+    margin-right: 0;
+    margin-left: auto;
+} */
+
+/************************/
+/* section offer END       */
+/************************/
+
+/************************/
+/* Third section START  */
+/************************/
+.third_section {
+  max-width: 50%;
+  padding: 200px 0;
+}
+
+.third_section p {
+  font-size: 24px;
+  line-height: 35px;
+  font-style: italic;
+}
+.third_section p:first-child {
+  padding-bottom: 50px;
+}
+
+/************************/
+/* Third section END      */
+/************************/
+
+/************************/
+/* three square START  */
+/************************/
+.three_square {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.three_square div {
+  width: 33.34vw;
+  aspect-ratio: 1/1;
+}
+
+.three_square div span {
+  display: block;
+  width: 80%;
+  margin: 15% auto 0 auto;
+  border-bottom: 1px solid white;
+}
+
+.three_square p{
+    width: 80%;
+    color: white;
+    font-size: 32px;
+    margin: 40px auto;
+    font-style: italic;
+}
+.three_square_first {
+  background-color: #22356f;
+}
+.three_square_second {
+  background-color: #0052c1;
+}
+.three_square_third {
+  background-color: #75b58c;
+}
+
+/************************/
+/* three square  END     */
+/************************/
+
+
+
+/************************/
+/* bike rent START         */
+/************************/
+.bike_rent_bg {
+    background-color: #ffffff;
+    background-image: url("../images/im2.png");
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+
+  .bike_rent {
+    display: grid;
+    align-items: center;
+    height: 800px;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .bike_rent_content {
+    margin: 0 auto;
+  }
+
+  .bike_rent_content p {
+    font-size: 36px;
+    line-height: 35px;
+    font-style: italic;
+    max-width: 80%;
+  }
+
+  .bike_rent_content p:first-child{
+    padding: 0 0 60px 0;
+  }
+/************************/
+/* bike rent  END            */
+/************************/
