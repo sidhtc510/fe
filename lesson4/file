@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(58, 58, 58);
+    color: rgb(182, 182, 174);
+    font-family: Nunito, sans-serif;
+    /* font-family: Roboto, sans-serif; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    background-color: #ffc1a6;
+    transition: 1s;
+        height: 100vh;
+}
+
+
+@media(max-width: 1240px){
+    .main{
+        width: 150px;
+        height: 150px;
+        background-color: #78ef46;
+    }
+}
+
+@media(max-width: 1040px){
+    .main{
+        width: 150px;
+        height: 350px;
+        background-color: #46bfef;
+        border-radius: 50%;
+        transform: rotate(120deg);
+    }
+}
+
+@media(max-width: 840px) {
+    .main{
+        width: 250px;
+        height: 150px;
+        background-color: #e646ef;
+        border-radius: 5%;
+        transform: rotate(20deg);
+    }
+}
+
+@media(max-width: 640px){
+    .main{
+        width: 100%;
+        height: 50px;
+        background-color: #efda70;
+        transform: rotate(294deg);
+    }
+}
+/* ______________________________________________ */
+/* ______________________________________________ */
+/* ______________________________________________ */
+/* ______________________________________________ */
+/* ______________________________________________ */
+
+
+
+
+
+#information {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 500px;
+  }
+  
+  #information .image_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+  }
+  
+  #information .image_block img {
+    width: 70%;
+  }
+  
+  #information .text_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #information .text_block p {
+    width: 70%;
+    text-align: justify;
+  }
+  
+  @media (max-width: 780px) {
+    #information .image_block img {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    #information {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+      gap: 40px;
+    }
+  }
+  
+  @media (max-width: 200px) {
+    #information {
+      gap: 0;
+    }
+    #information .text_block p {
+      width: 100%;
+      padding: 5px;
+    }
+  }
+  

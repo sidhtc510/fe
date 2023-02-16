@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+header {
+  min-height: 740px;
+  background-image: url("../media/bg.png");
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+h1 {
+  font-weight: 500;
+  font-size: 64px;
+  color: white;
+  margin: 0 auto;
+  /* max-width: 734px; */
+  text-align: center;
+  text-transform: uppercase;
+}
+/* 
+h1 span{
+    display: block;
+} */
+header .subheader {
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 30px 0;
+}
+header .achievements {
+  display: flex;
+  width: 100%;
+  padding: 60px 130px;
+  background-color: #fff;
+  text-align: center;
+  justify-content: space-between;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+header .item {
+  padding: 0 10px;
+}
+header .achievements .value {
+  color: rgb(251, 44, 44);
+  font-size: 72px;
+}
+header .achievements .unit {
+  font-size: 36px;
+}
+
+header .achievements .info {
+  color: #999999;
+  font-size: 18px;
+}
+
+#services {
+  margin: 100px auto;
+}
+#services .wrapper {
+  text-align: center;
+}
+
+#services h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 36px;
+  padding: 0 0 70px 0;
+}
+#services .offers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 30px;
+}
+#services .offers .item {
+  background: #f7f7f7;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#services .offers .item .icon .fa-city {
+  color: #ff3700;
+  font-size: 36px;
+}
+
+#services .offers .item .item_title {
+  font-size: 21px;
+}
+
+#contacts > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  text-align: center;
+  margin: 50px auto;
+}
+
+#contacts h2{
+  text-align: center;
+  margin-top: 50px;
+}
+#contacts .contacts_item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#contacts .contacts_item p:nth-child(2) {
+  color: #999999;
+}
+
+#contacts .contacts_item:nth-child(even) p:last-child:hover{
+  color:#ff3700;
+  cursor: pointer;
+}
+
+#contacts .fa-location-dot,
+#contacts .fa-phone,
+#contacts .fa-clock,
+#contacts .fa-envelope {
+  color: #ff3700;
+  font-size: 30px;
+}
+
+@media (max-width: 1100px) {
+  header .achievements {
+    width: auto;
+  }
+}
+@media (max-width: 470px) {
+  header .achievements {
+    display: block;
+  }
+}

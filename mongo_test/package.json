@@ -1,0 +1,7 @@
+{
+  "name": "mongo_test",
+  "version": "1.0.0",
+  "dependencies": {
+    "mongodb": "^3.1.6"
+  }
+}
