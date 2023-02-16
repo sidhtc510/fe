@@ -8,12 +8,14 @@ body {
 body > div {
   margin: 50px 0;
 }
+
 h3 {
   margin: 0 auto;
   width: fit-content;
   font-size: 36px;
   padding: 20px;
 }
+
 .common {
   display: grid;
   gap: 10px;
@@ -23,10 +25,6 @@ h3 {
 
 .wrapper_auto-fill {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-
-.wrapper_auto-fill::after{
-  background-color:aqua;
 }
 
 .wrapper_auto-fit {
