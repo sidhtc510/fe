@@ -70,6 +70,72 @@ header .achievements .info {
   font-size: 18px;
 }
 
+#big_projects h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 36px;
+  padding: 70px 0;
+}
+#big_projects .projects_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+#big_projects .project_card div:first-child {
+  height: 340px;
+  background-image: url("../media/Image20230217120020.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#big_projects .project_card p:nth-child(2)::before {
+  display: block;
+  content: "";
+  height: 6px;
+  width: 55px;
+  background-color: #ff3700;
+  margin: 45px 0 15px 0;
+}
+
+#big_projects .project_card p:nth-child(2) {
+  color: #404149;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#big_projects .project_card p:nth-child(3) {
+  color: #999999;
+  font-size: 16px;
+}
+
+#smart_projects {
+  background: #ff3700;
+  color: white;
+  padding: 40px 0;
+  margin: 100px 0;
+}
+
+#smart_projects .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#smart_projects .wrapper h2{
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+#smart_projects .wrapper p{
+  font-size: 24px;
+}
+#smart_projects button{
+  background-color:white;
+  font-size: 14px;
+  border: none;
+  padding: 13px 47px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
 #services {
   margin: 100px auto;
 }
@@ -114,7 +180,7 @@ header .achievements .info {
   margin: 50px auto;
 }
 
-#contacts h2{
+#contacts h2 {
   text-align: center;
   margin-top: 50px;
 }
@@ -128,8 +194,8 @@ header .achievements .info {
   color: #999999;
 }
 
-#contacts .contacts_item:nth-child(even) p:last-child:hover{
-  color:#ff3700;
+#contacts .contacts_item:nth-child(even) p:last-child:hover {
+  color: #ff3700;
   cursor: pointer;
 }
 
@@ -141,6 +207,17 @@ header .achievements .info {
   font-size: 30px;
 }
 
+footer {
+  background-color: #404149;
+}
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 16px;
+  padding: 30px 0;
+  font-weight: 400;
+}
 @media (max-width: 1100px) {
   header .achievements {
     width: auto;

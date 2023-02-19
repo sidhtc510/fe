@@ -1,0 +1,390 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  font-family: Roboto, sans-serif;
+  color: white;
+}
+button {
+  border-radius: 50px;
+  width: 183px;
+  height: 44px;
+  padding: 10px 30px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+header {
+  height: 830px;
+  background-image: url("../images/main-screen__bgc.png");
+  background-position: center;
+  background-size: cover;
+  /* color: white; */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+nav img {
+  width: 40px;
+  height: 40px;
+}
+
+.menu_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu_wrapper ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.menu_wrapper button {
+  background: linear-gradient(94.26deg, #c89afc 9.51%, #7c6afa 90.23%);
+  margin-left: 200px;
+}
+
+.fa-bars {
+  font-size: 48px;
+  display: none;
+}
+
+.header_title {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 80%;
+  align-items: center;
+}
+
+.header_title h1 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.4;
+  margin-bottom: 70px;
+}
+
+.header_title > div > div {
+  display: flex;
+  gap: 30px;
+  text-align: center;
+}
+
+.header_title > div > div div {
+  background: #121212;
+  padding: 20px;
+}
+
+.header_title > div > div div p:first-child {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.4;
+}
+
+.header_title > div > div div p:last-child {
+  color: #717171;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.order {
+  background-color: #121212;
+  padding: 43px 0;
+}
+
+.order button {
+  background: linear-gradient(94.78deg, #df5950 11.19%, #451046 93.72%);
+}
+
+.order > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.order .wrapper div:last-child {
+  display: flex;
+  justify-content: end;
+  gap: 50px;
+  align-items: center;
+}
+
+.order .wrapper div:last-child > p {
+  color: #717171;
+  font-size: 20px;
+}
+
+.order .wrapper div:last-child > p span {
+  color: white;
+  font-weight: 700;
+  padding-left: 60px;
+}
+
+.whatAreWeDoing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin: 240px auto 290px;
+}
+
+.whatAreWeDoing h3 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.4;
+  padding-bottom: 45px;
+}
+
+.whatAreWeDoing p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.takeYourJob {
+  text-align: center;
+  margin: 0 auto 290px;
+}
+
+.takeYourJob h3 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.4;
+  padding-bottom: 80px;
+}
+.takeYourJob image {
+}
+
+.takeYourJob > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: baseline;
+  gap: 60px;
+}
+
+.takeYourJob > div div {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; */
+}
+
+.takeYourJob > div div p:nth-child(2) {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 35px 0;
+}
+
+.partners {
+  margin: 0 auto 290px;
+}
+.partners h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.4;
+  padding-bottom: 80px;
+}
+
+.partners > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  gap: 41px;
+}
+
+.tutors {
+  margin: 0 auto 290px;
+}
+
+.tutors h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.4;
+  padding-bottom: 80px;
+}
+
+.tutors > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  text-align: center;
+  /* align-items: baseline;*/
+}
+
+.tutors button {
+  background: none;
+  border: 1px solid;
+}
+
+.tutors > div div p:nth-child(2) {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  padding: 40px 0 15px 0;
+}
+
+.tutors > div div p:nth-child(3) {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #717171;
+  padding-bottom: 20px;
+}
+
+footer {
+  max-width: 550px;
+  margin: 0 auto;
+}
+footer h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.4;
+  padding-bottom: 30px;
+}
+
+footer > p {
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #717171;
+  max-width: 400px;
+}
+
+.email_inp {
+  margin: 60px auto 40px;
+  position: relative;
+  width: 80%;
+}
+
+footer input {
+  background: #595959;
+  border: 0;
+  border-radius: 22px;
+  color: white;
+  padding: 14px 40px;
+  width: 100%;
+}
+
+footer input:focus {
+  outline: none;
+}
+
+footer input::placeholder {
+  color: white;
+}
+
+footer button {
+  background: linear-gradient(94.78deg, #df5950 11.19%, #451046 93.72%);
+  border-radius: 50px;
+  border: 0;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+}
+
+.social_icons {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto 290px;
+}
+
+.social_icons div {
+  background: rgb(201, 155, 253);
+  background: linear-gradient(
+    90deg,
+    rgba(201, 155, 253, 1) 0%,
+    rgba(124, 106, 249, 1) 100%
+  );
+  border-radius: 50%;
+  display: inline-block;
+  padding: 20px;
+  font-size: 24px;
+  width: 66px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .menu_wrapper {
+    display: none;
+  }
+  .fa-bars {
+    display: block;
+  }
+
+  .header_title {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .header_title > div > div {
+    justify-content: center;
+  }
+
+  .order > div {
+    grid-template-columns: 1fr 2fr;
+    padding: 0 20px;
+  }
+  .order .wrapper div:last-child {
+    display: block;
+    gap: 10px;
+  }
+  .order .wrapper div:last-child > p {
+    text-align: right;
+  }
+
+  .whatAreWeDoing {
+    display: flex;
+    margin: 130px auto 170px;
+    flex-direction: column-reverse;
+    padding: 0 40px;
+  }
+  .whatAreWeDoing p {
+    padding-bottom: 100px;
+  }
+
+  .takeYourJob > div {
+    grid-template-columns: 1fr;
+  }
+  .takeYourJob > div div img {
+    display: none;
+  }
+
+  .takeYourJob > div div {
+    text-align: left;
+    padding: 0 40px;
+  }
+
+  .tutors {
+    margin: 0 auto 150px;
+  }
+  .tutors > div {
+    display: flex;
+    gap: 89px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
