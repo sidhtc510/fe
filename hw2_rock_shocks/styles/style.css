@@ -5,8 +5,10 @@
 }
 body {
   background-color: black;
+  background-image:url("../images/bgc.png");
   font-family: Roboto, sans-serif;
   color: white;
+
 }
 button {
   border-radius: 50px;
