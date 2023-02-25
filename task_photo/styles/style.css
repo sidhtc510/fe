@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(58, 58, 58);
+  color: rgb(182, 182, 174);
+  font-family: Nunito, sans-serif;
+  /* font-family: Roboto, sans-serif; */
+}
+
+.tutors_container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.tutors_container > div div {
+  height: 190px;
+  width: 190px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}

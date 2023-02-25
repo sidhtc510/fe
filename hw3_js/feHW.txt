@@ -1,0 +1,107 @@
+Task 1 
+https://prog-center.pro/frontend/6
+
+for (let i = 10; i >= 0; i--) {
+    	console.log(i)
+    }
+
+------------------------------------
+
+Task 2
+https://prog-center.pro/frontend/8
+
+for (let i = m; i <= n; i++) {
+  if (i %2 === 0) {
+      console.log(i);
+  }
+}
+
+------------------------------------
+
+!!!Task 3
+https://prog-center.pro/frontend/14
+
+function range(n, m) {
+    let result = [];
+    if (n < m) {
+      for (let i = n; i < m; i++) {
+        result.push(i);
+      }
+    } else {
+      for (let i = m; i < n; i++) {
+        result.push(i);
+      }
+    }
+    return result;
+  }
+
+------------------------------------
+
+Task 4
+https://prog-center.pro/frontend/17
+
+function handler(arr, num) {
+  const newArr = arr.filter(function (el) {
+    if (el !== num) {
+      return el;
+    }
+  });
+  return newArr;
+}
+
+------------------------------------
+
+Task 5
+https://prog-center.pro/frontend/18
+
+function handler(array) {
+  const newArray = array.map(function (el) {
+    if (el < 0) {
+      return -el;
+    } else {
+      return el;
+    }
+  });
+  return newArray
+}
+
+------------------------------------
+
+!!!Task 6
+https://prog-center.pro/frontend/20
+
+function handler(arr) {
+    const newArray = arr.filter((el, index, arr) => {
+      return arr.indexOf(el) === index;
+    });
+    return newArray;
+  }
+
+
+------------------------------------
+
+Task 7
+https://prog-center.pro/frontend/21
+
+function handler(stringArray) {
+  const newArray = stringArray.map(function (str) {
+    return str.length;
+  });
+  return newArray;
+}
+
+------------------------------------
+
+Task 8
+https://prog-center.pro/frontend/22
+
+function handler(array, num) {
+    const numArray = array.filter(function (el) {
+        if (typeof el === "number") {
+            return el;
+        }
+    }).map(function (el) {
+        return el**num
+    })
+    return numArray;
+}
