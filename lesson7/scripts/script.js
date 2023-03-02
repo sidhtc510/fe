@@ -228,6 +228,11 @@ const users = [
 // }
 // console.log(kakayaNibudPeremennaya);
 
+// const kakayaNibudPeremennaya = users.find(function (el) {
+//   return el.first_name === "Olga";  
+// })
+// console.log(kakayaNibudPeremennaya);
+
 // 4. Сформируйте новый массив без объекта, где first_name == "Irina"
 // let kakayaNibudPeremennaya = [];
 // for (let i = 0; i < users.length; i++) {
@@ -236,6 +241,11 @@ const users = [
 //   }
 // }
 // console.log(kakayaNibudPeremennaya);
+// const users_without_irina = users.filter(function (el) {
+//   return el.first_name !== 'Irina'  
+// })
+// console.log(users_without_irina);
+
 
 
 // 5. Добавьте в конец нового массива объект со значениями:
@@ -253,11 +263,7 @@ const users = [
 // ['Ivan Ivanov (20): 500', 'Irina Alexandrova (46): 1500', 'Denis Sokolov (30): 760']
 
 // const newArray = users.filter(function (person) {
-//     if(person.age >= 18){
-//         return person
-//     }
-// })
-
-// newArray.forEach(function ({first_name, last_name, age, salary}) {
+//     return person.age >= 18
+// }).forEach(function ({first_name, last_name, age, salary}) {
 //     console.log(`${first_name} ${last_name} (${age}): ${salary}`);
 // })

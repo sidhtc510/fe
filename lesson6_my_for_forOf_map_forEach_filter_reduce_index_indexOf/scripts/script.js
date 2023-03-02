@@ -55,3 +55,4 @@ console.log("---------------------------------filter----------------------------
 
 // const filteredArray = peoples.filter(person => person.age >= 18)
 // console.log(filteredArray);
+
