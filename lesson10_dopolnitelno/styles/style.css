@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(58, 58, 58);
+
+    font-family: Nunito, sans-serif;
+    /* font-family: Roboto, sans-serif; */
+}
+
+.product_card {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 15px;
+
+  }
+  
+  .products_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
