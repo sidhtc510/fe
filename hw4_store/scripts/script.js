@@ -6,7 +6,7 @@ const removeAllGoods = document.querySelector(".removeAllGoods");
 const orderByAsc = document.querySelector(".asc");
 const orderByDesc = document.querySelector(".desc");
 
-let removeProductBtns = document.querySelectorAll("#removeProduct");
+// let removeProductBtns = document.querySelectorAll("#removeProduct");
 
 // modal window
 buttonShowModal.addEventListener("click", function () {
@@ -156,10 +156,18 @@ function showProducts(goodsArray) {
       divForAvailAndBtn
     ); // собираем все в кучу
 
+    removeProductBtn.addEventListener("click", function () {
+      goodsArray = goodsArray.filter(function (item) {
+        return item.id !== id;
+      });
+      localStorage.setItem("products", JSON.stringify(goodsArray));
+      showProducts(goodsArray);
+    });
     return productCard;
   });
 
   goods_wrapper.append(...product);
+
   return (removeProductBtns = document.querySelectorAll("#removeProduct"));
 }
 
@@ -244,20 +252,24 @@ function showNotification() {
 //   "---------------------------------removeItem---------------------------------"
 // );
 
-removeProductBtns.forEach(function (item) {
-  console.log(item);
-  item.addEventListener("click", function () {
-    removeItem(goods, +item.name);
-  });
-});
+// removeProductBtns.forEach(function (item) {
+//   console.log(item);
+//   item.addEventListener("click", function () {
+//     console.log(item);
+//     console.log(removeProductBtns);
+//     removeItem(goods, +item.name);
+//   });
+// });
 
-function removeItem(goodsArray, targetId) {
-  goodsArray = goodsArray.filter(function (item) {
-    return item.id !== targetId;
-  });
-  localStorage.setItem("products", JSON.stringify(goodsArray));
-  showProducts(goodsArray);
-}
+// function removeItem(goodsArray, targetId) {
+//   goodsArray = goodsArray.filter(function (item) {
+//     return item.id !== targetId;
+//   });
+//   localStorage.setItem("products", JSON.stringify(goodsArray));
+//   showProducts(goodsArray);
+// removeProductBtns = document.querySelectorAll("#removeProduct");
+
+// }
 
 // console.log(
 //   "---------------------------------remove All Goods---------------------------------"
@@ -277,16 +289,15 @@ orderByAsc.addEventListener("click", function (event) {
   goods.sort(function (x, y) {
     return x.price - y.price;
   });
-  localStorage.setItem("products", JSON.stringify(goods));
+  // localStorage.setItem("products", JSON.stringify(goods));
   showProducts(goods);
 });
-
 
 orderByDesc.addEventListener("click", function (event) {
   event.preventDefault();
   goods.sort(function (x, y) {
     return y.price - x.price;
   });
-  localStorage.setItem("products", JSON.stringify(goods));
+  // localStorage.setItem("products", JSON.stringify(goods));
   showProducts(goods);
 });
