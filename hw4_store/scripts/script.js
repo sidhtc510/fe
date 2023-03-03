@@ -6,8 +6,6 @@ const removeAllGoods = document.querySelector(".removeAllGoods");
 const orderByAsc = document.querySelector(".asc");
 const orderByDesc = document.querySelector(".desc");
 
-// let removeProductBtns = document.querySelectorAll("#removeProduct");
-
 // modal window
 buttonShowModal.addEventListener("click", function () {
   modal.style.visibility = "visible";
@@ -22,13 +20,6 @@ function clear() {
   modal.style.opacity = 0;
 }
 // modal window
-
-// ДЗ  - решение в папке hw4_store
-// Стилизовать карточки
-// Добавить форму с двумя инпутами для сбора данных о названии продукта и его цене. По умолчанию все добавляемые продукты должны иметь свойство in_stock со значением true
-// При отправке формы выводить собранные данные из формы в консоль в виде объекта
-// При отправке формы отрисовывать карточку из собранных данных
-// При обновлении страницы добавленные карточки не пропадают
 
 let goods = [
   {
@@ -102,8 +93,8 @@ if (localStorage.getItem("products") === null) {
   goods = JSON.parse(localStorage.getItem("products"));
 }
 
-function showProducts(goodsArray) {
-  const product = goodsArray.map(function ({
+function showProducts() {
+  const product = goods.map(function ({
     id,
     product,
     price,
@@ -157,21 +148,23 @@ function showProducts(goodsArray) {
     ); // собираем все в кучу
 
     removeProductBtn.addEventListener("click", function () {
-      goodsArray = goodsArray.filter(function (item) {
+      goods = goods.filter(function (item) {
         return item.id !== id;
       });
-      localStorage.setItem("products", JSON.stringify(goodsArray));
-      showProducts(goodsArray);
+      localStorage.setItem("products", JSON.stringify(goods));
+      
+      showProducts();
+      console.log("g " +goods);
+      console.log("ga " +goods);
     });
+
     return productCard;
   });
 
   goods_wrapper.append(...product);
-
-  return (removeProductBtns = document.querySelectorAll("#removeProduct"));
 }
 
-showProducts(goods);
+showProducts();
 
 // console.log(
 //   "---------------------------------add---------------------------------"
@@ -201,14 +194,14 @@ function addProduct(event) {
 
   clear();
   showNotification();
-  showProducts(goods);
+  showProducts();
 }
 
 // console.log(
 //   "---------------------------------filter---------------------------------"
 // );
 // const filter = document.querySelector("#filterBtn");
-const filter = document.querySelector("#filterForm");
+const filterForm = document.querySelector("#filterForm");
 const minDigit = document.querySelector("#minDigit");
 const maxDigit = document.querySelector("#maxDigit");
 
@@ -220,17 +213,15 @@ const maxPrice = Math.max(...prices);
 minDigit.setAttribute("value", minPrice);
 maxDigit.setAttribute("value", maxPrice);
 
-filter.addEventListener("submit", function (event) {
+
+filterForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  showProducts(filteredProduct(minDigit.value, maxDigit.value, goods));
+  goods = JSON.parse(localStorage.getItem("products")).filter(function (el) {
+    return el.price <= maxDigit.value && el.price >= minDigit.value;
+  })
+  showProducts()
 });
-
-function filteredProduct(min, max, goodsArr) {
-  return (filtgoods = goodsArr.filter(
-    (el) => el.price <= max && el.price >= min
-  ));
-}
 
 // console.log(
 //   "---------------------------------notification---------------------------------"
@@ -243,33 +234,6 @@ function showNotification() {
     notification.style.opacity = "0";
   }, 3500);
 }
-
-// 6. Добавить кнопку удаления одной карточки товара
-// 7. Добавить кнопку, при клике на которую удаляются все карточки
-// 8. Добавить кнопку, при клике на которую все карточки сортируются в порядке возрастания цены
-
-// console.log(
-//   "---------------------------------removeItem---------------------------------"
-// );
-
-// removeProductBtns.forEach(function (item) {
-//   console.log(item);
-//   item.addEventListener("click", function () {
-//     console.log(item);
-//     console.log(removeProductBtns);
-//     removeItem(goods, +item.name);
-//   });
-// });
-
-// function removeItem(goodsArray, targetId) {
-//   goodsArray = goodsArray.filter(function (item) {
-//     return item.id !== targetId;
-//   });
-//   localStorage.setItem("products", JSON.stringify(goodsArray));
-//   showProducts(goodsArray);
-// removeProductBtns = document.querySelectorAll("#removeProduct");
-
-// }
 
 // console.log(
 //   "---------------------------------remove All Goods---------------------------------"
@@ -289,8 +253,7 @@ orderByAsc.addEventListener("click", function (event) {
   goods.sort(function (x, y) {
     return x.price - y.price;
   });
-  // localStorage.setItem("products", JSON.stringify(goods));
-  showProducts(goods);
+  showProducts();
 });
 
 orderByDesc.addEventListener("click", function (event) {
@@ -298,6 +261,5 @@ orderByDesc.addEventListener("click", function (event) {
   goods.sort(function (x, y) {
     return y.price - x.price;
   });
-  // localStorage.setItem("products", JSON.stringify(goods));
-  showProducts(goods);
+  showProducts();
 });
