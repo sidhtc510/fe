@@ -154,8 +154,6 @@ function showProducts() {
       localStorage.setItem("products", JSON.stringify(goods));
       
       showProducts();
-      console.log("g " +goods);
-      console.log("ga " +goods);
     });
 
     return productCard;

@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(58, 58, 58);
+    color: rgb(182, 182, 174);
+    font-family: Nunito, sans-serif;
+    /* font-family: Roboto, sans-serif; */
+}
+
+.peoplesWrapper{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.personCard{
+    border: 1px solid;
+    padding: 10px;
+}
+
+.personCard img{
+    width: 200px;
+    height: 200px;
+}

@@ -105,7 +105,7 @@ header ul {
 .modalWrap {
   z-index: 110;
   height: 50vh;
-  min-height: 305px;
+  height: 320px;
   width: 50vw;
   border: 1px solid gray;
   background: #f0f0f0;
