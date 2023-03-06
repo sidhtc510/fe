@@ -5,6 +5,8 @@ const goods_wrapper = document.querySelector(".goods_wrapper");
 const removeAllGoods = document.querySelector(".removeAllGoods");
 const orderByAsc = document.querySelector(".asc");
 const orderByDesc = document.querySelector(".desc");
+const amount = document.querySelector(".amount");
+const notificationParagraph = document.querySelector(".notification p");
 
 // modal window
 buttonShowModal.addEventListener("click", function () {
@@ -94,13 +96,7 @@ if (localStorage.getItem("products") === null) {
 }
 
 function showProducts() {
-  const product = goods.map(function ({
-    id,
-    product,
-    price,
-    in_stock,
-    image,
-  }) {
+  const product = goods.map(function ({ id, product, price, in_stock, image }) {
     goods_wrapper.innerHTML = ""; //перед запуском фунцкции, очищаем goods_wrapper. т.е. удаляем все карточки товара который был ранее отрисован в html
 
     const productCard = document.createElement("div"); // Создает главный div карточки товара
@@ -124,6 +120,7 @@ function showProducts() {
     removeProductBtn.setAttribute("id", "removeProduct");
     removeProductBtn.setAttribute("name", id);
     button.setAttribute("value", id);
+    button.setAttribute("id", "buttonAddToCart");
 
     removeProductBtn.innerText = "X";
     button.innerText = "Add to cart"; // напишет текст на кнопке
@@ -152,7 +149,7 @@ function showProducts() {
         return item.id !== id;
       });
       localStorage.setItem("products", JSON.stringify(goods));
-      
+
       showProducts();
     });
 
@@ -191,7 +188,7 @@ function addProduct(event) {
   //   console.log(goods);
 
   clear();
-  showNotification();
+  showNotification("Product added");
   showProducts();
 }
 
@@ -211,25 +208,27 @@ const maxPrice = Math.max(...prices);
 minDigit.setAttribute("value", minPrice);
 maxDigit.setAttribute("value", maxPrice);
 
-
 filterForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   goods = JSON.parse(localStorage.getItem("products")).filter(function (el) {
     return el.price <= maxDigit.value && el.price >= minDigit.value;
-  })
-  showProducts()
+  });
+  showProducts();
 });
 
 // console.log(
 //   "---------------------------------notification---------------------------------"
 // );
 
-function showNotification() {
-  const notification = document.querySelector(".notification");
-  notification.style.opacity = "1";
+function showNotification(message) {
+  const notificationWrap = document.querySelector(".notification");
+  notificationParagraph.innerText = message;
+  notificationWrap.style.visibility = "visible";
+  notificationWrap.style.opacity = "1";
   setTimeout(function () {
-    notification.style.opacity = "0";
+    notificationWrap.style.visibility = "hidden";
+    notificationWrap.style.opacity = "0";
   }, 3500);
 }
 
@@ -261,3 +260,64 @@ orderByDesc.addEventListener("click", function (event) {
   });
   showProducts();
 });
+
+console.log(
+  "---------------------------------amount---------------------------------"
+);
+
+amount.addEventListener("click", function () {
+  const amountPrice = goods.reduce(function (acc, item) {
+    return acc + item.price;
+  }, 0);
+  showNotification(`Amount ${amountPrice}`);
+});
+
+console.log(
+  "---------------------------------AddToCart---------------------------------"
+);
+
+// let cart = [
+//   {
+//     id: 21,
+//     quantity: 1,
+//   },
+//   {
+//     id: 34,
+//     quantity:3,
+//   },
+//   {
+//     id: 67,
+//     quantity: 4,
+//   }
+// ];
+
+let cart = [
+  { id: 12, quantity: 4 },
+  { id: 8, quantity: 3 },
+  { id: 1, quantity: 2 },
+];
+let quantity = 0;
+
+
+if (localStorage.getItem("cart") === null) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+} else {
+  cart = JSON.parse(localStorage.getItem("cart"));
+}
+
+const buttonAddToCart = document.querySelectorAll("#buttonAddToCart");
+
+buttonAddToCart.forEach(function (item) {
+  item.addEventListener("click", function () {
+    const foundId = cart.findIndex((el) => el.id === item.value);
+    console.log("INDEX: " + foundId);
+
+    cart.unshift({
+      id: +item.value,
+      quantity: quantity++,
+    });
+  });
+});
+
+// console.log("cart: " + element.id);
+// console.log("click: "+ item.value);
