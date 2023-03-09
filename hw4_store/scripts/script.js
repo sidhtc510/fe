@@ -89,6 +89,8 @@ let goods = [
   },
 ];
 
+
+
 if (localStorage.getItem("products") === null) {
   localStorage.setItem("products", JSON.stringify(goods));
 } else {
@@ -96,9 +98,9 @@ if (localStorage.getItem("products") === null) {
 }
 
 function showProducts() {
-  const product = goods.map(function ({ id, product, price, in_stock, image }) {
-    goods_wrapper.innerHTML = ""; //перед запуском фунцкции, очищаем goods_wrapper. т.е. удаляем все карточки товара который был ранее отрисован в html
+  goods_wrapper.innerHTML = ""; //перед запуском фунцкции, очищаем goods_wrapper. т.е. удаляем все карточки товара который был ранее отрисован в html
 
+  const product = goods.map(function ({ id, product, price, in_stock, image }) {
     const productCard = document.createElement("div"); // Создает главный div карточки товара
     const productImage = document.createElement("img"); // Создает Image товара
     const removeProductBtn = document.createElement("button");
@@ -157,6 +159,7 @@ function showProducts() {
   });
 
   goods_wrapper.append(...product);
+  filterMyFunc();
 }
 
 showProducts();
@@ -196,26 +199,29 @@ function addProduct(event) {
 //   "---------------------------------filter---------------------------------"
 // );
 // const filter = document.querySelector("#filterBtn");
-const filterForm = document.querySelector("#filterForm");
-const minDigit = document.querySelector("#minDigit");
-const maxDigit = document.querySelector("#maxDigit");
+function filterMyFunc() {
+  const filterForm = document.querySelector("#filterForm");
+  const minDigit = document.querySelector("#minDigit");
+  const maxDigit = document.querySelector("#maxDigit");
 
-const prices = goods.map(function (product) {
-  return product.price;
-});
-const minPrice = Math.min(...prices);
-const maxPrice = Math.max(...prices);
-minDigit.setAttribute("value", minPrice);
-maxDigit.setAttribute("value", maxPrice);
-
-filterForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  goods = JSON.parse(localStorage.getItem("products")).filter(function (el) {
-    return el.price <= maxDigit.value && el.price >= minDigit.value;
+  const prices = goods.map(function (product) {
+    return product.price;
   });
-  showProducts();
-});
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
+  minDigit.setAttribute("value", minPrice);
+  maxDigit.setAttribute("value", maxPrice);
+
+  filterForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    goods = JSON.parse(localStorage.getItem("products")).filter(function (el) {
+      return el.price <= maxDigit.value && el.price >= minDigit.value;
+    });
+    showProducts();
+  });
+}
+// filterMyFunc();
 
 // console.log(
 //   "---------------------------------notification---------------------------------"
@@ -297,7 +303,6 @@ let cart = [
   { id: 1, quantity: 2 },
 ];
 let quantity = 0;
-
 
 if (localStorage.getItem("cart") === null) {
   localStorage.setItem("cart", JSON.stringify(cart));
