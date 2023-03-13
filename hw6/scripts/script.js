@@ -6,9 +6,10 @@ fetch("https://reqres.in/api/users?page=2")
   .then((person) => showCard(person.data));
 
 const peoplesWrapper = document.querySelector(".peoples");
+
 function showCard(array) {
   //    console.log(array);
-  array.forEach(function ({ avatar, first_name, last_name, email }) {
+  const person = array.map(function ({ avatar, first_name, last_name, email }) {
     const personWrapper = document.createElement("div");
     const personImage = document.createElement("img");
     const personFio = document.createElement("p");
@@ -23,12 +24,8 @@ function showCard(array) {
     personEmail.innerText = `${email}`;
 
     personWrapper.append(personImage, personFio, personEmail);
-    peoplesWrapper.append(personWrapper);
+    return personWrapper;
   });
-}
 
-// <div class="person">
-// <img src="" alt="">
-// <p class="fio"></p>
-// <p class="email"></p>
-// </div>
+  peoplesWrapper.append(...person);
+}

@@ -1,21 +1,21 @@
-const link = "https://jsonplaceholder.typicode.com/posts";
+// const link = "https://jsonplaceholder.typicode.com/posts";
 
-const posts = document.querySelector(".posts");
+// const posts = document.querySelector(".posts");
 
-function createPost(title, body) {
-    const container = document.createElement("div");
-    const pTitle = document.createElement("p");
-    const pBody = document.createElement("p");
-    pTitle.innerText = title;
-    pBody.innerText = body;
-  
-    pTitle.classList.add("title");
-    pBody.classList.add("text");
-  
-    container.append(pTitle, pBody);
-  
-    return container;
-  }  
+// function createPost(title, body) {
+//   const container = document.createElement("div");
+//   const pTitle = document.createElement("p");
+//   const pBody = document.createElement("p");
+//   pTitle.innerText = title;
+//   pBody.innerText = body;
+
+//   pTitle.classList.add("title");
+//   pBody.classList.add("text");
+
+//   container.append(pTitle, pBody);
+
+//   return container;
+// }
 
 fetch(link).then(function (resp) {
   resp.json().then(function (data) {
@@ -27,17 +27,8 @@ fetch(link).then(function (resp) {
   });
 });
 
-// const request = new Promise((resolve, reject) => {
-//   const number = Math.random();
-//   number < 0.5 ? resolve(number) : reject(number);
-// });
-
-// request.then(
-//   function (value) {
-//     console.log("positive " + value);
-//   },
-//   function (value) {
-//     console.log("negative " + value);
-//   }
-// );
+const request = new Promise((resolve, reject) => {
+  const number = Math.random();
+  number < 0.5 ? resolve(number) : reject(number);
+});
 

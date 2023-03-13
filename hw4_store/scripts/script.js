@@ -1,5 +1,6 @@
 const buttonShowModal = document.querySelector(".buttonShowModal");
 const modal = document.querySelector(".modalBackground");
+const modalWrap = document.querySelector(".modalWrap");
 const buttonCloseModal = document.querySelector("#closeModal");
 const goods_wrapper = document.querySelector(".goods_wrapper");
 const removeAllGoods = document.querySelector(".removeAllGoods");
@@ -9,13 +10,19 @@ const amount = document.querySelector(".amount");
 const notificationParagraph = document.querySelector(".notification p");
 
 // modal window
+modalWrap.addEventListener("click", function (event) {
+  event.stopPropagation();
+});
+
 buttonShowModal.addEventListener("click", function () {
   modal.style.visibility = "visible";
   modal.style.opacity = 1;
 });
 buttonCloseModal.addEventListener("click", clear);
+modal.addEventListener("click", clear);
 
-function clear() {
+function clear(event) {
+  // event.stopPropagation();
   modalTitle.value = "";
   modalPrice.value = "";
   modal.style.visibility = "hidden";
@@ -88,8 +95,6 @@ let goods = [
     image: false,
   },
 ];
-
-
 
 if (localStorage.getItem("products") === null) {
   localStorage.setItem("products", JSON.stringify(goods));
