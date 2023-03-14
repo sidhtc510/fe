@@ -37,7 +37,14 @@ function showCard(arr) {
     usrAddress.innerText = `${address}`;
     usrBankNumber.innerText = `${cardNumber} ,  ${currency}`;
 
-    card.append(usrImage, usrFIO, usrEmail, usrDepartment, usrAddress, usrBankNumber);
+    card.append(
+      usrImage,
+      usrFIO,
+      usrEmail,
+      usrDepartment,
+      usrAddress,
+      usrBankNumber
+    );
     usrContainer.append(card);
   });
 }
