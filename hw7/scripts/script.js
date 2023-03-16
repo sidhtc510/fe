@@ -7,9 +7,11 @@ form.addEventListener("submit", function (el) {
 
   fetch(`https://dummyjson.com/${collection}`)
     .then((resp) => resp.json())
-    .then((json) => renderCard(json, collection));
+    .then((json) => renderCard(json));
 });
 
-function renderCard(obj, collection) {
-
+function renderCard(obj) {
+  obj.products.forEach(element => {
+    console.log(element);
+  });
 }

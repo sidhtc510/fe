@@ -127,10 +127,10 @@ header ul {
   margin: 0 0 5px 0;
 }
 
-.modalWrap:hover .closeBtn{
+.modalWrap:hover .closeBtn {
   opacity: 1;
 }
-.product:hover .closeBtn{
+.product:hover .closeBtn {
   opacity: 1;
 }
 
@@ -171,7 +171,7 @@ input[type="submit"] {
   transition: 0.3s;
 }
 
-#filterForm{
+#filterForm {
   background: aliceblue;
   border-radius: 8px;
   text-align: center;
@@ -188,19 +188,17 @@ input[type="submit"] {
   width: 100%;
 }
 
-
-.removeAllGoods{
+.removeAllGoods {
   margin-top: 20px;
 }
 
-.orderBy{
+.orderBy {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  
 }
 
-.orderBy a{
+.orderBy a {
   color: black;
   margin: 10px 0;
   text-decoration: none;
@@ -210,6 +208,6 @@ input[type="submit"] {
   text-align: center;
   padding: 5px;
 }
-.orderBy a:hover{
-  color:#535353;
+.orderBy a:hover {
+  color: #535353;
 }
