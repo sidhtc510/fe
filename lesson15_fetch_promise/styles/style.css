@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(58, 58, 58);
+  color: rgb(182, 182, 174);
+  font-family: Nunito, sans-serif;
+  /* font-family: Roboto, sans-serif; */
+}
+
+.item {
+  width: fit-content;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  text-align: center;
+  background-color: rgb(140, 98, 255);
+  color: aliceblue;
+}
