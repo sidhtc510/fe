@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(58, 58, 58);
+  color: rgb(182, 182, 174);
+  font-family: Nunito, sans-serif;
+  /* font-family: Roboto, sans-serif; */
+}
+
+.cards_container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.container {
+  border: 1px solid black;
+}
