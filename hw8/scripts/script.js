@@ -2,7 +2,6 @@
 // https://jsonplaceholder.typicode.com/todos
 const root = document.querySelector(".root");
 
-let postsData = [];
 
 function createCard(userId, title, completed) {
   const container = document.createElement("div");
@@ -20,9 +19,7 @@ function createCard(userId, title, completed) {
 }
 
 function rerender(arr) {
-  // console.log(arr);
   arr.forEach(function ({ userId, title, completed }) {
-    // console.log(title);
     container = createCard(userId, title, completed);
     root.append(container);
   });
