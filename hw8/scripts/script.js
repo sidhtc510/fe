@@ -43,8 +43,4 @@ async function getPosts(callback) {
   callback(res);
 }
 
-getPosts(function (data) {
-  postsData = data;
-
-  rerender(postsData);
-});
+getPosts(rerender);
