@@ -68,3 +68,18 @@ console.log(multtwo_1(6, 3));
 //Создайте экземпляр этого класса
 //Выведете в консоль все свойства созданного экземпляра класса
 // Реализйуте метод get_info (выводит в консоль строку 'Язык: <name>, Алфавит: <alphabet>, Страна, в которой говорят на этом языке <country>)
+
+class Language{
+  constructor(name, alphabet, country){
+    this.name = name;
+    this.alphabet = alphabet;
+    this.country = country;
+  }
+
+  getLnagInfo(){
+    return `'Язык: ${this.name}, Алфавит: ${this.alphabet}, Страна: ${this.country},`
+  }
+}
+
+const lang = new Language('english', 'cyrillic', 'England');
+console.log(lang.getLnagInfo());
