@@ -83,3 +83,12 @@ class Language{
 
 const lang = new Language('english', 'cyrillic', 'England');
 console.log(lang.getLnagInfo());
+
+
+const num = [2,5,7,8];
+
+console.log(...num);
+
+
+
+
