@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(58, 58, 58);
+    /* color: rgb(182, 182, 174); */
+    font-family: Nunito, sans-serif;
+    /* font-family: Roboto, sans-serif; */
+}
+
+.cardsContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+padding: 20px;
+}
+.cardElem{
+    border: 2px dashed green;
+    border-radius: 15px;
+    padding: 15px;
+background-color: rgb(160, 88, 255);
+}

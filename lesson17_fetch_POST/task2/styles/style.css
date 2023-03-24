@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(58, 58, 58);
+  color: rgb(182, 182, 174);
+  font-family: Nunito, sans-serif;
+  /* font-family: Roboto, sans-serif; */
+}
+
+.users_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.users_container div {
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.users_container div img {
+    border-radius: 7px;
+    width: 200px;
+    object-fit: cover;
+}
+
+a{
+    color:white
+}

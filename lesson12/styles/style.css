@@ -96,6 +96,8 @@ body {
   top: 0;
   left: 0;
   visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
 }
 
 .popup_body {
@@ -115,18 +117,22 @@ body {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
-.popup.visible{
+.popup.visible {
   visibility: visible;
+  opacity: 1;
 }
 
 .cross_icon {
-  font-size: 20px;
+  font-size: 14px;
   cursor: pointer;
   position: absolute;
   right: 30px;
   top: 20px;
-  transform: rotate(0.125turn);
+  padding: 2px;
+  border-radius: 50%;
+  /* transform: rotate(0.125turn); */
 }
+
 /* MEDIA QUERIES */
 @media (max-width: 800px) {
   .header {
@@ -157,4 +163,8 @@ body {
     padding: 5px;
     text-align: center;
   }
+}
+
+.account {
+  cursor: pointer;
 }

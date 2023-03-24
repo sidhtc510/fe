@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(58, 58, 58);
+  color: rgb(182, 182, 174);
+  font-family: Nunito, sans-serif;
+  /* font-family: Roboto, sans-serif; */
+}
+
+.chColor {
+  background-color: brown;
+}
+
+.img_slider{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    /* background: url("./") */
+}
