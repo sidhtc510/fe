@@ -72,6 +72,12 @@ leftBtn.addEventListener("click", () => {
   photo_index = (photo_index - 1 + photos.length) % photos.length;
   img_slider.src = photos[photo_index];
 });
+// -1+5 = 4 % 4 =0
+// -2+5 = 3 % 4 =0
+console.log(4%4);
+console.log(3%4);
+console.log(2%4);
+console.log(1%4);
 
 rightBtn.addEventListener("click", () => {
   photo_index = ++photo_index % photos.length;
