@@ -38,8 +38,40 @@
 
             <br> <br>
             <p> homeWork</p>
+            <div class="homeWork">
 
+                <form id="addForm">
+                    <div>
+                        <label for="forTag">Name of Tag</label> <br>
 
+                        <select name="forTag" id="forTag">
+                            <option value="p">p</option>
+                            <option value="div">div</option>
+                            <option value="span">span</option>
+                            <option value="h1">h1</option>
+                            <option value="h2">h2</option>
+                            <option value="h3">h3</option>
+                            <option value="h4">h4</option>
+                            <option value="h5">h5</option>
+                            <option value="h6">h6</option>
+                        </select>
+
+                    </div>
+
+                    <div>
+                        <label for="forContent">Content</label> <br>
+                        <input type="text" name="forContent" id="forContent">
+                    </div>
+
+                    <div>
+                        <label for="forColor">Choose color</label> <br>
+                        <input type="color" name="forColor" id="forColor">
+                        <button>Add</button>
+                    </div>
+
+                </form>
+                <div class="target"></div>
+            </div>
             <script src="./scripts/script.js"></script>
 </body>
 

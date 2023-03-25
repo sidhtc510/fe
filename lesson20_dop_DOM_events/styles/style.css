@@ -15,3 +15,13 @@ body {
     object-fit: cover;
     /* background: url("./") */
 }
+.homeWork{
+  display: flex;
+}
+#addForm{
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 20px;
+  width: fit-content;
+}

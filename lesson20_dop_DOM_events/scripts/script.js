@@ -78,23 +78,32 @@ rightBtn.addEventListener("click", () => {
   img_slider.src = photos[photo_index];
 });
 
+const diceBtn = document.querySelector(".dice_btn");
+const diceResult = document.querySelector(".dice_result");
 
+const dice_random = () => Math.ceil(Math.random() * 6);
 
-
-
-const diceBtn = document.querySelector('.dice_btn');
-const diceResult = document.querySelector('.dice_result');
-
-
-  const dice_random = () => Math.ceil(Math.random() * 6);
-
-diceBtn.addEventListener('click', () => {
-
-console.log(dice_random());
-
-
+diceBtn.addEventListener("click", () => {
+  console.log(dice_random());
 });
-
 
 // 2:50
 
+const addForm = document.querySelector("#addForm");
+const target = document.querySelector(".target");
+
+addForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const forTag = event.target.forTag
+  const forContent = event.target.forContent
+  const forColor = event.target.forColor
+
+  
+const element = document.createElement(forTag.value);
+element.innerText = forContent.value
+element.style.color = forColor.value
+
+
+target.append(element)
+});
