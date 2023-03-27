@@ -13,7 +13,6 @@ const paramObj = {
 };
 
 function drawLine({ x, y, radius, startAngle, endAngle, counterclockwise }) {
-  console.log(x, y, radius, startAngle, endAngle, counterclockwise);
   ctx.beginPath();
   ctx.arc(x, y, radius, startAngle, endAngle, counterclockwise);
   ctx.stroke();
