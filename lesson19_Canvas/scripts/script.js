@@ -1,6 +1,6 @@
 const cvs = document.querySelector("#cvs");
 const ctx = cvs.getContext("2d");
-// console.log(ctx);
+console.log(ctx);
 cvs.width = window.innerWidth;
 cvs.height = window.innerHeight;
 // ctx.fillRect(300, 0, 50, 50);
@@ -68,4 +68,20 @@ function render() {
   circle++;
 }
 
-setInterval(render, 10);
+// setInterval(render, 10);
+
+console.log(
+  "---------------------------------color palitra---------------------------------"
+);
+
+function colorPalitra() {
+  for (let i = 0; i < 17; i++) {
+    for (let j = 0; j < 17; j++) {
+      ctx.fillStyle = `rgb(
+        ${Math.floor(255 - 15 * i)},
+        ${Math.floor(255 - 15 * j)},
+        0)`;
+      ctx.fillRect(j * 25, i * 25, 25, 25);
+    }
+  }
+}
