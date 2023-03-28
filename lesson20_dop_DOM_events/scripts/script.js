@@ -74,10 +74,10 @@ leftBtn.addEventListener("click", () => {
 });
 // -1+5 = 4 % 4 =0
 // -2+5 = 3 % 4 =0
-console.log(4%4);
-console.log(3%4);
-console.log(2%4);
-console.log(1%4);
+console.log(4 % 4);
+console.log(3 % 4);
+console.log(2 % 4);
+console.log(1 % 4);
 
 rightBtn.addEventListener("click", () => {
   photo_index = ++photo_index % photos.length;
@@ -93,23 +93,100 @@ diceBtn.addEventListener("click", () => {
   console.log(dice_random());
 });
 
-// 2:50
-
 const addForm = document.querySelector("#addForm");
 const target = document.querySelector(".target");
 
-addForm.addEventListener("submit", function(event) {
+addForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const forTag = event.target.forTag
-  const forContent = event.target.forContent
-  const forColor = event.target.forColor
+  const forTag = event.target.forTag;
+  const forContent = event.target.forContent;
+  const forColor = event.target.forColor;
 
-  
-const element = document.createElement(forTag.value);
-element.innerText = forContent.value
-element.style.color = forColor.value
+  const element = document.createElement(forTag.value);
+  element.innerText = forContent.value;
+  element.style.color = forColor.value;
 
+  target.append(element);
+});
 
-target.append(element)
+const btnPlus = document.querySelector(".incr_btn");
+let btn_param = 30;
+
+const incr_btn_render = (size) => {
+  btnPlus.style.width = `${size}px`;
+  btnPlus.style.height = `${size}px`;
+};
+
+incr_btn_render(btn_param);
+
+btnPlus.addEventListener("click", (event) => {
+  btn_param += 10;
+  incr_btn_render(btn_param);
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+
+  event.target.style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+});
+
+console.log(
+  "------------------------------------------------------------------"
+);
+
+const change_text_btn = document.querySelector(".change_text_btn");
+const change_text_input = document.querySelector(".change_text_input");
+change_text_input.value = "???";
+
+change_text_btn.addEventListener("click", () => {
+  if (change_text_input.value.includes("?")) {
+    change_text_input.value = "";
+  }
+  change_text_input.value += "!";
+});
+console.log(
+  "------------------------------------------------------------------"
+);
+
+const change_text_btn2 = document.querySelector(".change_text_btn2");
+const change_text_input2 = document.querySelector(".change_text_input2");
+change_text_input2.value = "???";
+
+change_text_btn2.addEventListener("click", () => {
+  console.log("heeeee");
+  if (change_text_input2.value.includes("?")) {
+    change_text_input2.value = "...";
+  } else {
+    change_text_input2.value = "???";
+  }
+});
+console.log(
+  "------------------------------------------------------------------"
+);
+
+const change_text_btn3 = document.querySelector(".change_text_btn3");
+const change_text_input3 = document.querySelector(".change_text_input3");
+
+const elems = ["...", "???", "$$$"];
+let elemIndex = 0;
+change_text_btn3.addEventListener("click", () => {
+  change_text_input3.value = elems[elemIndex++ % elems.length];
+});
+
+console.log(
+  "------------------------------------------------------------------"
+);
+
+const create_p_btn = document.querySelector(".create_p_btn");
+const create_p_container = document.querySelector(".create_p_container");
+
+const colors = ["red", "green", "orangered"];
+let elemIndex2 = 0;
+
+create_p_btn.addEventListener("click", () => {
+  console.log(elemIndex2++ % colors.length);
+  const p = document.createElement("p");
+  p.innerText = "lorem 10";
+  p.style.color = colors[elemIndex2++ % colors.length];
+  create_p_container.append(p);
 });
