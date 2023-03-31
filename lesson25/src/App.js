@@ -1,10 +1,10 @@
-
-import ProductContainer from "./components/ProductContainer";
+import GoodContainer from "./components/GoodContainer/GoodContainer";
+// import ProductContainer from "./components/ProductContainer";
 
 function App() {
   return (
     <div>
-      <ProductContainer />
+      <GoodContainer />
     </div>
   );
 }
