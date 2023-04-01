@@ -1,3 +1,14 @@
-.good_item{
-    
+.good_item {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 20px;
+}
+.another_style{
+
+}
+
+.good_item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
 }
