@@ -1,6 +1,6 @@
 import React from "react";
 import Good from "../Good/Good";
-import { goods } from "../../data/goods";
+import { goods } from "../../data/wines";
 import s from "./GoodContainer.module.css";
 
 export default function GoodContainer() {
