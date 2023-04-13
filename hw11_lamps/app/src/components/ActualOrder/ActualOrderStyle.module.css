@@ -1,0 +1,47 @@
+
+/* actual order */
+
+.actual_order {
+    padding: 120px 0;
+}
+
+.actual_order_title {
+    text-align: center;
+    font-style: italic;
+    color: #00868A;
+    padding: 0 0 60px 0;
+}
+
+.actual_order_wrapper {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space_between;
+}
+
+.actual_order_item {
+    width: 25%;
+    cursor: pointer;
+    margin: 0 10px;
+    background-color: #00868A;
+    color: white;
+    font-style: italic;
+}
+
+.actual_order_item_image {
+    width: 100%;
+}
+
+.actual_order_item_title_wrapper {
+    display: flex;
+    justify-content: space_evenly;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.new {
+    position: absolute;
+    margin: 25px;
+    padding: 10px;
+    background-color: #00868A;
+}

@@ -1,0 +1,46 @@
+.modalBackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  backdrop-filter: blur(3px);
+  /* opacity: 0;
+  visibility: hidden; */
+  transition: 0.3s;
+}
+
+.showModal {
+  opacity: 1;
+  visibility: visible;
+}
+.modalWrap {
+  z-index: 110;
+  height: 50vh;
+  height: 320px;
+  width: 50vw;
+  border: 1px solid gray;
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.closeBtn {
+  border-radius: 50%;
+  border: 1px solid gray;
+  font-size: 12px;
+  background: gainsboro;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s;
+  margin: 0 0 5px 0;
+}
+
+.modalWrap:hover .closeBtn {
+  opacity: 1;
+}

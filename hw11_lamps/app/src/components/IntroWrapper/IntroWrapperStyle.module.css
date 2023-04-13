@@ -1,0 +1,76 @@
+
+/* nav and intro wrapper */
+
+.introWrapper {
+    background-color: #4FBFA5;
+    font-style: italic;
+}
+
+nav {
+    color: white;
+    display: flex;
+    padding: 25px 0 40px 0;
+}
+
+.navWrapper {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navLink {
+    padding: 20px 10px 20px 0;
+    text-decoration: none;
+    color: white;
+
+}
+
+.aButton {
+    background-color: #ffffff;
+    border: none;
+    color: black;
+    padding: 20px 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* intro-info */
+
+.introInfo {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0 30px 0;
+    color: white;
+}
+
+.introText {
+    padding: 0 50px 0 0;
+}
+
+.introTitle {
+    padding: 0 0 20px 0;
+}
+
+.introDesrc {
+    padding: 0 0 20px 0;
+}
+
+.introBtn {
+    background-color: #00868A;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-style: italic;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.introImg {
+    width: 50%;
+}

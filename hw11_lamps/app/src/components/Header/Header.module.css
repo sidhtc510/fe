@@ -1,0 +1,20 @@
+.headerWrapper {
+    width: 70%;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerIcons{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.headerWrapper img {
+    height: 70px;
+}
+
+.headerIcons img{
+    height: 21px;
+}
