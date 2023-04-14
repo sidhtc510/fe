@@ -4,14 +4,16 @@ import IntroWrapper from "./components/IntroWrapper";
 import ActualOrder from "./components/ActualOrder";
 import Footer from "./components/Footer";
 import ModalWindowForActualOrder from "./components/ModalWindowForActualOrder";
+import { useState } from "react";
 
 function App() {
+  const [modalState, setModalState] = useState(false);
   return (
     <div>
-      <ModalWindowForActualOrder />
+      <ModalWindowForActualOrder {...{modalState, setModalState}}/>
       <Header />
       <IntroWrapper />
-      <ActualOrder />
+      <ActualOrder {...{modalState, setModalState}}/>
       <Footer />
     </div>
   );
