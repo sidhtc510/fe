@@ -8,11 +8,12 @@ export default function CoffeeItem({
   image,
   description,
   ingredients,
+  deleteItem
 }) {
   return (
     <div className={s.сoffeeItem}>
       {/* <p>id: {id}</p> */}
-      <div className={s.deleteBtn}>X</div>
+      <div className={s.deleteBtn} onClick={()=>deleteItem(id)}>X</div>
       <p>title: {title}</p>
       <img
         className={s.сoffeeItemImg}
