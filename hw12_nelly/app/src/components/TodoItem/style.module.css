@@ -1,0 +1,10 @@
+.todoItem{
+    padding: 20px;
+    border: 1px solid black;
+    user-select: none;
+    cursor: pointer;
+}
+
+.taskCompleted{
+    text-decoration: line-through;
+}
