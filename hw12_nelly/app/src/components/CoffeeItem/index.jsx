@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./style.module.css";
 import imageNotAvailable from "../../data/images/imageNotAvailable.jpg";
+import Like from "../Like";
 
 export default function CoffeeItem({
   id,
@@ -29,6 +30,8 @@ export default function CoffeeItem({
           ))}
         </ul>
       </div>
+
+      <Like />
     </div>
   );
 }

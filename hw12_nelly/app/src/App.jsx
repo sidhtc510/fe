@@ -4,6 +4,8 @@ import CoffeeContainer from "./components/CoffeeContainer";
 import { coffeeData } from "./data/coffee.js";
 import ButtonComponent from "./components/ButtonComponent";
 
+import Toggle from "./components/Toggle";
+
 function App() {
 
   const [cofeeData, setCofeeData] = useState(coffeeData);
@@ -12,6 +14,7 @@ function App() {
 
   return (
     <div>
+      <Toggle />
       <ButtonComponent />
       <CoffeeContainer coffeeData={cofeeData} deleteItem={deleteItem} />
     </div>

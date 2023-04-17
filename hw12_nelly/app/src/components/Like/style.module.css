@@ -1,0 +1,28 @@
+.like{
+    display: flex;
+    width: 80px;
+    background-color: rgb(127, 168, 174);
+    border-radius: 8px;
+    gap: 5px;
+    cursor: pointer;
+    margin: 20px;
+    padding: 5px;
+    user-select: none;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.like img{
+    width: 20px;
+    margin: auto;
+    display: block;
+}
+
+.count{
+    display: block;
+    color: black;
+    font-size: 18px;
+    margin: auto;
+}
