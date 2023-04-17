@@ -7,7 +7,7 @@ const input = document.querySelector(".show_msg_input");
 
 // btnColor.addEventListener("click",  () => document.body.classList.toggle("chColor"))
 
-const arrColor = ["red", "green", "orange"];
+const arrColor = ["black", "blue", "orangered"];
 let color_index = 0;
 
 btnRNDMColor.addEventListener("click", () => {
