@@ -1,0 +1,16 @@
+.item {
+  border: 1px solid black;
+  font-size: 14px;
+  width: fit-content;
+  padding: 10px 20px;
+  background: aliceblue;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+button{
+  cursor: pointer;
+  margin: 5px;
+}
