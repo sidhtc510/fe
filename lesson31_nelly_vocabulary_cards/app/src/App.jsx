@@ -61,12 +61,19 @@ function App() {
 
   };
 
+  const deleteItem = (id) =>{
+    setCards(cards.filter((el)=>{
+      return el.id !== id
+    }))
+  }
+
   return (
     <div>
       <AddCard addCardF={addCardF} />
       <CardsContainer
         cards={cards}
         change_single_item={change_single_item}
+        deleteItem={deleteItem}
         key={cards.id}
       />
       <Triggers {...{ change_to_eng, change_to_rus }} />
@@ -75,3 +82,12 @@ function App() {
 }
 
 export default App;
+
+// валидация языка
+// function isEnglish(text) {
+//   var englishPattern = /^[A-Za-z]+$/;   //"^[А-Яа-яЁё\s]+$"
+//   return englishPattern.test(text);
+// }
+
+// console.log(isEnglish("Hello World")); // true
+// console.log(isEnglish("Привет Мир")); // false
