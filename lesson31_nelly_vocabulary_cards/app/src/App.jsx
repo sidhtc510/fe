@@ -48,24 +48,25 @@ function App() {
       id: Date.now(),
       rus: e.target.rus.value,
       eng: e.target.eng.value,
-      lang: "eng"
+      lang: "eng",
     });
 
-  setCards(cards.map(el=>{
-    return el
-  }))
+    // setCards(cards.map(el=>{
+    //   return el
+    // }))
 
-  e.target.eng.value = ''
-  e.target.rus.value = ''
+    setCards([...cards]);
 
-
+    e.target.reset();
   };
 
-  const deleteItem = (id) =>{
-    setCards(cards.filter((el)=>{
-      return el.id !== id
-    }))
-  }
+  const deleteItem = (id) => {
+    setCards(
+      cards.filter((el) => {
+        return el.id !== id;
+      })
+    );
+  };
 
   return (
     <div>

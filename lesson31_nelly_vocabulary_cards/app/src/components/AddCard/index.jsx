@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./index.module.css";
 
 export default function AddCard({ addCardF }) {
