@@ -30,11 +30,13 @@ function App() {
     setCards(
       cards.map((el) => {
         if (el.id === id) {
-          if (el.lang === "rus") {
-            el.lang = "eng";
-          } else if (el.lang === "eng") {
-            el.lang = "rus";
-          }
+          // if (el.lang === "rus") {
+          //   el.lang = "eng";
+          // } else if (el.lang === "eng") {
+          //   el.lang = "rus";
+          // }
+
+          el.lang= el.lang === 'eng' ? 'rus' : 'eng';
         }
         return el;
       })

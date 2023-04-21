@@ -22,9 +22,7 @@ export default function AddItemForm({ addPerson }) {
       surname: surname.value,
       age: +age.value,
     };
-
     addPerson(newItem);
-
     event.target.reset();
   };
 
