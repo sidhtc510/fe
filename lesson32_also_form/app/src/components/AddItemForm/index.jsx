@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+// import { Context } from "../../context.js";
 
 export default function AddItemForm({ addPerson }) {
   const [age, setAge] = useState("age");
-
+  // const { addPerson } = useContext(Context);
+  
+  
   function handleAgeChange(event) {
     const inputAge = event.target.value;
     if (inputAge >= 1 && inputAge <= 90) {
@@ -11,7 +14,7 @@ export default function AddItemForm({ addPerson }) {
       setAge("");
     }
   }
-
+  
   const onSubmit = (event) => {
     event.preventDefault();
     const { name, surname, age } = event.target;
