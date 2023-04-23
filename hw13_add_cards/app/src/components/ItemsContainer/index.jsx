@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Item from "../Item";
+import { Context } from '../../context';
 
-
-export default function ItemsContainer({ item }) {
-
+export default function ItemsContainer() {
+const {item} = useContext(Context)
 
   return (
     <div className="ItemsContainer">

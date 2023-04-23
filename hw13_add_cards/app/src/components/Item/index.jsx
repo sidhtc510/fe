@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from '../../context.js';
+import { Context } from '../../context';
 
 export default function Item({ id, title, price }) {
   const { deleteItem } = useContext(Context);

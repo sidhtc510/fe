@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../context";
 
-export default function AddForm({addNewItem}) {
+export default function AddForm() {
+  const { addNewItem } = useContext(Context);
 
   const createItem = (e) => {
     e.preventDefault();
     const newItem = {
-        id: Date.now(),
-        title: e.target.title.value,
-        price: +e.target.price.value
-    }
-    addNewItem(newItem)
-}
+      id: Date.now(),
+      title: e.target.title.value,
+      price: +e.target.price.value,
+    };
+    addNewItem(newItem);
+  };
 
   return (
     <form className="form" onSubmit={createItem}>
