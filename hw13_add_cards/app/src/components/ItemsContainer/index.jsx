@@ -1,10 +1,15 @@
 import React from "react";
 import Item from "../Item";
 
-export default function ItemsContainer({ item, deleteItem }) {
+
+export default function ItemsContainer({ item }) {
+
+
   return (
     <div className="ItemsContainer">
-      {item.map(el => <Item {...el } deleteItem={deleteItem} key={el.id} />)}
+      {item.map(el => (
+        <Item {...el} key={el.id} />
+      ))}
     </div>
   );
 }

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from '../../context.js';
 
-export default function Item({ id, title, price, deleteItem }) {
+export default function Item({ id, title, price }) {
+  const { deleteItem } = useContext(Context);
+
   return (
     <div className="item">
       <div className="closeBtn" onClick={() => deleteItem(id)}>
