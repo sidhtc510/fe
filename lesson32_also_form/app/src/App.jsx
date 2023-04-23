@@ -7,6 +7,8 @@ import { Context } from "./context";
 
 function App() {
   const [people, setPeople] = useState(peopleDefault);
+  const [darkModeState, setDarkModeState] = useState(false);
+const darkModeBtnValue = darkModeState ? "Light" : "Dark"
 
   const addPerson = (obj) => {
     setPeople([obj, ...people]);
@@ -15,8 +17,9 @@ function App() {
   const deletePerson = (id) => {setPeople(people.filter((el) => el.id !== id))};
 
   return (
-    <div className="appWrapper">
-      <Context.Provider value={{ people, addPerson, deletePerson }}>
+    <div className={`appWrapper ${darkModeState ? "darkMode_appWrapper" : ""}`}>
+      <div className="darkModeBtn" onClick={()=>setDarkModeState(!darkModeState)}>{darkModeBtnValue}</div>
+      <Context.Provider value={{ people, addPerson, deletePerson, darkModeState }}>
         <AddItemForm />
         <ItemContainer />
       </Context.Provider>

@@ -4,7 +4,7 @@ import { Context } from "../../context.js";
 export default function AddItemForm() {
   const [age, setAge] = useState("age");
 
-  const { addPerson } = useContext(Context);
+  const { addPerson, darkModeState } = useContext(Context);
   
   
   function handleAgeChange(event) {
@@ -32,7 +32,7 @@ export default function AddItemForm() {
 
   return (
     <>
-      <form onSubmit={onSubmit} className="formAddItem">
+      <form onSubmit={onSubmit} className={`formAddItem ${darkModeState ? "darkMode_formAddItem" : ""}`}>
         <h3>Add new person</h3>
         <input type="text" name="name" placeholder="Enter name" />
         <input type="text" name="surname" placeholder="Enter surname" />
