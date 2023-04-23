@@ -10,7 +10,6 @@ function App() {
   const switchLike = (id) => {
     const target_post = posts.find((el) => el.id === id);
     target_post.like = !target_post.like;
-
     setPost([...posts]);
   };
 

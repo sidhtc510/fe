@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
-// import { Context } from "../../context.js";
+import { Context } from "../../context.js";
 
-export default function AddItemForm({ addPerson }) {
+export default function AddItemForm() {
   const [age, setAge] = useState("age");
-  // const { addPerson } = useContext(Context);
+
+  const { addPerson } = useContext(Context);
   
   
   function handleAgeChange(event) {
