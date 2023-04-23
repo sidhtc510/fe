@@ -4,13 +4,11 @@ import AddForm from "./components/AddForm";
 import ItemsContainer from "./components/ItemsContainer";
 
 function App() {
-  const [item, setItem] = useState([{ id: 1, title: "titleee", price: 122 }]);
+  const [item, setItem] = useState([]);
 
-  const deleteItem = (id) => setItem(item.filter((el) => id !== el.id));
+  const deleteItem = id => setItem(item.filter(el => id !== el.id));
 
-  const addNewItem = (newItem) => {
-    setItem([...item, newItem]);
-  };
+  const addNewItem = newItem => setItem([newItem, ...item]);
 
   return (
     <div>

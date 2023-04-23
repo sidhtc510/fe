@@ -4,16 +4,13 @@ export default function AddForm({addNewItem}) {
 
   const createItem = (e) => {
     e.preventDefault();
-  
     const newItem = {
         id: Date.now(),
         title: e.target.title.value,
         price: +e.target.price.value
     }
-
     addNewItem(newItem)
 }
-
 
   return (
     <form className="form" onSubmit={createItem}>
