@@ -12,9 +12,11 @@ function App() {
     setPeople([obj, ...people]);
   };
 
+  const deletePerson = (id) => {setPeople(people.filter((el) => el.id !== id))};
+
   return (
     <div className="appWrapper">
-      <Context.Provider value={{ people, addPerson }}>
+      <Context.Provider value={{ people, addPerson, deletePerson }}>
         <AddItemForm />
         <ItemContainer />
       </Context.Provider>
