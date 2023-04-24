@@ -3,7 +3,7 @@ import Item from "../Item";
 import { Context } from "../../context";
 
 export default function ItemContainer() {
-  const { people, darkModeState } = useContext(Context);
+  const { people, darkModeState, sortByAge } = useContext(Context);
 
   let sumAge = people.reduce((acc, person) => (acc += person.age), 0);
 
@@ -13,9 +13,10 @@ export default function ItemContainer() {
         <tr>
           <th>Name</th>
           <th>Surname</th>
-          <th>
+          <th onClick={sortByAge}>
             Age (Amount-{sumAge}, Average-{Math.round(sumAge / people.length)})
           </th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
