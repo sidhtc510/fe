@@ -4,7 +4,7 @@ import { Context } from "../../context";
 import CommentsContainer from "../CommentsContainer";
 
 export default function Post({ id, title, description, like, comments }) {
-  const { switchLike } = useContext(Context);
+  const { switchLike, addComment, delPost } = useContext(Context);
 
   const like_text = like ? "liked" : "like?";
 
@@ -15,12 +15,24 @@ export default function Post({ id, title, description, like, comments }) {
 
   return (
     <div className={s.post_item}>
+      <div className={s.delbtn} onClick={() => delPost(id)}>
+        X
+      </div>
       <h2>{title}</h2>
       <p>{description}</p>
-      <div className={s.likeBtn} onClick={() => switchLike(id)} style={like_style}>
+      <div
+        className={s.likeBtn}
+        onClick={() => switchLike(id)}
+        style={like_style}
+      >
         {like_text}
       </div>
-      <CommentsContainer comments={comments } />
+      <CommentsContainer comments={comments} />
+      <form onSubmit={addComment}>
+        <input type="text" name="commentVal" placeholder="comment" />
+        <input type="hidden" name="id" value={id} />
+        <button>Add comment</button>
+      </form>
     </div>
   );
 }

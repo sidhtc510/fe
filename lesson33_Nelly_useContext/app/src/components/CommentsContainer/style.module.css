@@ -1,0 +1,11 @@
+.commentContainer {
+  padding: 10px;
+  color: gray;
+}
+
+.commentContainer div{
+  width: 100%;
+  border-bottom: 1px dashed dodgerblue;
+  margin-bottom: 10px;
+
+}
