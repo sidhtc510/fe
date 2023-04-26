@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(58, 58, 58);
+  color: rgb(182, 182, 174);
+  /* font-family: Nunito, sans-serif; */
+  font-family: Roboto, sans-serif;
+}
+
+.productItem {
+  border: 1px solid black;
+  width: fit-content;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
