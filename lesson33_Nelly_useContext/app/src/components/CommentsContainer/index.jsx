@@ -1,16 +1,13 @@
 import React, { useContext } from "react";
-// import { Context } from "../../context";
 import Comment from "../Comment";
-import s from './style.module.css'
+import s from "./style.module.css";
 
-export default function CommentsContainer({comments}) {
-  // const { posts } = useContext(Context);
-
+export default function CommentsContainer({ comments, post_id }) {
   return (
     <div className={s.commentContainer}>
-       
-        {comments.map((el)=><Comment key={el.id} {...el} />)}
-      
+      {comments.map((el) => (
+        <Comment key={el.id} {...el} post_id={post_id} />
+      ))}
     </div>
   );
 }

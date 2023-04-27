@@ -3,7 +3,7 @@ import "./App.css";
 import PostsContainer from "./components/PostsContainer";
 import { posts_data } from "./data/posts.js";
 import { Context } from "./context";
-import AddForm from "./components/AddForm";  
+import AddForm from "./components/AddForm";
 
 function App() {
   const [posts, setPost] = useState(posts_data);
@@ -20,8 +20,8 @@ function App() {
   const addComment = (e) => {
     e.preventDefault();
     const newComment = { id: Date.now(), comment: e.target.commentVal.value };
-    const posId = +e.target.id.value; //?????????????????????????????????????????????????????????????????????? передал через инпут хидден
-    const targetPost = posts.find((el) => el.id === posId); //??????????????????????????????????????????????????????????????????????
+    const posId = +e.target.id.value; //??????????????????????????передал через инпут хидден
+    const targetPost = posts.find((el) => el.id === posId); //??????????????????????????
 
     targetPost.comments.push(newComment);
     setPost([...posts]);
@@ -35,17 +35,35 @@ function App() {
       title: e.target.title.value,
       description: e.target.description.value,
       like: false,
-      comments: []
-    }
+      comments: [],
+    };
 
-    setPost([...posts, newPost])
+    setPost([...posts, newPost]);
     e.target.reset();
   };
+
+  const delete_comment = (post_id, comment_id) => {
+    // 1. Найти пост по айди (поста)
+    const target_post = posts.find(el => el.id === post_id);
+    // 2. У найденного поста обратиться к comments и отфильтровать комментарии по айди (комментария)
+    target_post.comments = target_post.comments.filter(el => el.id !== comment_id);
+    // 3. Перерисовываем обновленное состояние
+    setPost([...posts]);
+  }
+
+  // nelly`s github - - https://github.com/NelliEfr/Group_43_44m/tree/main/Lesson_27_posts/posts_master
 
   return (
     <div>
       <Context.Provider
-        value={{ posts, switchLike, addComment, delPost, addPost }}
+        value={{
+          posts,
+          switchLike,
+          addComment,
+          delPost,
+          addPost,
+          delete_comment,
+        }}
       >
         <AddForm />
         <PostsContainer />
@@ -57,7 +75,7 @@ function App() {
 export default App;
 
 // дз
-//  + форма добавления комментария 
+//  + форма добавления комментария
 //  + удаление карточки
 //  + все стилизовать
 // удаление коммента по клику

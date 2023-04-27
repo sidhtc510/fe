@@ -27,7 +27,7 @@ export default function Post({ id, title, description, like, comments }) {
       >
         {like_text}
       </div>
-      <CommentsContainer comments={comments} />
+      <CommentsContainer comments={comments} post_id={id} />
       <form onSubmit={addComment}>
         <input type="text" name="commentVal" placeholder="comment" />
         <input type="hidden" name="id" value={id} />
