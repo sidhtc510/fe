@@ -4,14 +4,14 @@ import CardsContainer from "./components/CardsContainer";
 import { words } from "./data/words.js";
 import Triggers from "./components/Triggers";
 import AddCard from "./components/AddCard";
+import { Context } from "./context";
 
 function App() {
   const [cards, setCards] = useState(words);
 
-useEffect(()=>{
-  setCards(JSON.parse(localStorage.getItem('cards')) || cards)
-},[])
-
+  useEffect(() => {
+    setCards(JSON.parse(localStorage.getItem("cards")) || cards);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("cards", JSON.stringify(cards));
@@ -80,16 +80,13 @@ useEffect(()=>{
   };
 
   return (
-    <div>
-      <AddCard addCardF={addCardF} />
-      <CardsContainer
-        cards={cards}
-        change_single_item={change_single_item}
-        deleteItem={deleteItem}
-        key={cards.id}
-      />
-      <Triggers {...{ change_to_eng, change_to_rus }} />
-    </div>
+    <Context.Provider
+      value={{ deleteItem, change_single_item, change_to_eng, change_to_rus, addCardF, cards }}
+    >
+      <AddCard  />
+      <CardsContainer />
+      <Triggers />
+    </Context.Provider>
   );
 }
 

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "../Card";
-import s from './index.module.css'
+import s from "./index.module.css";
+import { Context } from "../../context";
 
-export default function CardsContainer({ cards, change_single_item, deleteItem }) {
-  return <div className={s.cards_container}>
-    {
-        cards.map(el=>(
-            <Card {...el} key={el.id} change_single_item={change_single_item} deleteItem={deleteItem}/>
-        ))
-    }
-    </div>;
+export default function CardsContainer() {
+  const { cards } = useContext(Context);
+  return (
+    <div className={s.cards_container}>
+      {cards.map((el) => (
+        <Card {...el} key={el.id} />
+      ))}
+    </div>
+  );
 }
