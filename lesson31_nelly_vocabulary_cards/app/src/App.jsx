@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import CardsContainer from "./components/CardsContainer";
 import { words } from "./data/words.js";
@@ -7,6 +7,15 @@ import AddCard from "./components/AddCard";
 
 function App() {
   const [cards, setCards] = useState(words);
+
+useEffect(()=>{
+  setCards(JSON.parse(localStorage.getItem('cards')) || cards)
+},[])
+
+
+  useEffect(() => {
+    localStorage.setItem("cards", JSON.stringify(cards));
+  }, [cards]);
 
   const change_to_eng = () => {
     setCards(
@@ -36,7 +45,7 @@ function App() {
           //   el.lang = "rus";
           // }
 
-          el.lang= el.lang === 'eng' ? 'rus' : 'eng';
+          el.lang = el.lang === "eng" ? "rus" : "eng";
         }
         return el;
       })
