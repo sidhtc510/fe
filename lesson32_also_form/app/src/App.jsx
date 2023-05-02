@@ -19,11 +19,11 @@ function App() {
   };
 
   const deletePerson = (id) => {
-    setPeople(people.filter((el) => el.id !== id)); // намутить event.stopPropagation();
+    setPeople(people.filter((el) => el.id !== id)); // намутить event.stopPropagation();  Суть в том что при клике на крестик удаления всплывает модальное окно. а оно не нужно
   };
 
   const showModal = (id) => {
-    setHumanInModal(people.find((el) => el.id === id));  //правильно ли так делать??????????????????????????????????????????????????????????????
+    setHumanInModal(people.find((el) => el.id === id));  //правильно ли так делать? я хочу что бы в модальном окне отображались актальные данные. это работает, но правильно ли этот функционал написан. 
     setShowModalState(!showModalState);
   };
 
