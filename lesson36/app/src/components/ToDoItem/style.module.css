@@ -1,0 +1,30 @@
+.todoItem {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  min-width: 350px;
+  width: fit-content;
+  padding: 20px 40px;
+  margin: 10px;
+  border-radius: 8px;
+  color: azure;
+  font-size: 24px;
+  user-select: none;
+
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+
+  background: rgba(74,151,224,1);
+  background: -moz-linear-gradient(left, rgba(74,151,224,1) 0%, rgba(32,124,229,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(74,151,224,1)), color-stop(100%, rgba(32,124,229,1)));
+  background: -webkit-linear-gradient(left, rgba(74,151,224,1) 0%, rgba(32,124,229,1) 100%);
+  background: -o-linear-gradient(left, rgba(74,151,224,1) 0%, rgba(32,124,229,1) 100%);
+  background: -ms-linear-gradient(left, rgba(74,151,224,1) 0%, rgba(32,124,229,1) 100%);
+  background: linear-gradient(to right, rgba(74,151,224,1) 0%, rgba(32,124,229,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a97e0', endColorstr='#207ce5', GradientType=1 );
+}
+
+button{
+  cursor: pointer;
+}

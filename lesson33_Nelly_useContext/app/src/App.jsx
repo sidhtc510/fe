@@ -44,12 +44,14 @@ function App() {
 
   const delete_comment = (post_id, comment_id) => {
     // 1. Найти пост по айди (поста)
-    const target_post = posts.find(el => el.id === post_id);
+    const target_post = posts.find((el) => el.id === post_id);
     // 2. У найденного поста обратиться к comments и отфильтровать комментарии по айди (комментария)
-    target_post.comments = target_post.comments.filter(el => el.id !== comment_id);
+    target_post.comments = target_post.comments.filter(
+      (el) => el.id !== comment_id
+    );
     // 3. Перерисовываем обновленное состояние
     setPost([...posts]);
-  }
+  };
 
   // nelly`s github - - https://github.com/NelliEfr/Group_43_44m/tree/main/Lesson_27_posts/posts_master
 
@@ -78,4 +80,4 @@ export default App;
 //  + форма добавления комментария
 //  + удаление карточки
 //  + все стилизовать
-// удаление коммента по клику
+// + удаление коммента по клику
