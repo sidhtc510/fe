@@ -1,0 +1,15 @@
+.item{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+}
+
+.age_block{
+    display: flex;
+    gap: 10px;
+}
+button{
+    min-width: 30px;
+    cursor: pointer;
+}

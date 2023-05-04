@@ -1,0 +1,15 @@
+.form {
+  max-width: 900px;
+  margin: 40px auto;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 8px;
+}
+
+.form > * {
+  padding: 5px;
+}
