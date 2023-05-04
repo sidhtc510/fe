@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import ProductItem from '../ProductItem';
 
 export default function ProductsContainer() {
 
@@ -7,6 +8,10 @@ export default function ProductsContainer() {
 
     console.log(products_state);
   return (
-    <div>ProductsContainer</div>
+    <div>
+      {
+        products_state.map(el => <ProductItem {...el} key={el.id}/>)
+      }
+    </div>
   )
 }

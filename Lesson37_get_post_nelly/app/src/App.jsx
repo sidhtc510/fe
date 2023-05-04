@@ -10,7 +10,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getUsers(setUsers, setIsLoading);
+    setTimeout(()=>{
+
+      getUsers(setUsers, setIsLoading);
+    },3000)
   }, []);
 
   const createNewUser = (user) => setUsers((state) => [...state, user]);
