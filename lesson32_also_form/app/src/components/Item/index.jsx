@@ -4,7 +4,7 @@ import { Context } from "../../context";
 export default function Item({ id, name, surname, age }) {
   const { deletePerson, showModal } = useContext(Context);
 
-  const delete_person = (e) => {
+  const vicinity = (e) => {
     deletePerson(id);
     e.stopPropagation();
   };
@@ -15,7 +15,7 @@ export default function Item({ id, name, surname, age }) {
       <td>{surname}</td>
       <td>{age}</td>
       <td>
-        <button className="buttonDelete" onClick={delete_person}>
+        <button className="buttonDelete" onClick={vicinity}>
           X
         </button>
       </td>
