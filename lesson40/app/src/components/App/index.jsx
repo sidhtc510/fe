@@ -1,4 +1,6 @@
 import AddUser from "../AddUser";
+import Test from "../Test";
+import UserCalculation from "../UserCalculation";
 import UserList from "../UserList";
 import "./style.css";
 
@@ -7,6 +9,8 @@ function App() {
     <div>
       <AddUser />
       <UserList />
+      <UserCalculation />
+      <Test />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./style.module.css";
 import { useDispatch } from "react-redux";
+import { addAction } from "../../store/reducer/userReducer";
 
 export default function AddUser() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export default function AddUser() {
       gender: gender.value,
     };
 
-    dispatch({ type: "ADD", payload: user });
+    dispatch(addAction(user));
     e.target.reset();
   };
 
