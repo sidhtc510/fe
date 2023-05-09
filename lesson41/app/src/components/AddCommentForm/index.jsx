@@ -5,17 +5,15 @@ export default function AddCommentForm({post_id}) {
 
 const dispatcher = useDispatch()
 
-  const handler = (e) => {
+  const submit = (e) => {
     e.preventDefault();
-
     const newComment = e.target.comment.value
-
     dispatcher({ type: "ADD_NEW_COMMENT", payload: {newComment, post_id} });
     e.target.reset();
   };
 
   return (
-    <form onSubmit={handler}>
+    <form onSubmit={submit}>
       <input type="text" name="comment" placeholder="comment" />
       <button>Add</button>
     </form>
