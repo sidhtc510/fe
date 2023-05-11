@@ -1,0 +1,9 @@
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    border: 2px solid black;
+    display: flex;
+    padding: 0 20px;
+    border-radius: 8px;
+    flex-direction: column;
+  }

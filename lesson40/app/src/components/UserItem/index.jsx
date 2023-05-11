@@ -5,6 +5,7 @@ import {
   decrementAction,
   incrementAction,
   removeAction,
+  resetAgeAction,
 } from "../../store/reducer/userReducer";
 
 export default function UserItem({ id, name, lastname, age, gender }) {
@@ -20,6 +21,7 @@ export default function UserItem({ id, name, lastname, age, gender }) {
         <button onClick={() => dispatch(decrementAction(id))}>-</button>
         <p>{age}</p>
         <button onClick={() => dispatch(incrementAction(id))}>+</button>
+        <button onClick={() => dispatch(resetAgeAction(id))}>0</button>
       </div>
       <button onClick={() => dispatch(removeAction(id))}>delete</button>
     </div>

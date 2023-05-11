@@ -69,7 +69,7 @@ export default function Test() {
       )} */}
 
       {
-      console.log(Math.max(...products.map(el=>el.marks.length)))
+      // console.log(Math.max(...products.map(el=>el.marks.length)))
 
       
       }

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import s from "./style.module.css";
 
 export default function UserCalculation() {
-  const users = useSelector((state) => state);
+  const users = useSelector((state) => state.users);
   return (
     <div className={s.container}>
       <p>Users quantity: {users.length}</p>
