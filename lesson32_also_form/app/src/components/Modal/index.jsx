@@ -7,8 +7,10 @@ export default function Modal() {
 
 const {name, surname, age} = humanInModal
   return (
-    <div className={[s.overlay, showModalState ? s.show : ""].join(" ")} >
-      <div className={s.modal}>
+    <div onClick={(e) => {
+      setShowModalState(!showModalState);
+    }} className={[s.overlay, showModalState ? s.show : ""].join(" ")} >
+      <div className={s.modal} onClick={e=>e.stopPropagation()}>
         <h2>{name} {surname}</h2>
         <h3>Age: {age}</h3>
       <button onClick={(e) => {
