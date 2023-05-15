@@ -1,0 +1,9 @@
+.cart div:nth-child(3){
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+  }

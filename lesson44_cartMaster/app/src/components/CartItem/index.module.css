@@ -1,0 +1,9 @@
+.cart_item {
+    border: 1px solid black;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+  }
+  
