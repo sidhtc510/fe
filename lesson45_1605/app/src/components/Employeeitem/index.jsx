@@ -6,7 +6,7 @@ export default function Employeeitem({id, name, lastname}) {
   // const tasks = useSelector(({tasks})=>tasks.filter(({employee_id})=> employee_id === id))
 
   const tasks = useSelector(state => state.tasks);
-  const filteredTasks = tasks.filter(el => el.employee_id === id)
+  const filteredTasks = tasks.filter(el => el.employee_id === id);
   
   return (
 

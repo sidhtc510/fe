@@ -6,8 +6,7 @@ export default function CartPage() {
   return (
     <div>
       <Cart />
-      <Link to = "/products_page"> ProductsPage
-      </Link>
+      <Link to = "/products_page"> ProductsPage </Link>
     </div>
   );
 }

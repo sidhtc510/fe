@@ -50,7 +50,6 @@ export const cartReducer = (state = [], action) => {
     return [];
   } else if (action.type === DELETE_PRODUCT_FROM_CART) {
     return state.filter((el) => el.id !== action.payload);
- 
   }
   return state;
 };
