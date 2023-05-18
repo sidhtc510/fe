@@ -306,17 +306,16 @@ body {
     margin-top: 20px;
   }
   
-  .orderBy a {
+  .orderBy p {
     color: black;
     margin: 10px 0;
-    text-decoration: none;
     cursor: pointer;
     background: aliceblue;
     border-radius: 8px;
     text-align: center;
     padding: 5px;
   }
-  .orderBy a:hover {
+  .orderBy p:hover {
     color: #535353;
   }
   
