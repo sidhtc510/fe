@@ -1,0 +1,9 @@
+.user_card {
+    border: 1px solid black;
+    padding: 15px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
