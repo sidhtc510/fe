@@ -8,3 +8,14 @@ body {
     /* font-family: Nunito, sans-serif; */
     font-family: Roboto, sans-serif;
   }
+
+  .nav_menu a {
+    text-decoration: none;
+    color: white;
+  }
+  .nav_menu a:hover{
+    text-decoration: underline;
+  }
+  .active{
+    color:brown !important
+  }
