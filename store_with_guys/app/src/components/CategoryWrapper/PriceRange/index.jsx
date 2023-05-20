@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function PriceRange() {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.goods);
+  const state = useSelector((state) => state.goods.products);
 
   const minPrice = Math.min(...state.map((item) => item.price));
   const maxPrice = Math.max(...state.map((item) => item.price));

@@ -7,13 +7,16 @@ import Notification from "./components/Notification";
 
 function App() {
   const [modalActive, setModalActive] = useState(false);
-  const [notification, setNotification] = useState({state:false, content:''});
-
-
+  const [notification, setNotification] = useState({
+    state: false,
+    content: "",
+  });
 
   return (
     <div>
-      <Context.Provider value={{ modalActive, setModalActive, notification, setNotification }}>
+      <Context.Provider
+        value={{ modalActive, setModalActive, notification, setNotification }}
+      >
         <Notification />
         <ModalAddProduct />
         <ContainerWrapper />

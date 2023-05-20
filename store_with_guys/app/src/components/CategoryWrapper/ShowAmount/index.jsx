@@ -4,10 +4,12 @@ import { useSelector } from "react-redux";
 
 export default function ShowAmount() {
   const { setNotification } = useContext(Context);
-  const goodsPriceAmount = useSelector((state) => state.goods).reduce(
-    (acc, el) => acc + el.price,
-    0
-  );
+
+  const goods = useSelector((state) => state.goods);
+  const goodsPriceAmount =
+    goods.filteredProducts.length > 0
+      ? goods.filteredProducts.reduce((acc, el) => acc + el.price, 0)
+      : goods.products.reduce((acc, el) => acc + el.price, 0);
 
   return (
     <div>

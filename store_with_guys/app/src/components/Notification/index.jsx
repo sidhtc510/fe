@@ -10,7 +10,7 @@ export default function Notification() {
 
   if (notification.state) {
     setTimeout(() => {
-      setNotification(notification.state = false);
+      setNotification({ state: false, content: "" });
     }, 3500);
   }
 
@@ -21,7 +21,8 @@ export default function Notification() {
   );
 }
 
-
-// для дальнейшкго использования окна уведомдения, в любом компоненте, добавь в обработчик     
+// импортируй этот компонент в App.jsx - <Notofication />
+// изначальное состояние в App.jsx   const [notification, setNotification] = useState({state:false, content:''});
+// для дальнейшкго использования окна уведомдения, в любом компоненте, добавь в обработчик
 // setNotification({state: true, content:`some content`});
-// предварительно передай пропсом (или через context) setNotification
+// предварительно передай через context обработчик состояния setNotification - const { setNotification } = useContext(Context);

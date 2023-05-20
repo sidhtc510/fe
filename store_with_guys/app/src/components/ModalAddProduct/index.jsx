@@ -4,7 +4,7 @@ import { addProductAction } from "../../store/reducers/goodsReducer";
 import { Context } from "../../context";
 
 export default function ModalAddProduct() {
-  const {modalActive, setModalActive, setNotification} = useContext(Context)
+  const { modalActive, setModalActive, setNotification } = useContext(Context);
 
   const [isChecked, setIsChecked] = useState(true); // checkbox state
 
@@ -21,8 +21,7 @@ export default function ModalAddProduct() {
     };
     dispatch(addProductAction(newProduct));
 
-    setNotification({state: true, content:`Product added`});
-
+    setNotification({ state: true, content: `Product added` });
     e.target.reset();
   };
 
@@ -53,11 +52,15 @@ export default function ModalAddProduct() {
             id="available"
             name="in_stock"
             checked={isChecked}
-            onChange={()=>setIsChecked(!isChecked)}
+            onChange={() => setIsChecked(!isChecked)}
           />{" "}
           <br />
           <br />
-          <input type="submit" value="Add product" onClick={() => setModalActive(false)}/>
+          <input
+            type="submit"
+            value="Add product"
+            onClick={() => setModalActive(false)}
+          />
         </form>
       </div>
     </div>

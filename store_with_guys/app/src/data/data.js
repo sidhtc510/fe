@@ -1,4 +1,5 @@
-export const goods = [
+export const goods = {
+  products: [
     {
       id: 1,
       product: "iPhone 14",
@@ -28,38 +29,40 @@ export const goods = [
       image: "pr4.webp",
     },
     {
-        id: 5,
-        product: "iPhone 12",
-        price: 1100,
-        in_stock: false,
-        image: "pr5.webp",
-      },
-      {
-        id: 6,
-        product: "iPhone xs",
-        price: 1700,
-        in_stock: false,
-        image: "pr6.webp",
-      },
-      {
-        id: 7,
-        product: "iPhone xs",
-        price: 1700,
-        in_stock: true,
-        image: false,
-      },
-      {
-        id: 8,
-        product: "iPhone xs max",
-        price: 1900,
-        in_stock: true,
-        image: false,
-      },
-      {
-        id: 9,
-        product: "iPhone 18 max",
-        price: 1200,
-        in_stock: false,
-        image: false,
-      },
-    ];
+      id: 5,
+      product: "iPhone 12",
+      price: 1100,
+      in_stock: false,
+      image: "pr5.webp",
+    },
+    {
+      id: 6,
+      product: "iPhone xs",
+      price: 1700,
+      in_stock: false,
+      image: "pr6.webp",
+    },
+    {
+      id: 7,
+      product: "iPhone xs",
+      price: 1700,
+      in_stock: true,
+      image: false,
+    },
+    {
+      id: 8,
+      product: "iPhone xs max",
+      price: 1900,
+      in_stock: true,
+      image: false,
+    },
+    {
+      id: 9,
+      product: "iPhone 18 max",
+      price: 1200,
+      in_stock: false,
+      image: false,
+    },
+  ],
+  filteredProducts: [],
+};
