@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { Context } from "../../../context";
 
-export default function AddProductButton({setModalActive}) {
+export default function AddProductButton() {
+  const { setModalActive } = useContext(Context);
   return (
-         <button className="buttonShowModal" onClick={()=>setModalActive(true)}>ADD PRODUCT</button>
-  )
+    <button className="buttonShowModal" onClick={() => setModalActive(true)}>
+      ADD PRODUCT
+    </button>
+  );
 }

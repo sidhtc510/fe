@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProductAction } from "../../store/reducers/goodsReducer";
+import { Context } from "../../context";
 
-export default function ModalAddProduct({ modalActive, setModalActive }) {
+export default function ModalAddProduct() {
+  const {modalActive, setModalActive, setNotification, setNotificationContent} = useContext(Context)
+
+  const [isChecked, setIsChecked] = useState(true); // checkbox state
+
   const dispatch = useDispatch();
 
   const handler = (e) => {
@@ -10,11 +15,15 @@ export default function ModalAddProduct({ modalActive, setModalActive }) {
     const newProduct = {
       id: Date.now(),
       product: e.target.title.value,
-      price: e.target.price.value,
-      in_stock: e.target.in_stock.value,
+      price: +e.target.price.value,
+      in_stock: isChecked,
       image: false,
     };
     dispatch(addProductAction(newProduct));
+
+    setNotificationContent(`Product added`);
+    setNotification(true);
+
     e.target.reset();
   };
 
@@ -44,7 +53,8 @@ export default function ModalAddProduct({ modalActive, setModalActive }) {
             type="checkbox"
             id="available"
             name="in_stock"
-            defaultChecked=""
+            checked={isChecked}
+            onChange={()=>setIsChecked(!isChecked)}
           />{" "}
           <br />
           <br />

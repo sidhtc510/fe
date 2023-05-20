@@ -5,10 +5,10 @@ import SortPrice from './SortPrice'
 import ShowAmount from './ShowAmount'
 import AddProductButton from './AddProductButton'
 
-export default function CategoryWrapper({setModalActive}) {
+export default function CategoryWrapper() {
   return (
     <div className="category_wrap">
-            <AddProductButton setModalActive={setModalActive}/>
+            <AddProductButton />
             <PriceRange />
             <RemoveProducts />
             <SortPrice />

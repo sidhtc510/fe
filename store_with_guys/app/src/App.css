@@ -278,7 +278,11 @@ body {
     opacity: 0;
     transition: 0.3s;
   }
-  
+
+  .notificationActive{
+    visibility: visible;
+    opacity: 1;
+  }
   #filterForm {
     background: aliceblue;
     border-radius: 8px;
