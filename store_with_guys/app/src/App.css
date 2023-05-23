@@ -327,3 +327,11 @@ body {
     max-width: 100%;
     display: block;
   }
+
+  .my-element {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .my-element.hidden {
+    opacity: 0;
+  }

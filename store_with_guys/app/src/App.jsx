@@ -11,11 +11,12 @@ function App() {
     state: false,
     content: "",
   });
+  const [whichStateWeUse, setWhichStateWeUse] = useState("Products");
 
   return (
     <div>
       <Context.Provider
-        value={{ modalActive, setModalActive, notification, setNotification }}
+        value={{ modalActive, setModalActive, notification, setNotification, whichStateWeUse, setWhichStateWeUse }}
       >
         <Notification />
         <ModalAddProduct />
