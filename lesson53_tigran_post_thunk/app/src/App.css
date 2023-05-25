@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: rgb(58, 58, 58);
+    color: rgb(182, 182, 174);
+    /* font-family: Nunito, sans-serif; */
+    font-family: Roboto, sans-serif;
+  }
+
+  .productWrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 300px);
+    gap: 20px;
+    margin: 0 auto;
+  }
+
+  .productWrapper div{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .productWrapper img{
+    object-fit: contain;
+  }
