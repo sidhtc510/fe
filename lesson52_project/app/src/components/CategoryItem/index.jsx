@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function CategoryItem() {
+export default function CategoryItem({title}) {
   return (
-    <div>CategoryItem</div>
+    <div>{title}</div>
   )
 }
