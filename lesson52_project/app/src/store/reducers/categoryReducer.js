@@ -1,5 +1,12 @@
-const data = ["electronics", "jewelery", "men's clothing", "women's clothing"];
+const LOAD = "[CATEGORY] LOAD"
 
-export const categoryReducer = (state = data, payload) => {
+export const loadCategoriesAction = payload => ({type: LOAD, payload})
+
+export const categoryReducer = (state = [], action) => {
+  if (action.type === LOAD) {
+    return action.payload
+  }
   return state;
 };
+
+
