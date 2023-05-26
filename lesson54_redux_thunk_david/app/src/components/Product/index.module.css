@@ -1,0 +1,17 @@
+
+
+.product_card {
+    border-radius: 10px;
+    border: 1px solid gray;
+    box-shadow: 5px 5px 15px lightgray;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.add_to_cart_btn {
+    padding: 5px;
+    background-color: yellowgreen;
+}

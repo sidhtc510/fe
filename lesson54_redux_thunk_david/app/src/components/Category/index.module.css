@@ -1,0 +1,17 @@
+.category_card {
+    border: 1px solid greenyellow;
+    box-shadow: 5px 5px 15px lightgreen;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.category_card:hover {
+    background-color: blanchedalmond;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
