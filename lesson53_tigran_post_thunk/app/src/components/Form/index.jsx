@@ -11,17 +11,17 @@ const dispatch = useDispatch()
         let data = new FormData(e.target)
         // Object.fromEntries позволяет получить в виде обычного объекта данные input полей
         let obj = Object.fromEntries(data)
-        console.log(obj);
         obj.images = ['https://bipbap.ru/wp-content/uploads/2018/06/3c980dd2e9c909ada7377cc89885231b.jpg']
+        console.log(obj);
         dispatch(fetchAddNewProduct(obj))
     }
   return (
     <div style={{margin:"50px"}}>
       <form onSubmit={formHandler}>
-        <input name="title" placeholder="title" type="text" />
-        <input name="price" placeholder="price" type="text" />
-        <input name="description" placeholder="description" type="text" />
-        <input name="categoryId" placeholder="categoryId" type="text" />
+        <input name="title" placeholder="title" type="text" value="my Product"/>
+        <input name="price" placeholder="price" type="text"  value="8989"/>
+        <input name="description" placeholder="description" type="text"  value="my Product Description" />
+        <input name="categoryId" placeholder="categoryId" type="text"  value="1"/>
         <input type="submit" />
       </form>
     </div>

@@ -9,18 +9,16 @@ export default function ProductList() {
 
   useEffect(() => {
     dispatch(fetchProductList());
-  },[]);
+  },[dispatch]);
 
-
-  console.log(productList);
   return <div className="productWrapper">
     {productList.map(elem=>
         <div key={elem.id}>
 
-            <p>{elem.title}</p>
-            <p>{elem.id}</p>
-            <p>{elem.price}</p>
-            {/* <img src={elem.images} alt="" /> */}
+            <p>title: {elem.title}</p>
+            <p>id: {elem.id}</p>
+            <p>price: {elem.price}</p>
+            <img src={elem.images} alt="" />
             </div>
         )}
   </div>;
