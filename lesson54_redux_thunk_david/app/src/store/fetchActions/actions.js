@@ -13,9 +13,9 @@ export const fetchAction = (dispatch) => {
     });
 };
 
-export const loadProducts = (dispatch, category) => {
+export const loadProducts = (category) => (dispatch)=> {
   dispatch(showLoader());
-  const url = `https://fakestoreapi.com/products/category/${category}`
+  const url =  category ? `https://fakestoreapi.com/products/category/${category}`: `https://fakestoreapi.com/products`
   fetch(url)
     .then((res) => res.json())
     .then((json) => {
