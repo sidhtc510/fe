@@ -8,7 +8,6 @@ export const fetchAction = (dispatch) => {
     .then((res) => res.json())
     .then((json) => {
       dispatch(loadCategoryAction(json));
-
       dispatch(hideLoader());
     });
 };

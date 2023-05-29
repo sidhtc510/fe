@@ -12,7 +12,7 @@ const dispatch = useDispatch()
         // Object.fromEntries позволяет получить в виде обычного объекта данные input полей
         let obj = Object.fromEntries(data)
         obj.images = ['https://bipbap.ru/wp-content/uploads/2018/06/3c980dd2e9c909ada7377cc89885231b.jpg']
-        console.log(obj);
+        // console.log(obj);
         dispatch(fetchAddNewProduct(obj))
     }
   return (

@@ -16,7 +16,14 @@ function App() {
   return (
     <div>
       <Context.Provider
-        value={{ modalActive, setModalActive, notification, setNotification, whichStateWeUse, setWhichStateWeUse }}
+        value={{
+          modalActive,
+          setModalActive,
+          notification,
+          setNotification,
+          whichStateWeUse,
+          setWhichStateWeUse,
+        }}
       >
         <Notification />
         <ModalAddProduct />

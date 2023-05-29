@@ -10,7 +10,7 @@ export default function ProductList() {
   useEffect(() => {
     dispatch(fetchProductList());
   },[dispatch]);
-
+console.log(productList);
   return <div className="productWrapper">
     {productList.map(elem=>
         <div key={elem.id}>
@@ -19,6 +19,7 @@ export default function ProductList() {
             <p>id: {elem.id}</p>
             <p>price: {elem.price}</p>
             <img src={elem.images} alt="" />
+            <p>{elem.category.name}</p>
             </div>
         )}
   </div>;

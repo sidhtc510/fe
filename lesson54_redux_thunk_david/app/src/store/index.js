@@ -6,8 +6,8 @@ import { productsReducer } from "./reducers/productsReducer";
 
 const rootReducer = combineReducers({
   categories: categoryReducer,
+  products:productsReducer,
   loader: loaderReducer,
-  products:productsReducer
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
