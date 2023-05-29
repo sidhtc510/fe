@@ -4,22 +4,25 @@ import Header from "../Header";
 import CategoryMenu from "../CategoryMenu";
 import Banner from "../Banner";
 import { Route, Routes } from "react-router-dom";
-import Main from "../Pages/Main";
 import ControlMenu from "../ControlMenu";
 import ProductsContainer from "../ProductsContainer";
+import { useSelector } from "react-redux";
 
 export default function App() {
+
+  const {products, categories} = useSelector(state=> state);
+
   return (
     <div className="main_container">
       <Header />
-      <CategoryMenu />
+      <CategoryMenu categories={categories}/>
       <Banner />
 
       <div className="Wrapp_ControlContent">
         <ControlMenu />
         <Routes>
-          <Route path="/" element={<ProductsContainer />} />
-          <Route path="/category/:categoryId" element={<ProductsContainer />} />
+          <Route path="/" element={<ProductsContainer  products={products}/>} />
+          <Route path="/category/:categoryId" element={<ProductsContainer products={products}/>} />
         </Routes>
       </div>
     </div>

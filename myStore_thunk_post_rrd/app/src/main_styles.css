@@ -9,11 +9,13 @@ body{
 }
 
 .main_container{
-  max-width: 1280px;
+  max-width: 1920px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .Wrapp_ControlContent{
   display: grid;
   grid-template-columns: 3fr 9fr;
+  margin: 20px 0;
 }
