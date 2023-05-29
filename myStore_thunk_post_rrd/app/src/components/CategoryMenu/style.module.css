@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.8rem;
+  padding: 20px 0;
+}
+
+.container a {
+  text-decoration: none;
+  color: black;
+}
+.container a p {
+
+  padding: 10px;
+  cursor: pointer;
+}
+.container a p:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: rgb(226, 226, 226);
+  font-family: 'nunito'
+}
+
+.main_container{
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.Wrapp_ControlContent{
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+}
