@@ -1,5 +1,4 @@
-export const goods = {
-  products: [
+export const goods = [
     {
       id: 1,
       product: "iPhone 14",
@@ -62,7 +61,5 @@ export const goods = {
       price: 1200,
       in_stock: false,
       image: false,
-    },
-  ],
-  filteredProducts: [],
-};
+    }
+  ]

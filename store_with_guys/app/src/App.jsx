@@ -5,13 +5,15 @@ import ModalAddProduct from "./components/ModalAddProduct";
 import { Context } from "./context";
 import Notification from "./components/Notification";
 
+
 function App() {
   const [modalActive, setModalActive] = useState(false);
   const [notification, setNotification] = useState({
     state: false,
     content: "",
   });
-  const [whichStateWeUse, setWhichStateWeUse] = useState("Products");
+
+
 
   return (
     <div>
@@ -21,8 +23,7 @@ function App() {
           setModalActive,
           notification,
           setNotification,
-          whichStateWeUse,
-          setWhichStateWeUse,
+
         }}
       >
         <Notification />
