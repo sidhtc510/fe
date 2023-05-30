@@ -23,7 +23,7 @@ export const goodsReducer = (state = goods, action) => {
     case SORTPRICE_DESC:
      return [...state.sort((x, y) => y.price - x.price) ]
     case ADD_PRODUCT:
-      return [action.payload, ...state.products]
+      return [action.payload, ...state]
     default:
       return state;
   }

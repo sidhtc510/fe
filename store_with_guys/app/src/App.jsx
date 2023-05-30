@@ -23,7 +23,6 @@ function App() {
           setModalActive,
           notification,
           setNotification,
-
         }}
       >
         <Notification />

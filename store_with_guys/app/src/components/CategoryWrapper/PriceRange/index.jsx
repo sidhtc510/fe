@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { priceRangeAction } from "../../../store/reducers/priceRangeReducer";
 import { useDispatch, useSelector } from "react-redux";
+import s from "./s.module.css";
 
 export default function PriceRange() {
   const dispatch = useDispatch();
@@ -15,11 +16,10 @@ export default function PriceRange() {
       minPrice: +e.target.minDigit.value,
       maxPrice: +e.target.maxDigit.value,
     };
-    dispatch(priceRangeAction(priceRange)); 
+    dispatch(priceRangeAction(priceRange));
   };
 
   return (
-
     <form onSubmit={handler} id="filterForm">
       <div>
         <label htmlFor="minDigit">min</label>
@@ -29,6 +29,7 @@ export default function PriceRange() {
           defaultValue={minPrice}
           key={minPrice - 1}
           name="minDigit"
+          min={0}
         />
         <br />
         <label htmlFor="maxDigit">max</label>
@@ -38,9 +39,12 @@ export default function PriceRange() {
           defaultValue={maxPrice}
           key={maxPrice + 1}
           name="maxDigit"
+          min={0}
         />
       </div>
-      <input type="submit" value="Apply" />
+    
+        <input type="submit" value="Apply" />
+  
     </form>
   );
 }

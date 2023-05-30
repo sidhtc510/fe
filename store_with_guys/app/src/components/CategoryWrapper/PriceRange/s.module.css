@@ -1,0 +1,36 @@
+.container {
+  width: 90%;
+  margin: 20px auto;
+}
+
+/* Style the custom slider */
+.custom_slider {
+  width: 100%;
+  height: 30px;
+  background: #eee;
+  opacity: 0.8;
+  outline: none;
+  transition: 0.3s;
+  -webkit-appearance: none;
+}
+
+.custom_slider:hover {
+  opacity: 1;
+}
+
+.custom_slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.custom_slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background: #4caf50;
+  cursor: pointer;
+}
+

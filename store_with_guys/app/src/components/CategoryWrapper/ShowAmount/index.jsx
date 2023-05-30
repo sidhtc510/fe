@@ -6,10 +6,7 @@ export default function ShowAmount() {
   const { setNotification } = useContext(Context);
 
   const goods = useSelector((state) => state.goods);
-  const goodsPriceAmount =
-    goods.filteredProducts.length > 0
-      ? goods.filteredProducts.reduce((acc, el) => acc + el.price, 0)
-      : goods.products.reduce((acc, el) => acc + el.price, 0);
+
 
   return (
     <div>
@@ -18,7 +15,7 @@ export default function ShowAmount() {
         onClick={() =>
           setNotification({
             state: true,
-            content: `Amount ${goodsPriceAmount}`,
+            content: `Amount ${goods.reduce((acc, el) => acc + el.price, 0)}`,
           })
         }
       >
