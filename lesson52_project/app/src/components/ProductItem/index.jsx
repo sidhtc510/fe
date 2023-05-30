@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { AddToBascketAction } from "../../store/reducers/bascketReducer";
 
 export default function ProductsItem({
   id,
@@ -7,6 +9,13 @@ export default function ProductsItem({
   price,
   rating: { rate, count },
 }) {
+
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(AddToBascketAction({ id }));
+  };
+
   return (
     <div className="product">
       <div>
@@ -19,7 +28,7 @@ export default function ProductsItem({
         </p>
         <p>
           {" "}
-          <button>Add</button>{" "}
+          <button onClick={addToCart} >Add</button>{" "}
         </p>
       </div>
     </div>

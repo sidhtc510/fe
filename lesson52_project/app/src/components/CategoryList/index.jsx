@@ -4,12 +4,17 @@ import CategoryItem from "../CategoryItem";
 
 export default function CategoryList() {
 
-  const categories = useSelector((state) => state.category);
+  const {status, list} = useSelector(({category}) => category);
+
   return (
     <div className="categoryList">
-      {categories.map((el) => (
-        <CategoryItem key={el} title={el} />
-      ))}
+      {status === "loading" ? (
+        <p>Loading...</p>
+      ) : status === "error" ? (
+        "Error..."
+      ) : (
+        list.map((el) => <CategoryItem key={el} title={el} />)
+      )}
     </div>
   );
 }

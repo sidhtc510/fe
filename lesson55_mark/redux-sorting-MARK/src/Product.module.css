@@ -1,0 +1,26 @@
+.card {
+  max-width: 150px;
+  padding: 1rem;
+}
+
+.card img {
+  border-radius: 1rem;
+  width: 150px;
+  height: auto;
+}
+
+.card h5 {
+  margin: 0;
+}
+
+.card p {
+  margin: 0;
+  font-size: small;
+  color: grey;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}

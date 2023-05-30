@@ -3,14 +3,17 @@ import { useSelector } from "react-redux";
 import ProductsItem from "../ProductItem";
 
 export default function ProductsList() {
-  const products = useSelector((state) => state.products);
+  const { status, list } = useSelector(({ products }) => products);
 
-  console.log(products);
   return (
     <div className="productsList">
-      {products.map((el) => (
-        <ProductsItem key={el.id} {...el} />
-      ))}
+      {status === "loading" ? (
+        <p>Loading...</p>
+      ) : status === "error" ? (
+        "Error..."
+      ) : (
+        list.map((el) => <ProductsItem key={el.id} {...el} />)
+      )}
     </div>
   );
 }

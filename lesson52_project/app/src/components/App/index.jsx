@@ -7,6 +7,7 @@ import {
 import CategoryList from "../CategoryList";
 import { useEffect } from "react";
 import ProductsList from "../ProductsList";
+import BascketContainer from "../BascketContainer";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
     <div className="categoryWrapper">
       <CategoryList />
       <ProductsList />
+      <BascketContainer />
     </div>
   );
 }

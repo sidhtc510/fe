@@ -5,11 +5,14 @@ import { fetchProducts } from "../../store/fetches";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
-
-export default function ProductsContainer({products}) {
+export default function ProductsContainer({ products, getCategoryId }) {
   const dispatch = useDispatch();
 
-  const {categoryId} = useParams()
+  const { categoryId } = useParams();
+
+  useEffect(() => {
+    getCategoryId(parseInt(categoryId));
+  }, [getCategoryId, categoryId]);
 
   useEffect(() => {
     dispatch(fetchProducts(categoryId));
