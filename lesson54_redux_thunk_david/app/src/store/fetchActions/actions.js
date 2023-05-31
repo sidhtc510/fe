@@ -20,7 +20,7 @@ export const loadProducts = (category) => (dispatch) => {
   fetch(url)
     .then((res) => res.json())
     .then((json) => {
-      dispatch(productsLoader(json));
+      dispatch(productsLoader(json)); 
       dispatch(hideLoader());
     });
 };
