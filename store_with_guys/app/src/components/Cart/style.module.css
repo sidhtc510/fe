@@ -1,0 +1,24 @@
+.productsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  gap: 20px;
+  grid-template-rows: max-content;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.product {
+    display: grid;
+   grid-column: 1/3;
+    gap: 40px;
+    border: 1px solid black;
+}
+.product div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product img{
+    max-width: 200px;
+}

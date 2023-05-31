@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import ContainerWrapper from "./components/ContainerWrapper";
 import ModalAddProduct from "./components/ModalAddProduct";
 import { Context } from "./context";
 import Notification from "./components/Notification";
 import Header from "./components/Header";
-
+import { Route, Routes } from "react-router-dom";
+import CartPage from "./Pages/CartPage";
+import ContainerWrapper from "./components/ContainerWrapper";
 
 function App() {
   const [modalActive, setModalActive] = useState(false);
@@ -13,8 +14,6 @@ function App() {
     state: false,
     content: "",
   });
-
-
 
   return (
     <div>
@@ -29,7 +28,11 @@ function App() {
         <Notification />
         <ModalAddProduct />
         <Header />
-        <ContainerWrapper />
+
+        <Routes>
+          <Route path="/" element={<ContainerWrapper />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
       </Context.Provider>
     </div>
   );

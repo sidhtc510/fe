@@ -17,8 +17,15 @@
   list-style: none;
 }
 
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
 .cart {
   position: relative;
+  text-decoration: none;
+  color: black;
 }
 .countWrapper {
   position: absolute;

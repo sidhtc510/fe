@@ -1,0 +1,36 @@
+import { useSelector } from "react-redux";
+import s from "./style.module.css";
+
+function ProductInCart({ id, product, price, image, count }) {
+  const defaultImg = !image ? "./images/noImage.webp" : "./images/" + image;
+  return (
+    <div className={s.product}>
+        <h2>{product}</h2>
+      <div>
+      <img src={defaultImg} />
+      </div>
+        <h3>{price}$</h3>
+       
+        <button>-</button>
+        <input type="number" value={count}/>
+        <button>+</button>
+    </div>
+  );
+}
+
+export function Cart() {
+  const { cart, goods } = useSelector((state) => state);
+
+  const goodsInTheCart = cart.map((item) => {
+    const product = goods.find((el) => el.id === item.id);
+    return { ...item, ...product };
+  });
+
+  return (
+    <div className={s.productsWrapper}>
+      {goodsInTheCart.map((data) => (
+        <ProductInCart {...data} key={data.id} />
+      ))}
+    </div>
+  );
+}

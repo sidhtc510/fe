@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./style.module.css";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const { cart } = useSelector((state) => state);
@@ -10,7 +11,8 @@ export default function Header() {
   return (
     <header className={s.wrapper}>
       <div>
-        <p>Amazon na minimalkah</p>
+       
+      <Link to="/" className={s.logo}><p>Amazon na minimalkah</p></Link> 
       </div>
       <ul>
         <li>Category 1</li>
@@ -19,14 +21,16 @@ export default function Header() {
         <li>Category 4</li>
       </ul>
 
-      <div className={s.cart}>
-        {countProductsInCart && (
-          <div className={s.countWrapper}>
-            <p>{+countProductsInCart}</p>
-          </div>
-)}
-        <i className="fa-solid fa-cart-shopping"></i>
-      </div>
+      <Link to="/cart" className={s.cart}>
+        <div className={s.cart}>
+          {countProductsInCart && (
+            <div className={s.countWrapper}>
+              <p>{+countProductsInCart}</p>
+            </div>
+          )}
+          <i className="fa-solid fa-cart-shopping"></i>
+        </div>
+      </Link>
     </header>
   );
 }

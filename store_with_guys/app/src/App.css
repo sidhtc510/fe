@@ -170,6 +170,7 @@ body {
     border-radius: 5px;
     font-size: 14px;
     height: 36px;
+    user-select: none;
   }
   .product div:last-child button:hover {
     background: #fcea49;
