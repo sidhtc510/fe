@@ -4,6 +4,7 @@ import ContainerWrapper from "./components/ContainerWrapper";
 import ModalAddProduct from "./components/ModalAddProduct";
 import { Context } from "./context";
 import Notification from "./components/Notification";
+import Header from "./components/Header";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       >
         <Notification />
         <ModalAddProduct />
+        <Header />
         <ContainerWrapper />
       </Context.Provider>
     </div>

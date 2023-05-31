@@ -1,0 +1,39 @@
+.wrapper {
+  max-width: 1920px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.cart {
+  position: relative;
+}
+.countWrapper {
+  position: absolute;
+  border-radius: 50%;
+  background-color: crimson;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 7px;
+  top: -14px;
+  font-size: 10px;
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  box-shadow: 0px 0px 17px 0px black;
+}

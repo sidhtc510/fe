@@ -15,15 +15,15 @@ export const addProductAction = (payload) => ({ type: ADD_PRODUCT, payload });
 export const goodsReducer = (state = goods, action) => {
   switch (action.type) {
     case DELETE:
-      return [...state.filter((item) => item.id !== action.payload)]
+      return [...state.filter((item) => item.id !== action.payload)];
     case REMOVE_PRODUCTS:
-      return []
+      return [];
     case SORTPRICE_ASC:
-     return [...state.sort((x, y) => x.price - y.price)]
+      return [...state.sort((x, y) => x.price - y.price)];
     case SORTPRICE_DESC:
-     return [...state.sort((x, y) => y.price - x.price) ]
+      return [...state.sort((x, y) => y.price - x.price)];
     case ADD_PRODUCT:
-      return [action.payload, ...state]
+      return [action.payload, ...state];
     default:
       return state;
   }

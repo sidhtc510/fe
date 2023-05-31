@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { priceRangeAction } from "../../../store/reducers/priceRangeReducer";
 import { useDispatch, useSelector } from "react-redux";
-import s from "./s.module.css";
+// import s from "./s.module.css";
 
 export default function PriceRange() {
   const dispatch = useDispatch();

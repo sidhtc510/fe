@@ -13,6 +13,7 @@ export default function GoodsWrapper() {
             item.price <= priceRange.maxPrice
         );
 
+  
   return (
     <div className="goods_wrapper">
       {filteredGoods.map((item) => (

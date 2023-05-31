@@ -12,6 +12,7 @@ export default function CategoryWrapper() {
     <div className="category_wrap">
       <AddProductButton />
       <PriceRange />
+
       <RemoveProducts />
       <SortPrice />
       <ShowAmount />
