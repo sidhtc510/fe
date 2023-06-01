@@ -3,14 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductList } from "../../store/asyncActions/productList";
 
 export default function ProductList() {
-  const productList = useSelector((state) => state.productList).reverse();
+  // const productList = useSelector((state) => state.productList).reverse().filter(elem => elem.show);
+  const productList = useSelector((state) => state.productList).filter(elem => elem.show);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchProductList());
   },[dispatch]);
-console.log(productList);
+
+  // console.log(productList);
   return <div className="productWrapper">
     {productList.map(elem=>
         <div key={elem.id}>

@@ -1,0 +1,13 @@
+для запуска приложения на vite,
+перейди в redux-sorting
+установи зависимости если их нет npm Install
+запусти приложение npm run dev
+
+
+-------------------------------------
+а вообще вот что такое vite - https://vitejs.dev/
+устанавливается командой 
+
+npm create vite@latest redux-sorting -- --template react
+npm Install
+npm run dev
