@@ -2,11 +2,15 @@ const LOAD = "[BASCKET] LOAD";
 const ADD = "[BASCKET] ADD";
 const INCR = "[BASCKET] INCR";
 const DECR = "[BASCKET] DECR";
+const CLEAR = "[BASCKET] CLEAR";
+const DELETEITEM = "[BASCKET] DELETEITEM";
 
 export const loadBascketAction = (payload) => ({ type: LOAD, payload });
 export const AddToBascketAction = (payload) => ({ type: ADD, payload });
 export const INCREMENTBascketAction = (payload) => ({ type: INCR, payload });
 export const DECREMENTBascketAction = (payload) => ({ type: DECR, payload });
+export const ClearBascketAction = () => ({ type: CLEAR });
+export const deleteItemBascketAction = (payload) => ({ type: DELETEITEM, payload });
 
 const checkProduct = (state, payload) => {
   const productInState = state.find((el) => el.id === payload.id);
@@ -44,6 +48,12 @@ export const bascketReducer = (state = [], action) => {
   }
    else if(action.type === DECR) {
     return decrementInReducer(state, action.payload);
+  }
+   else if(action.type === CLEAR) {
+    return [];
+  }
+   else if(action.type === DELETEITEM) {
+    return state.filter(el=>el.id !== action.payload);
   }
   return state;
 };

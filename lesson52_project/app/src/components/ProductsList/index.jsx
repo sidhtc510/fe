@@ -4,7 +4,7 @@ import ProductsItem from "../ProductItem";
 
 export default function ProductsList() {
   const { status, list } = useSelector(({ products }) => products);
-
+console.log(list);
   return (
     <div className="productsList">
       {status === "loading" ? (
@@ -12,7 +12,10 @@ export default function ProductsList() {
       ) : status === "error" ? (
         "Error..."
       ) : (
-        list.map((el) => <ProductsItem key={el.id} {...el} />)
+         list
+         .filter(({show})=>show)
+         .map((el) =>  <ProductsItem key={el.id} {...el} />)
+        //  .map((el) => el.show && <ProductsItem key={el.id} {...el} />)
       )}
     </div>
   );

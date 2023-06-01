@@ -1,0 +1,27 @@
+.product{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.product img{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.priceAndControlWrapper{
+    display:  flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    min-width: 200px;
+}
+
+.control{
+    display: flex;
+    flex-direction: column;
+}
+.control button{
+    padding: 10px;
+}

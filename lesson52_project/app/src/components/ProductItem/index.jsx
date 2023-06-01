@@ -7,7 +7,7 @@ export default function ProductsItem({
   title,
   image,
   price,
-  rating: { rate, count },
+  rating: { rate, count }
 }) {
 
   const dispatch = useDispatch();
