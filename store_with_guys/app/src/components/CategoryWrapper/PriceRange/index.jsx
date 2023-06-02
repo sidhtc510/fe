@@ -48,6 +48,7 @@ export default function PriceRange() {
                                     type="checkbox"
                                     name="isInStock"
                                     id="isInStock"
+                                    defaultChecked
                               />
                         </label>
                   </div>
