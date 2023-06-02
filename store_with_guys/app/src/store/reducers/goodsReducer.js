@@ -35,13 +35,56 @@ export const goodsReducer = (state = goods, action) => {
 //нужна для фильтрации по цене
 // она отдельная поскольку не меняеет стейт с товарами
 export const goodsHandler = (goods, priceRange) => {
-      const filteredGoods =
-            priceRange.minPrice === 0 && priceRange.maxPrice === 0
-                  ? goods
-                  : goods.filter(
-                          (item) =>
-                                item.price >= priceRange.minPrice &&
-                                item.price <= priceRange.maxPrice
-                    );
-      return filteredGoods;
+      // Вариант обработки без условия in stock
+      // const filteredGoods =
+      //       priceRange.minPrice === 0 && priceRange.maxPrice === 0
+      //             ? goods
+      //             : goods.filter(
+      //                     (item) =>
+      //                           item.price >= priceRange.minPrice &&
+      //                           item.price <= priceRange.maxPrice
+      //               );
+      // return filteredGoods;
+
+      // вариант обработки с in stock
+      // if (priceRange.minPrice === 0 && priceRange.maxPrice === 0) {
+      //       const filteredGoods = goods;
+      //       return filteredGoods;
+      // } else {
+      //       if (!priceRange.isInStock) {
+      //             const filteredGoods = goods.filter(
+      //                   (item) =>
+      //                         item.price >= priceRange.minPrice &&
+      //                         item.price <= priceRange.maxPrice
+      //             );
+      //             return filteredGoods;
+      //       } else {
+      //             const filteredGoods = goods.filter(
+      //                   (item) =>
+      //                         item.price >= priceRange.minPrice &&
+      //                         item.price <= priceRange.maxPrice &&
+      //                         item.in_stock === priceRange.isInStock
+      //             );
+      //             return filteredGoods;
+      //       }
+      // }
+
+      // попросил чат улучшить предидущую обработку
+      if (priceRange.minPrice === 0 && priceRange.maxPrice === 0) {
+            return goods;
+      } else {
+            const filteredGoods = goods.filter((item) => {
+                  const isInRange =
+                        item.price >= priceRange.minPrice &&
+                        item.price <= priceRange.maxPrice;
+                        
+                  const isInStock = item.in_stock === priceRange.isInStock;
+
+                  return !priceRange.isInStock
+                        ? isInRange
+                        : isInRange && isInStock;
+            });
+
+            return filteredGoods;
+      }
 };

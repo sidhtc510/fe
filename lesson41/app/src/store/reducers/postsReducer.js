@@ -6,7 +6,7 @@ export const postsReducer = (state = posts_data, action) => {
     target_post.like = !target_post.like;
     return [...state];
   } else if (action.type === "REMOVE") {
-    return state.filter((post) => post.id !== action.payload);
+    return state.slice().filter((post) => post.id !== action.payload);
   } else if (action.type === "ADD_POST") {
     return [
       ...state,

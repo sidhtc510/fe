@@ -26,7 +26,7 @@ export const productsReducer = (state = initialState, action) => {
   }else if(action.type === SEARCH){
       return {
         ...state, 
-        list: state.list.map(item=>({...item, show: item.title.startsWith(action.payload)}))
+        list: state.list.map(item=>({...item, show: item.title.toLowerCase().includes(action.payload.toLowerCase())}))
       } 
   }
 

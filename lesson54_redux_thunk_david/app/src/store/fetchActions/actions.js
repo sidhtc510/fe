@@ -3,26 +3,26 @@ import { showLoader, hideLoader } from "../reducers/loaderReducer";
 import { productsLoader } from "../reducers/productsReducer";
 
 export const fetchAction = (dispatch) => {
-  dispatch(showLoader());
-  fetch("https://fakestoreapi.com/products/categories")
-    .then((res) => res.json())
-    .then((json) => {
-      dispatch(loadCategoryAction(json));
-      dispatch(hideLoader());
-    });
+      dispatch(showLoader());
+      fetch("https://fakestoreapi.com/products/categories")
+            .then((res) => res.json())
+            .then((json) => {
+                  dispatch(loadCategoryAction(json));
+                  dispatch(hideLoader());
+            });
 };
 
 export const loadProducts = (category) => (dispatch) => {
-  dispatch(showLoader());
-  const url = category
-    ? `https://fakestoreapi.com/products/category/${category}`
-    : `https://fakestoreapi.com/products`;
-  fetch(url)
-    .then((res) => res.json())
-    .then((json) => {
-      dispatch(productsLoader(json)); 
-      dispatch(hideLoader());
-    });
+      dispatch(showLoader());
+      const url = category
+            ? `https://fakestoreapi.com/products/category/${category}`
+            : `https://fakestoreapi.com/products`;
+      fetch(url)
+            .then((res) => res.json())
+            .then((json) => {
+                  dispatch(productsLoader(json));
+                  dispatch(hideLoader());
+            });
 };
 
 // ---------------------------------------------------------------------------------
