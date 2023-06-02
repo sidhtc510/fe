@@ -1,0 +1,18 @@
+.player_card {
+      width: 80%;
+      margin: 20px auto;
+      background-color: rgb(255, 85, 0);
+      color: rgb(4, 222, 4);
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      padding: 30px;
+      font-style: italic;
+      font-weight: bold;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 24px;
+}
+
+.player_card span {
+      cursor: pointer;
+}

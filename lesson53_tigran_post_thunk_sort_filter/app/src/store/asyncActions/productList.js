@@ -5,7 +5,7 @@ export function fetchProductList() {
     const url = "https://api.escuelajs.co/api/v1/products";
     fetch(url)
       .then((res) => res.json())
-      .then((data) => disptach(addNewProductsAction(data)));
+      .then((data) => disptach(addNewProductsAction(data.reverse())));
   };
 }
 

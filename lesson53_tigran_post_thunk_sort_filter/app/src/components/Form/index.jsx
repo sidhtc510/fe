@@ -18,10 +18,10 @@ const dispatch = useDispatch()
   return (
     <div style={{margin:"50px"}}>
       <form onSubmit={formHandler}>
-        <input name="title" placeholder="title" type="text" value="my Product"/>
-        <input name="price" placeholder="price" type="text"  value="8989"/>
-        <input name="description" placeholder="description" type="text"  value="my Product Description" />
-        <input name="categoryId" placeholder="categoryId" type="text"  value="1"/>
+        <input name="title" placeholder="title" type="text" defaultValue="my Product"/>
+        <input name="price" placeholder="price" type="text"  defaultValue="8989"/>
+        <input name="description" placeholder="description" type="text"  defaultValue="my Product Description" />
+        <input name="categoryId" placeholder="categoryId" type="text"  defaultValue="1"/>
         <input type="submit" />
       </form>
     </div>

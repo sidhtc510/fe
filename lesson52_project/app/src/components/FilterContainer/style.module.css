@@ -1,13 +1,13 @@
-.container{
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
 }
 
-.container input{
-    max-width: 200px;
-    padding: 20px 10px;
+.container input {
+      max-width: 200px;
+      padding: 20px 10px;
 }
