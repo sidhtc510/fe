@@ -323,3 +323,12 @@ input[type="submit"] {
 .my-element.hidden {
       opacity: 0;
 }
+
+.mainWrapper{
+      background: #fff ;
+      transition: 0.5s;
+}
+.nightMode{
+      background: #12346f;
+
+}
