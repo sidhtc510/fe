@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import ProductsItem from "../ProductItem";
 
 export default function ProductsList() {
-      const { status, list } = useSelector(({ products }) => products);
+      const {list, status}= useSelector(({ products }) => products);
 
       return (
             <div className="productsList">

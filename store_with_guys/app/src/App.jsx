@@ -10,35 +10,39 @@ import ContainerWrapper from "./components/ContainerWrapper";
 import { useSelector } from "react-redux";
 
 function App() {
-  const [modalActive, setModalActive] = useState(false);
-  const [notification, setNotification] = useState({
-    state: false,
-    content: "",
-  });
+      const [modalActive, setModalActive] = useState(false);
+      const [notification, setNotification] = useState({
+            state: false,
+            content: "",
+      });
 
-  const {nightMode} = useSelector(state => state)
- 
-  return (
-    <div className={nightMode ? "mainWrapper nightMode" : "mainWrapper"}> 
-      <Context.Provider
-        value={{
-          modalActive,
-          setModalActive,
-          notification,
-          setNotification,
-        }}
-      >
-        <Notification />
-        <ModalAddProduct />
-        <Header />
+      const { nightMode } = useSelector((state) => state);
 
-        <Routes>
-          <Route path="/" element={<ContainerWrapper />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
-      </Context.Provider>
-    </div>
-  );
+      return (
+            <div
+                  className={
+                        nightMode ? "mainWrapper nightMode" : "mainWrapper"
+                  }
+            >
+                  <Context.Provider
+                        value={{
+                              modalActive,
+                              setModalActive,
+                              notification,
+                              setNotification,
+                        }}
+                  >
+                        <Notification />
+                        <ModalAddProduct />
+                        <Header />
+
+                        <Routes>
+                              <Route path="/" element={<ContainerWrapper />} />
+                              <Route path="/cart" element={<CartPage />} />
+                        </Routes>
+                  </Context.Provider>
+            </div>
+      );
 }
 
 export default App;

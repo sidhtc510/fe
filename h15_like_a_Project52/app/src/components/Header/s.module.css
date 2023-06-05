@@ -1,0 +1,8 @@
+.header {
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
