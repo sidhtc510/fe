@@ -10,39 +10,35 @@ import ContainerWrapper from "./components/ContainerWrapper";
 import { useSelector } from "react-redux";
 
 function App() {
-      const [modalActive, setModalActive] = useState(false);
-      const [notification, setNotification] = useState({
-            state: false,
-            content: "",
-      });
+    const [modalActive, setModalActive] = useState(false);
+    const [notification, setNotification] = useState({
+        state: false,
+        content: "",
+    });
 
-      const { nightMode } = useSelector((state) => state);
+    const { nightMode } = useSelector((state) => state);
 
-      return (
-            <div
-                  className={
-                        nightMode ? "mainWrapper nightMode" : "mainWrapper"
-                  }
+    return (
+        <div className={nightMode ? "mainWrapper nightMode" : "mainWrapper"}>
+            <Context.Provider
+                value={{
+                    modalActive,
+                    setModalActive,
+                    notification,
+                    setNotification,
+                }}
             >
-                  <Context.Provider
-                        value={{
-                              modalActive,
-                              setModalActive,
-                              notification,
-                              setNotification,
-                        }}
-                  >
-                        <Notification />
-                        <ModalAddProduct />
-                        <Header />
+                <Notification />
+                <ModalAddProduct />
+                <Header />
 
-                        <Routes>
-                              <Route path="/" element={<ContainerWrapper />} />
-                              <Route path="/cart" element={<CartPage />} />
-                        </Routes>
-                  </Context.Provider>
-            </div>
-      );
+                <Routes>
+                    <Route path="/" element={<ContainerWrapper />} />
+                    <Route path="/cart" element={<CartPage />} />
+                </Routes>
+            </Context.Provider>
+        </div>
+    );
 }
 
 export default App;

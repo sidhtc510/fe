@@ -13,78 +13,99 @@ export const sortPriceDescAction = () => ({ type: SORTPRICE_DESC });
 export const addProductAction = (payload) => ({ type: ADD_PRODUCT, payload });
 
 export const goodsReducer = (state = goods, action) => {
-      switch (action.type) {
-            case DELETE:
-                  return [
-                        ...state.filter((item) => item.id !== action.payload),
-                  ];
-            case REMOVE_PRODUCTS:
-                  return [];
-            case SORTPRICE_ASC:
-                  return [...state].sort((x, y) => x.price - y.price);
-            case SORTPRICE_DESC:
-                  return [...state].sort((x, y) => y.price - x.price);
-            case ADD_PRODUCT:
-                  return [action.payload, ...state];
-            default:
-                  return state;
-      }
+    switch (action.type) {
+        case DELETE:
+            return [...state.filter((item) => item.id !== action.payload)];
+        case REMOVE_PRODUCTS:
+            return [];
+        case SORTPRICE_ASC:
+            return [...state].sort((x, y) => x.price - y.price);
+        case SORTPRICE_DESC:
+            return [...state].sort((x, y) => y.price - x.price);
+        case ADD_PRODUCT:
+            return [action.payload, ...state];
+        default:
+            return state;
+    }
 };
 
 //функция которая принимает список товаров и диапазон цен
 //нужна для фильтрации по цене
 // она отдельная поскольку не меняеет стейт с товарами
-export const goodsHandler = (goods, priceRange) => {
-      // Вариант обработки без условия in stock
-      // const filteredGoods =
-      //       priceRange.minPrice === 0 && priceRange.maxPrice === 0
-      //             ? goods
-      //             : goods.filter(
-      //                     (item) =>
-      //                           item.price >= priceRange.minPrice &&
-      //                           item.price <= priceRange.maxPrice
-      //               );
-      // return filteredGoods;
+export const goodsHandler = (goods, priceRange, search) => {
+    // Вариант обработки без условия in stock
+    // const filteredGoods =
+    //       priceRange.minPrice === 0 && priceRange.maxPrice === 0
+    //             ? goods
+    //             : goods.filter(
+    //                     (item) =>
+    //                           item.price >= priceRange.minPrice &&
+    //                           item.price <= priceRange.maxPrice
+    //               );
+    // return filteredGoods;
 
-      // вариант обработки с in stock
-      // if (priceRange.minPrice === 0 && priceRange.maxPrice === 0) {
-      //       const filteredGoods = goods;
-      //       return filteredGoods;
-      // } else {
-      //       if (!priceRange.isInStock) {
-      //             const filteredGoods = goods.filter(
-      //                   (item) =>
-      //                         item.price >= priceRange.minPrice &&
-      //                         item.price <= priceRange.maxPrice
-      //             );
-      //             return filteredGoods;
-      //       } else {
-      //             const filteredGoods = goods.filter(
-      //                   (item) =>
-      //                         item.price >= priceRange.minPrice &&
-      //                         item.price <= priceRange.maxPrice &&
-      //                         item.in_stock === priceRange.isInStock
-      //             );
-      //             return filteredGoods;
-      //       }
-      // }
+    // вариант обработки с in stock
+    // if (priceRange.minPrice === 0 && priceRange.maxPrice === 0) {
+    //       const filteredGoods = goods;
+    //       return filteredGoods;
+    // } else {
+    //       if (!priceRange.isInStock) {
+    //             const filteredGoods = goods.filter(
+    //                   (item) =>
+    //                         item.price >= priceRange.minPrice &&
+    //                         item.price <= priceRange.maxPrice
+    //             );
+    //             return filteredGoods;
+    //       } else {
+    //             const filteredGoods = goods.filter(
+    //                   (item) =>
+    //                         item.price >= priceRange.minPrice &&
+    //                         item.price <= priceRange.maxPrice &&
+    //                         item.in_stock === priceRange.isInStock
+    //             );
+    //             return filteredGoods;
+    //       }
+    // }
 
-      // попросил чат улучшить предидущую обработку
-      if (priceRange.minPrice === 0 && priceRange.maxPrice === 0) {
-            return goods;
-      } else {
-            const filteredGoods = goods.filter((item) => {
-                  const isInRange =
-                        item.price >= priceRange.minPrice &&
-                        item.price <= priceRange.maxPrice;
-                        
-                  const isInStock = item.in_stock === priceRange.isInStock;
+    // попросил  улучшить предидущую обработку
+    //     if (priceRange.minPrice === 0 && priceRange.maxPrice === 0 && !search) {
+    //         return goods;
+    //     } else {
+    //         const filteredGoods = goods.filter((item) => {
+    //             const isInRange =
+    //                 item.price >= priceRange.minPrice &&
+    //                 item.price <= priceRange.maxPrice;
 
-                  return !priceRange.isInStock
-                        ? isInRange
-                        : isInRange && isInStock;
-            });
+    //             const isInStock = item.in_stock === priceRange.isInStock;
 
-            return filteredGoods;
-      }
+    //             return !priceRange.isInStock ? isInRange : isInRange && isInStock;
+    //         });
+
+    //         return filteredGoods;
+    //     }
+
+    if (priceRange.minPrice === 0 && priceRange.maxPrice === 0 && !search) {
+        return goods;
+    } else {
+        if (priceRange.maxPrice === 0) {
+            priceRange.maxPrice = Infinity;
+        }
+        const filteredGoods = goods.filter((item) => {
+            const isInRange =
+                item.price >= priceRange.minPrice &&
+                item.price <= priceRange.maxPrice;
+
+            const isInStock = item.in_stock === priceRange.isInStock;
+
+            const searched = item.product
+                .toLowerCase()
+                .includes(search.toLowerCase());
+
+            return !priceRange.isInStock
+                ? isInRange && searched
+                : isInRange && isInStock && searched;
+        });
+
+        return filteredGoods;
+    }
 };
