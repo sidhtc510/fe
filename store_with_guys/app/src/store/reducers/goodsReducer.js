@@ -32,7 +32,7 @@ export const goodsReducer = (state = goods, action) => {
 //функция которая принимает список товаров и диапазон цен
 //нужна для фильтрации по цене
 // она отдельная поскольку не меняеет стейт с товарами
-export const goodsHandler = (goods, priceRange, search) => {
+export const filterAndSearchHandler = (goods, priceRange, search) => {
     // Вариант обработки без условия in stock
     // const filteredGoods =
     //       priceRange.minPrice === 0 && priceRange.maxPrice === 0
