@@ -13,7 +13,8 @@ export default function ProductsList() {
                         "Error..."
                   ) : (
                         list
-                              .filter(({ show }) => show)
+                              // .filter(({ show }) => show.search && show.price)
+                              .filter(({ show }) => Object.values(show).every(item=>item))
                               .map((el) => <ProductsItem key={el.id} {...el} />)
                   )}
             </div>
