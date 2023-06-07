@@ -61,5 +61,12 @@ export const goods = [
       price: 1200,
       in_stock: false,
       image: false,
+    },
+    {
+      id: 10,
+      product: "Телевизор Электроника-М",
+      price: 2200,
+      in_stock: true,
+      image: false,
     }
   ]
