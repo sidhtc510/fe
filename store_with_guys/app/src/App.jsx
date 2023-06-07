@@ -8,6 +8,8 @@ import { Route, Routes } from "react-router-dom";
 import CartPage from "./Pages/CartPage";
 import ContainerWrapper from "./components/ContainerWrapper";
 import { useSelector } from "react-redux";
+import Loader from "./components/Loader";
+
 
 function App() {
     const [modalActive, setModalActive] = useState(false);
@@ -16,10 +18,11 @@ function App() {
         content: "",
     });
 
-    const { nightMode } = useSelector((state) => state);
+    const { nightMode, loader } = useSelector((state) => state);
 
     return (
         <div className={nightMode ? "mainWrapper nightMode" : "mainWrapper"}>
+            {loader.isLoading && <Loader />}
             <Context.Provider
                 value={{
                     modalActive,

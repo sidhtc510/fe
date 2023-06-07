@@ -141,6 +141,7 @@ header ul {
 .product img {
     border: 1px solid #bebebe;
     border-radius: 8px;
+    margin: 0 auto;
 }
 .product div {
     display: flex;

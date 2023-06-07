@@ -1,22 +1,39 @@
-import { goods } from "../../data/data";
+// import { goods } from "../../data/data";
 
+const INITIAL_LOADING = "[GOODS] INITIAL_LOADING";
 const DELETE = "[GOODS] DELETE";
 const REMOVE_PRODUCTS = "[GOODS] REMOVE_PRODUCTS";
 const SORTPRICE_ASC = "[GOODS] SORTPRICE_ASC";
 const SORTPRICE_DESC = "[GOODS] SORTPRICE_DESC";
 const ADD_PRODUCT = "[GOODS] ADD_PRODUCT";
 
+export const initialLoadingAction = (payload) => ({
+    type: INITIAL_LOADING,
+    payload,
+});
 export const deleteAction = (payload) => ({ type: DELETE, payload });
 export const removeProductsAction = () => ({ type: REMOVE_PRODUCTS });
 export const sortPriceAscAction = () => ({ type: SORTPRICE_ASC });
 export const sortPriceDescAction = () => ({ type: SORTPRICE_DESC });
 export const addProductAction = (payload) => ({ type: ADD_PRODUCT, payload });
 
-
-export const goodsReducer = (state = goods, action) => {
+export const goodsReducer = (state = [], action) => {
     switch (action.type) {
+        case INITIAL_LOADING:
+            return action.payload
+                .filter((el) => el.approx_price_EUR !== "")
+                .map((el) => {
+                    return {
+                        // ...el,
+                        id: el.id,
+                        product: `${el.brand} ${el.model}`,
+                        in_stock: true,
+                        image: el.img_url,
+                        price: parseInt(el.approx_price_EUR),
+                    };
+                });
+
         case DELETE:
-            
             return [...state.filter((item) => item.id !== action.payload)];
         case REMOVE_PRODUCTS:
             return [];

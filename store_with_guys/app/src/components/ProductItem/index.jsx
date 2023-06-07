@@ -5,7 +5,8 @@ import { useDispatch } from "react-redux";
 import { Context } from "../../context";
 
 export default function ProductItem({ id, price, product, in_stock, image }) {
-    const defaultImg = !image ? "./images/noImage.webp" : "./images/" + image;
+    // const defaultImg = !image ? "./images/noImage.webp" : "./images/" + image;
+    const defaultImg = image || "./images/noImage.webp";
     const stateInstock = in_stock ? "in stock" : "not available";
     const buttonDisabled = in_stock ? false : true;
     const style = {

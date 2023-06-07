@@ -8,7 +8,8 @@ import {
 } from "../../../store/reducers/cartReducer";
 
 export default function ProductInCart({ id, product, price, image, count }) {
-    const defaultImg = !image ? "./images/noImage.webp" : "./images/" + image;
+    // const defaultImg = !image ? "./images/noImage.webp" : "./images/" + image;
+    const defaultImg = image ||  "./images/noImage.webp" 
 
     const dispatch = useDispatch();
 
