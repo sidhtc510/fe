@@ -38,7 +38,7 @@ export default function ProductItem({ id, price, product, in_stock, image }) {
             <img className="img" src={defaultImg} alt="" />
             <div>
                 <p className="title">{product}</p>
-                <p className="price_actual">{price}</p>
+                <p className="price_actual">$ {price}</p>
             </div>
             <div>
                 <p style={style} className="available">

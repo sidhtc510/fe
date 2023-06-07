@@ -48,6 +48,11 @@ a:not([class]) {
     text-decoration-skip-ink: auto;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /* Упрощаем работу с изображениями */
 img {
     max-width: 100%;
@@ -124,13 +129,16 @@ header ul {
 
 .goods_wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
     grid-template-rows: max-content;
 }
 
 .product {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0 auto;
     width: 230px;
     border: 1px solid #bebebe;
@@ -178,6 +186,12 @@ header ul {
     color: green;
     font-size: 12px;
 }
+.product .title {
+    padding-right: 5px;
+}
+.price_actual {
+    text-wrap: nowrap;
+}
 
 .modalBackground {
     visibility: hidden;
@@ -222,6 +236,7 @@ header ul {
     transition: 0.3s;
     margin: 0 0 5px 0;
     /* padding: 3px 6px; */
+    max-width: 22px;
     max-height: 23px;
 }
 

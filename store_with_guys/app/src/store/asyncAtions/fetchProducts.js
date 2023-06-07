@@ -6,7 +6,7 @@ export const fetchProducts = async (dispatch) => {
 
     const resp = await fetch("https://raw.githubusercontent.com/Alucard17/PhoneAPI/master/phones.json");
     const data = await resp.json();
-    dispatch(initialLoadingAction(data.mobile.slice(0, 50)));
+    dispatch(initialLoadingAction(data.mobile.slice(0, 250)));
 
     dispatch(hideLoader());
 };

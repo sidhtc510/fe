@@ -21,7 +21,7 @@ export const goodsReducer = (state = [], action) => {
     switch (action.type) {
         case INITIAL_LOADING:
             return action.payload
-                .filter((el) => el.approx_price_EUR !== "")
+                .filter((el) => el.approx_price_EUR !== "") // в апишке есть пустые цены. убрал их
                 .map((el) => {
                     return {
                         // ...el,
