@@ -1,0 +1,16 @@
+.role_cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+  }
+  
+  .role_cards div {
+    border: 1px solid black;
+    padding: 50px;
+    background-color: rgb(86, 94, 255);
+  }
+  .role_cards a{
+    text-decoration: none;
+    color: white;
+  }

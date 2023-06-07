@@ -7,9 +7,8 @@ import Loader from "../Loader";
 export default function ProductsList() {
     const { productsList, status } = useSelector((state) => state.products);
 
+    const showProduct = productsList.filter((el) => el.show === true);
 
-    const showProduct = productsList.filter(el=>el.show===true)
-console.log(showProduct);
     return (
         <div className={s.productsContainer}>
             {status === "ready" ? (

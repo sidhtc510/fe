@@ -12,12 +12,23 @@ export default function ProductInCart({ id, product, price, image, count }) {
 
     const dispatch = useDispatch();
 
+
+    function confirmDelete() {
+        var result = window.confirm(
+            "Вы уверены, что хотите удалить этот элемент?"
+        );
+        if (result) {
+            dispatch(deleteFromCartAction(id));
+        }
+    }
+
+
     return (
         <div className={[s.product, "productInCart"].join(" ")}>
             <div>
                 <button
                     className="closeBtn"
-                    onClick={() => dispatch(deleteFromCartAction(id))}
+                    onClick={confirmDelete}
                 >
                     X
                 </button>

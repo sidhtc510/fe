@@ -12,9 +12,11 @@ export const sortPriceAscAction = () => ({ type: SORTPRICE_ASC });
 export const sortPriceDescAction = () => ({ type: SORTPRICE_DESC });
 export const addProductAction = (payload) => ({ type: ADD_PRODUCT, payload });
 
+
 export const goodsReducer = (state = goods, action) => {
     switch (action.type) {
         case DELETE:
+            
             return [...state.filter((item) => item.id !== action.payload)];
         case REMOVE_PRODUCTS:
             return [];

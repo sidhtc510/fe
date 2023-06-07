@@ -1,0 +1,15 @@
+.nav_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: rgb(86, 94, 255);
+    gap: 40px;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  
+  .nav_menu a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
