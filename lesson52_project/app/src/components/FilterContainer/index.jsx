@@ -23,7 +23,7 @@ export default function FilterContainer() {
     const [price, setPrice] = useState({ min: 0, max: Infinity });
 
     const rateHandler = (e) => {
-        dispatch(rateProductsAction(e.target.checked))
+        dispatch(rateProductsAction(e.target.checked));
         // console.log(e.target.checked);
     };
 
@@ -71,7 +71,12 @@ export default function FilterContainer() {
             </div>
 
             <div>
-                <Checkbox label={'Customers choice'}  onChange={rateHandler}/>
+                <Checkbox
+                    label={"Customers choice"}
+                    size="size_M"
+                    onChange={rateHandler}
+                />
+
                 {/* <label htmlFor="rating">
                     Customers choice
                     <input
