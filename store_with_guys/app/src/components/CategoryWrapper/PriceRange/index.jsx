@@ -1,6 +1,7 @@
 import React from "react";
 import { priceRangeAction } from "../../../store/reducers/priceRangeReducer";
 import { useDispatch, useSelector } from "react-redux";
+import Checkbox from '../../UI/Checkbox'
 // import s from "./s.module.css";
 
 export default function PriceRange() {
@@ -42,7 +43,7 @@ export default function PriceRange() {
                               name="maxDigit"
                               min={0}
                         />
-                        <label htmlFor="isInStock">
+                        {/* <label htmlFor="isInStock">
                               Only in stock
                               <input
                                     type="checkbox"
@@ -50,7 +51,8 @@ export default function PriceRange() {
                                     id="isInStock"
                                     defaultChecked
                               />
-                        </label>
+                        </label> */}
+                        <Checkbox label="Only in stock" name="isInStock" />
                   </div>
 
                   <input type="submit" value="Apply" />

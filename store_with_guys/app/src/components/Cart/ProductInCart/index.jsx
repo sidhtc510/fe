@@ -43,7 +43,7 @@ export default function ProductInCart({ id, product, price, image, count }) {
                 <h3>{price}$</h3>
             </span>
             <div>
-                <button onClick={() => dispatch(decrementInCartAction(id))}>
+                <button disabled={count === 1} style={count === 1 ? {visibility:'hidden'} : {}} onClick={() => dispatch(decrementInCartAction(id))}>
                     -
                 </button>
                 <p>{count}</p>
