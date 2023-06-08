@@ -5,6 +5,7 @@ import ProductsItem from "../ProductItem";
 export default function ProductsList() {
       const {list, status}= useSelector(({ products }) => products);
 
+
       return (
             <div className="productsList">
                   {status === "loading" ? (

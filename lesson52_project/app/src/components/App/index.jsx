@@ -1,31 +1,32 @@
 import { useDispatch } from "react-redux";
 import "../../App.css";
 import {
-  fetchCategories,
-  fetchProducts,
+    fetchCategories,
+    fetchProducts,
 } from "../../store/asyncActions/fetchActions";
-import CategoryList from "../CategoryList";
 import { useEffect } from "react";
-import ProductsList from "../ProductsList";
-import BascketContainer from "../BascketContainer";
-import FilterContainer from "../FilterContainer";
+import CategoriesPage from "../Pages/CategoriesPage";
+import ProductsPage from "../Pages/ProductsPage";
+import CartPage from "../Pages/CartPage";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchCategories);
-    dispatch(fetchProducts);
-  }, [dispatch]);
+    useEffect(() => {
+        dispatch(fetchCategories);
+        dispatch(fetchProducts);
+    }, [dispatch]);
 
-  return (
-    <div className="categoryWrapper">
-      <CategoryList />
-      <FilterContainer />
-      <ProductsList />
-      <BascketContainer />
-    </div>
-  );
+    return (
+        <div className="categoryWrapper">
+            <Routes>
+                <Route path="/categories" element={<CategoriesPage />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/cart" element={<CartPage />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

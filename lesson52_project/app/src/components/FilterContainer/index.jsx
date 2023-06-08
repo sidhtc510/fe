@@ -5,7 +5,9 @@ import {
     searchProductsAction,
     sortProductsAction,
     priceProductsAction,
+    rateProductsAction,
 } from "../../store/reducers/productsReducer";
+import Checkbox from "../UI/Checkbox";
 
 export default function FilterContainer() {
     const dispatch = useDispatch();
@@ -19,6 +21,11 @@ export default function FilterContainer() {
     };
 
     const [price, setPrice] = useState({ min: 0, max: Infinity });
+
+    const rateHandler = (e) => {
+        dispatch(rateProductsAction(e.target.checked))
+        // console.log(e.target.checked);
+    };
 
     useEffect(() => {
         dispatch(priceProductsAction(price));
@@ -61,6 +68,19 @@ export default function FilterContainer() {
                         })
                     }
                 />
+            </div>
+
+            <div>
+                <Checkbox label={'Customers choice'}  onChange={rateHandler}/>
+                {/* <label htmlFor="rating">
+                    Customers choice
+                    <input
+                        type="checkbox"
+                        name="rating"
+                        id="rating"
+                        onChange={rateHandler}
+                    />
+                </label> */}
             </div>
         </div>
     );

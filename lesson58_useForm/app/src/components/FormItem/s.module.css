@@ -1,0 +1,15 @@
+.form_item {
+    padding: 20px;
+    width: 350px;
+  }
+  
+  .form_title {
+    font-size: 28px;
+    font-weight: 800;
+  }
+  
+  .info_text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7B8E98;
+  }

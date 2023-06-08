@@ -13,8 +13,6 @@ export default function GoodsWrapper() {
         dispatch(fetchProducts);
     }, [dispatch]);
 
-    console.log(goods);
-    
     const filteredGoods = filterAndSearchHandler(goods, priceRange, search);
 
     return (

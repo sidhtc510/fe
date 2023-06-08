@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProductsPage from "./pages/ProductsPage";
 
+
 function App() {
   const isLoading = useSelector((state) => state.loader.isLoading);
   return (
