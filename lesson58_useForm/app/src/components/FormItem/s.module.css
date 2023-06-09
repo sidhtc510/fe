@@ -13,3 +13,9 @@
     font-weight: 400;
     color: #7B8E98;
   }
+
+  .error_text{
+    color: red;
+    text-align: end;
+    font-size: 0.8rem;
+  }
