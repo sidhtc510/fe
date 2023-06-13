@@ -1,0 +1,14 @@
+.item{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    border: 1px solid black;
+    width: fit-content;
+    margin: 20px;
+    padding: 10px;
+}
+
+.item button{
+    cursor: pointer;
+}
