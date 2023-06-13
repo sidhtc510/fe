@@ -9,6 +9,8 @@ import CategoriesPage from "../Pages/CategoriesPage";
 import ProductsPage from "../Pages/ProductsPage";
 import CartPage from "../Pages/CartPage";
 import { Routes, Route } from "react-router-dom";
+import NavMenu from "../NavMenu";
+// import CategoryProductsPage from "../Pages/CategoryProductsPage";
 
 function App() {
     const dispatch = useDispatch();
@@ -20,9 +22,14 @@ function App() {
 
     return (
         <div className="categoryWrapper">
+            <NavMenu />
             <Routes>
                 <Route path="/categories" element={<CategoriesPage />} />
-                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/products" element={<ProductsPage />} end />
+                <Route
+                    path="/products/:categoryName"
+                    element={<ProductsPage />}
+                />
                 <Route path="/cart" element={<CartPage />} />
             </Routes>
         </div>

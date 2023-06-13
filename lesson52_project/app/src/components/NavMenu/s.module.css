@@ -1,0 +1,16 @@
+.nav {
+    display: flex;
+    margin: 20px auto;
+    width: fit-content;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.nav .active {
+    border-bottom: 2px solid black;
+}

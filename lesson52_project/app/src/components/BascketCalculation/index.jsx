@@ -19,6 +19,8 @@ export default function BascketCalculation({ result }) {
                     {showPrice && <p>Amount : {amount}</p>}
 
                     <Checkbox
+                        label={"Amount"}
+                        size="size_M"
                         onChange={({ target }) => setShowPrice(target.checked)}
                     />
                 </div>

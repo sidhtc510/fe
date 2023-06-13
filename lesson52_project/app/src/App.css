@@ -27,6 +27,10 @@ body {
   cursor: pointer;
   background-color: #00000036;
 }
+.category  a{
+  text-decoration: none;
+  color: black
+}
 
 .productsList {
   max-width: 900px;
