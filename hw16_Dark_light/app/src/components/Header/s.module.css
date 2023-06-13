@@ -1,0 +1,9 @@
+.header_wrapper{
+display: flex;
+justify-content: space-around;
+}
+
+.logo_wrapper{
+display: grid;
+grid-template-columns: repeat(4,1fr);
+}
