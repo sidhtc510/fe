@@ -1,25 +1,28 @@
 import React from "react";
 import { BsLinkedin, BsTwitter, BsFacebook } from "react-icons/bs";
-import logo from './images/logo.png'
-import s from './s.module.css'
+import logo from "./images/logo.png";
+import s from "./s.module.css";
 
 export default function Header() {
     return (
-        <div className={s.header_wrapper}>
+        <header className={s.header_wrapper}>
             <div className={s.logo_wrapper}>
-                <img src={logo} alt="" />
-                <p>
+                <p className={s.logo}>
+                    <img src={logo} alt="" />
+                    Pages
+                </p>
+                <p className={s.icons}>
                     <BsFacebook />
                 </p>
-                <p>
+                <p className={s.icons}>
                     <BsTwitter />
                 </p>
-                <p>
+                <p className={s.icons}>
                     <BsLinkedin />
                 </p>
             </div>
 
-            <nav>
+            <nav className={s.nav}>
                 <ul>
                     <li>Home</li>
                     <li>Author</li>
@@ -28,8 +31,6 @@ export default function Header() {
                 </ul>
                 <p>Order Today</p>
             </nav>
-
-
-        </div>
+        </header>
     );
 }

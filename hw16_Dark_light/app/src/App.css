@@ -1,12 +1,18 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-color:#1B3764;
-    color: rgb(182, 182, 174);
-    /* font-family: Nunito, sans-serif; */
-    font-family: Roboto, sans-serif;
-  }
+    background-color: #1b3764;
+    color: #f6f8fc;
+    /* font-family: 'Cardo', serif; */
+    font-family: 'Inter', sans-serif;
+}
+
+.mainContainer {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 10px;
+}

@@ -1,0 +1,81 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ----------------Logo ----------------------------- */
+.logo_wrapper {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.logo_wrapper .logoImg {
+    height: fit-content;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 20px 0 0;
+}
+
+.iconsWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.icons {
+    width: 55px;
+    height: 55px;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 1px solid #ffca42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----------------Logo END ----------------------------- */
+
+.exploreBlock h3,
+.utilityBlock h3,
+.KeepInTouchBlock h3 {
+    font-family: 'Cardo', serif; 
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.exploreBlock ul li,
+.utilityBlock ul li {
+    color: #b4c7e7;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+.exploreBlock ul span,
+.utilityBlock ul span {
+    color: #ffca42;
+    padding: 0 5px 0 15px;
+}
+
+/* ------------ keep in touch START ------------------------------ */
+.KeepInTouchBlock p {
+    font-size: 18px;
+    color: #b4c7e7;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.KeepInTouchBlock p span {
+    font-weight: bold;
+    color: white;
+}

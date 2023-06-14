@@ -1,9 +1,64 @@
-.header_wrapper{
-display: flex;
-justify-content: space-around;
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
 }
 
-.logo_wrapper{
-display: grid;
-grid-template-columns: repeat(4,1fr);
+.logo_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo_wrapper .logoImg {
+    height: fit-content;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 20px 0 0;
+}
+
+.icons {
+    width: 45px;
+    height: 45px;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------------------------------------- */
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0 30px 0 0;
+}
+
+.nav p {
+    display: flex;
+    align-items: center;
+    height: 66px;
+    background: #ffca42;
+    border: 2px solid #ffca42;
+    border-radius: 0px;
+    padding: 0 30px;
+    color: black;
+    margin: 0 0 0 30px;
+    font-family: 'Cardo', serif; 
 }
