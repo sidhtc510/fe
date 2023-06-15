@@ -1,13 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    list: [
-        { id: 1, task: "task1" },
-        { id: 2, task: "task2" },
-        { id: 3, task: "task3" },
-        { id: 4, task: "task4" },
-    ],
+    list: [],
 };
+
+export const fetchToDo = createAsyncThunk("todo/fetchToDo", async () => {
+    const resp = await fetch("https://jsonplaceholder.typicode.com/todos");
+    let data = await resp.json();
+
+    data = data.slice(0, 10);
+
+    return data;
+});
 
 export const todoSlice = createSlice({
     name: "todo",
@@ -21,8 +25,27 @@ export const todoSlice = createSlice({
         },
         add(state, action) {
             // state.list.push({ id: Date.now(), task: action.payload });
-            state.list = [...state.list, { id: Date.now(), task: action.payload }];
+            state.list = [
+                ...state.list,
+                { id: Date.now(), task: action.payload },
+            ];
         },
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchToDo.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(fetchToDo.fulfilled, (state, { payload }) => {
+                state.status = "ready";
+                state.list = payload.map(({ id, title, completed }) => ({
+                    id,
+                    task: title,
+                }));
+            })
+            .addCase(fetchToDo.rejected, (state) => {
+                state.status = "rejected";
+            });
     },
 });
 

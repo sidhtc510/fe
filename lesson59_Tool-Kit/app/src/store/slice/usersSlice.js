@@ -18,6 +18,12 @@ export const usersSlice = createSlice({
         remove(state, action) {
             state.list = state.list.filter(({ id }) => id !== action.payload);
         },
+        incr(state, action) {
+           state.list.find(({ id }) => id === action.payload).age++;
+        },
+        add(state, action) {
+           state.list.unshift({id:Date.now(), ...action.payload});
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -41,6 +47,6 @@ export const usersSlice = createSlice({
     },
 });
 
-export const { remove } = usersSlice.actions;
+export const { remove, incr , add} = usersSlice.actions;
 
 export default usersSlice.reducer;
