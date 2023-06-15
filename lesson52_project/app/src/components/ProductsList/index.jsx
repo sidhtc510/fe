@@ -5,6 +5,7 @@ import ProductsItem from "../ProductItem";
 export default function ProductsList({ categoryName }) {
     const { list, status } = useSelector(({ products }) => products);
 
+    
     const filteredProducts = categoryName
         ? list.filter((el) => el.category === categoryName)
         : list;

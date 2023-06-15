@@ -38,7 +38,7 @@ export const fetchProducts = async (dispatch) => {
 // export const fetchProducts = dispatch =>{
 //     try{
 
-//         fetch('https://fakestoreap_.com/products')
+//         fetch('https://fakestoreapi.com/products')
 //         .then(resp => resp.json())
 //         .then(data=>dispatch(loadProductsAction(data)))
 //     }catch{

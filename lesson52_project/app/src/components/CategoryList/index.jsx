@@ -6,6 +6,8 @@ export default function CategoryList() {
 
   const {status, list} = useSelector(({category}) => category);
 
+
+
   return (
     <div className="categoryList">
       {status === "loading" ? (

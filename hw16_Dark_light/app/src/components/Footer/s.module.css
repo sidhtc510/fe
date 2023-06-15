@@ -49,6 +49,7 @@
     font-family: 'Cardo', serif; 
     font-size: 24px;
     margin-bottom: 24px;
+    font-weight: 400;
 }
 
 .exploreBlock ul li,
@@ -78,4 +79,6 @@
 .KeepInTouchBlock p span {
     font-weight: bold;
     color: white;
+    font-weight: 400;
+    font-family: 'Cardo', serif; 
 }

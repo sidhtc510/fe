@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from "react";
 import s from "./style.module.css";
 import { useDispatch } from "react-redux";
-import {
-    searchProductsAction,
-    sortProductsAction,
-    priceProductsAction,
-    rateProductsAction,
-} from "../../store/reducers/productsReducer";
+// import {
+//     searchProductsAction,
+//     sortProductsAction,
+//     rateProductsAction,
+// } from "../../store/reducers/productsReducer";
 import Checkbox from "../UI/Checkbox";
+import { priceAction } from "../../store/slice/productsSlice";
 
 export default function FilterContainer() {
     const dispatch = useDispatch();
 
     const searchHandler = ({ target }) => {
-        dispatch(searchProductsAction(target.value));
+        // dispatch(searchProductsAction(target.value));
     };
 
     const sortHandle = (e) => {
-        dispatch(sortProductsAction(e.target.value));
+        // dispatch(sortProductsAction(e.target.value));
     };
 
     const [price, setPrice] = useState({ min: 0, max: Infinity });
 
     const rateHandler = (e) => {
-        dispatch(rateProductsAction(e.target.checked));
+        // dispatch(rateProductsAction(e.target.checked));
         // console.log(e.target.checked);
     };
 
     useEffect(() => {
-        dispatch(priceProductsAction(price));
+        dispatch(priceAction(price));
     }, [price]);
 
     return (
