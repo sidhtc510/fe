@@ -6,7 +6,7 @@ import BascketCalculation from "../BascketCalculation";
 
 
 export default function BascketContainer() {
-    const bascket = useSelector((state) => state.bascket);
+    const bascket = useSelector((state) => state.bascket.list);
 
     const { list } = useSelector(({ products }) => products);
 

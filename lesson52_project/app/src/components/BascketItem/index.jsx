@@ -1,11 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {
-      DECREMENTBascketAction,
-      INCREMENTBascketAction,
-      deleteItemBascketAction,
-} from "../../store/reducers/bascketReducer";
+// import {
+//       DECREMENTBascketAction,
+//       INCREMENTBascketAction,
+//       deleteItemBascketAction,
+// } from "../../store/reducers/bascketReducer";
 import s from "./style.module.css";
+import { decrAction, deleteAction, incrAction } from "../../store/slice/bascketSlice";
 export default function BascketItem({ id, title, image, price, count }) {
       const dispatch = useDispatch();
 
@@ -20,14 +21,14 @@ export default function BascketItem({ id, title, image, price, count }) {
                         <div className={s.control}>
                               <button
                                     onClick={() =>
-                                          dispatch(INCREMENTBascketAction(id))
+                                          dispatch(incrAction(id))
                                     }
                               >
                                     +
                               </button>
                               <button
                                     onClick={() =>
-                                          dispatch(DECREMENTBascketAction(id))
+                                          dispatch(decrAction(id))
                                     }
                               >
                                     -
@@ -35,7 +36,7 @@ export default function BascketItem({ id, title, image, price, count }) {
                         </div>
                         <button
                               onClick={() =>
-                                    dispatch(deleteItemBascketAction(id))
+                                    dispatch(deleteAction(id))
                               }
                         >
                               X

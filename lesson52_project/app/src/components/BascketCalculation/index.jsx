@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { ClearBascketAction } from "../../store/reducers/bascketReducer";
+// import { useDispatch } from "react-redux";
+// import { ClearBascketAction } from "../../store/reducers/bascketReducer";
 import s from "./style.module.css";
 import Checkbox from "../UI/Checkbox";
 
 export default function BascketCalculation({ result }) {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const amount = result
         .reduce((acc, el) => acc + el.price * el.count, 0)
         .toFixed(2);
@@ -25,9 +25,9 @@ export default function BascketCalculation({ result }) {
                     />
                 </div>
             </div>
-            <button onClick={() => dispatch(ClearBascketAction())}>
+            {/* <button onClick={() => dispatch(ClearBascketAction())}>
                 ClearCart
-            </button>
+            </button> */}
         </div>
     );
 }

@@ -45,7 +45,7 @@ export const productsReducer = (state = initialState, action) => {
                         .toLowerCase()
                         .includes(action.payload.toLowerCase()),
                 },
-            })),
+            })    ),
         };
     } else if (action.type === PRICE) {
         return {
