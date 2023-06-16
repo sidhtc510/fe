@@ -1,0 +1,15 @@
+.button {
+    background: linear-gradient(
+        85.76deg,
+        rgba(191, 196, 238, 0.0945738) -105.02%,
+        #c367e6 10.94%,
+        rgba(190, 206, 239, 0) 121.57%
+    );
+    border-radius: 5px;
+    padding: 10px 30px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}

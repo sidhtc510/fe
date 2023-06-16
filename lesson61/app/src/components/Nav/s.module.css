@@ -1,0 +1,68 @@
+.nav_wrapper {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    height: 70px;
+}
+
+.logo_menu_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 25px;
+    padding-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+}
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.search_signIn_wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.search_wrap {
+    border: 2px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search_wrap input {
+    border: none;
+    background-color: transparent;
+    padding: 10px 5px;
+    width: 250px;
+    color: white;
+}
+
+.search_wrap {
+    padding: 0 10px;
+}
+
+.search_signIn_wrapper button {
+    background: linear-gradient(
+        85.76deg,
+        rgba(191, 196, 238, 0.0945738) -105.02%,
+        #c367e6 10.94%,
+        rgba(190, 206, 239, 0) 121.57%
+    );
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 12px 40px;
+}

@@ -1,0 +1,49 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    height: 500px;
+}
+
+.descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.discover_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.discover_info h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 60px;
+}
+
+.btn {
+    width: 200px;
+}
+
+.achievements {
+    display: flex;
+    justify-content: space-between;
+}
+.achievements p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.achievements p span {
+    font-size: 12px;
+}
+
+.discover_img {
+    background-color: #30384d;
+}
