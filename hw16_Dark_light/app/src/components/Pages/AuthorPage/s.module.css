@@ -1,9 +1,50 @@
-.author_page_wrapper{
-    background-color:white
+.author_page_wrapper {
+    background-color: white;
 }
 
-.items_container{
+.items_container {
     display: flex;
     justify-content: space-between;
     padding: 0 0 100px 0;
+}
+
+/* about author block */
+
+.about_block_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 100px 0;
+}
+
+.img_wrap img {
+    position: inherit;
+    z-index: 2;
+}
+.img_wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.img_wrap::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 55px;
+    width: calc(100% - 200px);
+    height: 590px;
+    border: 15px solid #ffca42;
+    z-index: 1;
+}
+
+.span_line_to_left {
+    text-align: left;
+    margin: 0;
+}
+
+.info {
+    font-size: 19px;
+    color: #969aa0;
+}
+.achievements {
+    color: #969aa0;
 }
