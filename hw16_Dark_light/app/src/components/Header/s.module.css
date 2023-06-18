@@ -62,3 +62,8 @@
     margin: 0 0 0 30px;
     font-family: 'Cardo', serif; 
 }
+
+.btn{
+    font-weight: bold;
+    color:blueviolet
+}

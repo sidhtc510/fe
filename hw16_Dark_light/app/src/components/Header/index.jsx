@@ -2,6 +2,7 @@ import React from "react";
 import { BsLinkedin, BsTwitter, BsFacebook } from "react-icons/bs";
 import logo from "./images/logo.png";
 import s from "./s.module.css";
+import Button from "../UI/Button";
 
 export default function Header() {
     return (
@@ -29,7 +30,7 @@ export default function Header() {
                     <li>Companies</li>
                     <li>Articles</li>
                 </ul>
-                <p>Order Today</p>
+                <Button> Order Today </Button>
             </nav>
         </header>
     );

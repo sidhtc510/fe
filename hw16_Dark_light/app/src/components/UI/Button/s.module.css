@@ -1,0 +1,12 @@
+button {
+    display: flex;
+    align-items: center;
+    height: 66px;
+    background: #ffca42;
+    border: 2px solid #ffca42;
+    border-radius: 0px;
+    padding: 0 30px;
+    color: black;
+    margin: 0 0 0 30px;
+    font-family: 'Cardo', serif; 
+}
