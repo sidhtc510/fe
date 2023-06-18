@@ -2,8 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0;
 }
+/* 
+.flex_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+} */
 
 .logo_wrapper {
     display: flex;
@@ -50,6 +57,10 @@
     margin: 0 30px 0 0;
 }
 
+.nav a {
+    text-decoration: none;
+    color: white;
+}
 .nav p {
     display: flex;
     align-items: center;
@@ -60,10 +71,10 @@
     padding: 0 30px;
     color: black;
     margin: 0 0 0 30px;
-    font-family: 'Cardo', serif; 
+    font-family: "Cardo", serif;
 }
 
-.btn{
+.btn {
     font-weight: bold;
-    color:blueviolet
+    color: blueviolet;
 }

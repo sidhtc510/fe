@@ -8,5 +8,7 @@ button {
     padding: 0 30px;
     color: black;
     margin: 0 0 0 30px;
+    font-size: 19px;
     font-family: 'Cardo', serif; 
+    cursor: pointer;
 }

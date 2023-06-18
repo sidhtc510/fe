@@ -1,0 +1,9 @@
+.wrapper {
+    padding: 15px 0;
+    background-color: #1b3764;
+}
+
+.max_size {
+    max-width: 1440px;
+    margin: 0 auto;
+}

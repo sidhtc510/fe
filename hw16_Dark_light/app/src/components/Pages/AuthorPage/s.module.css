@@ -1,0 +1,9 @@
+.author_page_wrapper{
+    background-color:white
+}
+
+.items_container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 100px 0;
+}

@@ -1,0 +1,76 @@
+.main_container_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 50px auto;
+}
+
+.info_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.text_welcome_page span {
+    display: inline-block;
+    width: 20px;
+    border-bottom: 2px solid #ffca42;
+    margin: 0px 10px 5px 0;
+}
+.text_welcome_page {
+    font-size: 21px;
+    font-family: "Cardo", serif;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 64px;
+    font-family: "Cardo", serif;
+}
+
+.text_we_belive {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 18px;
+}
+
+.button_group {
+    display: flex;
+}
+
+.clearBtn {
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+    border: none;
+}
+
+.achievements {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.achievements > p {
+    font-size: 24px;
+    font-family: "Cardo", serif;
+    position: relative;
+}
+.achievements > p > span {
+    position: absolute;
+    font-size: 100px;
+    color: #ffca42;
+    top: -50px;
+    left: -25px;
+}
+
+.achievements > p > p {
+    font-size: 17px;
+    font-family: "Inter", serif;
+    color: #b4c7e7;
+}
+
+.image_block img{
+    object-fit: contain;
+    width: 100%;
+
+}

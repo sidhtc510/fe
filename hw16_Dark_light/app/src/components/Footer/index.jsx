@@ -2,11 +2,14 @@ import React from "react";
 import { BsLinkedin, BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 import logo from "./images/logo.png";
 import s from "./s.module.css";
+import MainWrapper from "../UI/MainWrapper";
 
 export default function Footer() {
     
     return (
-        <footer className={s.footer}>
+        <MainWrapper className={s.footer}>
+
+        {/* <footer className={s.footer}> */}
             <div className={s.logo_wrapper}>
                 <p className={s.logo}>
                     <img src={logo} alt="" />
@@ -84,6 +87,7 @@ export default function Footer() {
                     <span>Phone: </span> (+22) 123 - 4567 - 900
                 </p>
             </div>
-        </footer>
+        </MainWrapper>
+        // </footer>
     );
 }

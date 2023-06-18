@@ -3,10 +3,14 @@ import { BsLinkedin, BsTwitter, BsFacebook } from "react-icons/bs";
 import logo from "./images/logo.png";
 import s from "./s.module.css";
 import Button from "../UI/Button";
+import { NavLink } from "react-router-dom";
+import MainWrapper from "../UI/MainWrapper";
 
 export default function Header() {
     return (
-        <header className={s.header_wrapper}>
+        // <header className={s.header_wrapper}>
+        //     <div className={s.flex_wrap}>
+        <MainWrapper className={s.header_wrapper}>
             <div className={s.logo_wrapper}>
                 <p className={s.logo}>
                     <img src={logo} alt="" />
@@ -25,13 +29,23 @@ export default function Header() {
 
             <nav className={s.nav}>
                 <ul>
-                    <li>Home</li>
-                    <li>Author</li>
-                    <li>Companies</li>
-                    <li>Articles</li>
+                    <li>
+                        <NavLink to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/author">Author</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/companies">Companies</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/articles">Articles</NavLink>
+                    </li>
                 </ul>
                 <Button> Order Today </Button>
             </nav>
-        </header>
+        </MainWrapper>
+        //     </div>
+        // </header>
     );
 }

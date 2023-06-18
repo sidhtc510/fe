@@ -1,0 +1,20 @@
+.wrap {
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.wrap p {
+    font-size: 42px;
+    font-family: "Cardo", serif;
+    /* color: #ffffff; */
+    color: #1b3764;
+}
+
+.wrap span {
+    display: inline-block;
+    background-color: #ffca42;
+    height: 3px;
+    width: 50px;
+}

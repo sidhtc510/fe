@@ -1,0 +1,37 @@
+.wrap {
+    display: flex;
+    gap: 10px;
+    padding-right: 30px;
+}
+
+.info_block {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.title {
+    font-size: 32px;
+    color: #1b3764;
+    font-family: "Cardo", serif;
+}
+
+.price {
+    font-size: 21px;
+    color: #ffca42;
+}
+
+.info {
+    font-size: 19px;
+    color: #969aa0;
+}
+
+.text_printedBook {
+    font-size: 24px;
+    color: #1b3764;
+    font-family: "Cardo", serif;
+}
+.text_printedBook span {
+    color: #ffca42;
+}
