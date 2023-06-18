@@ -28,10 +28,16 @@
 }
 
 .text_printedBook {
+    position: relative;
     font-size: 24px;
     color: #1b3764;
     font-family: "Cardo", serif;
+    padding: 0 0 0 25px;
 }
 .text_printedBook span {
     color: #ffca42;
+    font-size: 80px;
+    position: absolute;
+    top: -35px;
+    left: 0px;
 }

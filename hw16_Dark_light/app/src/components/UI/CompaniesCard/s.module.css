@@ -1,0 +1,18 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+}
+.card img{
+    object-fit: none;
+}
+.title {
+    font-family: "Cardo", serif;
+    color: #1b3764;
+    font-size: 24px;
+}
+.description {
+    color: #969aa0;
+    font-size: 19px;
+}

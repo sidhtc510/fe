@@ -5,6 +5,7 @@ import BookForSale from "../../UI/BookForSale";
 import img1 from "./images/1.png";
 import img2 from "./images/2.png";
 import img_person from "./images/person.png";
+import img_qr from "./images/qr.png";
 import MainWrapper from "../../UI/MainWrapper";
 
 export default function AuthorPage() {
@@ -34,7 +35,7 @@ export default function AuthorPage() {
                     <div className={s.img_wrap}>
                         <img src={img_person} alt="" />
                     </div>
-                    <div>
+                    <div className={s.info_block}>
                         <TitleOfPage className={s.span_line_to_left}>
                             About the Author
                         </TitleOfPage>
@@ -58,6 +59,15 @@ export default function AuthorPage() {
                                 <p>04</p>
                                 <span>Best Seller Awards</span>
                             </p>
+                        </div>
+
+                        <div className={s.qr_block}>
+                            <img src={img_qr} alt="" />
+                            <div>
+                                <p className={s.qr_name}>John Abraham , Ph.d</p>
+                                <p>Mail: johnabraham@gmail.com</p>
+                                <p>Phone: (+2) 123 545 9000</p>
+                            </div>
                         </div>
                     </div>
                 </div>
