@@ -1,0 +1,47 @@
+.WhatWillYouLearn_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 0 100px 0;
+}
+
+.articlesResources{
+    padding: 0 0 100px 0;
+}
+.fourBlocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+}
+
+.fourBlocks div {
+    background-color: #f4f8ff;
+    padding: 30px;
+}
+
+.fourBlocks div span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: #1b3764;
+    background-color: #ffca42;
+    font-family: "Cardo", serif;
+    font-size: 23px;
+}
+.fourBlocks div p {
+    font-family: "Cardo", serif;
+    color: #1b3764;
+    font-size: 24px;
+}
+
+/* persons*/
+
+.persons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

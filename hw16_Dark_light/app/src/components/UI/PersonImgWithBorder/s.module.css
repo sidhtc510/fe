@@ -1,0 +1,21 @@
+
+.img_wrap img {
+    position: inherit;
+    z-index: 2;
+}
+.img_wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.img_wrap::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 55px;
+    width: calc(100% - 200px);
+    min-width: 475px;
+    height: 590px;
+    border: 15px solid #ffca42;
+    z-index: 1;
+}

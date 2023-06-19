@@ -1,0 +1,28 @@
+.personCard {
+    background-color: #fff;
+}
+
+.personCard img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.title {
+    color: #1b3764;
+    font-size: 24px;
+    padding: 25px 30px;
+    font-family: "Cardo", serif;
+}
+
+.description {
+    font-size: 19px;
+    color: #969aa0;
+    padding: 25px 30px;
+}
+
+.date {
+    color: #1b3764;
+    font-size: 16px;
+    text-align: right;
+    padding: 25px 30px;
+}

@@ -19,7 +19,7 @@
     grid-template-columns: 1fr 1fr;
     margin: 100px 0;
 }
-
+/* 
 .img_wrap img {
     position: inherit;
     z-index: 2;
@@ -38,7 +38,7 @@
     height: 590px;
     border: 15px solid #ffca42;
     z-index: 1;
-}
+} */
 
 .span_line_to_left {
     text-align: left;

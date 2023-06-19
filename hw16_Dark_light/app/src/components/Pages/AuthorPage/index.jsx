@@ -7,12 +7,12 @@ import img2 from "./images/2.png";
 import img_person from "./images/person.png";
 import img_qr from "./images/qr.png";
 import MainWrapper from "../../UI/MainWrapper";
+import PersonImgWithBorder from "../../UI/PersonImgWithBorder";
 
 export default function AuthorPage() {
     return (
         <>
             <MainWrapper color_main="white">
-                {/* <div className={s.author_page_wrapper}> */}
                 <TitleOfPage>The Author’s Book</TitleOfPage>
 
                 <div className={s.items_container}>
@@ -32,9 +32,10 @@ export default function AuthorPage() {
 
             <MainWrapper color_main="#F5F8FC">
                 <div className={s.about_block_wrapper}>
-                    <div className={s.img_wrap}>
+                    {/* <div className={s.img_wrap}>
                         <img src={img_person} alt="" />
-                    </div>
+                    </div> */}
+                    <PersonImgWithBorder img={img_person} />
                     <div className={s.info_block}>
                         <TitleOfPage className={s.span_line_to_left}>
                             About the Author
@@ -72,6 +73,8 @@ export default function AuthorPage() {
                     </div>
                 </div>
             </MainWrapper>
+
+
         </>
     );
 }
