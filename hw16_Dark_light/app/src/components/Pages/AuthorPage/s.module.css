@@ -94,3 +94,12 @@
     font-family: "Cardo", serif;
     font-size: 22px;
 }
+
+@media only screen and (max-width: 1200px) {
+    .items_container {
+        flex-direction: column;
+    }
+    .about_block_wrapper {
+        grid-template-columns: 1fr;
+    }
+}

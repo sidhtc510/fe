@@ -1,4 +1,3 @@
-import s from "./s.module.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import MainPage from "../Pages/MainPage";
@@ -9,18 +8,16 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        <div className={s.mainContainer}>
+        <>
             <Header />
-
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/author" element={<AuthorPage />} />
                 <Route path="/companies" element={<CompaniesPage />} />
                 <Route path="/articles" element={<ArticlesPage />} />
             </Routes>
-
             <Footer />
-        </div>
+        </>
     );
 }
 

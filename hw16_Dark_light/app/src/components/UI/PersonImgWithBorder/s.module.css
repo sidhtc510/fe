@@ -15,6 +15,7 @@
     left: 55px;
     width: calc(100% - 200px);
     min-width: 475px;
+    max-width: 500px;
     height: 590px;
     border: 15px solid #ffca42;
     z-index: 1;

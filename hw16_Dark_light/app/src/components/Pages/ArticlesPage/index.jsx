@@ -45,7 +45,7 @@ export default function ArticlesPage() {
                             </p>
                         </div>
                     </div>
-                    <PersonImgWithBorder img={img_person} />
+                    <PersonImgWithBorder img={img_person} className={s.personImgWithBorder} />
                 </div>
             </MainWrapper>
 

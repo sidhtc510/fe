@@ -7,9 +7,6 @@ import MainWrapper from "../../UI/MainWrapper";
 export default function MainPage() {
     return (
         <MainWrapper className={s.main_container_wrapper}>
-
-        {/* <div className={s.main_container_wrapper}> */}
-
             <div className={s.info_block}>
                 <p className={s.text_welcome_page}>
                     <span></span>Welcome to Pages!!!
@@ -49,7 +46,6 @@ export default function MainPage() {
             <div className={s.image_block}>
                 <img src={rightImage} alt="" />
             </div>
-            {/* </div> */}
         </MainWrapper>
     );
 }

@@ -26,3 +26,10 @@
     text-align: right;
     padding: 25px 30px;
 }
+
+@media only screen and (max-width: 1200px) {
+    .personCard img {
+        object-fit: cover;
+        height: 400px;
+    }
+}

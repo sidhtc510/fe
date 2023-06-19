@@ -1,4 +1,4 @@
-.trustedBlock{
+.trustedBlock {
     padding: 20px 0 130px 0;
 }
 
@@ -31,4 +31,14 @@
     font-size: 19px;
     color: #b4c7e7;
     padding: 30px 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .tea_block {
+        grid-template-columns: 1fr;
+    }
 }

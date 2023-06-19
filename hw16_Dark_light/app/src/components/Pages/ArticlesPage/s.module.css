@@ -4,7 +4,7 @@
     padding: 0 0 100px 0;
 }
 
-.articlesResources{
+.articlesResources {
     padding: 0 0 100px 0;
 }
 .fourBlocks {
@@ -37,11 +37,25 @@
     color: #1b3764;
     font-size: 24px;
 }
-
+.personImgWithBorder{
+object-fit: contain;
+}
 /* persons*/
 
 .persons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .WhatWillYouLearn_wrapper {
+        grid-template-columns: 1fr;
+    }
+    .personImgWithBorder{
+        display: none;
+    }
+    .persons {
+        grid-template-columns: 1fr;
+    }
 }

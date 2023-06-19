@@ -1,5 +1,5 @@
-import React from "react";
-import { BsLinkedin, BsTwitter, BsFacebook } from "react-icons/bs";
+import React, { useState } from "react";
+import { BsLinkedin, BsTwitter, BsFacebook, BsList } from "react-icons/bs";
 import logo from "./images/logo.png";
 import s from "./s.module.css";
 import Button from "../UI/Button";
@@ -7,9 +7,14 @@ import { NavLink } from "react-router-dom";
 import MainWrapper from "../UI/MainWrapper";
 
 export default function Header() {
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
+    console.log(menuIsOpen);
+
+    const styles = {
+        display: "flex",
+    };
+
     return (
-        // <header className={s.header_wrapper}>
-        //     <div className={s.flex_wrap}>
         <MainWrapper className={s.header_wrapper}>
             <div className={s.logo_wrapper}>
                 <p className={s.logo}>
@@ -25,6 +30,10 @@ export default function Header() {
                 <p className={s.icons}>
                     <BsLinkedin />
                 </p>
+            </div>
+
+            <div className={s.buttonMenu} onClick={() => setMenuIsOpen(true)}>
+                <BsList />
             </div>
 
             <nav className={s.nav}>
@@ -44,6 +53,8 @@ export default function Header() {
                 </ul>
                 <Button> Order Today </Button>
             </nav>
+
+            
         </MainWrapper>
         //     </div>
         // </header>
