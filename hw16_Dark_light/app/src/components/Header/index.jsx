@@ -8,11 +8,15 @@ import MainWrapper from "../UI/MainWrapper";
 
 export default function Header() {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
-    console.log(menuIsOpen);
 
-    const styles = {
-        display: "flex",
-    };
+    let style_menu;
+    if (!menuIsOpen) {
+        style_menu = s.nav_mobile_wrapper;
+    } else {
+        style_menu = [s.nav_mobile_wrapperACTIVE, s.nav_mobile_wrapper].join(
+            " "
+        );
+    }
 
     return (
         <MainWrapper className={s.header_wrapper}>
@@ -36,25 +40,31 @@ export default function Header() {
                 <BsList />
             </div>
 
-            <nav className={s.nav}>
-                <ul>
-                    <li>
-                        <NavLink to="/">Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/author">Author</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/companies">Companies</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/articles">Articles</NavLink>
-                    </li>
-                </ul>
-                <Button> Order Today </Button>
-            </nav>
-
-            
+            <div className={style_menu}>
+                <nav className={s.nav}>
+                    <p
+                        className={s.close_modal}
+                        onClick={() => setMenuIsOpen(false)}
+                    >
+                        X
+                    </p>
+                    <ul>
+                        <li>
+                            <NavLink to="/" onClick={() => setMenuIsOpen(false)}>Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/author" onClick={() => setMenuIsOpen(false)}>Author</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/companies" onClick={() => setMenuIsOpen(false)}>Companies</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/articles" onClick={() => setMenuIsOpen(false)}>Articles</NavLink>
+                        </li>
+                    </ul>
+                    <Button> Order Today </Button>
+                </nav>
+            </div>
         </MainWrapper>
         //     </div>
         // </header>

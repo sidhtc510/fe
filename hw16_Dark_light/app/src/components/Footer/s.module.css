@@ -47,7 +47,7 @@
 .exploreBlock h3,
 .utilityBlock h3,
 .KeepInTouchBlock h3 {
-    font-family: 'Cardo', serif; 
+    font-family: "Cardo", serif;
     font-size: 24px;
     margin-bottom: 24px;
     font-weight: 400;
@@ -81,5 +81,14 @@
     font-weight: bold;
     color: white;
     font-weight: 400;
-    font-family: 'Cardo', serif; 
+    font-family: "Cardo", serif;
+}
+
+@media only screen and (max-width: 1200px) {
+    .footer {
+        flex-direction: column;
+    }
+    .KeepInTouchBlock p {
+        grid-template-columns: 1fr;
+    }
 }
