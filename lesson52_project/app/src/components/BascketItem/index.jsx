@@ -1,10 +1,5 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-// import {
-//       DECREMENTBascketAction,
-//       INCREMENTBascketAction,
-//       deleteItemBascketAction,
-// } from "../../store/reducers/bascketReducer";
 import s from "./style.module.css";
 import { decrAction, deleteAction, incrAction } from "../../store/slice/bascketSlice";
 export default function BascketItem({ id, title, image, price, count }) {

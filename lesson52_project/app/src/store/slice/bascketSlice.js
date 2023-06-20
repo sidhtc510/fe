@@ -51,10 +51,14 @@ export const bascketSlice = createSlice({
             state.list = state.list.filter((el) => el.id !== action.payload);
             write(state.list);
         },
+        clearBascketAction(state) {
+            state.list = []
+            write( state.list);
+        },
     },
 });
 
-export const { addAction, incrAction, decrAction, deleteAction } =
+export const { addAction, incrAction, decrAction, deleteAction, clearBascketAction } =
     bascketSlice.actions;
 
 export default bascketSlice.reducer;
