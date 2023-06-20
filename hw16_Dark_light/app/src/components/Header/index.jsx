@@ -9,14 +9,9 @@ import MainWrapper from "../UI/MainWrapper";
 export default function Header() {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-    let style_menu;
-    if (!menuIsOpen) {
-        style_menu = s.nav_mobile_wrapper;
-    } else {
-        style_menu = [s.nav_mobile_wrapperACTIVE, s.nav_mobile_wrapper].join(
-            " "
-        );
-    }
+    const style_menu = menuIsOpen
+    ? `${s.nav_mobile_wrapperACTIVE} ${s.nav_mobile_wrapper}`
+    : s.nav_mobile_wrapper;
 
     return (
         <MainWrapper className={s.header_wrapper}>
