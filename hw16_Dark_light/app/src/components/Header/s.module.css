@@ -120,13 +120,14 @@
         height: 100vh;
         z-index: 5;
         backdrop-filter: blur(8px);
+        position: fixed;
     }
     .close_modal {
         display: flex !important;
         width: fit-content;
         justify-self: right;
         border-radius: 50% !important;
-        padding: 20px !important;
+        padding: 17px !important;
     }
     .nav {
         display: grid;

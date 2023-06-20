@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsLinkedin, BsTwitter, BsFacebook, BsList } from "react-icons/bs";
+import { BsLinkedin, BsTwitter, BsFacebook, BsList, BsXLg } from "react-icons/bs";
 import logo from "./images/logo.png";
 import s from "./s.module.css";
 import Button from "../UI/Button";
@@ -41,7 +41,7 @@ export default function Header() {
                         className={s.close_modal}
                         onClick={() => setMenuIsOpen(false)}
                     >
-                        X
+                        <BsXLg />
                     </p>
                     <ul>
                         <li>

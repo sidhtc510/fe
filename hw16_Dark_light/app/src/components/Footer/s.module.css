@@ -86,7 +86,15 @@
 
 @media only screen and (max-width: 1200px) {
     .footer {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    .logo_wrapper {
+        grid-area: 1/1/2/4;
+    }
+    .KeepInTouchBlock {
+        grid-area: 3/1/4/4;
     }
     .KeepInTouchBlock p {
         grid-template-columns: 1fr;
