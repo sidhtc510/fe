@@ -1,0 +1,21 @@
+.aboutMe {
+    background-color: #f6f6f6;
+    padding: 100px 0;
+}
+.wrap {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 20px;
+    flex-direction: column;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+h2 {
+    font-size: 34px;
+}
+
+.aboutMe p {
+    margin-bottom: 20px;
+}
