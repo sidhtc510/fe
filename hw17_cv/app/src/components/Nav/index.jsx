@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Wrapper from "../Wrapper";
 import s from "./s.module.css";
+import menuIcon from "./menu_icon.png";
+import closeBtn from "./close_btn.png";
+
 export default function Nav() {
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+    const style_menu = menuIsOpen
+        ? `${s.nav_wrapper_ACTIVE} ${s.nav_wrapper}`
+        : s.nav_wrapper;
+
+    const buttonIcon = menuIsOpen ? <img src={closeBtn} alt="" /> : <img src={menuIcon} alt="" />;
     return (
         <Wrapper>
-            <nav className={s.nav}>
-                <a href="#">Home</a>
-                <a href="#">About me</a>
-                <a href="#">Skills</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Contacts</a>
-            </nav>
+            <div className={s.buttonMenu} onClick={() => setMenuIsOpen(!menuIsOpen)}>
+                {buttonIcon}
+            </div>
+
+            <div className={style_menu}>
+                <nav className={s.nav}>
+                    <a href="#">Home</a>
+                    <a href="#">About me</a>
+                    <a href="#">Skills</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Contacts</a>
+                </nav>
+            </div>
         </Wrapper>
     );
 }
