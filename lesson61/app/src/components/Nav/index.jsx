@@ -7,7 +7,6 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Nav() {
     return (
-        // <nav className={s.nav_wrapper}>
         <Container className={s.nav_wrapper}>
             <div className={s.logo_menu_wrapper}>
                 <a href="#" className={s.logo}>
@@ -27,10 +26,8 @@ export default function Nav() {
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </p>
                 </div>
-                <Button component={"button"}> Sign In</Button>
-                {/* <button>Sign In</button> */}
+                <Button component={"a"} type={'secondary'}> Sign In</Button>
             </div>
         </Container>
-        // </nav>
     );
 }

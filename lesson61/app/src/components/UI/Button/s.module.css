@@ -1,10 +1,4 @@
 .button {
-    background: linear-gradient(
-        85.76deg,
-        rgba(191, 196, 238, 0.0945738) -105.02%,
-        #c367e6 10.94%,
-        rgba(190, 206, 239, 0) 121.57%
-    );
     border-radius: 5px;
     padding: 10px 30px;
     border: none;
@@ -12,4 +6,27 @@
     text-decoration: none;
     text-align: center;
     cursor: pointer;
+}
+
+.general {
+    background: linear-gradient(
+        85.76deg,
+        rgba(191, 196, 238, 0.0945738) -105.02%,
+        #c367e6 10.94%,
+        rgba(190, 206, 239, 0) 121.57%
+    );
+}
+
+.secondary {
+    background: transparent;
+    border: 2px solid white;
+}
+
+.third {
+    background: #30384d;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.third:hover {
+    background: #3d2a3d;
 }

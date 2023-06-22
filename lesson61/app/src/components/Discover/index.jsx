@@ -14,8 +14,7 @@ export default function Discover() {
                             Digital marketplace for crypto collections and
                             non-fungible tokens (NFTs)
                         </p>
-                        <Button className={s.btn} component={"a"}> Discover Now </Button>
-                        {/* <button>Discover Now</button> */}
+                        <Button className={s.btn} component={"a"} type={'general'}> Discover Now </Button>
                     </div>
 
                     <div className={s.achievements}>

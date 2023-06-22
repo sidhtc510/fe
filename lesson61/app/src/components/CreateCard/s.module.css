@@ -1,0 +1,18 @@
+.card{
+    background: #30384D;
+    padding: 50px;
+    border-radius: 4px;
+    display: grid;
+    gap: 15px;
+    justify-items: center;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.card h3{
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+.card p{
+    font-size: 10px;
+    letter-spacing: 1px;
+}

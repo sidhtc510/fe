@@ -1,0 +1,10 @@
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.mrc{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}

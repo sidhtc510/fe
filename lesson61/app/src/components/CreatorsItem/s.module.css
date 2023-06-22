@@ -1,0 +1,20 @@
+.item {
+    background: #30384d;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.namePrice {
+    justify-self: start;
+    font-size: 8px;
+    text-align: left;
+    line-height: 15px;
+}
+.item svg {
+    justify-self: end;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,19 @@
+.card {
+    padding: 20px;
+    background: #30384d;
+    border-radius: 4px;
+}
+
+.authorInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    font-size: 10px;
+    font-family: "Space Grotesk", sans-serif;
+    padding: 10px;
+}
+
+.avatar {
+    grid-area: 1/2/1/2;
+    justify-self: end;
+}

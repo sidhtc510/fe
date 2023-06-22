@@ -1,0 +1,14 @@
+section{
+    width: 100%;
+
+}
+
+.container{
+    text-align: center;
+}
+
+.container h1{
+    font-size: 36px;
+    font-family: "Space Grotesk", sans-serif;
+    padding: 20px 0 0 0;
+}
