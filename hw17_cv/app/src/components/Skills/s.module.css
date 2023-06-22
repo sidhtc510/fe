@@ -1,0 +1,37 @@
+.skillsWrapper {
+    text-align: center;
+    padding: 100px 0;
+}
+.skillsWrapper h2 {
+    font-size: 34px;
+    color: #070707;
+    padding-bottom: 50px;
+}
+.skillsWrapper p {
+    font-size: 18px;
+    color: #070707;
+    padding-bottom: 50px;
+}
+
+.technologies {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.tech {
+}
+.tech> img{
+    height: 88px;
+}
+.tech p {
+    color: #828282;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .technologies {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+  }

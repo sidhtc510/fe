@@ -1,17 +1,17 @@
 import AboutMe from "../AboutMe";
+import Contacts from "../Contacts";
 import Home from "../Home";
 import Nav from "../Nav";
-import Wrapper from "../Wrapper";
-
+import Skills from "../Skills";
 
 function App() {
     return (
         <div>
-            <Wrapper>
-                <Nav />
-                <Home />
-                <AboutMe />
-            </Wrapper>
+            <Nav />
+            <Home />
+            <AboutMe />
+            <Skills />
+            <Contacts />
         </div>
     );
 }
