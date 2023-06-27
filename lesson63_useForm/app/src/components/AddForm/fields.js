@@ -17,8 +17,6 @@ export const fields = [
 
     {
         id: 2,
-        errors,
-        register,
         name: "lastName",
         constraints: {
             required: "required field",
@@ -26,58 +24,36 @@ export const fields = [
     },
 
     {
-        id:3,
-        errors,
-        register,
+        id: 3,
         name: "age",
         constraints: {
             min: { value: 1, message: "more than 1 year" },
             max: { value: 140, message: "less than 140 year" },
-            validate: ageValidate,
+            validate: (value) =>
+                "" + value.split("0").length - 1 < 2 || "double zero error",
         },
+    },
 
-    }
+    {
+        id: 4,
+        name: "email",
+        constraints: {
+            required: "field required",
+            pattern: {
+                value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
+                message: "enter valid e-mail",
+            },
+        },
+    },
+    {
+        id: 5,
+        name: "phone",
+        constraints: {
+            required: "field required",
+            pattern: {
+                value: /^(?:\+?38)?(?:[-()\s]*\d){10}$/,
+                message: "enter valid phone",
+            },
+        },
+    },
 ];
-
-{
-    /*
-
-                <Field
-                    {...{
-                        errors,
-                        register,
-                        name: "lastName",
-                        constraints: {
-                            required: "required field",
-                        },
-                    }}
-                />
-
-                <Field
-                    {...{
-                        errors,
-                        register,
-                        name: "age",
-                        constraints: {
-                            min: { value: 1, message: "more than 1 year" },
-                            max: { value: 140, message: "less than 140 year" },
-                            // validate: ageValidate,
-                        },
-                    }}
-                />
-
-                <Field
-                    {...{
-                        errors,
-                        register,
-                        name: "email",
-                        constraints: {
-                            required: "field required",
-                            pattern: {
-                                // value: emailRegExp,
-                                // message: "enter valid e-mail",
-                            },
-                        },
-                    }}
-                /> */
-}
