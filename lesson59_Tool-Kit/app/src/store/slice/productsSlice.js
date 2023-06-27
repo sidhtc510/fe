@@ -23,6 +23,7 @@ export const productsSlice = createSlice({
                 state.list = payload.products.map((el) => ({
                     ...el,
                 }));
+                // console.log(state);
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";

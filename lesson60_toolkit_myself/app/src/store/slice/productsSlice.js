@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    status: 'start',
-    products : []
+    status: "start",
+    products: [],
 };
 
 // const write = (data) => {
@@ -13,23 +13,25 @@ const initialState = {
 //     return JSON.parse(localStorage.getItem("testKey")) ?? initialState
 // }
 
+export const fetchProducts = createAsyncThunk(
+    "products/fetchProducts",
+    async () => {
+        const resp = await fetch("https://fakestoreapi.com/products");
+        let data = await resp.json();
 
-export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
-    const resp = await fetch("https://fakestoreapi.com/products");
-    let data = await resp.json();
+        data = data.slice(0, 10);
 
-    data = data.slice(0, 10);
-
-    return data;
-});
+        return data;
+    }
+);
 
 export const productsSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
         incrementAction(state, action) {
-            state.products.find((el) => el.id === action.payload).price++;
-            
+            // state.products.find((el) => el.id === action.payload).price++;
+            console.log(state.products);
         },
     },
     extraReducers: (builder) => {
@@ -39,7 +41,8 @@ export const productsSlice = createSlice({
             })
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.status = "ready";
-                state.products = action.payload.map((el) => ({...el}));
+                state.products = action.payload
+                // console.log(action.payload);
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";

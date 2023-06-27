@@ -10,7 +10,7 @@ export default function AddUser() {
         let data = new FormData(e.target);
         let obj = Object.fromEntries(data);
         obj.age = Number(obj.age);
-        dispatch(add(obj))
+        dispatch(add(obj));
     };
 
     return (

@@ -1,0 +1,22 @@
+.nav {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 20px 0;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.button {
+    background-color: #018abe;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    align-self: center;
+    border-radius: 3px;
+}

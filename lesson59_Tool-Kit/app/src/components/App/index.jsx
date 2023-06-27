@@ -11,10 +11,7 @@ import { fetchProducts } from "../../store/slice/productsSlice";
 
 function App() {
     const dispatch = useDispatch();
-    const products = useSelector(state => state.products.list)
-
-// console.log(products);
-
+    const products = useSelector((state) => state.products.list);
 
     useEffect(() => {
         dispatch(fetchToDo());
