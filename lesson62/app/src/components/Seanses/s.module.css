@@ -1,0 +1,54 @@
+h2 {
+    text-align: center;
+    margin: 150px 0 100px 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0 0 0 35px;
+}
+
+.list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+.list ul li {
+    padding: 0 20px;
+    list-style-image: url("./rec.png"); /* Путь к изображению маркера */
+}
+
+.list ul li div {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 150px);
+    gap: 10px;
+}
+
+.img_wr p {
+    text-align: center;
+    padding: 20px;
+    font-size: 21px;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .img_wr {
+        display: none;
+    }
+    .list ul li div {
+        grid-template-columns: 1fr auto;
+    }
+}

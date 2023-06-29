@@ -1,0 +1,34 @@
+h1 {
+    text-align: center;
+    margin: 150px 0 100px 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(416px, 1fr));
+    gap: 20px;
+}
+.wrapper div {
+    background: url("./u.png");
+    min-height: 250px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    position: relative;
+    border-radius: 12px;
+}
+.wrapper div p {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    font-size: 24px;
+}
+.firstBlock {
+    grid-area: 1/1/3/1;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}

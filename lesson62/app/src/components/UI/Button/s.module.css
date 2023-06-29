@@ -1,0 +1,21 @@
+.button {
+    border: none;
+    padding: 10px 15px;
+    width: fit-content;
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.light {
+    background: white;
+    color: #018abe;
+    border-radius: 4px;
+    align-self: start;
+}
+
+.dark {
+    background-color: #018abe;
+    color: white;
+    align-self: center;
+}

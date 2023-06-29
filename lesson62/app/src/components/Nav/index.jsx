@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.png";
 import s from "./s.module.css";
 import Container from "../UI/Container";
+import Button from "../UI/Button";
 export default function Nav() {
     return (
         <nav>
@@ -18,7 +19,9 @@ export default function Nav() {
                     <p className={s.menu_item}>Blog</p>
                 </div>
 
-                <button className={s.button}>Записаться на сеанс</button>
+                {/* <button className={s.button}>Записаться на сеанс</button>
+                 */}
+                <Button type={"dark"}>Записаться на сеанс</Button>
             </Container>
         </nav>
     );

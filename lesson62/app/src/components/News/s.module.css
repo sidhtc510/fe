@@ -1,0 +1,10 @@
+h2 {
+    text-align: center;
+    margin: 150px 0 100px 0;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-auto-rows: 260px;
+    gap: 20px;
+}

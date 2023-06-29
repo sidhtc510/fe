@@ -12,11 +12,18 @@
     margin: 0 auto;
 }
 
-.button {
+/* .button {
     background-color: #018abe;
     color: white;
     border: none;
     padding: 10px 15px;
     align-self: center;
     border-radius: 3px;
+} */
+
+@media (max-width: 1024px) {
+    .menu,
+    .button {
+        display: none;
+    }
 }
