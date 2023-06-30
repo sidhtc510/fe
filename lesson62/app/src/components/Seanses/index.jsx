@@ -2,8 +2,10 @@ import React from "react";
 import s from "./s.module.css";
 import Container from "../UI/Container";
 import certificate from "./certificate.png";
+import { useSelector } from "react-redux";
 
 export default function Seanses() {
+    const seanses = useSelector((state) => state.seanses.list);
     return (
         <div>
             <Container>
@@ -11,36 +13,14 @@ export default function Seanses() {
                 <div className={s.wrapper}>
                     <div className={s.list}>
                         <ul>
-                            <li>
-                                <div>
-                                    <p>RitmStyle с погружением</p>
-                                    <p>1000р.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <p>Абонемент на RitmStyle</p>
-                                    <p>5500р.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <p>RitmStyle для пар</p>
-                                    <p>6000р.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <p>RitmStyle для беременных</p>
-                                    <p>13500р.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <p>RitmStyle + фотосессия</p>
-                                    <p>11500р.</p>
-                                </div>
-                            </li>
+                            {seanses.map((el) => (
+                                <li>
+                                    <div>
+                                        <p>{el.title}</p>
+                                        <p>{el.price}</p>
+                                    </div>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <div className={s.img_wr}>
