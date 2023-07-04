@@ -6,7 +6,7 @@ import Wrapper from "../Wrapper";
 export default function Home() {
     return (
         <Wrapper>
-            <div className={s.home}>
+            <div className={s.home} id="home">
                 <div className={s.info}>
                     <p className={s.name}>
                         Inants

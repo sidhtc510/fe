@@ -11,7 +11,7 @@ import Wrapper from "../Wrapper";
 export default function Skills() {
     return (
         <Wrapper>
-            <div className={s.skillsWrapper}>
+            <div className={s.skillsWrapper} id="skills">
                 <h2>Skills</h2>
                 <p>I work in such technologies as</p>
                 <div className={s.technologies}>

@@ -4,7 +4,7 @@ import Wrapper from "../Wrapper";
 
 export default function AboutMe() {
     return (
-        <div className={s.aboutMe}>
+        <div className={s.aboutMe} id="AboutMe">
             <Wrapper>
                 <div className={s.wrap}>
                     <h2>About Me</h2>

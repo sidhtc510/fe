@@ -20,11 +20,11 @@ export default function Nav() {
 
             <div className={style_menu}>
                 <nav className={s.nav}>
-                    <a href="#">Home</a>
-                    <a href="#">About me</a>
-                    <a href="#">Skills</a>
-                    <a href="#">Portfolio</a>
-                    <a href="#">Contacts</a>
+                    <a href="#home">Home</a>
+                    <a href="#AboutMe">About me</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contacts">Contacts</a>
                 </nav>
             </div>
         </Wrapper>

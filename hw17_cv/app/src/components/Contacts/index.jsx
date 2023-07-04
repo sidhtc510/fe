@@ -8,7 +8,7 @@ import i4 from "./images/4.png";
 
 export default function Contacts() {
     return (
-        <div className={s.contacts}>
+        <div className={s.contacts} id="contacts">
             <Wrapper>
                 <h2>Contacts</h2>
                 <p>
