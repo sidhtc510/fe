@@ -1,0 +1,29 @@
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.nav div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.nav div:nth-child(1) img {
+    width: 72px;
+}
+
+.nav div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    justify-content: flex-end;
+}
+
+.nav div:nth-child(2) .links a {
+    color: black;
+    text-decoration: none;
+}
+.nav div:nth-child(2) svg {
+    font-size: 30px;
+}

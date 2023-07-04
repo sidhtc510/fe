@@ -1,0 +1,26 @@
+.btn {
+    border-radius: 21px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.addToCart {
+    border: 2px solid #393;
+    background: #f1fff1;
+    color: #393;
+    width: 90%;
+    margin: 0 auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.HeaderMenuButton {
+    background: #393;
+    border-radius: 5px;
+}
+.HeaderMenuButton a {
+    text-decoration: none;
+    color: #f1fff1;
+}

@@ -1,0 +1,52 @@
+.productWrapper {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.productWrapper button{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.productWrapper:hover button{
+   visibility: visible;
+   opacity: 1;
+}
+
+.productWrapper img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.priceBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: 600;
+}
+.oldPrice {
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #8b8b8b;
+}
+.price span,
+.oldPrice span {
+    font-size: 0.6em;
+}
+.sale {
+    font-size: 20px;
+    color: #ff32a1;
+}
+
+.title {
+    color: #3a3a3a;
+    font-size: 16px;
+    padding-top: 10px;
+}
