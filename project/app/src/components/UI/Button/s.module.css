@@ -19,6 +19,7 @@
 .HeaderMenuButton {
     background: #393;
     border-radius: 5px;
+    color: #f1fff1;
 }
 .HeaderMenuButton a {
     text-decoration: none;

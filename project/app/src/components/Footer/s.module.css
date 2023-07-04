@@ -1,0 +1,67 @@
+.contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contact > p:nth-child(1) {
+    font-size: 40px;
+    font-weight: 700;
+}
+.contact > p:nth-child(2) {
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.contact span {
+    display: flex;
+    gap: 20px;
+}
+
+.contact span p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact span p svg {
+    font-size: 50px;
+}
+
+.address {
+}
+
+.address p:nth-child(1) {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 50px;
+}
+.address p:nth-child(2) {
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: underline;
+    padding-bottom: 50px;
+}
+.address p:nth-child(3) {
+    font-size: 18px;
+    font-weight: 500;
+}
+.address p:nth-child(4) {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.map {
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+.map iframe {
+    width: 100%;
+    border: none;
+    height: 500px;
+}

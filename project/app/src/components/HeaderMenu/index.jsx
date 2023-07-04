@@ -12,9 +12,10 @@ export default function HeaderMenu() {
             <nav className={s.nav}>
                 <div>
                     <img src={logo} alt="" />
-                    <Button className="HeaderMenuButton">
-                        <Link to="/catalog">Catalog</Link>
-                    </Button>
+                    <Link to="/categories">
+                        {" "}
+                        <Button className="HeaderMenuButton">Categories</Button>
+                    </Link>
                 </div>
                 <div>
                     <div className={s.links}>
@@ -22,7 +23,9 @@ export default function HeaderMenu() {
                         <Link to="/products">All products</Link>
                         <Link to="/sales">All Sale</Link>
                     </div>
-                    <HiOutlineShoppingBag />
+                    <Link to="/cart">
+                        <HiOutlineShoppingBag />
+                    </Link>
                 </div>
             </nav>
         </Wrapper>

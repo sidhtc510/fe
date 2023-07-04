@@ -1,10 +1,11 @@
 import React from "react";
 import Wrapper from "../../components/UI/Wrapper";
+import PageTitle from "../../components/UI/PageTitle";
 
-export default function MainPage() {
+export default function AllSales() {
     return (
         <Wrapper>
-            <p>Main page</p>
+            <PageTitle>All Sales</PageTitle>
         </Wrapper>
     );
 }
