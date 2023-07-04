@@ -1,0 +1,9 @@
+{
+    "data": [
+        {"id": 1, "title": "Стандартный RitmStyle", "image": "http://127.0.0.1:5500/server/services_data/media/u.png"},
+        {"id": 2, "title": "RitmStyle для пар", "image": "http://127.0.0.1:5500/server/services_data/media/u.png"},
+        {"id": 3, "title": "RitmStyle с полным погружением под воду", "image": "http://127.0.0.1:5500/server/services_data/media/u.png"},
+        {"id": 4, "title": "RitmStyle для беременных", "image": "http://127.0.0.1:5500/server/services_data/media/u.png"},
+        {"id": 5, "title": "RitmStyle + красочная подводная фотосессия", "image": "http://127.0.0.1:5500/server/services_data/media/u.png"}
+    ]
+}

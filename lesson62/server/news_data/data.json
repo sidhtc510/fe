@@ -1,0 +1,43 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Новый формат сеансов",
+            "img": "http://127.0.0.1:5500/server/news_data/media/uns.png",
+            "date": "13.02.2022"
+        },
+        {
+            "id": 2,
+            "title": "RitmStyle для пар",
+            "img": "http://127.0.0.1:5500/server/news_data/media/uns.png",
+            "date": "13.02.2022"
+        },
+        {
+            "id": 3,
+            "title": "RitmStyle с полным погружением под воду",
+            "img": "http://127.0.0.1:5500/server/news_data/media/uns.png",
+            "date": "13.02.2022"
+        },
+        {
+            "id": 4,
+            "title": "RitmStyle для беременных",
+            "img": "http://127.0.0.1:5500/server/news_data/media/uns.png",
+            "date": "13.02.2022"
+        },
+        {
+            "id": 5,
+            "title": "RitmStyle + красочная подводная фотосессия",
+            "img": "http://127.0.0.1:5500/server/news_data/media/uns.png",
+            "date": "13.02.2022"
+        },
+        {
+            "id": 6,
+            "title": "RitmStyle + красочная подводная фотосессия",
+            "img": "http://127.0.0.1:5500/server/news_data/media/uns.png",
+            "date": "13.02.2022"
+        }
+    ]
+}
+
+
+

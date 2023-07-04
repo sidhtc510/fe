@@ -1,0 +1,9 @@
+{
+    "data": [
+        {"id": 1, "title": "RitmStyle с погружением", "price": "1500uah"},
+        {"id": 2, "title": "Абонемент на RitmStyle", "price": "5000uah"},
+        {"id": 3, "title": "RitmStyle для пар", "price": "6000uah"},
+        {"id": 4, "title": "RitmStyle для беременных", "price": "13500uah"},
+        {"id": 5, "title": "RitmStyle + фотосессия", "price": "11500uah"}
+    ]
+}

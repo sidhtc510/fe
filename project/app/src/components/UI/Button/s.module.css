@@ -25,3 +25,10 @@
     text-decoration: none;
     color: #f1fff1;
 }
+
+.BannerSale {
+    background: #f1fff1;
+    color: black;
+    padding: 25px 50px;
+    border-radius: 13px;
+}

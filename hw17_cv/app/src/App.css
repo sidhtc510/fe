@@ -1,16 +1,11 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 body {
-  font-family: 'Abel', sans-serif;
-    /* background-color: rgb(58, 58, 58); */
-    /* color: rgb(182, 182, 174); */
-    /* font-family: Nunito, sans-serif; */
-    /* font-family: Roboto, sans-serif; */
-
-  }
+    font-family: "Abel", sans-serif;
+}

@@ -1,0 +1,23 @@
+.wrapper {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    color: white;
+}
+
+.wrapper .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px;
+}
+.wrapper .info h2 {
+    font-weight: 700;
+    font-size: 80px;
+}
+
+.wrapper .info h3 {
+    font-weight: 700;
+    font-size: 63px;
+}
