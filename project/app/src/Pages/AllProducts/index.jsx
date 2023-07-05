@@ -17,7 +17,9 @@ export default function AllProducts() {
     return (
         <Wrapper>
             <PageTitle>All Products</PageTitle>
-            <ProductsContainer products={products} />
+            {products.status !== "ready" ? "LOADING..." : (
+                <ProductsContainer products={products} />
+                )}
         </Wrapper>
     );
 }
