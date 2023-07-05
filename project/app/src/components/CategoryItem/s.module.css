@@ -1,6 +1,8 @@
 .catWrap {
+    width: 100%;
 }
 .catWrap img {
     width: 100%;
     object-fit: contain;
+    height: auto;
 }
