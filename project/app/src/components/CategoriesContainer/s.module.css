@@ -3,4 +3,10 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     row-gap: 40px;
     column-gap: 20px;
+    align-items: end;
+    text-align: center;
+}
+.wrapper a{
+    text-decoration: none;
+    color: black;
 }

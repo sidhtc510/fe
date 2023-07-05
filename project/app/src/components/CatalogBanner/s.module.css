@@ -1,0 +1,11 @@
+.titleButton {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.titleButton p {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}

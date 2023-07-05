@@ -32,3 +32,10 @@
     padding: 25px 50px;
     border-radius: 13px;
 }
+
+.transp {
+    color: #8b8b8b;
+    background-color: transparent;
+    border: 3px solid #8b8b8b;
+    border-radius: 0;
+}

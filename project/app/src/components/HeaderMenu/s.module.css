@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding-bottom: 40px;
 }
 
 .nav div:nth-child(1) {

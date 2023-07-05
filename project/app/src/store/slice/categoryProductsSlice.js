@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-        "category": {
+        category: {
         },
-        "list": [
+        list: [
         ],
-        "status":""
+        status:""
 };
 
 export const fetchCategoryProducts = createAsyncThunk(

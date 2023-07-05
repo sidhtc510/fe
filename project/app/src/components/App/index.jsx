@@ -1,14 +1,14 @@
-import "./App.css";
-import MainPage from "./Pages/MainPage";
-import Footer from "./components/Footer";
-import HeaderMenu from "./components/HeaderMenu";
-import Categories from "./Pages/Categories";
-import AllProducts from "./Pages/AllProducts";
-import AllSales from "./Pages/AllSales";
-import ProductPage from "./Pages/ProductPage";
-import Cart from "./Pages/Cart";
+import "../../App.css";
+import MainPage from "../../Pages/MainPage";
+import Footer from "../Footer";
+import HeaderMenu from "../HeaderMenu";
+import Categories from "../../Pages/Categories";
+import AllProducts from "../../Pages/AllProducts";
+import AllSales from "../../Pages/AllSales";
+import ProductPage from "../../Pages/ProductPage";
+import Cart from "../../Pages/Cart";
 import { Routes, Route } from "react-router-dom";
-import CategoryProducts from "./Pages/CategoryProducts";
+import CategoryProducts from "../../Pages/CategoryProducts";
 
 function App() {
     return (
