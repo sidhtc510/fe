@@ -18,7 +18,8 @@ export const dataSlice = createSlice({
     initialState,
     reducers: {
         add(state, action) {
-            state.list = [...state.list, { id: Date.now(), ...action.payload }];
+            console.log(action.payload);
+            state.list = [{ id: Date.now(), ...action.payload }, ...state.list];
         },
     },
 });

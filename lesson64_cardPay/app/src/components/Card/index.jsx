@@ -8,6 +8,7 @@ import { add } from "../../store/slice/dataSlice";
 
 export default function Card() {
     const dispatch = useDispatch();
+    
     const handler = (e) => {
         e.preventDefault();
         const data = {
