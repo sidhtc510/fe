@@ -3,7 +3,9 @@
     grid-template-columns: 3fr 2fr;
     gap: 20px;
 }
-
+.productWrap img{
+    width: 100%;
+}
 .controlBlock {
     display: flex;
     flex-direction: column;
@@ -44,5 +46,3 @@
     font-weight: 500;
     line-height: 130%;
 }
-
-

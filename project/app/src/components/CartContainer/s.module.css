@@ -1,0 +1,46 @@
+.cartContainerWrapper {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+}
+
+.amountBlock {
+    display: flex;
+    flex-direction: column;
+    border-radius: 21px;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.amountBlock > p {
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+.amountBlock > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.amountBlock > div p:nth-child(1) {
+    font-size: 24px;
+    font-weight: 500;
+}
+.amountBlock > div p:nth-child(2) {
+    font-size: 32px;
+    font-weight: 600;
+}
+.amountBlock > div p:nth-child(2) > span {
+    font-size: 16px;
+}
+
+.amountBlock form{
+    display: flex;
+    flex-direction: column;
+}
+.amountBlock form input{
+    margin: 40px 0;
+    border-radius: 25px;
+    border: 1px solid black;
+    padding: 30px;
+}

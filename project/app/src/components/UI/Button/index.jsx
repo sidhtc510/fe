@@ -1,8 +1,8 @@
 import React from "react";
 import s from "./s.module.css";
 
-export default function Button({ className, children }) {
+export default function Button({ className, children, ...props }) {
     return (
-        <button className={[s.btn, s[className]].join(" ")}>{children}</button>
+        <button {...props} className={[s.btn, s[className]].join(" ")}>{children}</button>
     );
 }

@@ -23,7 +23,7 @@ export default function ProductIndividual({ product }) {
                     </p>
                     <p className={s.sale}>{percent}</p>
                 </div>
-                <Button className="ToCart_individual">To Cart</Button>
+                <Button className="greenBtn">To Cart</Button>
                 <p className={s.description}>
                     <p>Description</p>
                     <p>{description}</p>

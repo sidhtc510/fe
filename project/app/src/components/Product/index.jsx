@@ -9,6 +9,10 @@ export default function Product({ id, title, price, discont_price, image }) {
             ? ""
             : Math.ceil(((price - discont_price) / price) * 100) + "%";
 
+const handler = () =>{
+    console.log("kkksss");
+}
+
     return (
         <div className={s.wrap}>
             <Link to={`/product/${id}`} className={s.productWrapper}>
@@ -27,8 +31,8 @@ export default function Product({ id, title, price, discont_price, image }) {
                     <p className={s.title}>{title}</p>
                 </div>
             </Link>
+            <Button className="addToCart" onClick={handler}>Add To Cart</Button>
 
-            <Button className="addToCart">Add To Cart</Button>
         </div>
     );
 }

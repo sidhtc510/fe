@@ -1,4 +1,3 @@
-
 import "../../App.css";
 import MainPage from "../../Pages/MainPage";
 import Footer from "../Footer";
@@ -8,17 +7,16 @@ import AllProducts from "../../Pages/AllProducts";
 import AllSales from "../../Pages/AllSales";
 import ProductPage from "../../Pages/ProductPage";
 import Cart from "../../Pages/Cart";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import CategoryProducts from "../../Pages/CategoryProducts";
 import Button from "../UI/Button";
-
-
+import PageNotFound from "../PageNotFound";
 
 function App() {
     return (
         <div>
             <HeaderMenu />
-            
+
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/categories" element={<Categories />} />
@@ -27,6 +25,8 @@ function App() {
                 <Route path="/product/:id" element={<ProductPage />} />
                 <Route path="/categories/:id" element={<CategoryProducts />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/404" element={<PageNotFound />} />
+                <Route path="*" element={<Navigate to="/404" />} />
             </Routes>
             <Footer />
         </div>

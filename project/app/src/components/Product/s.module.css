@@ -1,6 +1,5 @@
-.wrap{
+.wrap {
     position: relative;
-
 }
 
 .productWrapper {
@@ -9,19 +8,18 @@
     justify-content: space-between;
     text-decoration: none;
     color: black;
-   
+    height: 100%;
 }
 
-.wrap button{
+.wrap button {
     position: absolute;
     bottom: 100px;
     left: 50%;
     transform: translate(-50%);
-
 }
-.wrap:hover button{
-   visibility: visible;
-   opacity: 1;
+.wrap:hover button {
+    visibility: visible;
+    opacity: 1;
 }
 
 .productWrapper img {

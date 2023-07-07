@@ -15,12 +15,12 @@ export default function ProductPage() {
         dispatch(fetchProducts(id));
     }, [dispatch, id]);
 
-    const product = useSelector((state) =>  state.products.list[0]);
-
+    const product = useSelector((state) => state.products.list[0]);
+    // console.log(product);
     return (
         <Wrapper>
             <PageTitle>{product.title}</PageTitle>
-            <ProductIndividual product ={product}/>
+            <ProductIndividual product={product} />
         </Wrapper>
     );
 }
