@@ -7,7 +7,7 @@ export default function ProductsContainer({ products }) {
         <div className={s.productsWrapper}>
             {" "}
             {products.list.map((el) => (
-                <Product key={el.key} {...el} />
+                <Product key={el.id} {...el} />
             ))}
         </div>
     );

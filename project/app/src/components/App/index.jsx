@@ -1,3 +1,4 @@
+
 import "../../App.css";
 import MainPage from "../../Pages/MainPage";
 import Footer from "../Footer";
@@ -9,17 +10,21 @@ import ProductPage from "../../Pages/ProductPage";
 import Cart from "../../Pages/Cart";
 import { Routes, Route } from "react-router-dom";
 import CategoryProducts from "../../Pages/CategoryProducts";
+import Button from "../UI/Button";
+
+
 
 function App() {
     return (
         <div>
             <HeaderMenu />
+            
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/categories" element={<Categories />} />
                 <Route path="/products" element={<AllProducts />} />
                 <Route path="/sales" element={<AllSales />} />
-                <Route path="/products/:id" element={<ProductPage />} />
+                <Route path="/product/:id" element={<ProductPage />} />
                 <Route path="/categories/:id" element={<CategoryProducts />} />
                 <Route path="/cart" element={<Cart />} />
             </Routes>

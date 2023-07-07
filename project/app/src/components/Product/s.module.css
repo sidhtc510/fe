@@ -1,18 +1,25 @@
-.productWrapper {
-    max-width: 300px;
-    display: flex;
-    flex-direction: column;
+.wrap{
     position: relative;
-    justify-content: space-between;
+
 }
 
-.productWrapper button{
+.productWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+   
+}
+
+.wrap button{
     position: absolute;
     bottom: 100px;
     left: 50%;
     transform: translate(-50%);
+
 }
-.productWrapper:hover button{
+.wrap:hover button{
    visibility: visible;
    opacity: 1;
 }

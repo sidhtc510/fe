@@ -1,15 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    list: [],
+    list: [{
+        id:1
+    }],
 };
 
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
-    async () => {
-        const resp = await fetch("http://localhost:3333/products/all");
+    async (id) => {
+        const url = id
+            ? `http://localhost:3333/products/${id}`
+            : "http://localhost:3333/products/all";
+        const resp = await fetch(url);
         const data = await resp.json();
-  
+
         return data;
     }
 );

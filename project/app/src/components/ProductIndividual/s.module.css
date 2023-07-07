@@ -1,0 +1,48 @@
+.productWrap {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+}
+
+.controlBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.priceBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: 600;
+}
+.oldPrice {
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #8b8b8b;
+}
+.price span,
+.oldPrice span {
+    font-size: 0.6em;
+}
+.sale {
+    font-size: 20px;
+    color: #ff32a1;
+}
+
+.description p:nth-child(1) {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 30px 0 10px 0;
+    border-top: 2px dashed #c0c0c0;
+}
+.description p:nth-child(2) {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+

@@ -16,6 +16,16 @@
     transition: 0.5s;
 }
 
+.ToCart_individual {
+    border-radius: 10px;
+    border: 2px solid #393;
+    background: #393;
+    padding: 25px 120px;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
 .HeaderMenuButton {
     background: #393;
     border-radius: 5px;
@@ -38,4 +48,12 @@
     background-color: transparent;
     border: 3px solid #8b8b8b;
     border-radius: 0;
+}
+
+.getDiscount {
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
 }
