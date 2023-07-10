@@ -26,7 +26,7 @@ export default function Nav() {
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </p>
                 </div>
-                <Button component={"a"} type={'secondary'}> Sign In</Button>
+                <Button component={"a"} type={'secondary'} > Sign In</Button>
             </div>
         </Container>
     );

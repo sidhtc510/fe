@@ -7,12 +7,19 @@ import AllProducts from "../../Pages/AllProducts";
 import AllSales from "../../Pages/AllSales";
 import ProductPage from "../../Pages/ProductPage";
 import Cart from "../../Pages/Cart";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import CategoryProducts from "../../Pages/CategoryProducts";
 import Button from "../UI/Button";
 import PageNotFound from "../PageNotFound";
+import { useEffect } from "react";
 
 function App() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
     return (
         <div>
             <HeaderMenu />

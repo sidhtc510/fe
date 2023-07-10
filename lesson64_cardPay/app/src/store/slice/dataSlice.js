@@ -1,16 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    list: [
-        {
-            id:1,
-            hName: "anatolii",
-            hNumber: "1234432112344321",
-            mm: "12",
-            yy: "23",
-            cvc: "555",
-        },
-    ],
+    list: [ ],
 };
 
 export const dataSlice = createSlice({
@@ -18,8 +9,8 @@ export const dataSlice = createSlice({
     initialState,
     reducers: {
         add(state, action) {
-            console.log(action.payload);
-            state.list = [{ id: Date.now(), ...action.payload }, ...state.list];
+            // state.list = [{ id: Date.now(), ...action.payload }, ...state.list];
+            state.list.push({id:Date.now(), ...action.payload})
         },
     },
 });
