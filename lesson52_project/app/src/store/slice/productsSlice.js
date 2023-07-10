@@ -15,6 +15,7 @@ export const productsSlice = createSlice({
     reducers: {
         priceAction(state, { payload }) {
             const { min, max } = payload;
+            
             state.list.forEach((item) => {
                 item.show.price = item.price >= min && item.price <= max;
             });

@@ -18,6 +18,7 @@ export default function FilterContainer() {
         min: 0,
         max: Infinity,
     });
+    
     const [rateFilter, setRateFilter] = useLocalStorage("rateFilter", false);
     const [searchValue, setSearchValue] = useLocalStorage("searchValue", "");
 

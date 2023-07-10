@@ -5,10 +5,14 @@ import ProductsItem from "../ProductItem";
 export default function ProductsList({ categoryName }) {
     const { list, status } = useSelector(({ products }) => products);
 
-    const filteredProducts = categoryName
-        ? list.filter((el) => el.category === categoryName)
-        : list;
 
+
+
+    const filteredProducts = categoryName
+    ? list.filter((el) => el.category === categoryName)
+    : list;
+
+filteredProducts.map(el => console.log(el))
     return (
         <div className="productsList">
             {status === "loading" ? (
