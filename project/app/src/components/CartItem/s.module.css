@@ -4,6 +4,7 @@
     padding: 20px 0;
     border-top: 1px solid gray;
     gap: 40px;
+    position: relative;
 }
 
 .cartItemWrap:last-child {
@@ -43,6 +44,7 @@
     font-size: 20px;
     padding: 0 10px;
     cursor: pointer;
+    user-select: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -55,4 +57,16 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.delFromCart {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.delFromCart:hover {
+    color: red;
 }

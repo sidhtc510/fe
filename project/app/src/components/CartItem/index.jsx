@@ -1,5 +1,7 @@
 import React from "react";
 import s from "./s.module.css";
+import { useDispatch } from "react-redux";
+import { decrAction, deleteAction, incrAction, setCountAction } from "../../store/slice/cartSlice";
 
 export default function CartItem({
     id,
@@ -9,6 +11,10 @@ export default function CartItem({
     image,
     count,
 }) {
+    const currentPrice = discont_price ?? price;
+
+    const dispatch = useDispatch();
+
     return (
         <div className={s.cartItemWrap}>
             <img src={`http://localhost:3333/${image}`} alt="" />
@@ -16,16 +22,18 @@ export default function CartItem({
             <div className={s.titleCountBlock}>
                 <p>{title}</p>
                 <div>
-                    <p>-</p>
-                    <input type="number" />
-                    <p>+</p>
+                    <p onClick={() => dispatch(decrAction(id))}>-</p>
+                    <input type="number" value={count} onChange={(e)=>dispatch(setCountAction({id, count: +e.target.value}))}/>
+                    <p onClick={() => dispatch(incrAction(id))}>+</p>
                 </div>
             </div>
 
             <div className={s.priceBlock}>
-                <p>Price {price}</p>
-                <p>Amount {price*2}</p>
+                <p>Price {currentPrice}</p>
+                <p>Amount {(currentPrice * count).toFixed(2)}</p>
             </div>
+
+            <p className={s.delFromCart} onClick={() => dispatch(deleteAction(id))}>X</p>
         </div>
     );
 }

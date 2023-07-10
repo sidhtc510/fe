@@ -1,0 +1,28 @@
+.filtersSortWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 20px 0;
+}
+
+.filtersSortWrapper p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.filtersSortWrapper > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filtersSortWrapper input {
+    border-radius: 7px;
+    border: 1px solid #000;
+    padding: 10px;
+    
+}
+
+.filtersSortWrapper input[type=checkbox] {
+    transform : scale(2);
+    /* zoom: 2.5; */
+}

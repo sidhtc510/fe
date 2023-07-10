@@ -2,16 +2,20 @@ import React from "react";
 import s from "./s.module.css";
 import Button from "../UI/Button";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addAction } from "../../store/slice/cartSlice";
 
 export default function Product({ id, title, price, discont_price, image }) {
+    const dispatch = useDispatch();
+
     const percent =
         discont_price === null
             ? ""
             : Math.ceil(((price - discont_price) / price) * 100) + "%";
 
-const handler = () =>{
-    console.log("kkksss");
-}
+    const addToCart = () => {
+        dispatch(addAction({ id }));
+    };
 
     return (
         <div className={s.wrap}>
@@ -31,8 +35,9 @@ const handler = () =>{
                     <p className={s.title}>{title}</p>
                 </div>
             </Link>
-            <Button className="addToCart" onClick={handler}>Add To Cart</Button>
-
+            <Button className="addToCart" onClick={addToCart}>
+                Add To Cart
+            </Button>
         </div>
     );
 }

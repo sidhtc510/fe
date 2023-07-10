@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategoryProducts } from "../../store/slice/categoryProductsSlice";
 import ProductsContainer from "../../components/ProductsContainer";
+import FilterSortBlock from "../../components/FiltersSortBlock";
 
 export default function CategoryProducts() {
     const { id } = useParams();
@@ -15,14 +16,13 @@ export default function CategoryProducts() {
         dispatch(fetchCategoryProducts(id));
     }, [dispatch]);
 
-    const categoryProducts = useSelector((state) => state.categoryProducts);
- 
+    const products = useSelector((state) => state.categoryProducts);
 
     return (
         <Wrapper>
-            <PageTitle>{categoryProducts.category.title}</PageTitle>
-
-            <ProductsContainer products={categoryProducts} />
+            <PageTitle>{products.category.title}</PageTitle>
+            <FilterSortBlock products={products.list} />
+            <ProductsContainer products={products} />
         </Wrapper>
     );
 }

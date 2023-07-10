@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../../store/slice/categoriesSlice";
 import CategoriesContainer from "../../components/CategoriesContainer";
 
+
 export default function Categories() {
     const dispatch = useDispatch();
 
@@ -17,6 +18,7 @@ export default function Categories() {
     return (
         <Wrapper>
             <PageTitle>Categories</PageTitle>
+    
             <CategoriesContainer categories={categories.list} />
         </Wrapper>
     );

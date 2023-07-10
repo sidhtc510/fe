@@ -4,6 +4,7 @@ import PageTitle from "../../components/UI/PageTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/slice/productSlice";
 import ProductsContainer from "../../components/ProductsContainer";
+import FilterSortBlock from "../../components/FiltersSortBlock";
 
 export default function AllSales() {
     const dispatch = useDispatch();
@@ -22,6 +23,8 @@ export default function AllSales() {
     return (
         <Wrapper>
             <PageTitle>All Sales</PageTitle>
+            <FilterSortBlock products={products_with_discount.list} />
+
             {products_with_discount.status !== "ready" ? (
                 "LOADING..."
             ) : (

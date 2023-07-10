@@ -24,8 +24,30 @@
     color: black;
     text-decoration: none;
 }
+.nav div:nth-child(2) a {
+    position: relative;
+}
+
 .nav div:nth-child(2) a svg {
     color: black;
     text-decoration: none;
     font-size: 30px;
+}
+.nav div:nth-child(2) a .cartQtnStyle {
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: red;
+    color: white;
+    z-index: 5;
+    top: -15px;
+    left: 15px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
 }

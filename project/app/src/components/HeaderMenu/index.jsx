@@ -6,7 +6,7 @@ import logo from "./logo.png";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-export default function HeaderMenu() {
+export default function HeaderMenu({cartQtn}) {
     return (
         <Wrapper>
             <nav className={s.nav}>
@@ -24,6 +24,8 @@ export default function HeaderMenu() {
                         <Link to="/sales">All Sale</Link>
                     </div>
                     <Link to="/cart">
+                        {!cartQtn > 0 || 
+                        <p className={s.cartQtnStyle}>{cartQtn}</p>}
                         <HiOutlineShoppingBag />
                     </Link>
                 </div>

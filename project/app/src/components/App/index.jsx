@@ -12,8 +12,21 @@ import CategoryProducts from "../../Pages/CategoryProducts";
 import Button from "../UI/Button";
 import PageNotFound from "../PageNotFound";
 import { useEffect } from "react";
+import { fetchProducts } from "../../store/slice/productSlice";
+import { useDispatch } from "react-redux";
+import { useCart } from "../../hooks/useCart";
 
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch]);
+
+    const cart = useCart();
+    const cartQtn = cart.reduce((acc, el) => acc + el.count, 0);
+
+
     const { pathname } = useLocation();
 
     useEffect(() => {
@@ -22,12 +35,12 @@ function App() {
 
     return (
         <div>
-            <HeaderMenu />
+            <HeaderMenu cartQtn={cartQtn}/>
 
             <Routes>
                 <Route path="/" element={<MainPage />} />
-                <Route path="/categories" element={<Categories />} />
                 <Route path="/products" element={<AllProducts />} />
+                <Route path="/categories" element={<Categories />} />
                 <Route path="/sales" element={<AllSales />} />
                 <Route path="/product/:id" element={<ProductPage />} />
                 <Route path="/categories/:id" element={<CategoryProducts />} />
