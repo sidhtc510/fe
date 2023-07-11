@@ -1,8 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-// const initialState = {
-//     list: [],
-// };
 const myConsole = (data) => {
     const stateStringify = JSON.stringify(data);
     console.log(JSON.parse(stateStringify));
@@ -33,6 +30,23 @@ export const productsSlice = createSlice({
             });
             // myConsole(state)
         },
+
+        rateAction(state, { payload }) {
+            state.list.forEach((item) => {
+                item.show.rate = !payload || item.discont_price !== null;
+            });
+        },
+        sortAction(state, { payload }) {
+            ({
+                
+                priceAsc: () => state.list.sort((a, b) => a.price - b.price),
+                priceDesc: () => state.list.sort((a, b) => b.price - a.price),
+                titleAtoZ: () =>
+                    state.list.sort((a, b) => a.title.localeCompare(b.title)),
+                titleZtoA: () =>
+                    state.list.sort((a, b) => b.title.localeCompare(a.title)),
+            })[payload]();
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -53,5 +67,5 @@ export const productsSlice = createSlice({
     },
 });
 
-export const { priceAction } = productsSlice.actions;
+export const { priceAction, rateAction, sortAction } = productsSlice.actions;
 export default productsSlice.reducer;
