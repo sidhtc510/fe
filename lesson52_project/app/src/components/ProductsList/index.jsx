@@ -12,7 +12,6 @@ export default function ProductsList({ categoryName }) {
     ? list.filter((el) => el.category === categoryName)
     : list;
 
-filteredProducts.map(el => console.log(el))
     return (
         <div className="productsList">
             {status === "loading" ? (

@@ -34,6 +34,8 @@ export default function FiltersSortBlock({ products }) {
     // при отрисовке компонента сразу в инпуты устанавливаются инфинити
     // минимальное и максимальное значения для подстановки в инпуты END
 
+
+    
     return (
         <div className={s.filtersSortWrapper}>
             <div className={s.priceSort}>

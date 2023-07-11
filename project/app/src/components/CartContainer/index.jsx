@@ -9,7 +9,7 @@ import { useCart } from "../../hooks/useCart.js";
 export default function CartContainer() {
     const data = useCart();
 
-const amountCart = data.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0 )
+const amountCart = data.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0 ).toFixed(2)
 
 
     return (

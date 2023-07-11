@@ -1,6 +1,6 @@
 .cartItemWrap {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr auto;
     padding: 20px 0;
     border-top: 1px solid gray;
     gap: 40px;
@@ -57,6 +57,11 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.priceBlock{
+    padding: 20px;
+    margin-left: 10px;
 }
 
 .delFromCart {

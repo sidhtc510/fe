@@ -5,10 +5,15 @@ export default function ProductsContainer({ products }) {
 
     return (
         <div className={s.productsWrapper}>
-            {" "}
-            {products.list.map((el) => (
-                <Product key={el.id} {...el} />
-            ))}
+            {
+                products.list
+                // .filter(({ show }) => show.search && show.price)
+                .filter(({ show }) =>
+                    Object.values(show).every((item) => item)
+                )
+                .map((el) => <Product key={el.id} {...el} />)
+            }
         </div>
     );
 }
+

@@ -6,4 +6,4 @@ fetch("http://localhost:3333/users", {
     body: JSON.stringify({ name: "ivan", email: "iv@gmail.com", age: 31 }),
 })
     .then((resp) => resp.json())
-    .then((data) => console.log(data));
+    .then((data) => console.log(data ));

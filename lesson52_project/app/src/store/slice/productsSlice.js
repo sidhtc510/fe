@@ -1,5 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+const myConsole = (data) => {
+    const stateStringify = JSON.stringify(data);
+    console.log(JSON.parse(stateStringify));
+};
+
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
     async () => {
@@ -15,10 +20,10 @@ export const productsSlice = createSlice({
     reducers: {
         priceAction(state, { payload }) {
             const { min, max } = payload;
-            
             state.list.forEach((item) => {
                 item.show.price = item.price >= min && item.price <= max;
             });
+            // myConsole(state)
         },
         searchAction(state, { payload }) {
             state.list.forEach((item) => {
@@ -66,6 +71,7 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
+                myConsole(state)
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";

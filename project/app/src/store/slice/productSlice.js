@@ -1,7 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    list: [],
+// const initialState = {
+//     list: [],
+// };
+const myConsole = (data) => {
+    const stateStringify = JSON.stringify(data);
+    console.log(JSON.parse(stateStringify));
 };
 
 export const fetchProducts = createAsyncThunk(
@@ -19,15 +23,15 @@ export const fetchProducts = createAsyncThunk(
 
 export const productsSlice = createSlice({
     name: "products",
-    initialState,
+    initialState: { list: [] },
     reducers: {
         priceAction(state, { payload }) {
-            // const { min, max } = payload;
-            // console.log(min);
-            // return state
-            // state.forEach((item) => {
-            //     item.show.price = item.price >= min && item.price <= max;
-            // });
+            const { min, max } = payload;
+            state.list.forEach((item) => {
+                const currentPrice = item.discont_price ?? item.price;
+                item.show.price = currentPrice >= min && currentPrice <= max;
+            });
+            // myConsole(state)
         },
     },
     extraReducers: (builder) => {
@@ -37,7 +41,11 @@ export const productsSlice = createSlice({
             })
             .addCase(fetchProducts.fulfilled, (state, { payload }) => {
                 state.status = "ready";
-                state.list = payload;
+                state.list = payload.map((item) => ({
+                    ...item,
+                    show: { search: true, price: true, rate: true },
+                }));
+                // myConsole(state)
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";
@@ -45,6 +53,5 @@ export const productsSlice = createSlice({
     },
 });
 
-
-export const {priceAction} = productsSlice.actions
+export const { priceAction } = productsSlice.actions;
 export default productsSlice.reducer;

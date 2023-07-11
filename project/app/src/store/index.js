@@ -12,3 +12,6 @@ export const store = configureStore({
         cart: cartReducer
     }
 })
+// const currentState = store.getState();
+
+// console.log('Current State:', currentState);
