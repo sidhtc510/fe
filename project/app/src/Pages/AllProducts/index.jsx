@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Wrapper from "../../components/UI/Wrapper";
 import PageTitle from "../../components/UI/PageTitle";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import ProductsContainer from "../../components/ProductsContainer";
 import FilterSortBlock from "../../components/FiltersSortBlock";
+import { fetchProducts } from "../../store/slice/productSlice";
 
 export default function AllProducts() {
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch]);
 
     const products = useSelector((state) => state.products);
 

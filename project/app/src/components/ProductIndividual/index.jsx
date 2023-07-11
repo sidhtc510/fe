@@ -1,9 +1,15 @@
 import React from "react";
 import s from "./s.module.css";
 import Button from "../UI/Button";
+import { addAction } from "../../store/slice/cartSlice";
+import { useDispatch } from "react-redux";
 
 export default function ProductIndividual({ product }) {
     const { id, title, price, discont_price, image, description } = product;
+    const dispatch = useDispatch();
+    const addToCart = () => {
+        dispatch(addAction({ id }));
+    };
 
     const percent =
         discont_price === null
@@ -23,7 +29,9 @@ export default function ProductIndividual({ product }) {
                     </p>
                     <p className={s.sale}>{percent}</p>
                 </div>
-                <Button className="greenBtn">To Cart</Button>
+                <Button className="greenBtn" onClick={addToCart}>
+                    To Cart
+                </Button>
                 <p className={s.description}>
                     <p>Description</p>
                     <p>{description}</p>

@@ -5,6 +5,12 @@ const myConsole = (data) => {
     console.log(JSON.parse(stateStringify));
 };
 
+const initialState = {
+    category: {},
+    list: [],
+    status: "",
+};
+
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
     async (id) => {
@@ -18,9 +24,19 @@ export const fetchProducts = createAsyncThunk(
     }
 );
 
+export const fetchCategoryProducts = createAsyncThunk(
+    "products/fetchCategoryProducts",
+    async (category_id) => {
+        const url = `http://localhost:3333/categories/${category_id}`;
+        const resp = await fetch(url);
+        const data = await resp.json();
+        return data;
+    }
+);
+
 export const productsSlice = createSlice({
     name: "products",
-    initialState: { list: [] },
+    initialState,
     reducers: {
         priceAction(state, { payload }) {
             const { min, max } = payload;
@@ -38,7 +54,6 @@ export const productsSlice = createSlice({
         },
         sortAction(state, { payload }) {
             ({
-                
                 priceAsc: () => state.list.sort((a, b) => a.price - b.price),
                 priceDesc: () => state.list.sort((a, b) => b.price - a.price),
                 titleAtoZ: () =>
@@ -59,9 +74,23 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
-                // myConsole(state)
             })
             .addCase(fetchProducts.rejected, (state) => {
+                state.status = "rejected";
+            })
+            .addCase(fetchCategoryProducts.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(fetchCategoryProducts.fulfilled, (state, { payload }) => {
+                state.status = "ready";
+                state.category = payload.category;
+                state.list = payload.data.map((item) => ({
+                    ...item,
+                    show: { search: true, price: true, rate: true },
+                }));
+                // myConsole(state);
+            })
+            .addCase(fetchCategoryProducts.rejected, (state) => {
                 state.status = "rejected";
             });
     },

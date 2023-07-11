@@ -81,7 +81,7 @@ export default function FiltersSortBlock({ products }) {
             <div className={s.sorting} >
                 <p>Sorted</p>
                 <select name="sorting" onChange={sortHandle}>
-                <option selected disabled hidden>
+                <option selected disabled>
                     Sorting
                 </option>
                 <option value="priceAsc">Price 0 - 1</option>
