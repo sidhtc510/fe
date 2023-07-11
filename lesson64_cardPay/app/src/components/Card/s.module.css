@@ -21,9 +21,8 @@ input {
     padding: 10px;
 }
 
-.hName {
-}
-.hNumber {
+.hName, .hNumber {
+    width: 100%;
 }
 
 .dateBlock {

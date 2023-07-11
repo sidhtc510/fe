@@ -5,51 +5,69 @@ import vs from "./2.png";
 import Button from "../UI/Button";
 import { useDispatch } from "react-redux";
 import { add } from "../../store/slice/dataSlice";
+import { useForm } from "react-hook-form";
+import { fields } from "./constrains";
+import Field from "../UI/Field";
 
 export default function Card() {
     const dispatch = useDispatch();
-    
-    const handler = (e) => {
-        e.preventDefault();
-        const data = {
-            hName: e.target.hName.value,
-            hNumber: e.target.hNumber.value,
-            mm: e.target.mm.value,
-            yy: e.target.yy.value,
-            cvc: e.target.cvc.value,
-        };
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const handler = ({ mm, yy, ...data }) => {
+        // e.preventDefault();
+        // const data = {
+        //     hName: e.target.hName.value,
+        //     hNumber: e.target.hNumber.value,
+        //     mm: e.target.mm.value,
+        //     yy: e.target.yy.value,
+        //     cvc: e.target.cvc.value,
+        // };
+        data.dateExpire = `${mm} / ${yy}`;
         dispatch(add(data));
     };
 
     return (
-        <form onSubmit={handler} className={s.form}>
+        <form onSubmit={handleSubmit(handler)} className={s.form}>
             <div className={s.frontSide}>
-                <input
+                <Field
+                    register={register("hName", fields.hName)}
                     type="text"
                     placeholder="Holder of card"
                     className={s.hName}
-                    name="hName"
+                    errors={errors}
                 />
-                <input
+
+                <Field
+                    register={register("hNumber", fields.hNumber)}
                     type="text"
                     placeholder="Number of card"
                     className={s.hNumber}
-                    name="hNumber"
+                    errors={errors}
                 />
+
                 <div className={s.dateBlock}>
                     <p>VALID THRU</p>
-                    <input
+
+                    <Field
+                        register={register("mm", fields.mm)}
                         type="number"
                         placeholder="MM"
                         className={s.mm}
-                        name="mm"
+                        errors={errors}
                     />
                     <span>/</span>
-                    <input
+
+                    <Field
+                        register={register("yy", fields.yy)}
                         type="number"
                         placeholder="YY"
                         className={s.yy}
-                        name="yy"
+                        errors={errors}
                     />
                     <div className={s.icons}>
                         <img src={mc} alt="" />
@@ -60,11 +78,12 @@ export default function Card() {
 
             <div className={s.backSide}>
                 <div className={s.strip}></div>
-                <input
+                <Field
+                    register={register("cvc", fields.cvc)}
                     type="password"
-                    name="cvc"
                     placeholder="CVC"
                     className={s.cvc}
+                    errors={errors}
                 />
             </div>
 
