@@ -1,18 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-const data = [
-    // {
-    //     categoryId: 1,
-    //     createdAt: "2022-10-02T14:43:29.000Z",
-    //     description:
-    //         "Angelonia angustifolia Archangel™ White displays pristine white blossoms arranged on tall stems that sparkle above clean, glossy, dark green foliage. These sturdy, well-branched plants add texture and commanding presence to borders, containers, and flower arrangements.",
-    //     discont_price: null,
-    //     id: 2,
-    //     image: "/product_img/2.jpeg",
-    //     price: 10.75,
-    //     title: "Angelonia angustifolia Archangel™ White",
-    //     updatedAt: "2022-10-02T14:43:29.000Z",
-    // },
-];
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const read = () => {
     return JSON.parse(localStorage.getItem("cart")) ?? [];
@@ -20,6 +7,22 @@ const read = () => {
 const write = (data) => {
     localStorage.setItem("cart", JSON.stringify(data));
 };
+
+export const postOrder = createAsyncThunk(
+    "cart/postOrder",
+    async (postData) => {
+        try {
+            const response = await axios.post(
+                "http://localhost:3333/order/send",
+                postData
+            );
+            return response.data;
+        } catch (error) {
+ 
+            throw error;
+        }
+    }
+);
 
 const checkProduct = (state, payload) => {
     const target = state.list.find((el) => el.id === payload.id);
@@ -78,6 +81,21 @@ export const cartSlice = createSlice({
         setCountAction(state, action) {
             countInReducer(state, action.payload);
         },
+    },
+
+    extraReducers: (builder) => {
+        builder
+            .addCase(postOrder.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(postOrder.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                console.log(action.payload);
+            })
+            .addCase(postOrder.rejected, (state, action) => {
+                state.status = "failed";
+                state.error = action.error.message;
+            });
     },
 });
 

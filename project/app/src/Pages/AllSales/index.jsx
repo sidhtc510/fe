@@ -23,7 +23,7 @@ export default function AllSales() {
     return (
         <Wrapper>
             <PageTitle>All Sales</PageTitle>
-            <FilterSortBlock products={products_with_discount.list} />
+            <FilterSortBlock salesPageFlag={true} />
 
             {products_with_discount.status !== "ready" ? (
                 "LOADING..."

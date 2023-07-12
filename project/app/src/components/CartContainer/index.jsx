@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CartItem from "../CartItem";
 import s from "./s.module.css";
 import Button from "../UI/Button";
 import Wrapper from "../UI/Wrapper";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart.js";
+import { useDispatch } from "react-redux";
+import { postOrder } from "../../store/slice/cartSlice";
 
 export default function CartContainer() {
+    const dispatch = useDispatch();
+
     const data = useCart();
 
-const amountCart = data.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0 ).toFixed(2)
+    const handleSubmit = (event, postData) => {
+        event.preventDefault();
+        // console.log(event);
+        dispatch(postOrder(postData));
+    };
 
+    const amountCart = data
+        .reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0)
+        .toFixed(2);
 
     return (
         <Wrapper>
@@ -39,7 +50,13 @@ const amountCart = data.reduce((acc, el) => acc + (el.discont_price ?? el.price)
                             type="text"
                             placeholder="Enter your phone number"
                         />
-                        <Button className="greenBtn">Order</Button>
+
+                        <Button
+                            className="greenBtn"
+                            onClick={(event) => handleSubmit(event, "handler phone number")}
+                        >
+                            Order
+                        </Button>
                     </form>
                 </div>
             </div>
