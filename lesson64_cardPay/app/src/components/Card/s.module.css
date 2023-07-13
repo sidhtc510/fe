@@ -45,6 +45,7 @@ input {
 .icons {
     display: flex;
     align-items: center;
+    min-width: 115px;
 }
 .icons img {
     width: 55px;

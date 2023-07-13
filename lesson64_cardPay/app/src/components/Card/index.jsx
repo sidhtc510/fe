@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./s.module.css";
 import mc from "./1.png";
 import vs from "./2.png";
@@ -10,6 +10,8 @@ import { fields } from "./constrains";
 import Field from "../UI/Field";
 
 export default function Card() {
+    const [typeOfCard, setTypeOfCard] = useState(false);
+
     const dispatch = useDispatch();
 
     const {
@@ -31,6 +33,16 @@ export default function Card() {
         dispatch(add(data));
     };
 
+    const cardTypeValidation = (e) => {
+        if (e.target.value[0] === "4") {
+            setTypeOfCard("visa");
+        } else if (e.target.value[0] === "5") {
+            setTypeOfCard("mc");
+        } else {
+            setTypeOfCard(false);
+        }
+    };
+
     return (
         <form onSubmit={handleSubmit(handler)} className={s.form}>
             <div className={s.frontSide}>
@@ -48,6 +60,7 @@ export default function Card() {
                     placeholder="Number of card"
                     className={s.hNumber}
                     errors={errors}
+                    onChange={cardTypeValidation}
                 />
 
                 <div className={s.dateBlock}>
@@ -70,8 +83,16 @@ export default function Card() {
                         errors={errors}
                     />
                     <div className={s.icons}>
-                        <img src={mc} alt="" />
-                        <img src={vs} alt="" />
+                        {!typeOfCard ? (
+                            <>
+                                <img src={mc} alt="" />
+                                <img src={vs} alt="" />
+                            </>
+                        ) : typeOfCard === "visa" ? (
+                            <img src={vs} alt="" />
+                        ) : (
+                            <img src={mc} alt="" />
+                        )}
                     </div>
                 </div>
             </div>

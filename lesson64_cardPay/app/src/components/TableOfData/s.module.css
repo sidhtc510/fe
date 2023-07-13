@@ -1,3 +1,11 @@
+.wrap {
+    padding: 30px;
+    background-color: #55a4ff;
+    margin: 50px 20px;
+    width: fit-content;
+    border-radius: 20px;
+}
+
 .table {
     border-collapse: collapse;
     color: black;
@@ -6,11 +14,10 @@
     text-align: center;
     border-radius: 10px;
     overflow: hidden;
-margin: 50px 20px;
 }
 
 .table th {
-    background-color: #E5E5E5;
+    background-color: #e5e5e5;
     font-weight: bold;
     padding: 10px;
     text-transform: uppercase;
@@ -22,10 +29,8 @@ margin: 50px 20px;
     background-color: #f2f2f2;
 }
 
-
 .table td {
     background-color: #fff;
     padding: 10px;
     border: 1px solid #ccc;
-    
 }

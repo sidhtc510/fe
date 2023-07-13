@@ -9,8 +9,8 @@ export const fields = {
     hNumber: {
         required: "Require",
         pattern: {
-            value: /^(?:\d{4}[- ]){3}\d{4}|\d{16}$/,
-            message: "enter valid card number",
+            // value: /^(?:\d{4}[- ]){3}\d{4}|\d{16}$/,
+            // message: "enter valid card number",
         },
     },
     mm: {
