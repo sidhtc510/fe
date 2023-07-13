@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductsContainer from "../../components/ProductsContainer";
 import FilterSortBlock from "../../components/FiltersSortBlock";
 import { fetchProducts } from "../../store/slice/productSlice";
+// import { motion } from "framer-motion";
 
 export default function AllProducts() {
     const dispatch = useDispatch();
@@ -18,17 +19,20 @@ export default function AllProducts() {
 
 
     return (
+        // <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+
         <Wrapper>
             <PageTitle>All Products</PageTitle>
 
             <FilterSortBlock />
             {products.status === "loading" ? (
                 <p>Loading...</p>
-            ) : products.status === "error" ? (
-                "Error..."
-            ) : (
-                <ProductsContainer products={products} />
-            )}
+                ) : products.status === "error" ? (
+                    "Error..."
+                    ) : (
+                        <ProductsContainer products={products} />
+                        )}
         </Wrapper>
+                        // </motion.div>
     );
 }
