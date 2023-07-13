@@ -3,12 +3,14 @@ import s from "./s.module.css";
 import Button from "../UI/Button";
 import { addAction } from "../../store/slice/cartSlice";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 export default function ProductIndividual({ product }) {
     const { id, title, price, discont_price, image, description } = product;
     const dispatch = useDispatch();
     const addToCart = () => {
         dispatch(addAction({ id }));
+        toast("product in cart")
     };
 
     const percent =

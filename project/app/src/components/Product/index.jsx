@@ -4,6 +4,7 @@ import Button from "../UI/Button";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addAction } from "../../store/slice/cartSlice";
+import { toast } from "react-toastify";
 
 export default function Product({ id, title, price, discont_price, image }) {
     const dispatch = useDispatch();
@@ -15,6 +16,8 @@ export default function Product({ id, title, price, discont_price, image }) {
 
     const addToCart = () => {
         dispatch(addAction({ id }));
+        toast("product in cart");
+
     };
 
     return (

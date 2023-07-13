@@ -15,6 +15,8 @@ import ProductPage from "../../Pages/ProductPage";
 import CategoryProducts from "../../Pages/CategoryProducts";
 import Cart from "../../Pages/Cart";
 import PageNotFound from "../PageNotFound";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
     const dispatch = useDispatch();
@@ -35,6 +37,19 @@ function App() {
 
     return (
         <div>
+            <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
+
             <HeaderMenu cartQtn={cartQtn} />
             <AnimatePresence>
                 <Routes location={location} key={location.pathname}>
