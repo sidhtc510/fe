@@ -21,9 +21,9 @@
     display: grid;
     grid-template-columns: 1fr;
 }
-.formBlock form input{
+/* .formBlock form input{
     margin: 40px 0;
     border-radius: 25px;
     border: none;
     padding: 30px;
-}
+} */

@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import CartItem from "../CartItem";
 import s from "./s.module.css";
 import Button from "../UI/Button";
+import InputPhone from "../UI/InputPhone";
 import Wrapper from "../UI/Wrapper";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { useCart } from "../../hooks/useCart.js";
 import { useDispatch } from "react-redux";
 import { postOrder } from "../../store/slice/cartSlice";
@@ -13,9 +15,14 @@ export default function CartContainer() {
 
     const data = useCart();
 
-    const handleSubmit = (event, postData) => {
-        event.preventDefault();
-        // console.log(event);
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const handler = (postData) => {
+        // console.log(data);
         dispatch(postOrder(postData));
     };
 
@@ -45,18 +52,22 @@ export default function CartContainer() {
                             {amountCart} <span>$</span>{" "}
                         </p>
                     </div>
-                    <form>
-                        <input
+
+                    <form onSubmit={handleSubmit(handler)}>
+                        <InputPhone
                             type="text"
                             placeholder="Enter your phone number"
+                            register={register("phoneNum", {
+                                required: "*required",
+                                pattern: {
+                                    value: /^(?:\+49|0)[1-9]\d{6,14}$/,
+                                    message: "Enter a valid German number",
+                                },
+                            })}
+                            errors={errors}
                         />
 
-                        <Button
-                            className="greenBtn"
-                            onClick={(event) => handleSubmit(event, "handler phone number")}
-                        >
-                            Order
-                        </Button>
+                        <Button className="greenBtn">Order</Button>
                     </form>
                 </div>
             </div>
