@@ -9,24 +9,19 @@ import ProductIndividual from "../../components/ProductIndividual";
 export default function ProductPage() {
     const dispatch = useDispatch();
     const { id } = useParams();
-    
+
     useEffect(() => {
         dispatch(fetchProducts(id));
     }, [dispatch, id]);
-    
-    const product = useSelector((state) => state.products);
 
-// проверка на статус
+    const product = useSelector((state) => state.products.list);
 
-console.log(product);
-    // if (!product) {
-    //     return <div>Loading...</div>;
-    // }
-    
     return (
         <Wrapper>
-            {/* <PageTitle>{product.title}</PageTitle>
-            <ProductIndividual product={product} /> */}
+            <PageTitle>{product.map((el) => el.title)}</PageTitle>
+            {product.map((el) => (
+                <ProductIndividual key={el.id} {...el} />
+            ))}
         </Wrapper>
     );
 }
