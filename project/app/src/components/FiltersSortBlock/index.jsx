@@ -14,6 +14,7 @@ export default function FiltersSortBlock({ salesPageFlag }) {
         min: 0,
         max: Infinity,
     });
+
     const [rateFilter, setRateFilter] = useState(false);
 
     const sortHandle = (e) => {

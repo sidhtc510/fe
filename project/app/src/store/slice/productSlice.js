@@ -19,7 +19,7 @@ export const fetchProducts = createAsyncThunk(
             : "http://localhost:3333/products/all";
         const resp = await fetch(url);
         const data = await resp.json();
-
+console.log("slice", data);
         return data;
     }
 );

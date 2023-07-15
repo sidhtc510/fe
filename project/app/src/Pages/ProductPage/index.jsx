@@ -7,16 +7,20 @@ import { fetchProducts } from "../../store/slice/productSlice";
 import ProductIndividual from "../../components/ProductIndividual";
 
 export default function ProductPage() {
-    const { id } = useParams();
-
     const dispatch = useDispatch();
-
+    const { id } = useParams();
+    
     useEffect(() => {
         dispatch(fetchProducts(id));
     }, [dispatch, id]);
-
+    
     const product = useSelector((state) => state.products.list[0]);
-    // console.log(product);
+
+
+    // if (!product) {
+    //     return <div>Loading...</div>;
+    // }
+    
     return (
         <Wrapper>
             <PageTitle>{product.title}</PageTitle>

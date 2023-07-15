@@ -3,8 +3,8 @@ import Footer from "../Footer";
 import HeaderMenu from "../HeaderMenu";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchProducts } from "../../store/slice/productSlice";
-import { useDispatch } from "react-redux";
+// import { fetchProducts } from "../../store/slice/productSlice";
+// import { useDispatch } from "react-redux";
 import { useCart } from "../../hooks/useCart";
 import { AnimatePresence } from "framer-motion";
 import MainPage from "../../Pages/MainPage";
@@ -19,11 +19,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch]);
 
     const cart = useCart();
     const cartQtn = cart.reduce((acc, el) => acc + el.count, 0);
