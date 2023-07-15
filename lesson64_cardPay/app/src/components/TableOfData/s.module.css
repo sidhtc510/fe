@@ -5,6 +5,10 @@
     width: fit-content;
     border-radius: 20px;
 }
+.filterWrapper {
+    display: flex;
+    gap: 10px;
+}
 
 .table {
     border-collapse: collapse;

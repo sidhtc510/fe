@@ -14,17 +14,19 @@ export default function ProductPage() {
         dispatch(fetchProducts(id));
     }, [dispatch, id]);
     
-    const product = useSelector((state) => state.products.list[0]);
+    const product = useSelector((state) => state.products);
 
+// проверка на статус
 
+console.log(product);
     // if (!product) {
     //     return <div>Loading...</div>;
     // }
     
     return (
         <Wrapper>
-            <PageTitle>{product.title}</PageTitle>
-            <ProductIndividual product={product} />
+            {/* <PageTitle>{product.title}</PageTitle>
+            <ProductIndividual product={product} /> */}
         </Wrapper>
     );
 }

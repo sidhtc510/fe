@@ -5,7 +5,6 @@ import TableOfData from "../TableOfData";
 
 function App() {
     const data = useSelector((state) => state.data);
-
     return (
         <div>
             <Form />

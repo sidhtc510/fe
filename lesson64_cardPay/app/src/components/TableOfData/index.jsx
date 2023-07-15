@@ -3,12 +3,29 @@ import TRComponent from "./TRComponent";
 import s from "./s.module.css";
 import Search from "../Search";
 import TypeOfCardSelect from "../TypeOfCardSelect";
+import { useDispatch } from "react-redux";
+import { typeOfCardAction } from "../../store/slice/dataSlice";
 
 export default function TableOfData({ data }) {
+    const dispatch = useDispatch();
+
+    const handle = (e) => {
+        dispatch(typeOfCardAction(e.target.value));
+    };
+
+const options_obj = [
+    {id:1, value: "visa"},
+    {id:2, value: "mc", label: "Master Card"},
+]
+
+console.log(data);
+
     return (
         <div className={s.wrap}>
+            <div className={s.filterWrapper}>
             <Search />
-            <TypeOfCardSelect />
+            <TypeOfCardSelect options_data={options_obj} onChange={handle}/>
+            </div>
             <table className={s.table}>
                 <thead>
                     <tr>
@@ -19,9 +36,7 @@ export default function TableOfData({ data }) {
                     </tr>
                 </thead>
 
-                {data
-                    .filter((el) => el.show)
-                    .map((el) => (
+                {data.list.filter((el) => Object.values(el.show).every(item=>item)).map((el) => (
                         <TRComponent key={el.id} {...el} />
                     ))}
             </table>

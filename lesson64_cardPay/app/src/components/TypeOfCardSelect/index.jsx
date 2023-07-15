@@ -1,20 +1,22 @@
 import React from "react";
 import s from "./s.module.css";
-import { useDispatch } from "react-redux";
-import { typeOfCardAction } from "../../store/slice/dataSlice";
 
-export default function TypeOfCardSelect() {
-    const dispatch = useDispatch();
+export default function TypeOfCardSelect({
+    options_data,
+    className,
+    ...props
+}) {
+    props.className = [s.select, className].join(" ");
 
-    const handle = (e) => {
-        dispatch(typeOfCardAction(e.target.value));
-    };
     return (
         <div>
-            <select name="typeOfCard" onChange={handle}>
+            <select {...props} name="typeOfCard">
                 <option value="all">all</option>
-                <option value="mc">Master Card</option>
-                <option value="visa">Visa</option>
+                {options_data.map((el) => {
+                    return (
+                        <option value={el.value}>{el.label ?? el.value}</option>
+                    );
+                })}
             </select>
         </div>
     );
