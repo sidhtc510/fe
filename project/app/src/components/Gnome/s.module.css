@@ -7,7 +7,7 @@
     align-items: center;
     color: white;
 }
-.formBlock{
+.formBlock {
     max-width: 550px;
 }
 .formBlock h2 {
@@ -17,7 +17,7 @@
     font-size: 60px;
 }
 
-.formBlock form{
+.formBlock form {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -27,3 +27,12 @@
     border: none;
     padding: 30px;
 } */
+
+@media (max-width: 1024px) {
+    .wrap {
+        grid-template-columns: 1fr;
+    }
+    .wrap img {
+        display: none;
+    }
+}

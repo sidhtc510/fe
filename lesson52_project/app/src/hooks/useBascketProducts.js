@@ -5,6 +5,8 @@ export function useBascketProducts() {
 
     const { list } = useSelector(({ products }) => products);
 
+console.log("cartList", list);
+
     const result = bascket.map((item) => {
         const product = list.find(({ id }) => id === item.id);
         return { ...item, ...product };

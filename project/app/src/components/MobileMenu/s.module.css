@@ -1,0 +1,44 @@
+.mobileMenu {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
+    bottom: 0;
+    padding: 20px 0;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 0px -5px 5px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -5px 5px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -5px 5px -2px rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    color: rgb(95, 95, 95);
+    font-weight: bold;
+}
+
+.mobileMenu a {
+    color: rgb(95, 95, 95);
+    text-decoration: none;
+}
+
+.cartIconWrap {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    flex-direction: column;
+}
+.cartIconWrap > p:first-child {
+    display: flex;
+    gap: 5px;
+}
+
+
+@media (max-width: 1024px) {
+    .mobileMenu {
+        display: grid;
+    }
+}

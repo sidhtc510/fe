@@ -14,14 +14,16 @@ export default function ProductPage() {
         dispatch(fetchProducts(id));
     }, [dispatch, id]);
 
-    const product = useSelector((state) => state.products.list);
+    const product = useSelector((state) => state.products);
 
     return (
         <Wrapper>
-            <PageTitle>{product.map((el) => el.title)}</PageTitle>
-            {product.map((el) => (
-                <ProductIndividual key={el.id} {...el} />
-            ))}
+            {product.status === "ready" && (
+                <>
+                    <PageTitle>{product.list[0].title}</PageTitle>
+                    <ProductIndividual product={product.list[0]} />
+                </>
+            )}
         </Wrapper>
     );
 }

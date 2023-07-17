@@ -4,10 +4,10 @@ import Button from "../UI/Button";
 import { addAction } from "../../store/slice/cartSlice";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-
-export default function ProductIndividual({ id, title, price, discont_price, image, description }) {
+//                                                                           { id, title, price, discont_price, image, description } 
+export default function ProductIndividual({product}) {
 // console.log(product);
-    // const { id, title, price, discont_price, image, description } = product;
+    const { id, title, price, discont_price, image, description } = product;
     const dispatch = useDispatch();
     const addToCart = () => {
         dispatch(addAction({ id }));

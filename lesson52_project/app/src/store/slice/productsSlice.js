@@ -71,7 +71,7 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
-                myConsole(state)
+                // myConsole(state)
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";

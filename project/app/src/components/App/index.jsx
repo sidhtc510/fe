@@ -17,6 +17,7 @@ import Cart from "../../Pages/Cart";
 import PageNotFound from "../PageNotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MobileMenu from "../MobileMenu";
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
             />
 
             <HeaderMenu cartQtn={cartQtn} />
+            <MobileMenu  cartQtn={cartQtn} />
             <AnimatePresence>
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<MainPage />} />

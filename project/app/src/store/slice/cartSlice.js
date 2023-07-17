@@ -107,4 +107,5 @@ export const {
     clearBascketAction,
     setCountAction,
 } = cartSlice.actions;
+
 export default cartSlice.reducer;

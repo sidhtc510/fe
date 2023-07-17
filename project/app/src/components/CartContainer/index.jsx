@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CartItem from "../CartItem";
 import s from "./s.module.css";
 import Button from "../UI/Button";
@@ -13,7 +13,7 @@ import { postOrder } from "../../store/slice/cartSlice";
 export default function CartContainer() {
     const dispatch = useDispatch();
 
-    const data = useCart();
+    const data = useCart(); // так же вызывается в app. данные можно передать пропсами
 
     const {
         register,
@@ -22,7 +22,6 @@ export default function CartContainer() {
     } = useForm();
 
     const handler = (postData) => {
-        // console.log(data);
         dispatch(postOrder(postData));
     };
 

@@ -33,8 +33,6 @@
     font-size: 50px;
 }
 
-.address {
-}
 
 .address p:nth-child(1) {
     font-size: 40px;
@@ -64,4 +62,14 @@
     width: 100%;
     border: none;
     height: 500px;
+}
+
+@media (max-width: 1024px) {
+    .contacts {
+        grid-template-columns: 1fr;
+        padding-bottom: 80px;
+    }
+    .map {
+        grid-area: auto;
+    }
 }

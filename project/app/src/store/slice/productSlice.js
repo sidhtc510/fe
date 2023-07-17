@@ -74,6 +74,7 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
+                myConsole(state);
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";
@@ -88,7 +89,6 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
-                // myConsole(state);
             })
             .addCase(fetchCategoryProducts.rejected, (state) => {
                 state.status = "rejected";
