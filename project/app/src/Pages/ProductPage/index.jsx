@@ -15,7 +15,8 @@ export default function ProductPage() {
     }, [dispatch, id]);
 
     const product = useSelector((state) => state.products);
-
+    
+console.log(product);
     return (
         <Wrapper>
             {product.status === "ready" && (

@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 //                                                                           { id, title, price, discont_price, image, description } 
 export default function ProductIndividual({product}) {
-// console.log(product);
     const { id, title, price, discont_price, image, description } = product;
     const dispatch = useDispatch();
     const addToCart = () => {

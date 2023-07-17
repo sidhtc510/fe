@@ -18,8 +18,16 @@ import PageNotFound from "../PageNotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MobileMenu from "../MobileMenu";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "../../store/slice/productSlice";
+import { fetchCategories } from "../../store/slice/categoriesSlice";
 
 function App() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchProducts());
+        dispatch(fetchCategories());
+    }, [dispatch]);
 
     const cart = useCart();
     const cartQtn = cart.reduce((acc, el) => acc + el.count, 0);
@@ -47,7 +55,7 @@ function App() {
             />
 
             <HeaderMenu cartQtn={cartQtn} />
-            <MobileMenu  cartQtn={cartQtn} />
+            <MobileMenu cartQtn={cartQtn} />
             <AnimatePresence>
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<MainPage />} />
@@ -59,7 +67,7 @@ function App() {
                         path="/categories/:id"
                         element={<CategoryProducts />}
                     />
-                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/cart" element={<Cart data={cart} />} />
                     <Route path="/404" element={<PageNotFound />} />
                     <Route path="*" element={<Navigate to="/404" />} />
                 </Routes>

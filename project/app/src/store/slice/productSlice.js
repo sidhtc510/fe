@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const myConsole = (data) => {
-    const stateStringify = JSON.stringify(data);
-    console.log(JSON.parse(stateStringify));
-};
+// const myConsole = (data) => {
+//     const stateStringify = JSON.stringify(data);
+//     console.log(JSON.parse(stateStringify));
+// };
 
 const initialState = {
     category: {},
@@ -74,7 +74,7 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
-                myConsole(state);
+                // myConsole(state);
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";

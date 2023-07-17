@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartItem from "../CartItem";
 import s from "./s.module.css";
 import Button from "../UI/Button";
@@ -7,13 +7,13 @@ import Wrapper from "../UI/Wrapper";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useCart } from "../../hooks/useCart.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postOrder } from "../../store/slice/cartSlice";
 
-export default function CartContainer() {
+export default function CartContainer({ data }) {
     const dispatch = useDispatch();
 
-    const data = useCart(); // так же вызывается в app. данные можно передать пропсами
+    // const data = useCart(); // так же вызывается в app. данные можно передать пропсами
 
     const {
         register,

@@ -1,16 +1,10 @@
 import React, { useEffect } from "react";
 import Wrapper from "../UI/Wrapper";
 import PageTitle from "../UI/PageTitle";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../store/slice/productSlice";
+import { useSelector } from "react-redux";
 import ProductsContainer from "../ProductsContainer";
 
 export default function SaleOnMain() {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch]);
 
     const products = useSelector((state) => state.products);
 

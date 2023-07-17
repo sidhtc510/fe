@@ -17,7 +17,6 @@ export default function Product({ id, title, price, discont_price, image }) {
     const addToCart = () => {
         dispatch(addAction({ id }));
         toast("product in cart");
-
     };
 
     return (
@@ -44,3 +43,7 @@ export default function Product({ id, title, price, discont_price, image }) {
         </div>
     );
 }
+
+<a href="/product/">
+    <div>jdsbvjkds fdksnvklds mfkdsvmd fcds</div>
+</a>;
