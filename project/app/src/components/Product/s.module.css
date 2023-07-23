@@ -10,7 +10,9 @@
     color: black;
     height: 100%;
 }
-
+.productWrapper img{
+border-radius: 20px;
+}
 .wrap button {
     position: absolute;
     bottom: 100px;

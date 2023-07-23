@@ -1,10 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-// const myConsole = (data) => {
-//     const stateStringify = JSON.stringify(data);
-//     console.log(JSON.parse(stateStringify));
-// };
-
 const initialState = {
     category: {},
     list: [],
@@ -19,7 +14,6 @@ export const fetchProducts = createAsyncThunk(
             : "http://localhost:3333/products/all";
         const resp = await fetch(url);
         const data = await resp.json();
-// console.log("slice", data);
         return data;
     }
 );
@@ -44,7 +38,6 @@ export const productsSlice = createSlice({
                 const currentPrice = item.discont_price ?? item.price;
                 item.show.price = currentPrice >= min && currentPrice <= max;
             });
-            // myConsole(state)
         },
 
         rateAction(state, { payload }) {
@@ -74,7 +67,6 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
-                // myConsole(state);
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";

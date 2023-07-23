@@ -1,10 +1,12 @@
-import React from "react";
-import Button from "../UI/Button";
-import Wrapper from "../UI/Wrapper";
 import s from "./s.module.css";
 import logo from "./logo.png";
+
+import React from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { Link } from "react-router-dom";
+
+import Button from "../UI/Button";
+import Wrapper from "../UI/Wrapper";
 
 export default function HeaderMenu({ cartQtn }) {
     return (
@@ -26,9 +28,7 @@ export default function HeaderMenu({ cartQtn }) {
                         <Link to="/sales">All Sale</Link>
                     </div>
                     <Link to="/cart">
-                        {!cartQtn > 0 || (
-                            <p className={s.cartQtnStyle}>{cartQtn}</p>
-                        )}
+                        {!cartQtn > 0 || <p className={s.cartQtnStyle}>{cartQtn}</p>}
                         <HiOutlineShoppingBag />
                     </Link>
                 </div>

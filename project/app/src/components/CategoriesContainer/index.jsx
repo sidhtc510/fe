@@ -1,6 +1,6 @@
+import s from "./s.module.css";
 import React from "react";
 import CategoryItem from "../CategoryItem";
-import s from "./s.module.css";
 
 export default function CategoriesContainer({ categories }) {
     

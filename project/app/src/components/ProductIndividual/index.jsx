@@ -1,13 +1,16 @@
-import React from "react";
 import s from "./s.module.css";
-import Button from "../UI/Button";
+
+import React from "react";
 import { addAction } from "../../store/slice/cartSlice";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-//                                                                           { id, title, price, discont_price, image, description } 
+
+import Button from "../UI/Button";
+
 export default function ProductIndividual({product}) {
     const { id, title, price, discont_price, image, description } = product;
     const dispatch = useDispatch();
+    
     const addToCart = () => {
         dispatch(addAction({ id }));
         toast("product in cart")
@@ -17,6 +20,7 @@ export default function ProductIndividual({product}) {
         discont_price === null
             ? ""
             : Math.ceil(((price - discont_price) / price) * 100) + "%";
+
     return (
         <div className={s.productWrap}>
             <img src={`http://localhost:3333/${image}`} alt="" />

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
 import s from "./s.module.css";
+
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineShoppingBag, HiOutlineHome } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
+
 import MobileMenuLinks from "./MobileMenuLinks";
 
 export default function MobileMenu({ cartQtn }) {
@@ -10,7 +12,7 @@ export default function MobileMenu({ cartQtn }) {
 
     return (
         <>
-            {mobileMenuLinks && <MobileMenuLinks setMobileMenuLinks={setMobileMenuLinks}/>}
+            {mobileMenuLinks && <MobileMenuLinks setMobileMenuLinks={setMobileMenuLinks} />}
 
             <div className={s.mobileMenu}>
                 <Link to="/">
@@ -19,9 +21,7 @@ export default function MobileMenu({ cartQtn }) {
                 <Link to="/cart" className={s.cartIconWrap}>
                     <p>
                         <HiOutlineShoppingBag />
-                        {!cartQtn > 0 || (
-                            <p className={s.cartQtnStyle}>{cartQtn}</p>
-                        )}
+                        {!cartQtn > 0 || <p className={s.cartQtnStyle}>{cartQtn}</p>}
                     </p>
                     <p>Cart</p>
                 </Link>

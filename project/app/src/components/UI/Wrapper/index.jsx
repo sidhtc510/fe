@@ -1,5 +1,6 @@
-import React from "react";
 import s from "./s.module.css";
+
+import React from "react";
 import { motion } from "framer-motion";
 
 export default function Wrapper({ children, ...props }) {

@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
-import CartItem from "../CartItem";
 import s from "./s.module.css";
-import Button from "../UI/Button";
-import InputPhone from "../UI/InputPhone";
-import Wrapper from "../UI/Wrapper";
+
+import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useCart } from "../../hooks/useCart.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { postOrder } from "../../store/slice/cartSlice";
+
+import CartItem from "../CartItem";
+import Button from "../UI/Button";
+import InputPhone from "../UI/InputPhone";
+import Wrapper from "../UI/Wrapper";
 
 export default function CartContainer() {
     const dispatch = useDispatch();
+
     const data = useCart(); // так же вызывается в app. данные можно передать пропсами
-    // console.log(data);
 
     const {
         register,
@@ -25,9 +27,7 @@ export default function CartContainer() {
         dispatch(postOrder(postData));
     };
 
-    const amountCart = data
-        .reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0)
-        .toFixed(2);
+    const amountCart = data.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0).toFixed(2);
 
     return (
         <Wrapper>
@@ -36,7 +36,6 @@ export default function CartContainer() {
                 Back to the store &gt;{" "}
             </Link>
             <div className={s.cartContainerWrapper}>
-                {/* <div className={s.items}> */}
                 <div>
                     {data.map((el) => (
                         <CartItem key={el.id} {...el} />

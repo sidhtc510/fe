@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import Wrapper from "../../components/UI/Wrapper";
-import PageTitle from "../../components/UI/PageTitle";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/slice/productSlice";
+
 import ProductIndividual from "../../components/ProductIndividual";
+import Wrapper from "../../components/UI/Wrapper";
+import PageTitle from "../../components/UI/PageTitle";
 
 export default function ProductPage() {
     const dispatch = useDispatch();
@@ -15,8 +16,7 @@ export default function ProductPage() {
     }, [dispatch, id]);
 
     const product = useSelector((state) => state.products);
-    
-// console.log(product);
+
     return (
         <Wrapper>
             {product.status === "ready" && (

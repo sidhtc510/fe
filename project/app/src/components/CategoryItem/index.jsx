@@ -1,5 +1,5 @@
-import React from "react";
 import s from "./s.module.css";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export default function CategoryItem({ id, title, image }) {

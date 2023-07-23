@@ -12,6 +12,3 @@ export const store = configureStore({
         discount:discountSlice
     }
 })
-// const currentState = store.getState();
-
-// console.log('Current State:', currentState);

@@ -1,10 +1,12 @@
-import React from "react";
 import s from "./s.module.css";
-import Button from "../UI/Button";
+
+import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addAction } from "../../store/slice/cartSlice";
 import { toast } from "react-toastify";
+
+import Button from "../UI/Button";
 
 export default function Product({ id, title, price, discont_price, image }) {
     const dispatch = useDispatch();

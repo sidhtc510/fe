@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
 import s from "./s.module.css";
+
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { priceAction, rateAction, sortAction } from "../../store/slice/productSlice";
+import { VscClose } from "react-icons/vsc";
+
 import MobileFilterButton from "../MobileFilterButton";
-import {VscClose} from 'react-icons/vsc'
 
 export default function FiltersSortBlock({ salesPageFlag }) {
     const dispatch = useDispatch();
 
     const [mobileFilter, setMobileFilter] = useState(false);
-
 
     const [priceRange, setPriceRange] = useState({
         min: 0,
@@ -54,7 +55,9 @@ export default function FiltersSortBlock({ salesPageFlag }) {
             </div>
 
             <div className={mobileFilter ? [s.filtersSortWrapper, s.active].join(" ") : s.filtersSortWrapper}>
-                <p className={mobileFilter ? [s.filtersCloseBtn, s.active].join(" ") : s.filtersCloseBtn} onClick={() => setMobileFilter(false)}><VscClose /></p>
+                <p className={mobileFilter ? [s.filtersCloseBtn, s.active].join(" ") : s.filtersCloseBtn} onClick={() => setMobileFilter(false)}>
+                    <VscClose />
+                </p>
                 <div className={s.priceSort}>
                     <p>Price</p>
                     <input
@@ -90,8 +93,8 @@ export default function FiltersSortBlock({ salesPageFlag }) {
                         <option selected disabled>
                             Sorting
                         </option>
-                        <option value="priceAsc">Price 0 - 1</option>
-                        <option value="priceDesc">Price 1 - 0</option>
+                        <option value="priceAsc">Price ASC</option>
+                        <option value="priceDesc">Price DESC</option>
                         <option value="titleAtoZ">Title A to Z</option>
                         <option value="titleZtoA">Title Z to A</option>
                     </select>

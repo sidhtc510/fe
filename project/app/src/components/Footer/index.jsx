@@ -1,8 +1,10 @@
-import React from "react";
-import Wrapper from "../UI/Wrapper";
 import s from "./s.module.css";
+
+import React from "react";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineWhatsApp } from "react-icons/ai";
+
+import Wrapper from "../UI/Wrapper";
 
 export default function Footer() {
     return (
