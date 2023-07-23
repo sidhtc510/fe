@@ -63,10 +63,7 @@ function App() {
                     <Route path="/categories" element={<Categories />} />
                     <Route path="/sales" element={<AllSales />} />
                     <Route path="/product/:id" element={<ProductPage />} />
-                    <Route
-                        path="/categories/:id"
-                        element={<CategoryProducts />}
-                    />
+                    <Route path="/categories/:id" element={<CategoryProducts />} />
                     <Route path="/cart" element={<Cart data={cart} />} />
                     <Route path="/404" element={<PageNotFound />} />
                     <Route path="*" element={<Navigate to="/404" />} />

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import s from "./s.module.css";
 import { useDispatch } from "react-redux";
-import {
-    priceAction,
-    rateAction,
-    sortAction,
-} from "../../store/slice/productSlice";
+import { priceAction, rateAction, sortAction } from "../../store/slice/productSlice";
+import MobileFilterButton from "../MobileFilterButton";
+import {VscClose} from 'react-icons/vsc'
 
 export default function FiltersSortBlock({ salesPageFlag }) {
     const dispatch = useDispatch();
+
+    const [mobileFilter, setMobileFilter] = useState(false);
+
 
     const [priceRange, setPriceRange] = useState({
         min: 0,
@@ -47,55 +48,55 @@ export default function FiltersSortBlock({ salesPageFlag }) {
     // минимальное и максимальное значения для подстановки в инпуты END
 
     return (
-        <div className={s.filtersSortWrapper}>
-            <div className={s.priceSort}>
-                <p>Price</p>
-                <input
-                    type="text"
-                    placeholder="from"
-                    name="minPrice"
-                    // defaultValue={minPrice ?? ""}
-                    onChange={(e) =>
-                        setPriceRange({ ...priceRange, min: +e.target.value })
-                    }
-                />
-                <input
-                    type="text"
-                    placeholder="to"
-                    name="maxPrice"
-                    onChange={(e) =>
-                        setPriceRange({
-                            ...priceRange,
-                            max: +e.target.value || Infinity,
-                        })
-                    }
-                />
+        <>
+            <div className={s.mobileFilterButton} onClick={() => setMobileFilter(true)}>
+                <MobileFilterButton />
             </div>
 
-            {salesPageFlag ?? (
-                <div className={s.discounted}>
-                    <p>Discounted items</p>
+            <div className={mobileFilter ? [s.filtersSortWrapper, s.active].join(" ") : s.filtersSortWrapper}>
+                <p className={mobileFilter ? [s.filtersCloseBtn, s.active].join(" ") : s.filtersCloseBtn} onClick={() => setMobileFilter(false)}><VscClose /></p>
+                <div className={s.priceSort}>
+                    <p>Price</p>
                     <input
-                        type="checkbox"
-                        name="discounted"
-                        checked={rateFilter}
-                        onChange={({ target }) => setRateFilter(target.checked)}
+                        type="text"
+                        placeholder="from"
+                        name="minPrice"
+                        // defaultValue={minPrice ?? ""}
+                        onChange={(e) => setPriceRange({ ...priceRange, min: +e.target.value })}
+                    />
+                    <input
+                        type="text"
+                        placeholder="to"
+                        name="maxPrice"
+                        onChange={(e) =>
+                            setPriceRange({
+                                ...priceRange,
+                                max: +e.target.value || Infinity,
+                            })
+                        }
                     />
                 </div>
-            )}
 
-            <div className={s.sorting}>
-                <p>Sorted</p>
-                <select name="sorting" onChange={sortHandle}>
-                    <option selected disabled>
-                        Sorting
-                    </option>
-                    <option value="priceAsc">Price 0 - 1</option>
-                    <option value="priceDesc">Price 1 - 0</option>
-                    <option value="titleAtoZ">Title A to Z</option>
-                    <option value="titleZtoA">Title Z to A</option>
-                </select>
+                {salesPageFlag ?? (
+                    <div className={s.discounted}>
+                        <p>Discounted items</p>
+                        <input type="checkbox" name="discounted" checked={rateFilter} onChange={({ target }) => setRateFilter(target.checked)} />
+                    </div>
+                )}
+
+                <div className={s.sorting}>
+                    <p>Sorted</p>
+                    <select name="sorting" onChange={sortHandle}>
+                        <option selected disabled>
+                            Sorting
+                        </option>
+                        <option value="priceAsc">Price 0 - 1</option>
+                        <option value="priceDesc">Price 1 - 0</option>
+                        <option value="titleAtoZ">Title A to Z</option>
+                        <option value="titleZtoA">Title Z to A</option>
+                    </select>
+                </div>
             </div>
-        </div>
+        </>
     );
 }

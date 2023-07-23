@@ -52,9 +52,27 @@
     overflow: hidden;
 }
 
-
+.mobileHeader {
+    display: none;
+    margin: 0 auto;
+    width: fit-content;
+}
+.mobileHeader a {
+    align-items: center;
+    gap: 10px;
+    color: green;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
 @media (max-width: 1024px) {
     .nav {
         display: none;
+    }
+    .mobileHeader {
+        display: block;
+    }
+    .mobileHeader a {
+        display: flex;
     }
 }

@@ -11,7 +11,7 @@ export default function HeaderMenu({ cartQtn }) {
         <Wrapper>
             <nav className={s.nav}>
                 <div>
-                    <Link to='/'>
+                    <Link to="/">
                         <img src={logo} alt="" />
                     </Link>
                     <Link to="/categories">
@@ -32,6 +32,12 @@ export default function HeaderMenu({ cartQtn }) {
                         <HiOutlineShoppingBag />
                     </Link>
                 </div>
+            </nav>
+            <nav className={s.mobileHeader}>
+                <Link to="/">
+                    <img src={logo} alt="" />
+                    <p>Sad&Ogorod</p>
+                </Link>
             </nav>
         </Wrapper>
     );

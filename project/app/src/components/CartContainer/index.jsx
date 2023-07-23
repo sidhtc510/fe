@@ -10,10 +10,10 @@ import { useCart } from "../../hooks/useCart.js";
 import { useDispatch, useSelector } from "react-redux";
 import { postOrder } from "../../store/slice/cartSlice";
 
-export default function CartContainer({ data }) {
+export default function CartContainer() {
     const dispatch = useDispatch();
-
-    // const data = useCart(); // так же вызывается в app. данные можно передать пропсами
+    const data = useCart(); // так же вызывается в app. данные можно передать пропсами
+    // console.log(data);
 
     const {
         register,
