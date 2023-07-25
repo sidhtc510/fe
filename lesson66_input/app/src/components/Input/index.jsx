@@ -6,9 +6,11 @@ export const Input = () => {
     const [showContent, setShowContent] = useState(false);
 
     const type = showContent ? "text" : "password";
+
     const styleBtn = showContent ? { color: "red" } : { color: "gray" };
+    
     const eye = showContent ? <PiEyeThin /> : <PiEyeClosedThin />;
-    // props.className = [className, s.input_wrap].join(" ");
+
 
     return (
         <div className={s.input_wrap}>

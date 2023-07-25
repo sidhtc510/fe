@@ -5,7 +5,7 @@ export function useBascketProducts() {
 
     const { list } = useSelector(({ products }) => products);
 
-console.log("cartList", list);
+    console.log("cartList", list);
 
     const result = bascket.map((item) => {
         const product = list.find(({ id }) => id === item.id);
@@ -15,12 +15,11 @@ console.log("cartList", list);
     return result;
 }
 
-    // const bascket = useSelector((state) => state.bascket.list);
+// const bascket = useSelector((state) => state.bascket.list);
 
-    // const { list } = useSelector(({ products }) => products);
+// const { list } = useSelector(({ products }) => products);
 
-    // const result = bascket.map((item) => {
-    //     const product = list.find(({ id }) => id === item.id);
-    //     return { ...item, ...product };
-    // });
-    
+// const result = bascket.map((item) => {
+//     const product = list.find(({ id }) => id === item.id);
+//     return { ...item, ...product };
+// });

@@ -4,8 +4,11 @@
 
 .filtersSortWrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     padding: 20px 0;
+    align-items: center;
 }
 
 .filtersSortWrapper p {
@@ -26,11 +29,25 @@
 }
 
 .filtersSortWrapper input[type="checkbox"] {
+    cursor: pointer;
     transform: scale(2);
     /* zoom: 2.5; */
 }
+.filtersSortWrapper select{
+    padding: 10px;
+    border-radius: 5px;
+}
+
 .filtersCloseBtn {
     display: none;
+}
+
+.clearFilters{
+    cursor: pointer;
+    user-select: none;
+}
+.clearFilters:hover{
+color:red
 }
 
 @media (max-width: 1200px) {
@@ -50,6 +67,7 @@
         -webkit-backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
         color: white;
+        align-items:stretch;
     }
     .active {
         visibility: visible;
@@ -69,4 +87,7 @@
     .filtersSortWrapper > div:nth-child(2) {
         display: grid;
     }
+    .clearFilters{
+        color:red
+        }
 }

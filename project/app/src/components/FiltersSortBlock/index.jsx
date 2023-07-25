@@ -41,6 +41,8 @@ export default function FiltersSortBlock({ salesPageFlag }) {
         dispatch(sortAction(filtersState.sort));
     }, [dispatch, filtersState, list]);
 
+
+
     // минимальное и максимальное значения для подстановки в инпуты START
     ///////////////////////
 
@@ -116,7 +118,7 @@ export default function FiltersSortBlock({ salesPageFlag }) {
                         ))}
                     </select>
                 </div>
-                <p onClick={() => setFiltersState(filters)}>X</p>
+                <p className={s.clearFilters} onClick={() => setFiltersState(filters)}>Clear filters</p>
             </div>
         </>
     );
