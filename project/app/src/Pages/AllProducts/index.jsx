@@ -20,6 +20,7 @@ export default function AllProducts() {
             <PageTitle>All Products</PageTitle>
 
             <FilterSortBlock />
+            
             {products.status === "loading" ? (
                 <p>Loading...</p>
             ) : products.status === "error" ? (

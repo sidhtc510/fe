@@ -75,3 +75,10 @@ input[type="number"] {
 .delFromCart:hover {
     color: red;
 }
+
+@media(max-width:1024px){
+    .cartItemWrap {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+    }
+}

@@ -3,7 +3,7 @@
     grid-template-columns: 3fr 2fr;
     gap: 20px;
 }
-.productWrap img{
+.productWrap img {
     width: 100%;
 }
 .controlBlock {
@@ -45,4 +45,10 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 130%;
+}
+
+@media (max-width: 1024px) {
+    .productWrap {
+        grid-template-columns: 1fr;
+    }
 }

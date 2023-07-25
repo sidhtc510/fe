@@ -46,6 +46,6 @@ export default function Product({ id, title, price, discont_price, image }) {
     );
 }
 
-<a href="/product/">
+{/* <a href="/product/">
     <div>jdsbvjkds fdksnvklds mfkdsvmd fcds</div>
-</a>;
+</a>; */}

@@ -1,7 +1,8 @@
 import s from "./s.module.css";
+import { sortOptions } from "./sortOptions";
 
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { priceAction, rateAction, sortAction } from "../../store/slice/productSlice";
 import { VscClose } from "react-icons/vsc";
 
@@ -9,28 +10,40 @@ import MobileFilterButton from "../MobileFilterButton";
 
 export default function FiltersSortBlock({ salesPageFlag }) {
     const dispatch = useDispatch();
+    const { list } = useSelector(({ products }) => products);
 
     const [mobileFilter, setMobileFilter] = useState(false);
 
-    const [priceRange, setPriceRange] = useState({
-        min: 0,
-        max: Infinity,
-    });
-
-    const [rateFilter, setRateFilter] = useState(false);
-
-    const sortHandle = (e) => {
-        dispatch(sortAction(e.target.value));
+    const filters = {
+        price: {
+            min: 0,
+            max: Infinity,
+        },
+        rate: false,
+        sort: false,
     };
 
-    useEffect(() => {
-        dispatch(priceAction(priceRange));
-    }, [dispatch, priceRange]);
+    const [filtersState, setFiltersState] = useState(JSON.parse(localStorage.getItem("filtersState")) || filters);
 
     useEffect(() => {
-        dispatch(rateAction(rateFilter));
-    }, [dispatch, rateFilter]);
+        localStorage.setItem("filtersState", JSON.stringify({ ...filtersState, price: filtersState.price }));
+        filtersState.price.max = filtersState.price.max ?? Infinity;
+        dispatch(priceAction(filtersState.price));
+    }, [dispatch, filtersState, list]);
+
+    useEffect(() => {
+        localStorage.setItem("filtersState", JSON.stringify({ ...filtersState, rate: filtersState.rate }));
+        dispatch(rateAction(filtersState.rate));
+    }, [dispatch, filtersState, list]);
+
+    useEffect(() => {
+        localStorage.setItem("filtersState", JSON.stringify({ ...filtersState, sort: filtersState.sort }));
+        dispatch(sortAction(filtersState.sort));
+    }, [dispatch, filtersState, list]);
+
     // минимальное и максимальное значения для подстановки в инпуты START
+    ///////////////////////
+
     // const findMinMaxPrice = (products) => {
     //     let minPrice = Infinity;
     //     let maxPrice = -Infinity;
@@ -46,6 +59,8 @@ export default function FiltersSortBlock({ salesPageFlag }) {
 
     // const { minPrice, maxPrice } = findMinMaxPrice(products);
     // при отрисовке компонента сразу в инпуты устанавливаются инфинити
+
+    ///////////////////////
     // минимальное и максимальное значения для подстановки в инпуты END
 
     return (
@@ -64,41 +79,44 @@ export default function FiltersSortBlock({ salesPageFlag }) {
                         type="text"
                         placeholder="from"
                         name="minPrice"
-                        // defaultValue={minPrice ?? ""}
-                        onChange={(e) => setPriceRange({ ...priceRange, min: +e.target.value })}
+                        defaultValue={filtersState.price.min === 0 ? "" : filtersState.price.min}
+                        onChange={(e) => setFiltersState({ ...filtersState, price: { ...filtersState.price, min: +e.target.value } })}
                     />
                     <input
                         type="text"
                         placeholder="to"
                         name="maxPrice"
-                        onChange={(e) =>
-                            setPriceRange({
-                                ...priceRange,
-                                max: +e.target.value || Infinity,
-                            })
-                        }
+                        defaultValue={filtersState.price.max === Infinity ? "" : filtersState.price.max}
+                        onChange={(e) => setFiltersState({ ...filtersState, price: { ...filtersState.price, max: +e.target.value || Infinity } })}
                     />
                 </div>
 
                 {salesPageFlag ?? (
                     <div className={s.discounted}>
                         <p>Discounted items</p>
-                        <input type="checkbox" name="discounted" checked={rateFilter} onChange={({ target }) => setRateFilter(target.checked)} />
+                        <input
+                            type="checkbox"
+                            name="discounted"
+                            checked={filtersState.rate}
+                            onChange={({ target }) => setFiltersState({ ...filtersState, rate: target.checked })}
+                        />
                     </div>
                 )}
 
                 <div className={s.sorting}>
                     <p>Sorted</p>
-                    <select name="sorting" onChange={sortHandle}>
+                    <select name="sorting" onChange={({ target }) => setFiltersState({ ...filtersState, sort: target.value })}>
                         <option selected disabled>
                             Sorting
                         </option>
-                        <option value="priceAsc">Price ASC</option>
-                        <option value="priceDesc">Price DESC</option>
-                        <option value="titleAtoZ">Title A to Z</option>
-                        <option value="titleZtoA">Title Z to A</option>
+                        {sortOptions.map((el) => (
+                            <option selected={el.value === filtersState.sort} value={el.value}>
+                                {el.title}
+                            </option>
+                        ))}
                     </select>
                 </div>
+                <p onClick={() => setFiltersState(filters)}>X</p>
             </div>
         </>
     );

@@ -46,6 +46,9 @@ export const productsSlice = createSlice({
             });
         },
         sortAction(state, { payload }) {
+            if (payload === false) {
+                return state;
+            }
             ({
                 priceAsc: () => state.list.sort((a, b) => a.price - b.price),
                 priceDesc: () => state.list.sort((a, b) => b.price - a.price),
