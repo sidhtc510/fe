@@ -1,10 +1,39 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     /* font-family: Roboto, sans-serif; */
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
+.mainWrapper {
+    height: 100vh;
+
+}
+.darkTheme {
+    background-color: rgb(35, 35, 35);
+    transition: 0.5s;
+
+  }
+  .lightTheme {
+    background-color: rgb(95, 95, 95);
+    transition: 0.5s;
+
+}
+
+
+@keyframes rotateIcon {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  /* Add a class to rotate the icon using the animation */
+  .rotatedIcon {
+    animation: rotateIcon 0.3s ease-in-out;
   }

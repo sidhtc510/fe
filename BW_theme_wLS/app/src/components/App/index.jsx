@@ -3,16 +3,25 @@ import Button from "../Button";
 import Wrapper from "../Wrapper";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { GoArrowSwitch } from "react-icons/go";
+import { useState } from "react";
 
 function App() {
     const [darkTheme, setDarkTheme] = useLocalStorage("theme", false);
+    const [rotated, setRotated] = useState(false);
+
+    const handleButtonClick = () => {
+        setDarkTheme(!darkTheme);
+
+        setRotated(true);
+        setTimeout(() => setRotated(false), 300); 
+    };
 
     return (
-        <div>
+        <div className={["mainWrapper", darkTheme ? "darkTheme" : "lightTheme"].join(" ")}>
             <Wrapper darkTheme={darkTheme}>
-                <Button onClick={() => setDarkTheme(!darkTheme)}>
+                <Button onClick={handleButtonClick}>
                     {" "}
-                    <GoArrowSwitch /> Switch theme
+                    <GoArrowSwitch className={rotated ? "rotatedIcon" : ""} /> Switch theme
                 </Button>
             </Wrapper>
         </div>
