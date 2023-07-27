@@ -11,12 +11,17 @@ export default function ProductPage() {
     const dispatch = useDispatch();
     const { id } = useParams();
 
+    const urlType = {
+        type: "product",
+        entity_id: id,
+    };
+
     useEffect(() => {
-        dispatch(fetchProducts(id));
-    }, [dispatch, id]);
+        dispatch(fetchProducts(urlType));
+    }, [dispatch]);
 
     const product = useSelector((state) => state.products);
-
+    // console.log(urlType);
     return (
         <Wrapper>
             {product.status === "ready" && (

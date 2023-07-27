@@ -5,28 +5,31 @@ const initialState = {
     list: [],
     status: "",
 };
+const myConsole = (data) => {
+    const stateStringify = JSON.stringify(data);
+    console.log(JSON.parse(stateStringify));
+};
 
-export const fetchProducts = createAsyncThunk(
-    "products/fetchProducts",
-    async (id) => {
-        const url = id
-            ? `http://localhost:3333/products/${id}`
-            : "http://localhost:3333/products/all";
-        const resp = await fetch(url);
-        const data = await resp.json();
-        return data;
+export const fetchProducts = createAsyncThunk("products/fetchProducts", async (urlType) => {
+    let url = "";
+    switch (urlType?.type) {
+        case "productsByCategory":
+            url = `http://localhost:3333/categories/${urlType.entity_id}`;
+            break;
+        case "product":
+            url = `http://localhost:3333/products/${urlType.entity_id}`;
+            break;
+        default:
+            url = "http://localhost:3333/products/all";
+            break;
     }
-);
+    const resp = await fetch(url);
+    const data = await resp.json();
 
-export const fetchCategoryProducts = createAsyncThunk(
-    "products/fetchCategoryProducts",
-    async (category_id) => {
-        const url = `http://localhost:3333/categories/${category_id}`;
-        const resp = await fetch(url);
-        const data = await resp.json();
-        return data;
-    }
-);
+    const normalizedData = Array.isArray(data) ? { data: [...data] } : data;
+
+    return normalizedData;
+});
 
 export const productsSlice = createSlice({
     name: "products",
@@ -52,10 +55,8 @@ export const productsSlice = createSlice({
             ({
                 priceAsc: () => state.list.sort((a, b) => a.price - b.price),
                 priceDesc: () => state.list.sort((a, b) => b.price - a.price),
-                titleAtoZ: () =>
-                    state.list.sort((a, b) => a.title.localeCompare(b.title)),
-                titleZtoA: () =>
-                    state.list.sort((a, b) => b.title.localeCompare(a.title)),
+                titleAtoZ: () => state.list.sort((a, b) => a.title.localeCompare(b.title)),
+                titleZtoA: () => state.list.sort((a, b) => b.title.localeCompare(a.title)),
             })[payload]();
         },
     },
@@ -66,26 +67,13 @@ export const productsSlice = createSlice({
             })
             .addCase(fetchProducts.fulfilled, (state, { payload }) => {
                 state.status = "ready";
-                state.list = payload.map((item) => ({
-                    ...item,
-                    show: { search: true, price: true, rate: true },
-                }));
-            })
-            .addCase(fetchProducts.rejected, (state) => {
-                state.status = "rejected";
-            })
-            .addCase(fetchCategoryProducts.pending, (state) => {
-                state.status = "loading";
-            })
-            .addCase(fetchCategoryProducts.fulfilled, (state, { payload }) => {
-                state.status = "ready";
-                state.category = payload.category;
+                state.category = payload.category ?? {};
                 state.list = payload.data.map((item) => ({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
             })
-            .addCase(fetchCategoryProducts.rejected, (state) => {
+            .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";
             });
     },

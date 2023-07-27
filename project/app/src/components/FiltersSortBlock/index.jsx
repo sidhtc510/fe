@@ -26,22 +26,12 @@ export default function FiltersSortBlock({ salesPageFlag }) {
     const [filtersState, setFiltersState] = useState(JSON.parse(localStorage.getItem("filtersState")) || filters);
 
     useEffect(() => {
-        localStorage.setItem("filtersState", JSON.stringify({ ...filtersState, price: filtersState.price }));
+        localStorage.setItem("filtersState", JSON.stringify({ price: filtersState.price, rate: filtersState.rate, sort: filtersState.sort }));
         filtersState.price.max = filtersState.price.max ?? Infinity;
         dispatch(priceAction(filtersState.price));
-    }, [dispatch, filtersState, list]);
-
-    useEffect(() => {
-        localStorage.setItem("filtersState", JSON.stringify({ ...filtersState, rate: filtersState.rate }));
         dispatch(rateAction(filtersState.rate));
-    }, [dispatch, filtersState, list]);
-
-    useEffect(() => {
-        localStorage.setItem("filtersState", JSON.stringify({ ...filtersState, sort: filtersState.sort }));
         dispatch(sortAction(filtersState.sort));
     }, [dispatch, filtersState, list]);
-
-
 
     // минимальное и максимальное значения для подстановки в инпуты START
     ///////////////////////
@@ -118,7 +108,9 @@ export default function FiltersSortBlock({ salesPageFlag }) {
                         ))}
                     </select>
                 </div>
-                <p className={s.clearFilters} onClick={() => setFiltersState(filters)}>Clear filters</p>
+                <p className={s.clearFilters} onClick={() => setFiltersState(filters)}>
+                    Clear filters
+                </p>
             </div>
         </>
     );
