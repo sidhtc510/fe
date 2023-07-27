@@ -1,8 +1,9 @@
 /* Основные стили кнопки */
 .button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin: 20px;
-
-    display: inline-block;
     text-align: center;
     text-decoration: none;
     border: none;
