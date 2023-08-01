@@ -13,14 +13,13 @@ function App() {
         setDarkTheme(!darkTheme);
 
         setRotated(true);
-        setTimeout(() => setRotated(false), 300); 
+        setTimeout(() => setRotated(false), 300);
     };
 
     return (
         <div className={["mainWrapper", darkTheme ? "darkTheme" : "lightTheme"].join(" ")}>
             <Wrapper darkTheme={darkTheme}>
                 <Button onClick={handleButtonClick}>
-                    {" "}
                     <GoArrowSwitch className={rotated ? "rotatedIcon" : ""} /> Switch theme
                 </Button>
             </Wrapper>

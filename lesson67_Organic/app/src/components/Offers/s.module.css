@@ -1,0 +1,24 @@
+.Offers_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 376px;
+    justify-items: center;
+}
+
+.Offers_wrapper > div {
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain; /* Resize the background image to cover the entire container */
+}
+.Offers_fruits {
+    background: url("./lp.jpg");
+}
+.Offers_vegetables {
+    background: url("./rp.jpg");
+}
+.Offers_card > div p:nth-child(1) {
+    font-family: "Yellowtail", cursive;
+    color: #fff;
+    font-size: 36px;
+}
