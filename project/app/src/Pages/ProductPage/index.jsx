@@ -1,27 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../store/slice/productSlice";
 
 import ProductIndividual from "../../components/ProductIndividual";
 import Wrapper from "../../components/UI/Wrapper";
 import PageTitle from "../../components/UI/PageTitle";
 
 export default function ProductPage() {
-    const dispatch = useDispatch();
-    const { id } = useParams();
 
-    const urlType = {
-        type: "product",
-        entity_id: id,
+    const { id } = useParams();
+    const [product, setProduct] = useState({status:"loading"});
+
+    const getProduct = (id, callback) => {
+        fetch(`http://localhost:3333/products/${id}`)
+            .then((res) => res.json())
+            .then((json) => callback({status:"ready", list: json}));
     };
 
-    useEffect(() => {
-        dispatch(fetchProducts(urlType));
-    }, [dispatch]);
+    useEffect(()=>{
+        getProduct(id, setProduct);
+    }, [])
 
-    const product = useSelector((state) => state.products);
-    // console.log(urlType);
+
     return (
         <Wrapper>
             {product.status === "ready" && (

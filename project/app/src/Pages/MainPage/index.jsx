@@ -10,12 +10,12 @@ import { useDispatch } from "react-redux";
 import { fetchProducts } from "../../store/slice/productSlice";
 
 export default function MainPage() {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchProducts());
-        dispatch(fetchCategories());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(fetchProducts());
+    //     dispatch(fetchCategories());
+    // }, [dispatch]);
 
     return (
         <Wrapper>

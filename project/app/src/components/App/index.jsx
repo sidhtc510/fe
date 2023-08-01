@@ -18,8 +18,19 @@ import { useCart } from "../../hooks/useCart";
 import { AnimatePresence } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "../../store/slice/productSlice";
+import { fetchCategories } from "../../store/slice/categoriesSlice";
 
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+        dispatch(fetchCategories());
+    }, [dispatch]);
+
+
     const cart = useCart();
     const cartQtn = cart.reduce((acc, el) => acc + el.count, 0);
 

@@ -16,9 +16,9 @@ export const fetchProducts = createAsyncThunk("products/fetchProducts", async (u
         case "productsByCategory":
             url = `http://localhost:3333/categories/${urlType.entity_id}`;
             break;
-        case "product":
-            url = `http://localhost:3333/products/${urlType.entity_id}`;
-            break;
+        // case "product":
+        //     url = `http://localhost:3333/products/${urlType.entity_id}`;
+        //     break;
         default:
             url = "http://localhost:3333/products/all";
             break;
