@@ -30,17 +30,17 @@ function App() {
         dispatch(fetchCategories());
     }, [dispatch]);
 
-
     const cart = useCart();
     const cartQtn = cart.reduce((acc, el) => acc + el.count, 0);
-
     const location = useLocation();
-
-    const { pathname } = useLocation();
     
+    const { pathname } = useLocation();
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
+
+
 
     return (
         <div>
@@ -74,6 +74,7 @@ function App() {
             </AnimatePresence>
 
             <Footer />
+ 
         </div>
     );
 }

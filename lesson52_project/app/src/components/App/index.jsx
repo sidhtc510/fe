@@ -14,13 +14,14 @@ import { fetchCategories } from "../../store/slice/categorySlice";
 import { fetchProducts } from "../../store/slice/productsSlice";
 // import CategoryProductsPage from "../Pages/CategoryProductsPage";
 
+
 function App() {
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(fetchCategories());
         dispatch(fetchProducts());
     }, [dispatch]);
+    
 
     return (
         <div className="categoryWrapper">

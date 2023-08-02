@@ -5,14 +5,11 @@ const myConsole = (data) => {
     console.log(JSON.parse(stateStringify));
 };
 
-export const fetchProducts = createAsyncThunk(
-    "products/fetchProducts",
-    async () => {
-        const resp = await fetch("https://fakestoreapi.com/products");
-        const data = await resp.json();
-        return data;
-    }
-);
+export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
+    const resp = await fetch("https://fakestoreapi.com/products");
+    const data = await resp.json();
+    return data;
+});
 
 export const productsSlice = createSlice({
     name: "products",
@@ -27,9 +24,7 @@ export const productsSlice = createSlice({
         },
         searchAction(state, { payload }) {
             state.list.forEach((item) => {
-                item.show.search = item.title
-                    .toLowerCase()
-                    .includes(payload.toLowerCase());
+                item.show.search = item.title.toLowerCase().includes(payload.toLowerCase());
             });
         },
         sortAction(state, { payload }) {
@@ -48,10 +43,8 @@ export const productsSlice = createSlice({
             //variant #2 :
             ({
                 price: () => state.list.sort((a, b) => a.price - b.price),
-                rating: () =>
-                    state.list.sort((a, b) => a.rating.rate - b.rating.rate),
-                title: () =>
-                    state.list.sort((a, b) => a.title.localeCompare(b.title)),
+                rating: () => state.list.sort((a, b) => a.rating.rate - b.rating.rate),
+                title: () => state.list.sort((a, b) => a.title.localeCompare(b.title)),
             })[payload]();
         },
         rateAction(state, { payload }) {
@@ -79,7 +72,6 @@ export const productsSlice = createSlice({
     },
 });
 
-export const { priceAction, searchAction, sortAction, rateAction } =
-    productsSlice.actions;
+export const { priceAction, searchAction, sortAction, rateAction } = productsSlice.actions;
 
 export default productsSlice.reducer;

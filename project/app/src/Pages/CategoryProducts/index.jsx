@@ -11,15 +11,11 @@ import FilterSortBlock from "../../components/FiltersSortBlock";
 export default function CategoryProducts() {
     const dispatch = useDispatch();
     const { id } = useParams();
+    const categoryId = +id;
 
-    const urlType = {
-        type: "productsByCategory",
-        entity_id: id,
-    };
-    useEffect(() => {
-        dispatch(fetchProducts(urlType));
-    }, [dispatch]);
     const products = useSelector((state) => state.products);
+    const filteredListByCategory = products.list.filter((el) => el.categoryId === categoryId);
+    const productsByCategory = { ...products, list: filteredListByCategory };
 
     return (
         <Wrapper>
@@ -27,7 +23,7 @@ export default function CategoryProducts() {
                 <>
                     <PageTitle>{products.category.title}</PageTitle>
                     <FilterSortBlock products={products.list} />
-                    <ProductsContainer products={products} />
+                    <ProductsContainer products={productsByCategory} />
                 </>
             )}
         </Wrapper>

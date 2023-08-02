@@ -1,18 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import PageTitle from "../UI/PageTitle";
 import ProductsContainer from "../ProductsContainer";
 import Wrapper from "../UI/Wrapper";
-import { fetchProducts } from "../../store/slice/productSlice";
 
 export default function SaleOnMain() {
-    const dispatch = useDispatch();
-    const products = useSelector((state) => state.products);
 
-    useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch, products]);
+    const products = useSelector((state) => state.products);
 
     const products_with_discount = {
         ...products,
@@ -22,7 +17,7 @@ export default function SaleOnMain() {
     return (
         <Wrapper>
             <PageTitle>Sale</PageTitle>
-            <ProductsContainer products={products_with_discount} />
+            <ProductsContainer products={products_with_discount} dontUseShowFilter={true}/>
         </Wrapper>
     );
 }

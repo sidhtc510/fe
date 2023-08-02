@@ -2,12 +2,16 @@ import React from "react";
 import Product from "../Product";
 import s from "./s.module.css";
 
-export default function ProductsContainer({ products }) {
+export default function ProductsContainer({ products, dontUseShowFilter }) {
+const processedProducts = dontUseShowFilter === undefined ? products.list
+.filter(({ show }) => Object.values(show).every((item) => item)) : products.list
 
+
+console.log("ProductsContainer - products",products);
+console.log("ProductsContainer - processedProducts",processedProducts);
     return (
         <div className={s.productsWrapper}>
-            {products.list
-                .filter(({ show }) => Object.values(show).every((item) => item))
+            {processedProducts
                 .map((el) => (
                     <Product key={el.id} {...el} />
                 ))}

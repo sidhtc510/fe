@@ -10,20 +10,8 @@ const myConsole = (data) => {
     console.log(JSON.parse(stateStringify));
 };
 
-export const fetchProducts = createAsyncThunk("products/fetchProducts", async (urlType) => {
-    let url = "";
-    switch (urlType?.type) {
-        case "productsByCategory":
-            url = `http://localhost:3333/categories/${urlType.entity_id}`;
-            break;
-        // case "product":
-        //     url = `http://localhost:3333/products/${urlType.entity_id}`;
-        //     break;
-        default:
-            url = "http://localhost:3333/products/all";
-            break;
-    }
-    const resp = await fetch(url);
+export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
+    const resp = await fetch("http://localhost:3333/products/all");
     const data = await resp.json();
 
     const normalizedData = Array.isArray(data) ? { data: [...data] } : data;
@@ -72,6 +60,7 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
+                // myConsole(state)
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";
