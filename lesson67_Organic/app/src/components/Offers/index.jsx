@@ -8,14 +8,24 @@ export default function Offers() {
     return (
         <Container>
             <div className={s.Offers_wrapper}>
-                <div className={s.Offers_fruits}>
-                    <p>Natural!!!</p>
-                    <p>Get Garden Fresh Fruits</p>
+                <div>
+                    <div className={[s.Offers_fruits, s.Offers_card].join(" ")}>
+                        <img src={lp} alt="" />
+                        <span>
+                            <p>Natural!!!</p>
+                            <p>Get Garden Fresh Fruits</p>
+                        </span>
+                    </div>
                 </div>
 
-                <div className={s.Offers_vegetables}>
-                    <p>Offer!!</p>
-                    <p>Get 10% off on Vegetables</p>
+                <div>
+                    <div className={[s.Offers_vegetables, s.Offers_card].join(" ")}>
+                        <img src={rp} alt="" />
+                        <span>
+                            <p>Offer!!</p>
+                            <p>Get 10% off on Vegetables</p>
+                        </span>
+                    </div>
                 </div>
             </div>
         </Container>

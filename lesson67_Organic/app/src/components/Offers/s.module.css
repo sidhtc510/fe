@@ -1,24 +1,43 @@
 .Offers_wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: 376px;
     justify-items: center;
 }
 
-.Offers_wrapper > div {
-    width: 100%;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: contain; /* Resize the background image to cover the entire container */
+.Offers_card {
+    position: relative;
 }
-.Offers_fruits {
-    background: url("./lp.jpg");
+.Offers_card > span {
+    position: absolute;
+    top: 30%;
+    left: 40px;
+    width: 260px;
 }
-.Offers_vegetables {
-    background: url("./rp.jpg");
-}
-.Offers_card > div p:nth-child(1) {
+.Offers_card > span p:nth-child(1) {
     font-family: "Yellowtail", cursive;
-    color: #fff;
     font-size: 36px;
+    font-weight: 400;
+}
+.Offers_card > span p:nth-child(2) {
+    font-size: 40px;
+    font-weight: 800;
+}
+.Offers_fruits > span p:nth-child(1) {
+    color: white;
+}
+.Offers_fruits > span p:nth-child(2) {
+    color: white;
+}
+.Offers_vegetables > span p:nth-child(1) {
+    color: #7eb693;
+}
+.Offers_vegetables > span p:nth-child(2) {
+    color: #274c5b;
+}
+
+.Offers_card > img {
+    object-fit: contain;
+    width: 100%;
+    border-radius: 30px;
 }
