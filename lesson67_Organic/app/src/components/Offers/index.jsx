@@ -11,6 +11,7 @@ export default function Offers() {
                 <div>
                     <div className={[s.Offers_fruits, s.Offers_card].join(" ")}>
                         <img src={lp} alt="" />
+
                         <span>
                             <p>Natural!!!</p>
                             <p>Get Garden Fresh Fruits</p>

@@ -1,13 +1,36 @@
 import "../../App.css";
+import s from "./s.module.css";
+import { useEffect, useState } from "react";
+import { Context } from "../../context";
+
 import Nav from "../Nav";
 import Offers from "../Offers";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+import ProductsContainer from "../ProductsContainer";
 
 function App() {
+    // const [darkMode, setDarkMode] = useState(() => {
+    //     return !!+(localStorage.getItem("darkMode"));
+    // });
+
+    // useEffect(() => {
+    //     localStorage.setItem("darkMode", +darkMode);
+    // }, [darkMode]);
+
+    const [darkMode, setDarkMode] = useLocalStorage(false, "darkMode");
+
+    const changeDarkMode = ({ target }) => {
+        setDarkMode(target.checked);
+    };
+
     return (
-        <div>
-            <Nav />
-            <Offers />
-        </div>
+        <Context.Provider value={{ darkMode, changeDarkMode }}>
+            <div className={darkMode ? s.darkMode : s.lightMode}>
+                <Nav />
+                <Offers />
+                <ProductsContainer />
+            </div>
+        </Context.Provider>
     );
 }
 

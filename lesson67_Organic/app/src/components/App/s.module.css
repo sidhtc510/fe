@@ -1,0 +1,14 @@
+.darkMode {
+    background: #242424;
+    transition: 0.2s;
+    color: white;
+}
+
+.lightMode {
+    background: inherit;
+    transition: 0.2s;
+}
+
+.darkMode a {
+    color: white;
+}

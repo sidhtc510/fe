@@ -1,12 +1,19 @@
-import React from "react";
 import logo from "./logo.png";
 import s from "./s.module.css";
+import { Context } from "../../context";
+
+import React, { useContext } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { PiShoppingCartSimpleLight } from "react-icons/pi";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
 import Container from "../UI/Container";
+import Checkbox from "../UI/Checkbox";
 
 export default function Nav() {
+    const { darkMode, changeDarkMode } = useContext(Context);
+
+
     return (
         <Container>
             <nav className={s.Nav_wrap}>
@@ -22,7 +29,7 @@ export default function Nav() {
                     <li>
                         <a href="#">About</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="#" style={{ display: "flex", alignItems: "center" }}>
                             Pages <MdOutlineKeyboardArrowDown />
                         </a>
@@ -37,7 +44,6 @@ export default function Nav() {
                         <a href="#">News</a>
                     </li>
                 </ul>
-
                 <div className={s.Nav_search_cart_wrapper}>
                     <div className={s.Nav_search}>
                         <input type="text" />
@@ -52,6 +58,8 @@ export default function Nav() {
                         </div>
                         <p>Cart (0)</p>
                     </div>
+
+                    <Checkbox checked={darkMode} onChange={changeDarkMode} label={darkMode ? "Light" : "Dark"} />
                 </div>
             </nav>
         </Container>
