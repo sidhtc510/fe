@@ -41,6 +41,7 @@ export const productsSlice = createSlice({
                 return state;
             }
             ({
+                id: () => state.list.sort((a, b) => a.id - b.id),
                 priceAsc: () => state.list.sort((a, b) => a.price - b.price),
                 priceDesc: () => state.list.sort((a, b) => b.price - a.price),
                 titleAtoZ: () => state.list.sort((a, b) => a.title.localeCompare(b.title)),

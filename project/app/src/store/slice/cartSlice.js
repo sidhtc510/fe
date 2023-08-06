@@ -90,7 +90,7 @@ export const cartSlice = createSlice({
             })
             .addCase(postOrder.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                console.log(action.payload);
+                // console.log(action.payload);
             })
             .addCase(postOrder.rejected, (state, action) => {
                 state.status = "failed";
