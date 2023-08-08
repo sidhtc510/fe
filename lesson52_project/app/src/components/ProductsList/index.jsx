@@ -5,9 +5,7 @@ import ProductsItem from "../ProductItem";
 export default function ProductsList({ categoryName }) {
     const { list, status } = useSelector(({ products }) => products);
 
-    const filteredProducts = categoryName
-    ? list.filter((el) => el.category === categoryName)
-    : list;
+    const filteredProducts = categoryName ? list.filter((el) => el.category === categoryName) : list;
 
     return (
         <div className="productsList">
@@ -17,10 +15,8 @@ export default function ProductsList({ categoryName }) {
                 "Error..."
             ) : (
                 filteredProducts
-                    // .filter(({ show }) => show.search && show.price)
-                    .filter(({ show }) =>
-                        Object.values(show).every((item) => item)
-                    )
+                    // .filter(({ show }) => show.search && show.price )
+                    .filter(({ show }) => Object.values(show).every((item) => item))
                     .map((el) => <ProductsItem key={el.id} {...el} />)
             )}
         </div>

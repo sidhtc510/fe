@@ -31,10 +31,10 @@
     border-radius: 14px;
     transition: background 0.2s;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 1;
 }
 .checkbox:hover::before {
-    opacity: 1;
+    opacity: 0.8;
 }
 .checkbox {
     width: 0;

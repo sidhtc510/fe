@@ -7,8 +7,11 @@ import Nav from "../Nav";
 import Offers from "../Offers";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import ProductsContainer from "../ProductsContainer";
+import { fetchProducts } from "../../store/slices/productsSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
+    const dispatch = useDispatch();
     // const [darkMode, setDarkMode] = useState(() => {
     //     return !!+(localStorage.getItem("darkMode"));
     // });
@@ -22,6 +25,11 @@ function App() {
     const changeDarkMode = ({ target }) => {
         setDarkMode(target.checked);
     };
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch]);
+
 
     return (
         <Context.Provider value={{ darkMode, changeDarkMode }}>

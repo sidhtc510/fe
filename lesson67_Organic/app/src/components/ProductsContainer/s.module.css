@@ -5,3 +5,26 @@
     gap: 10px;
     justify-items: center;
 }
+
+.zagolovki {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px 0;
+}
+.zagolovki h3 {
+    color: #7eb693;
+    font-family: Yellowtail;
+    font-size: 36px;
+    text-align: center;
+
+    font-weight: 400;
+}
+.zagolovki h2 {
+    color: #274c5b;
+    text-align: center;
+
+    font-size: 50px;
+
+    font-weight: 800;
+}

@@ -13,7 +13,6 @@ import Checkbox from "../UI/Checkbox";
 export default function Nav() {
     const { darkMode, changeDarkMode } = useContext(Context);
 
-
     return (
         <Container>
             <nav className={s.Nav_wrap}>
@@ -58,7 +57,6 @@ export default function Nav() {
                         </div>
                         <p>Cart (0)</p>
                     </div>
-
                     <Checkbox checked={darkMode} onChange={changeDarkMode} label={darkMode ? "Light" : "Dark"} />
                 </div>
             </nav>

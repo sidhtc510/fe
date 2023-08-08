@@ -48,6 +48,7 @@ export const productsSlice = createSlice({
             })[payload]();
         },
         rateAction(state, { payload }) {
+            // console.log(payload);
             state.list.forEach((item) => {
                 item.show.rate = payload ? item.rating.rate >= 4 : true;
             });
