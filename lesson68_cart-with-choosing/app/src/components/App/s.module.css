@@ -1,0 +1,17 @@
+.App__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.App__products_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.App__wrapper button{
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    cursor: pointer;
+}
