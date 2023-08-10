@@ -41,22 +41,36 @@
 .productItem_item > div {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
 }
 
-.productItem_item > div p:nth-child(1) {
+.productItem_item > div > div:nth-child(1) {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.productItem_item > div > div p:nth-child(1) {
     color: #b8b8b8;
     text-align: center;
     font-size: 15px;
     font-weight: 600;
     text-decoration: line-through;
 }
-.productItem_item > div p:nth-child(2) {
+.productItem_item > div > div p:nth-child(2) {
     color: #274c5b;
     text-align: center;
     font-size: 18px;
     font-weight: 700;
 }
+
+/* .price{
+    color: #b8b8b8;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: line-through;
+} */
 
 .stars {
     font-size: 20px;

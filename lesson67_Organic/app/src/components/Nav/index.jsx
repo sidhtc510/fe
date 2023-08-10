@@ -9,6 +9,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import Container from "../UI/Container";
 import Checkbox from "../UI/Checkbox";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
     const { darkMode, changeDarkMode } = useContext(Context);
@@ -23,7 +24,7 @@ export default function Nav() {
 
                 <ul className={s.Nav_ul}>
                     <li>
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
                         <a href="#">About</a>

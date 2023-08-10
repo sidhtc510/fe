@@ -21,7 +21,7 @@
         "id": 3,
         "img": "http://127.0.0.1:5500/media/3.png",
         "title": "White Nuts",
-        "price": 20,
+        "price": 28,
         "new_price": 19,
         "mark": 2,
         "type": "miles"

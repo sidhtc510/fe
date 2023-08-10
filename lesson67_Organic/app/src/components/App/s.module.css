@@ -12,3 +12,14 @@
 .darkMode a {
     color: white;
 }
+
+.button {
+    padding: 30px 50px;
+    border-radius: 15px;
+    background-color: #274C5B;
+    cursor: pointer;
+    color: white;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+}
