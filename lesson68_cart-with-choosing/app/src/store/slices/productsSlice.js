@@ -8,10 +8,13 @@ const myConsole = (data) => {
 
 const productsSlice = createSlice({
     name: "productsSlice",
-    initialState: { list: data.map((el) => ({ ...el, isChecked: true })) },
+    initialState: { list: data.map((el) => ({ ...el, isChecked: false })) },
     reducers: {
+        
         changeSelectAction(state, { payload }) {
+console.log("payload", payload);
             state.list.find((el) => el.id === payload.id).isChecked = payload.isChecked;
+            // state.list.map((item) => item.id === payload.id ? { ...item.list, isChecked:  !state.list.isChecked } : item)
         },
     },
 });
