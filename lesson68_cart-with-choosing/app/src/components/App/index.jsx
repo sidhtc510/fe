@@ -13,8 +13,6 @@ function App() {
         const arr = products.filter((el) => el.isChecked);
         dispatch(addItemsAction(arr));
     };
-    console.log("App", products);
-
 
     return (
         <div className={s.App__wrapper}>
