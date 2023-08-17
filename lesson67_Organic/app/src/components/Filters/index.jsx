@@ -13,6 +13,9 @@ export default function Filters() {
     const [mark, setMark] = useState(-1);
     const [category, setCategory] = useState("-1");
 
+    const products = useSelector(({ products }) => products.list);
+    const filteredProducts = products.filter(({ show }) => Object.values(show).every((item) => item));
+
     useEffect(() => {
         dispatch(filterPriceAction(price));
     }, [dispatch, price]);
@@ -29,6 +32,13 @@ export default function Filters() {
         dispatch(filterCategoryAction(category));
     }, [dispatch, category]);
 
+    useEffect(() => {
+        return () => {
+            // return clearInputs
+            return dispatch(filterResetAction(true));
+        };
+    }, []);
+
     const clearInputs = () => {
         setPrice({
             min: 0,
@@ -37,7 +47,6 @@ export default function Filters() {
         setChbxState(false);
         setMark(-1);
         setCategory("-1");
-        dispatch(filterResetAction(true));
     };
 
     const categories = useSelector(({ products }) => products.list.map(({ type }) => type)).filter((type, index, arr) => arr.indexOf(type) === index); // выбрать уникальные значения
@@ -82,6 +91,11 @@ export default function Filters() {
             </label>
 
             <button onClick={clearInputs}>Reset Filters </button>
+            {filteredProducts.length !== products.length && (
+                <p>
+                    {filteredProducts.length} items from {products.length}
+                </p>
+            )}
         </div>
     );
 }

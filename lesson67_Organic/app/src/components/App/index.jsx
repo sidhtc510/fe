@@ -8,20 +8,15 @@ import Nav from "../Nav";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import ProductsContainer from "../ProductsContainer";
 import { fetchProducts } from "../../store/slices/productsSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import MainPage from "../Pages/MainPage";
+import ProductPage from "../Pages/ProductPage";
 
 function App() {
     const dispatch = useDispatch();
-    // const [darkMode, setDarkMode] = useState(() => {
-    //     return !!+(localStorage.getItem("darkMode"));
-    // });
-
-    // useEffect(() => {
-    //     localStorage.setItem("darkMode", +darkMode);
-    // }, [darkMode]);
 
     const [darkMode, setDarkMode] = useLocalStorage(false, "darkMode");
+
 
     const changeDarkMode = ({ target }) => {
         setDarkMode(target.checked);
@@ -43,6 +38,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/products" element={<ProductsContainer  />} />
+                    <Route path="/product/:id" element={<ProductPage  />} />
                 </Routes>
                 <Link to={"/products"} className={s.button}>All products</Link>
             </div>

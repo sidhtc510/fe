@@ -1,0 +1,23 @@
+/* .Banner_wrapper {
+    width: 100%;
+    position: relative;
+} */
+
+.Banner_wrapper {
+    height: 450px;
+    background-size: cover;
+    background-position: left;
+    background: url("./img.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    font-size: 70px;
+    color: #274c5b;
+}
+/* .Banner_wrapper p {
+    position: absolute;
+    width: fit-content;
+    margin: 0 auto;
+} */
