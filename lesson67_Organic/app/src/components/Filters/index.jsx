@@ -19,9 +19,15 @@ export default function Filters() {
 
     useEffect(() => {
         dispatch(filterDiscountAction(chbxState));
+    }, [dispatch, chbxState]);
+
+    useEffect(() => {
         dispatch(filterMarkAction(mark));
+    }, [dispatch, mark]);
+
+    useEffect(() => {
         dispatch(filterCategoryAction(category));
-    }, [dispatch, chbxState, mark, category]);
+    }, [dispatch, category]);
 
     const clearInputs = () => {
         setPrice({
