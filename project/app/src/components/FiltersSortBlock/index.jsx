@@ -29,12 +29,12 @@ export default function FiltersSortBlock({ salesPageFlag }) {
     const sortRef = useRef(null);
 
     const clearFilters = () => {
-        minPriceInputRef.current.value=""
-        maxPriceInputRef.current.value=""
-        maxPriceInputRef.current.checked=false
-        sortRef.current.option='id'
-        setFiltersState({ ...filters, sort: 'id' })    
-    }
+        minPriceInputRef.current.value = "";
+        maxPriceInputRef.current.value = "";
+        maxPriceInputRef.current.checked = false;
+        sortRef.current.option = "id";
+        setFiltersState({ ...filters, sort: "id" });
+    };
 
     const [filtersState, setFiltersState] = useState(JSON.parse(localStorage.getItem("filtersState")) || filters);
 
@@ -45,6 +45,7 @@ export default function FiltersSortBlock({ salesPageFlag }) {
         dispatch(rateAction(filtersState.rate));
         dispatch(sortAction(filtersState.sort));
     }, [dispatch, filtersState, list]);
+
 
     // минимальное и максимальное значения для подстановки в инпуты START
     ///////////////////////
@@ -87,7 +88,7 @@ export default function FiltersSortBlock({ salesPageFlag }) {
                         name="minPrice"
                         defaultValue={filtersState.price.min === 0 ? "" : filtersState.price.min}
                         onChange={(e) => setFiltersState({ ...filtersState, price: { ...filtersState.price, min: +e.target.value } })}
-                        />
+                    />
                     <input
                         ref={maxPriceInputRef}
                         type="text"
@@ -95,14 +96,14 @@ export default function FiltersSortBlock({ salesPageFlag }) {
                         name="maxPrice"
                         defaultValue={filtersState.price.max === Infinity ? "" : filtersState.price.max}
                         onChange={(e) => setFiltersState({ ...filtersState, price: { ...filtersState.price, max: +e.target.value || Infinity } })}
-                        />
+                    />
                 </div>
 
                 {salesPageFlag ?? (
                     <div className={s.discounted}>
                         <p>Discounted items</p>
                         <input
-                        ref={rateInputRef}
+                            ref={rateInputRef}
                             type="checkbox"
                             name="discounted"
                             checked={filtersState.rate}
@@ -113,7 +114,7 @@ export default function FiltersSortBlock({ salesPageFlag }) {
 
                 <div className={s.sorting}>
                     <p>Sorted</p>
-                    <select  ref={sortRef} name="sorting" onChange={({ target }) => setFiltersState({ ...filtersState, sort: target.value })}>
+                    <select ref={sortRef} name="sorting" onChange={({ target }) => setFiltersState({ ...filtersState, sort: target.value })}>
                         {/* <option selected disabled>
                             Sorting
                         </option> */}

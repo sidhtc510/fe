@@ -1,6 +1,6 @@
 const obj1 = {
   username: "tolik",
-  hello: () => {     // со стрелочной не работает. используй фаншн декларейшн
+  hello: () => {     // со стрелочной не работает. используй фанкшн декларейшн
     console.log(`hi, ${this.username}!`);
   },
 };
@@ -8,7 +8,7 @@ const obj1 = {
 
 const obj2 = {
     username: "tolik",
-    hello: function() {     // со стрелочной не работает. используй фаншн декларейшн
+    hello: function() {     // со стрелочной не работает. используй фанкшн декларейшн
       console.log(`hi, ${this.username}!`);
     },
   };
