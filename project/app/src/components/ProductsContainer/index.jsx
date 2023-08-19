@@ -5,7 +5,7 @@ import s from "./s.module.css";
 export default function ProductsContainer({ products, dontUseShowFilter }) {
     const processedProducts = dontUseShowFilter === undefined ? products.list.filter(({ show }) => Object.values(show).every((item) => item)) : products.list;
 
-    console.log("ProductsContainer", products);
+    // console.log("ProductsContainer", products);
     return products.status === "loading" ? (
         "LOADING..."
     ) : (

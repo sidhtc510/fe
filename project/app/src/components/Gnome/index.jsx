@@ -4,11 +4,13 @@ import img from "./3.png";
 import Button from "../UI/Button";
 import InputPhone from "../UI/InputPhone";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postDiscount } from "../../store/slice/discountSlice";
 
 export default function Gnome() {
     const dispatch = useDispatch();
+    const resp = useSelector((state) => state.discount);
+
 
     const {
         register,
@@ -40,7 +42,7 @@ export default function Gnome() {
                         errors={errors}
                     />
 
-                    <Button className={"getDiscount"}>Get a discount</Button>
+                    <Button className={"getDiscount"}>{resp.data.status === "OK" ? "Discount has been received" : "Get a discount"}</Button>
                 </form>
             </div>
         </div>

@@ -2,6 +2,7 @@ import s from "./s.module.css";
 import { sortOptions } from "./sortOptions";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useDispatch, useSelector } from "react-redux";
 import { priceAction, rateAction, sortAction } from "../../store/slice/productSlice";
 import { VscClose } from "react-icons/vsc";
@@ -37,15 +38,17 @@ export default function FiltersSortBlock({ salesPageFlag }) {
     };
 
     const [filtersState, setFiltersState] = useState(JSON.parse(localStorage.getItem("filtersState")) || filters);
+    // const [filtersState, setFiltersState] = useLocalStorage("filtersState", filters);
 
     useEffect(() => {
         localStorage.setItem("filtersState", JSON.stringify({ price: filtersState.price, rate: filtersState.rate, sort: filtersState.sort }));
+        // setFiltersState({ price: filtersState.price, rate: filtersState.rate, sort: filtersState.sort });
         filtersState.price.max = filtersState.price.max ?? Infinity;
         dispatch(priceAction(filtersState.price));
         dispatch(rateAction(filtersState.rate));
         dispatch(sortAction(filtersState.sort));
-    }, [dispatch, filtersState, list]);
 
+    }, [dispatch, filtersState, list]);
 
     // минимальное и максимальное значения для подстановки в инпуты START
     ///////////////////////

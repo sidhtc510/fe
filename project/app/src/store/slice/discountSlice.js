@@ -1,24 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const postDiscount = createAsyncThunk(
-    "discount/postDiscount",
-    async (postData) => {
-        try {
-            const response = await axios.post(
-                "http://localhost:3333/sale/send",
-                postData
-            );
-            return response.data;
-        } catch (error) {
-            throw error;
-        }
+export const postDiscount = createAsyncThunk("discount/postDiscount", async (postData) => {
+    try {
+        const response = await axios.post("http://localhost:3333/sale/send", postData);
+        return response.data;
+    } catch (error) {
+        throw error;
     }
-);
+});
 
 export const discountSlice = createSlice({
     name: "discount",
-    initialState: {},
+    initialState: { status: "loading", data: { status: "loading" } },
     reducers: {},
 
     extraReducers: (builder) => {
@@ -28,7 +22,7 @@ export const discountSlice = createSlice({
             })
             .addCase(postDiscount.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                console.log(action.payload);
+                state.data = action.payload;
             })
             .addCase(postDiscount.rejected, (state, action) => {
                 state.status = "failed";
