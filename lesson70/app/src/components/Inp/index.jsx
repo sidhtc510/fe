@@ -15,10 +15,9 @@ export default function Inp() {
 
     useEffect(() => {
         return () => {
-            console.log("unmounting");
-            setState(" ");
+            setState("");
         };
-    }, [" "]);
+    }, []);
 
     return (
         <div>
