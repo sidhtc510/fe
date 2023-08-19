@@ -10,6 +10,10 @@ export const postDiscount = createAsyncThunk("discount/postDiscount", async (pos
     }
 });
 
+
+
+
+
 export const discountSlice = createSlice({
     name: "discount",
     initialState: { status: "loading", data: { status: "loading" } },

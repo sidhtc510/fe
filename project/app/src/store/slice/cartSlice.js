@@ -8,21 +8,14 @@ const write = (data) => {
     localStorage.setItem("cart", JSON.stringify(data));
 };
 
-export const postOrder = createAsyncThunk(
-    "cart/postOrder",
-    async (postData) => {
-        try {
-            const response = await axios.post(
-                "http://localhost:3333/order/send",
-                postData
-            );
-            return response.data;
-        } catch (error) {
- 
-            throw error;
-        }
+export const postOrder = createAsyncThunk("cart/postOrder", async (postData) => {
+    try {
+        const response = await axios.post("http://localhost:3333/order/send", postData);
+        return response.data;
+    } catch (error) {
+        throw error;
     }
-);
+});
 
 const checkProduct = (state, payload) => {
     const target = state.list.find((el) => el.id === payload.id);
@@ -59,7 +52,7 @@ const countInReducer = (state, payload) => {
 
 export const cartSlice = createSlice({
     name: "cart",
-    initialState: { list: read() },
+    initialState: { list: read(), data: { status: "" } },
     reducers: {
         addAction(state, action) {
             checkProduct(state, action.payload);
@@ -90,7 +83,7 @@ export const cartSlice = createSlice({
             })
             .addCase(postOrder.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                // console.log(action.payload);
+                state.data = action.payload;
             })
             .addCase(postOrder.rejected, (state, action) => {
                 state.status = "failed";
@@ -99,13 +92,6 @@ export const cartSlice = createSlice({
     },
 });
 
-export const {
-    addAction,
-    incrAction,
-    decrAction,
-    deleteAction,
-    clearBascketAction,
-    setCountAction,
-} = cartSlice.actions;
+export const { addAction, incrAction, decrAction, deleteAction, clearBascketAction, setCountAction } = cartSlice.actions;
 
 export default cartSlice.reducer;

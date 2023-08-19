@@ -4,8 +4,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useCart } from "../../hooks/useCart.js";
-import { useDispatch } from "react-redux";
-import { postOrder } from "../../store/slice/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { clearBascketAction, postOrder } from "../../store/slice/cartSlice";
+import {FaAngellist} from 'react-icons/fa'
+import { toast } from "react-toastify";
 
 import CartItem from "../CartItem";
 import Button from "../UI/Button";
@@ -16,6 +18,7 @@ export default function CartContainer() {
     const dispatch = useDispatch();
 
     const data = useCart(); // так же вызывается в app. данные можно передать пропсами
+    const order_sent = useSelector((state) => state.cart.data);
 
     const {
         register,
@@ -25,6 +28,8 @@ export default function CartContainer() {
 
     const handler = (postData) => {
         dispatch(postOrder(postData));
+        dispatch(clearBascketAction(true))
+toast("Order has been oformlen")
     };
 
     const amountCart = data.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0).toFixed(2);
@@ -65,7 +70,7 @@ export default function CartContainer() {
                             errors={errors}
                         />
 
-                        <Button className="greenBtn">Order</Button>
+                        <Button className="greenBtn">{order_sent.status === "OK" ? <FaAngellist />: "Order"}</Button>
                     </form>
                 </div>
             </div>
