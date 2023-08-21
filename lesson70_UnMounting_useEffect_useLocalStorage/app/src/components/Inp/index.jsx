@@ -4,14 +4,6 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 export default function Inp() {
     const [state, setState] = useLocalStorage("stateText", "");
 
-    // useEffect(() => {
-    //     console.log("AnotherPage", "mounting");
-    //     return () => {
-    //         console.log("AnotherPage", "UNmounting");
-    //         console.log("123");
-    //         setState(" ");
-    //     };
-    // }, []);
 
     useEffect(() => {
         return () => {
