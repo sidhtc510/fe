@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../store/slice/productSlice";
+import { useSelector } from "react-redux";
 
 import Wrapper from "../../components/UI/Wrapper";
 import PageTitle from "../../components/UI/PageTitle";
@@ -9,7 +8,6 @@ import ProductsContainer from "../../components/ProductsContainer";
 import FilterSortBlock from "../../components/FiltersSortBlock";
 
 export default function CategoryProducts() {
-    const dispatch = useDispatch();
     const { id } = useParams();
     const categoryId = +id;
 
@@ -22,7 +20,7 @@ export default function CategoryProducts() {
             {products.status === "ready" && (
                 <>
                     <PageTitle>{products.category.title}</PageTitle>
-                    <FilterSortBlock products={products.list} />
+                    <FilterSortBlock />
                     <ProductsContainer products={productsByCategory} />
                 </>
             )}

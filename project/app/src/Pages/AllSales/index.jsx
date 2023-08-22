@@ -7,9 +7,9 @@ import ProductsContainer from "../../components/ProductsContainer";
 import FilterSortBlock from "../../components/FiltersSortBlock";
 
 export default function AllSales() {
-    const products = useSelector((state) => state.products);
 
-    const products_with_discount = {
+    const products = useSelector(({products}) => products);
+      const products_with_discount = {
         ...products,
         list: products.list.filter((el) => el.discont_price !== null),
     };
@@ -18,7 +18,7 @@ export default function AllSales() {
         <Wrapper>
             <PageTitle>All Sales</PageTitle>
             <FilterSortBlock salesPageFlag={true} />
-            {products_with_discount.status !== "ready" ? "LOADING..." : <ProductsContainer products={products_with_discount} />}
+            {products.status !== "ready" ? "LOADING..." : <ProductsContainer products={products_with_discount} />}
         </Wrapper>
     );
 }

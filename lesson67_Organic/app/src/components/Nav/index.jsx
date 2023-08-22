@@ -9,10 +9,15 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import Container from "../UI/Container";
 import Checkbox from "../UI/Checkbox";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
 export default function Nav() {
     const { darkMode, changeDarkMode } = useContext(Context);
+    
+    const countOfProducts = useCart().reduce((acc, el) => acc + el.count, 0);
+
+
 
     return (
         <Container>
@@ -52,12 +57,12 @@ export default function Nav() {
                         </p>
                     </div>
 
-                    <div className={s.Nav_cart}>
+                    <Link to="/cart" className={s.Nav_cart}>
                         <div>
                             <PiShoppingCartSimpleLight />
                         </div>
-                        <p>Cart (0)</p>
-                    </div>
+                        <p>Cart ({countOfProducts})</p>
+                    </Link>
                     <Checkbox checked={darkMode} onChange={changeDarkMode} label={darkMode ? "Light" : "Dark"} />
                 </div>
             </nav>

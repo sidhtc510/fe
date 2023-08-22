@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import PageTitle from "../UI/PageTitle";
@@ -14,10 +14,13 @@ export default function SaleOnMain() {
         list: products.list.filter((el) => el.discont_price !== null).slice(0, 4),
     };
 
+
+
     return (
         <Wrapper>
             <PageTitle>Sale</PageTitle>
-            <ProductsContainer products={products_with_discount} dontUseShowFilter={true}/>
+            {/* <ProductsContainer products={products_with_discount} dontUseShowFilter={true}/> */}
+            <ProductsContainer products={products_with_discount}/>
         </Wrapper>
     );
 }

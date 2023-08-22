@@ -2,7 +2,6 @@ import s from "./s.module.css";
 import { sortOptions } from "./sortOptions";
 
 import React, { useEffect, useRef, useState } from "react";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useDispatch, useSelector } from "react-redux";
 import { priceAction, rateAction, sortAction } from "../../store/slice/productSlice";
 import { VscClose } from "react-icons/vsc";
@@ -23,6 +22,7 @@ export default function FiltersSortBlock({ salesPageFlag }) {
         rate: false,
         sort: false,
     };
+    const [filtersState, setFiltersState] = useState(JSON.parse(localStorage.getItem("filtersState")) || filters);
 
     const minPriceInputRef = useRef(null);
     const maxPriceInputRef = useRef(null);
@@ -37,7 +37,6 @@ export default function FiltersSortBlock({ salesPageFlag }) {
         setFiltersState({ ...filters, sort: "id" });
     };
 
-    const [filtersState, setFiltersState] = useState(JSON.parse(localStorage.getItem("filtersState")) || filters);
     // const [filtersState, setFiltersState] = useLocalStorage("filtersState", filters);
 
     useEffect(() => {
@@ -47,9 +46,17 @@ export default function FiltersSortBlock({ salesPageFlag }) {
         dispatch(priceAction(filtersState.price));
         dispatch(rateAction(filtersState.rate));
         dispatch(sortAction(filtersState.sort));
-
     }, [dispatch, filtersState, list]);
 
+    useEffect(() => {
+        return () => {
+            localStorage.setItem("filtersState", JSON.stringify({ price: filters.price, rate: filters.rate, sort: filters.sort }));
+            dispatch(priceAction(filters.price));
+            dispatch(rateAction(filters.rate));
+            dispatch(sortAction(filters.sort));
+            setFiltersState({ ...filters, sort: "id" });
+        };
+    }, []);
     // минимальное и максимальное значения для подстановки в инпуты START
     ///////////////////////
 
@@ -118,9 +125,6 @@ export default function FiltersSortBlock({ salesPageFlag }) {
                 <div className={s.sorting}>
                     <p>Sorted</p>
                     <select ref={sortRef} name="sorting" onChange={({ target }) => setFiltersState({ ...filtersState, sort: target.value })}>
-                        {/* <option selected disabled>
-                            Sorting
-                        </option> */}
                         {sortOptions.map((el) => (
                             <option selected={el.value === filtersState.sort} value={el.value}>
                                 {el.title}

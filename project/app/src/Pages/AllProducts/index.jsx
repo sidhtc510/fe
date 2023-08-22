@@ -11,9 +11,7 @@ export default function AllProducts() {
     return (
         <Wrapper>
             <PageTitle>All Products</PageTitle>
-
             <FilterSortBlock />
-
             {products.status === "loading" ? <p>Loading...</p> : products.status === "error" ? "Error..." : <ProductsContainer products={products} />}
         </Wrapper>
     );

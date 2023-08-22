@@ -30,8 +30,8 @@ function App() {
         dispatch(fetchCategories());
     }, [dispatch]);
 
-    const cart = useCart();
-    const cartQtn = cart.reduce((acc, el) => acc + el.count, 0);
+    const cartQtn = useCart().reduce((acc, el) => acc + el.count, 0);
+
     const location = useLocation();
     
     const { pathname } = useLocation();

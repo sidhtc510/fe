@@ -38,7 +38,8 @@ export const productsSlice = createSlice({
         },
         sortAction(state, { payload }) {
             if (payload === false) {
-                return state;
+                state.list.sort((a, b) => a.id - b.id);
+                return;
             }
             ({
                 id: () => state.list.sort((a, b) => a.id - b.id),

@@ -1,6 +1,6 @@
 import "../../App.css";
 import s from "./s.module.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Context } from "../../context";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Nav from "../Nav";
@@ -11,6 +11,7 @@ import { fetchProducts } from "../../store/slices/productsSlice";
 import { useDispatch } from "react-redux";
 import MainPage from "../Pages/MainPage";
 import ProductPage from "../Pages/ProductPage";
+import CartPage from "../Pages/CartPage";
 
 function App() {
     const dispatch = useDispatch();
@@ -39,6 +40,7 @@ function App() {
                     <Route path="/" element={<MainPage />} />
                     <Route path="/products" element={<ProductsContainer  />} />
                     <Route path="/product/:id" element={<ProductPage  />} />
+                    <Route path="/cart" element={<CartPage  />} />
                 </Routes>
                 <Link to={"/products"} className={s.button}>All products</Link>
             </div>
