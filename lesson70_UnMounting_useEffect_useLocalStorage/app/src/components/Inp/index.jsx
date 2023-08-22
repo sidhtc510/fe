@@ -4,22 +4,17 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 export default function Inp() {
     const [state, setState] = useLocalStorage("stateText", "");
 
-
     useEffect(() => {
+        console.log("Mounting");
         return () => {
-            setState("");
+            console.log("UN-mounting");
+             setState("");
         };
     }, []);
 
     return (
         <div>
-            <input
-                type="text"
-                onChange={(e) => {
-                    setState(e.target.value);
-                }}
-                value={state}
-            />
+            <input type="text" onChange={(e) => setState(e.target.value)} value={state} />
             <p>{state}</p>
         </div>
     );

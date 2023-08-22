@@ -28,6 +28,7 @@ function App() {
     useEffect(() => {
         dispatch(fetchProducts());
         dispatch(fetchCategories());
+    
     }, [dispatch]);
 
     const cartQtn = useCart().reduce((acc, el) => acc + el.count, 0);

@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { priceAction, rateAction, sortAction } from "../../store/slice/productSlice";
 import { VscClose } from "react-icons/vsc";
+// import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 import MobileFilterButton from "../MobileFilterButton";
 
@@ -14,6 +15,8 @@ export default function FiltersSortBlock({ salesPageFlag }) {
 
     const [mobileFilter, setMobileFilter] = useState(false);
 
+
+
     const filters = {
         price: {
             min: 0,
@@ -22,7 +25,10 @@ export default function FiltersSortBlock({ salesPageFlag }) {
         rate: false,
         sort: false,
     };
+
     const [filtersState, setFiltersState] = useState(JSON.parse(localStorage.getItem("filtersState")) || filters);
+
+    // const [filtersState, setFiltersState] = useLocalStorage("filtersState", filters);
 
     const minPriceInputRef = useRef(null);
     const maxPriceInputRef = useRef(null);
@@ -37,23 +43,38 @@ export default function FiltersSortBlock({ salesPageFlag }) {
         setFiltersState({ ...filters, sort: "id" });
     };
 
-    // const [filtersState, setFiltersState] = useLocalStorage("filtersState", filters);
-
     useEffect(() => {
+        // console.log("Mounting");
         localStorage.setItem("filtersState", JSON.stringify({ price: filtersState.price, rate: filtersState.rate, sort: filtersState.sort }));
         // setFiltersState({ price: filtersState.price, rate: filtersState.rate, sort: filtersState.sort });
         filtersState.price.max = filtersState.price.max ?? Infinity;
         dispatch(priceAction(filtersState.price));
         dispatch(rateAction(filtersState.rate));
         dispatch(sortAction(filtersState.sort));
+
+
+
     }, [dispatch, filtersState, list]);
+    
+
+
+    // const filters = {
+    //     price: {
+    //         min: 0,
+    //         max: Infinity,
+    //     },
+    //     rate: false,
+    //     sort: false,
+    // };
 
     useEffect(() => {
         return () => {
-            localStorage.setItem("filtersState", JSON.stringify({ price: filters.price, rate: filters.rate, sort: filters.sort }));
-            dispatch(priceAction(filters.price));
-            dispatch(rateAction(filters.rate));
-            dispatch(sortAction(filters.sort));
+            // console.log('un_Mounting');
+            // setFiltersState({ price: filtersState.price, rate: filtersState.rate, sort: filtersState.sort });
+            localStorage.setItem("filtersState", JSON.stringify({ price: {min:0,max:Infinity}, rate: false, sort: false }));
+            dispatch(priceAction({min:0,max:Infinity}));
+            dispatch(rateAction(false));
+            dispatch(sortAction(false));
             setFiltersState({ ...filters, sort: "id" });
         };
     }, []);

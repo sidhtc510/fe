@@ -14,6 +14,7 @@ export default function Header() {
         <div style={styles}>
             <Link to="/">Main page</Link>
             <Link to="/another_page">Another page</Link>
+            <Link to="/another_page_two">Another page_two</Link>
         </div>
     );
 }
