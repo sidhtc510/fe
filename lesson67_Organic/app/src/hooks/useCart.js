@@ -8,5 +8,9 @@ export function useCart() {
         return { ...item, ...product };
     });
 
+    if (products.length === 0) {
+        return []
+    }
+    
     return result;
 }

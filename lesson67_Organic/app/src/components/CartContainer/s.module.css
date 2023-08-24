@@ -1,0 +1,13 @@
+.CartContainer_containerStyle{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.CartContainer_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+}

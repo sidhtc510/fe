@@ -1,0 +1,9 @@
+.CartAmount_wrapper {
+    border: 2px solid #fafafa;
+    padding: 20px;
+    width: fit-content;
+    border-radius: 8px;
+    height: fit-content;
+    box-shadow: 2px 2px 8px 2px #ff7700b0;
+    margin: 20px;
+}
