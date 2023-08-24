@@ -3,6 +3,6 @@ import s from "./s.module.css";
 
 export default function PageTitle({children}) {
   return (
-    <div className={s.wrapper}>{children}</div>
+    <div className={s.PageTitle_wrapper}>{children}</div>
   )
 }

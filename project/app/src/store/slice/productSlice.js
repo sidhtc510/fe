@@ -24,7 +24,7 @@ export const productsSlice = createSlice({
     initialState,
     reducers: {
         priceAction(state, { payload }) {
-            console.log(payload);
+ 
             const { min, max } = payload;
             state.list.forEach((item) => {
                 const currentPrice = item.discont_price ?? item.price;

@@ -12,14 +12,18 @@ export default function CategoryProducts() {
     const categoryId = +id;
 
     const products = useSelector((state) => state.products);
+    
     const filteredListByCategory = products.list.filter((el) => el.categoryId === categoryId);
     const productsByCategory = { ...products, list: filteredListByCategory };
+    
+    const categories = useSelector((state) => state.categories);
+const category = categories.list.find(el=>el.id === categoryId)
 
     return (
         <Wrapper>
             {products.status === "ready" && (
                 <>
-                    <PageTitle>{products.category.title}</PageTitle>
+                    <PageTitle>{categories.status === 'ready' && category.title}</PageTitle>
                     <FilterSortBlock />
                     <ProductsContainer products={productsByCategory} />
                 </>
