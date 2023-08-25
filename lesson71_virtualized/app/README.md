@@ -1,3 +1,9 @@
+(https://blog.logrocket.com/rendering-large-lists-react-virtualized/)
+(https://github.com/bvaughn/react-virtualized)
+(https://www.youtube.com/watch?v=FepLbTxEWok) - индус
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

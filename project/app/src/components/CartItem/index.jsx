@@ -12,6 +12,7 @@ export default function CartItem({ id, title, price, discont_price, image, count
     return (
         <div className={s.cartItemWrap}>
             <img src={`http://localhost:3333/${image}`} alt="" />
+            {/* <img src={`${image}`} alt="" /> */}
 
             <div className={s.titleCountBlock}>
                 <p>{title}</p>

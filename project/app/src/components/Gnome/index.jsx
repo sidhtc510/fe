@@ -29,7 +29,7 @@ export default function Gnome() {
                 <h3>on the first order</h3>
                 <form onSubmit={handleSubmit(handler)}>
                     <InputPhone
-                        value={"+492115684962"}
+                        defaultValue={"+492115684962"}
                         type="text"
                         placeholder="Enter your phone number"
                         register={register("phoneNum", {

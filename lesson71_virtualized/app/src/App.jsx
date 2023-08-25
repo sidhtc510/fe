@@ -3,7 +3,6 @@ import { List, AutoSizer, CellMeasurer, CellMeasurerCache } from "react-virtuali
 import "react-virtualized/styles.css";
 import { data } from "./data/data.js";
 
-
 export default function App() {
     const cache = new CellMeasurerCache({
         fixedWidth: true,
@@ -11,16 +10,14 @@ export default function App() {
     });
 
     const renderRow = ({ index, key, style, parent }) => {
-        const myStyle = { ...style, display: "flex", gap: "20px", padding: "10px", borderRadius: "10px", alignItems: "center" };
+        // const myStyle = { ...style, display: "flex", gap: "20px", padding: "10px", borderRadius: "10px", alignItems: "center" };
         return (
             <CellMeasurer key={key} cache={cache} parent={parent} columnIndex={0} rowIndex={index}>
                 {({ registerChild }) => (
-                  
-                        <div key={key} style={myStyle} ref={registerChild}>
-                            <p style={{ fontSize: "21px" }}>{data[index].name}</p>
-                            <p>{data[index].email}</p>
-                        </div>
-                    
+                    <div key={key} style={style} ref={registerChild}>
+                        <p style={{ fontSize: "21px" }}>{data[index].name}</p>
+                        <p>{data[index].email}</p>
+                    </div>
                 )}
             </CellMeasurer>
         );
