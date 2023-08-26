@@ -1,9 +1,14 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  }
+    font-family: "Montserrat", sans-serif;
+}
+
+.headerMenuLinks > a.active {
+    color: #339933 !important;
+    font-weight: 500;
+}

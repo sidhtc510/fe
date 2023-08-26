@@ -7,7 +7,7 @@ import FilterSortBlock from "../../components/FiltersSortBlock";
 
 export default function AllProducts() {
     const products = useSelector((state) => state.products);
-console.log(products.list);
+// console.log(products.list);
     return (
         <Wrapper>
             <PageTitle>All Products</PageTitle>

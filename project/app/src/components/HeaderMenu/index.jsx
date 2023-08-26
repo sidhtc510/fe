@@ -3,7 +3,7 @@ import logo from "./logo.png";
 
 import React from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import Button from "../UI/Button";
 import Wrapper from "../UI/Wrapper";
@@ -17,15 +17,14 @@ export default function HeaderMenu({ cartQtn }) {
                         <img src={logo} alt="" />
                     </Link>
                     <Link to="/categories">
-                        {" "}
                         <Button className="HeaderMenuButton">Categories</Button>
                     </Link>
                 </div>
                 <div>
-                    <div className={s.links}>
-                        <Link to="/">Main Page</Link>
-                        <Link to="/products">All products</Link>
-                        <Link to="/sales">All Sale</Link>
+                    <div className={[s.links, "headerMenuLinks"].join(" ")}>
+                        <NavLink to="/">Main Page</NavLink>
+                        <NavLink to="/products">All products</NavLink>
+                        <NavLink to="/sales">All Sale</NavLink>
                     </div>
                     <Link to="/cart">
                         {!cartQtn > 0 || <p className={s.cartQtnStyle}>{cartQtn}</p>}
