@@ -24,7 +24,6 @@ export const productsSlice = createSlice({
     initialState,
     reducers: {
         priceAction(state, { payload }) {
- 
             const { min, max } = payload;
             state.list.forEach((item) => {
                 const currentPrice = item.discont_price ?? item.price;
@@ -45,8 +44,18 @@ export const productsSlice = createSlice({
             }
             ({
                 id: () => state.list.sort((a, b) => a.id - b.id),
-                priceAsc: () => state.list.sort((a, b) => a.price - b.price),
-                priceDesc: () => state.list.sort((a, b) => b.price - a.price),
+                // priceAsc: () => state.list.sort((a, b) => a.price - b.price),
+                // priceDesc: () => state.list.sort((a, b) => b.price - a.price),
+                priceAsc: () =>
+                    state.list.sort((a, b) => {
+                        const getPrice = (obj) => (obj.discont_price !== null ? obj.discont_price : obj.price);
+                        return getPrice(a) - getPrice(b);
+                    }),
+                priceDesc: () =>
+                    state.list.sort((a, b) => {
+                        const getPrice = (obj) => (obj.discont_price !== null ? obj.discont_price : obj.price);
+                        return getPrice(b) - getPrice(a);
+                    }),
                 titleAtoZ: () => state.list.sort((a, b) => a.title.localeCompare(b.title)),
                 titleZtoA: () => state.list.sort((a, b) => b.title.localeCompare(a.title)),
             })[payload]();
