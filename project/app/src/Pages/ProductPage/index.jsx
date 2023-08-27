@@ -6,20 +6,18 @@ import Wrapper from "../../components/UI/Wrapper";
 import PageTitle from "../../components/UI/PageTitle";
 
 export default function ProductPage() {
-
     const { id } = useParams();
-    const [product, setProduct] = useState({status:"loading"});
+    const [product, setProduct] = useState({ status: "loading" });
 
     const getProduct = (id, callback) => {
         fetch(`http://localhost:3333/products/${id}`)
             .then((res) => res.json())
-            .then((json) => callback({status:"ready", list: json}));
+            .then((json) => callback({ status: "ready", list: json }));
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         getProduct(id, setProduct);
-    }, [])
-
+    }, []);
 
     return (
         <Wrapper>

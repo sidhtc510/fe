@@ -29,7 +29,7 @@ export default function CartContainer() {
     const handler = (postData) => {
         dispatch(postOrder(postData));
         dispatch(clearBascketAction(true))
-toast("Order has been oformlen")
+toast("An order has been placed")
     };
 
     const amountCart = data.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0).toFixed(2);

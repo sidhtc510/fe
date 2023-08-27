@@ -1,15 +1,13 @@
-import React from "react";
 import s from "./s.module.css";
+
+import React from "react";
 import { Link } from "react-router-dom";
 import { VscClose } from "react-icons/vsc";
 
 export default function MobileMenuLinks({ setMobileMenuLinks }) {
     return (
         <div className={s.background_menuLinks}>
-            <p
-                className={s.closeMenu}
-                onClick={() => setMobileMenuLinks(false)}
-            >
+            <p className={s.closeMenu} onClick={() => setMobileMenuLinks(false)}>
                 <VscClose />
             </p>
             <div className={s.wrap_mobileMenuLinks}>
@@ -22,10 +20,7 @@ export default function MobileMenuLinks({ setMobileMenuLinks }) {
                 <Link onClick={() => setMobileMenuLinks(false)} to="/sales">
                     All Sale
                 </Link>
-                <Link
-                    onClick={() => setMobileMenuLinks(false)}
-                    to="/categories"
-                >
+                <Link onClick={() => setMobileMenuLinks(false)} to="/categories">
                     Categories
                 </Link>{" "}
             </div>

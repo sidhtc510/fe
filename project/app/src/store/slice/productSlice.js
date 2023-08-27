@@ -5,10 +5,10 @@ const initialState = {
     list: [],
     status: "",
 };
-const myConsole = (data) => {
-    const stateStringify = JSON.stringify(data);
-    console.log(JSON.parse(stateStringify));
-};
+// const myConsole = (data) => {
+//     const stateStringify = JSON.stringify(data);
+//     console.log(JSON.parse(stateStringify));
+// };
 
 export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
     const resp = await fetch("http://localhost:3333/products/all");
@@ -37,7 +37,6 @@ export const productsSlice = createSlice({
             });
         },
         sortAction(state, { payload }) {
-            // console.log("sortActionpayload", payload);
             if (payload === false) {
                 state.list.sort((a, b) => a.id - b.id);
                 return;
@@ -73,7 +72,6 @@ export const productsSlice = createSlice({
                     ...item,
                     show: { search: true, price: true, rate: true },
                 }));
-                // myConsole(state)
             })
             .addCase(fetchProducts.rejected, (state) => {
                 state.status = "rejected";

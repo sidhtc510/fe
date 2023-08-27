@@ -28,20 +28,17 @@ function App() {
     useEffect(() => {
         dispatch(fetchProducts());
         dispatch(fetchCategories());
-    
     }, [dispatch]);
 
     const cartQtn = useCart().reduce((acc, el) => acc + el.count, 0);
 
     const location = useLocation();
-    
+
     const { pathname } = useLocation();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
-
-
 
     return (
         <div>
@@ -73,9 +70,7 @@ function App() {
                     <Route path="*" element={<Navigate to="/404" />} />
                 </Routes>
             </AnimatePresence>
-
             <Footer />
- 
         </div>
     );
 }

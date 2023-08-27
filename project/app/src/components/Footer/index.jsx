@@ -35,9 +35,6 @@ export default function Footer() {
                     <div className={s.map}>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7320.623009012905!2d13.368522409825365!3d52.50808942673097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851cecff94831%3A0x9f39bce1f6ad5524!2sMall%20of%20Berlin!5e0!3m2!1sen!2sde!4v1688501585528!5m2!1sen!2sde"
-                            // width="600"
-                            // height="450"
-                            // style="border:0;"
                             allowFullScreen=""
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"

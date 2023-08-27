@@ -9,7 +9,7 @@ export default function Wrapper({ children, ...props }) {
             // initial={{ opacity: 0 }}
             // animate={{ opacity: 1 }}
             // exit={{ opacity: 0 }}
-            initial={{ width: 0, opacity: 0, }}
+            initial={{ width: 0, opacity: 0 }}
             animate={{ width: "100%", opacity: 1 }}
             exit={{
                 x: window.innerWidth,

@@ -7,7 +7,6 @@ export function useCart() {
         const product = products.list.find(({ id }) => id === item.id);
         return { ...item, ...product };
     });
-    // console.log("useCart", result);
 
     return result;
 }

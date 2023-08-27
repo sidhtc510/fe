@@ -60,8 +60,18 @@ input[type="number"] {
 }
 
 .priceBlock {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    padding: 0 20px;
     margin-left: 10px;
+    font-size: 18px;
+}
+
+.priceBlock span {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .delFromCart {
@@ -70,6 +80,7 @@ input[type="number"] {
     right: 20px;
     cursor: pointer;
     padding: 5px;
+    font-size: 24px;
 }
 
 .delFromCart:hover {
@@ -82,15 +93,14 @@ input[type="number"] {
         gap: 10px;
     }
 
-    .cartItemWrap img{
+    .cartItemWrap img {
         margin: 0 auto;
-
     }
-    .titleCountBlock{
+    .titleCountBlock {
         gap: 10px;
         padding: 0 20px;
     }
-    .priceBlock{
+    .priceBlock {
         font-size: 1.2rem;
     }
 }

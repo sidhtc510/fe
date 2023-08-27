@@ -31,14 +31,13 @@ export default function Product({ id, title, price, discont_price, image }) {
                 <>
                     <Link to={`/product/${id}`} className={s.productWrapper}>
                         <img src={`http://localhost:3333/${image}`} alt="" />
-                        {/* <img src={`${image}`} alt="" /> */}
                         <div>
                             <div className={s.priceBlock}>
                                 <p className={s.price}>
-                                    {discont_price ?? price}
+                                    {(discont_price ?? price).toFixed(2)}
                                     <span>$</span>{" "}
                                 </p>
-                                <p className={s.oldPrice}>{discont_price !== null ? `${price}$` : ""}</p>
+                                <p className={s.oldPrice}>{discont_price !== null ? `${price.toFixed(2)}$` : ""}</p>
                                 <p className={s.sale}>{percent}</p>
                             </div>
                             <p className={s.title}>{title}</p>

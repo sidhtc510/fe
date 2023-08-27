@@ -7,19 +7,16 @@ import { toast } from "react-toastify";
 
 import Button from "../UI/Button";
 
-export default function ProductIndividual({product}) {
+export default function ProductIndividual({ product }) {
     const { id, title, price, discont_price, image, description } = product;
     const dispatch = useDispatch();
-    
+
     const addToCart = () => {
         dispatch(addAction({ id }));
-        toast("product in cart")
+        toast("product in cart");
     };
 
-    const percent =
-        discont_price === null
-            ? ""
-            : Math.ceil(((price - discont_price) / price) * 100) + "%";
+    const percent = discont_price === null ? "" : Math.ceil(((price - discont_price) / price) * 100) + "%";
 
     return (
         <div className={s.productWrap}>
@@ -30,9 +27,7 @@ export default function ProductIndividual({product}) {
                         {discont_price ?? price}
                         <span>$</span>{" "}
                     </p>
-                    <p className={s.oldPrice}>
-                        {discont_price !== null ? `${price}$` : ""}
-                    </p>
+                    <p className={s.oldPrice}>{discont_price !== null ? `${price}$` : ""}</p>
                     <p className={s.sale}>{percent}</p>
                 </div>
                 <Button className="greenBtn" onClick={addToCart}>

@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import s from "./s.module.css";
+
+import React from "react";
 import Button from "../UI/Button";
 import Wrapper from "../UI/Wrapper";
-import { useSelector } from "react-redux";
 import CategoriesContainer from "../CategoriesContainer";
-import s from "./s.module.css";
+
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function CatalogBanner() {
     const categories = useSelector((state) => state.categories);
