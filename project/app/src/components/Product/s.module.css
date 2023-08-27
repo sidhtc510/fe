@@ -1,7 +1,13 @@
 .wrap {
     position: relative;
 }
-
+.wrap__sceleton{
+    position: relative;
+    background-color: #d4f9cb;
+    border-radius: 50px;
+    height: 200px;
+    width: 100%;
+}
 .productWrapper {
     display: flex;
     flex-direction: column;
