@@ -51,4 +51,7 @@
     .productWrap {
         grid-template-columns: 1fr;
     }
+    .priceBlock {
+        padding: 0 30px;
+    }
 }

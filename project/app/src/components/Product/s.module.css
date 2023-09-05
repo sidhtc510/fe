@@ -1,7 +1,7 @@
 .wrap {
     position: relative;
 }
-.wrap__sceleton{
+.wrap__sceleton {
     position: relative;
     background-color: #d4f9cb;
     border-radius: 50px;
@@ -16,8 +16,8 @@
     color: black;
     height: 100%;
 }
-.productWrapper img{
-border-radius: 20px;
+.productWrapper img {
+    border-radius: 20px;
 }
 .wrap button {
     position: absolute;
@@ -69,5 +69,22 @@ border-radius: 20px;
     .wrap button {
         visibility: visible;
         opacity: 1;
+        bottom: 50px;
+        height: 50px;
+    }
+    .priceBlock {
+        padding: 0 30px;
+    }
+    .title {
+        font-size: 20px;
+        border-radius: 15px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        background: #161616b0;
+        backdrop-filter: blur(3px);
+        padding: 10px 10px;
+        color: white;
     }
 }

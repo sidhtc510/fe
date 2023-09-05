@@ -23,7 +23,8 @@ export default function CartContainer() {
 
     return (
         <Container>
-            <div className={s.CartContainer_containerStyle}>
+            <div clasnpsName={s.CartContainer_containerStyle}>
+          
                 <div className={s.CartContainer_wrapper}>
                     {productsInCart.map((el) => (
                         <CartItem key={el.id} {...el} />

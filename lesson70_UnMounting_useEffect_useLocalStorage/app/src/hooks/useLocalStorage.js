@@ -7,16 +7,13 @@ export function useLocalStorage(key, defaultValue) {
         let result = JSON.parse(localStorage.getItem(key));
 
         setState(result);
-
         return () => {
             changeState("");
         };
     }, [defaultValue]);
 
     const changeState = (data) => {
-
         localStorage.setItem(key, JSON.stringify(data));
-
         setState(data);
     };
 

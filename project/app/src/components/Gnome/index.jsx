@@ -18,6 +18,7 @@ export default function Gnome() {
     } = useForm();
 
     const handler = (data) => {
+
         dispatch(postDiscount(data));
     };
 
