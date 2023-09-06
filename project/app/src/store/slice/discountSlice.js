@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const postDiscount = createAsyncThunk("discount/postDiscount", async (postData) => {
-  
     try {
         const response = await axios.post("http://localhost:3333/sale/send", postData);
         return response.data;
@@ -10,10 +9,6 @@ export const postDiscount = createAsyncThunk("discount/postDiscount", async (pos
         throw error;
     }
 });
-
-
-
-
 
 export const discountSlice = createSlice({
     name: "discount",
@@ -36,5 +31,4 @@ export const discountSlice = createSlice({
     },
 });
 
-export const {} = discountSlice.actions;
 export default discountSlice.reducer;

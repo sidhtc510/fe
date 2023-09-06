@@ -13,7 +13,9 @@ export default function Footer() {
                 <div className={s.contacts}>
                     <div className={s.contact}>
                         <p>Contact</p>
-                        <p>+49 999 999 99 99</p>
+                        <p>
+                            <a href="tel:+499999999999">+49 999 999 99 99</a>
+                        </p>
                         <span>
                             <p>
                                 <AiOutlineInstagram />

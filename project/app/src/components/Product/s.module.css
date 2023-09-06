@@ -3,7 +3,7 @@
 }
 .wrap__sceleton {
     position: relative;
-    background-color: #d4f9cb;
+    background-color: #d1fdc6;
     border-radius: 50px;
     height: 200px;
     width: 100%;
@@ -15,6 +15,7 @@
     text-decoration: none;
     color: black;
     height: 100%;
+    min-height: 400px;
 }
 .productWrapper img {
     border-radius: 20px;

@@ -9,7 +9,6 @@ export const fetchCategories = createAsyncThunk(
     async () => {
         const resp = await fetch("http://localhost:3333/categories/all");
         const data = await resp.json();
-  
         return data;
     }
 );

@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 20px;
+    padding-bottom: 40px;
 }
 .productWrap img {
     width: 100%;
