@@ -27,7 +27,7 @@ export default function ProductPage() {
         list: product.status !== "loading" && products.list.filter((el) => el.categoryId === product.list[0].categoryId && el.id !== +id).sort(() => Math.random() - 0.5).slice(0, 4),
     };
 
-    console.log(relatedProducts);
+    // console.log(relatedProducts);
     return (
         <Wrapper>
             {product.status === "ready" && (
