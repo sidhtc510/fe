@@ -1,0 +1,8 @@
+.Header__wrap{
+    padding: 20px;
+    background-color: beige;
+    border-bottom: 1px solid rgb(203, 203, 183);
+
+    display: flex;
+    gap: 10px;
+}
