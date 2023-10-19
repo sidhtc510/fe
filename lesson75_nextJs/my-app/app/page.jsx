@@ -1,11 +1,10 @@
 import Image from "next/image";
-// import Link from "next/link";
-import Container from "./components/container";
+import Container from "./components/Container";
 
 export default function Home() {
     return (
         <Container>
-            <p>Home page</p>
+            <p>This is a home page</p>
         </Container>
     );
 }

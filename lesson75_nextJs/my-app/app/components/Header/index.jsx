@@ -1,16 +1,16 @@
-import Link from "next/link";
-import Container from "../container";
+
+import Container from "../Container";
+import HeaderLinks from "../HeaderLinks";
 
 const Header = () => {
+    const links =[
+        {name: 'home', path: '/'},
+        {name: 'products', path: '/product'},
+    ]
     return (
         <header>
             <Container className="flex gap-2">
-                <Link href="/" className="border-b-2 border-orange-600">
-                    home
-                </Link>
-                <Link href="/product" className="border-b-2 border-orange-600">
-                    product
-                </Link>
+                <HeaderLinks links={links}/>
             </Container>
         </header>
     );
