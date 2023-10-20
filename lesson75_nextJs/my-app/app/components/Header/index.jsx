@@ -6,6 +6,7 @@ const Header = () => {
     const links =[
         {name: 'home', path: '/'},
         {name: 'products', path: '/product'},
+        {name: 'users', path: '/users'},
     ]
     return (
         <header>

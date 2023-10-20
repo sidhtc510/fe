@@ -1,0 +1,145 @@
+export const users = [
+    {
+        id: 1,
+        name: "John",
+        age: 25,
+        email: "john@example.com",
+        gender: "male",
+        job: {
+            company: "XYZ Corporation",
+            salary: 50000,
+        },
+    },
+    {
+        id: 2,
+        name: "Sarah",
+        age: 30,
+        email: "sarah@example.com",
+        gender: "female",
+        job: {
+            company: "ABC Industries",
+            salary: 60000,
+        },
+    },
+    {
+        id: 3,
+        name: "Michael",
+        age: 35,
+        email: "michael@example.com",
+        gender: "male",
+        job: {
+            company: "PQR Solutions",
+            salary: 70000,
+        },
+    },
+    {
+        id: 4,
+        name: "Emily",
+        age: 27,
+        email: "emily@example.com",
+        gender: "female",
+        job: {
+            company: "DEF Corporation",
+            salary: 55000,
+        },
+    },
+    {
+        id: 5,
+        name: "David",
+        age: 32,
+        email: "david@example.com",
+        gender: "male",
+        job: {
+            company: "LMN Enterprises",
+            salary: 65000,
+        },
+    },
+    {
+        id: 6,
+        name: "Olivia",
+        age: 29,
+        email: "olivia@example.com",
+        gender: "female",
+        job: {
+            company: "GHI Solutions",
+            salary: 60000,
+        },
+    },
+    {
+        id: 7,
+        name: "Daniel",
+        age: 31,
+        email: "daniel@example.com",
+        gender: "male",
+        job: {
+            company: "XYZ Corporation",
+            salary: 50000,
+        },
+    },
+    {
+        id: 8,
+        name: "Sophia",
+        age: 28,
+        email: "sophia@example.com",
+        gender: "female",
+        job: {
+            company: "PQR Solutions",
+            salary: 70000,
+        },
+    },
+    {
+        id: 9,
+        name: "William",
+        age: 33,
+        email: "william@example.com",
+        gender: "male",
+        job: {
+            company: "ABC Industries",
+            salary: 60000,
+        },
+    },
+    {
+        id: 10,
+        name: "Ava",
+        age: 26,
+        email: "ava@example.com",
+        gender: "female",
+        job: {
+            company: "DEF Corporation",
+            salary: 55000,
+        },
+    },
+    {
+        id: 11,
+        name: "James",
+        age: 30,
+        email: "james@example.com",
+        gender: "male",
+        job: {
+            company: "LMN Enterprises",
+            salary: 65000,
+        },
+    },
+    {
+        id: 12,
+        name: "Mia",
+        age: 34,
+        email: "mia@example.com",
+        gender: "female",
+        job: {
+            company: "GHI Solutions",
+            salary: 60000,
+        },
+    },
+    {
+        id: 13,
+        name: "Benjamin",
+        age: 27,
+        email: "benjamin@example.com",
+        gender: "male",
+        job: {
+            company: "XYZ Corporation",
+            salary: 500,
+        },
+    },
+];
