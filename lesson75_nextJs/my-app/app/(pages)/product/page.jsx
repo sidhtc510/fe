@@ -1,5 +1,7 @@
 import Container from "@/app/components/Container";
 import Link from "next/link";
+import s from "./s.module.css";
+import Image from "next/image";
 
 export const metadata = {
     title: "Product",
@@ -9,20 +11,20 @@ export default async function Product() {
     const data = await getData();
 
     return (
-        <Container>
+        <Container className={s.contWrap}>
             {data.map((item) => (
-                <div key={item.id}>
-                    <p>
-                        <Link href={`product/${item.id}`}>{item.title}</Link>
-                    </p>
-                </div>
+                <Link key={item.id} href={`product/${item.id}`}>
+                    <div className={s.itemWrap}>{item.title}</div>
+                    {item.images.map((image) => (
+                        <Image src={image} alt={'text'} width={500} height={500} />
+                    ))}
+                </Link>
             ))}
         </Container>
     );
 }
 async function getData() {
-    // const res = await fetch("https://api.escuelajs.co/api/v1/products?limit=5&offset=1"); // при таком варианте некст кэширует данные
-    const res = await fetch("https://api.escuelajs.co/api/v1/products?limit=5&offset=1", {
+    const res = await fetch("https://api.escuelajs.co/api/v1/products", {
         next: {
             revalidate: 60,
         },
