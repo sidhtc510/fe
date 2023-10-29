@@ -19,6 +19,7 @@ export default async function Product() {
                         <Image src={image} alt={'text'} width={500} height={500} />
                     ))}
                 </Link>
+                
             ))}
         </Container>
     );
