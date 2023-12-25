@@ -1,0 +1,18 @@
+.wrap {
+border: 1px solid lightblue;
+padding: 10px;
+width: 100px;height: 180px;
+border-radius: 6px;
+}
+.id{
+    font-size: 8px;
+    color:lightgrey;
+}
+.title {
+    font-size: 24px;
+    color: rgb(82, 82, 82);
+}
+.price {
+    font-size: 12px;
+    color: brown;
+}
