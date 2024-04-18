@@ -5,6 +5,7 @@ import Category from "../Category";
 import Product from "../Product";
 import Header from "../Header";
 import Cart from "../Cart";
+import PostForm from "../PostForm";
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
       <Route path='/product/:id' element={<Product/>} />
       <Route path='/cart' element={<Cart/>} />
     </Routes>
+    <hr />
+    <PostForm />
     </>
   )
 }

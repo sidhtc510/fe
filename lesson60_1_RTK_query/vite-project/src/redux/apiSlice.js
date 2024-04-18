@@ -13,7 +13,14 @@ export const sliceApi = createApi({
         getSingleProduct: builder.query({
             query: (id) => `${id}`
         }),
+        addProduct: builder.mutation({
+            query: (product) => ({
+                url: '/',
+                method: 'POST',
+                body: product
+            })
+        })
     })
 })
 
-export const { useGetAllCategoriesQuery, useGetProductsByCategoryQuery, useGetSingleProductQuery } = sliceApi
+export const { useGetAllCategoriesQuery, useGetProductsByCategoryQuery, useGetSingleProductQuery, useAddProductMutation } = sliceApi

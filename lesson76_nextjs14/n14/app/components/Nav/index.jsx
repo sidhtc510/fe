@@ -10,6 +10,7 @@ export default function Nav() {
             <Link href="/">Home</Link>
             <Link href="/ClientFetchPage">Client Fetch</Link>
             <Link href="/ServerFetchPage">Server Fetch</Link>
+            <Link href="/StateManagerFetching">State Manager Fetch</Link>
         </nav>
     );
 }

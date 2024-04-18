@@ -5,7 +5,8 @@ import { addProductToCart } from "../../redux/cartSlice";
 
 function Product() {
     const {id} = useParams();
-    const {data, isLoading} = useGetSingleProductQuery(id);
+    const {data: product, isLoading} = useGetSingleProductQuery(id);
+    console.log("product", product)
 const dispatch = useDispatch()
 
     const addToCartHandler = (product)=>{
@@ -16,9 +17,9 @@ const dispatch = useDispatch()
     <div>
         {isLoading ? <h2>Loading... </h2> : 
        ( <>
-             <h2>{data?.title}</h2>
-            <p>{data?.price}</p>
-            <button onClick={()=>addToCartHandler(data)}>Add tot cart</button>
+             <h2>{product?.title}</h2>
+            <p>{product?.price}</p>
+            <button onClick={()=>addToCartHandler(product)}>Add tot cart</button>
         </>
         )
   }

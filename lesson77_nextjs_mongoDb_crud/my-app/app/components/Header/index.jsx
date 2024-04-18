@@ -12,7 +12,7 @@ export default function Header() {
     ];
 
     return (
-        <nav className="flex gap-2 border py-2 px-3 bg-gray-100">
+        <nav className="flex gap-3 border py-2 px-3 bg-gray-100">
             {links.map(({ title, path }) => {
                 return (
                     <Link className={clsx("text-blue-600 text-xl", {
