@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 export function useLocalStorage(key, defaultValue) {
+    debugger
     const [state, setState] = useState(defaultValue);
 
     useEffect(() => {
