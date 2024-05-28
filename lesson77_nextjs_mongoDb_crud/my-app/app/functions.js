@@ -1,3 +1,5 @@
+
+
 export const loadTopics = async () => {
     try {
         const res = await fetch('http://localhost:3000/api/topics', {
@@ -15,7 +17,8 @@ export const loadTopics = async () => {
     }
 }
 
-export const deleteTopic = async (id, router) => {
+export const deleteTopic = async (e, id, router) => {
+    e.preventDefault();
     const confirmed = confirm('delete?')
 
     if (confirmed) {
@@ -25,6 +28,7 @@ export const deleteTopic = async (id, router) => {
         if (res.ok) {
             router.refresh();
             router.push("/");
+            
         }
     }
 }
