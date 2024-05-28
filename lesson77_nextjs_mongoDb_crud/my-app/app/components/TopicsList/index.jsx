@@ -1,21 +1,29 @@
-import React from "react";
-import Container from "../Container";
-import Button from "../Button";
+import React from 'react'
+import Container from '../Container'
+import Topic from '../Topic'
 
-export default function TopicsList() {
-    
+const loadTopics = async () => {
+    try {
+        const res = await fetch('http://localhost:3000/api/topics', {
+            cache: 'no-store'
+        })
+
+        if (!res.ok) {
+            throw new Error('no res ok')
+        }
+
+        return res.json()
+
+    } catch (error) {
+        console.log('TopicsList-component', error);
+    }
+}
+
+export default async function TopicsList() {
+    const { topics } = await loadTopics();
     return (
         <Container>
-            <div className="flex justify-around border-b items-center mt-3 hover:bg-slate-50 rounded-lg">
-                <div>
-                    <p className="text-lg font-bold">title</p>
-                    <p className="text-xs">description</p>
-                </div>
-                <div className="flex gap-1">
-                    <Button href={"/admin/editTopic/123456"}>Edit</Button>
-                    <Button href={""}>Delete</Button>
-                </div>
-            </div>
+            {topics.map((topic, i)=> <Topic key={i} topic={topic}/>)}
         </Container>
-    );
+    )
 }

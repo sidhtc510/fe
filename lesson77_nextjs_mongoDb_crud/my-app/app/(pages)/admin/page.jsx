@@ -1,6 +1,6 @@
 import Button from "@/app/components/Button";
 import Container from "@/app/components/Container";
-import TopicsList from "@/app/components/TopicsList";
+import Topic from "@/app/components/Topic";
 
 export default function Admin() {
     return (
@@ -9,10 +9,6 @@ export default function Admin() {
             <Button className={"text-sm"} href={"/admin/addTopic"}>
                 Add topic
             </Button>
-            <TopicsList />
-            <TopicsList />
-            <TopicsList />
-            <TopicsList />
         </Container>
     );
 }
