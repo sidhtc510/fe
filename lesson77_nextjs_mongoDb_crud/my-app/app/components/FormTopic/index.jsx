@@ -1,7 +1,5 @@
 'use client'
-import React, { useState } from "react";
 import { useRouter } from 'next/navigation'
-
 
 export default async function FormTopic({ id }) {
     const router = useRouter();
@@ -9,28 +7,6 @@ export default async function FormTopic({ id }) {
     const props = {
         className: "border p-2 rounded",
     };
-
-    // const [topicTitle, setTopicTitle] = useState('')
-
-    // const loadTopic = async (id) => {
-    //     try {
-    //         const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
-    //             cache: 'no-store'
-    //         })
-
-    //         if (!res.ok) {
-    //             throw new Error('no res ok')
-    //         }
-
-    //         return res.json()
-
-    //     } catch (error) {
-    //         console.log('FormTopic loadTopic - component', error);
-    //     }
-    // }
-
-    // const topic = await loadTopic(id)
-    // console.log(topic.title)
 
     const addTopic = async (obj) => {
         try {
