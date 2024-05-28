@@ -1,8 +1,10 @@
+
 import React from "react";
 import Container from "../Container";
 import Button from "../Button";
 
 export default function Topic({ topic }) {
+
 
     return (
         <Container>
@@ -12,8 +14,7 @@ export default function Topic({ topic }) {
                     <p className="text-xs">{topic.description}</p>
                 </div>
                 <div className="flex gap-1">
-                    <Button href={"/admin/editTopic/123456"}>Edit</Button>
-                    <Button href={""}>Delete</Button>
+                    <Button href={`/admin/editTopic/${topic._id}`}>Edit</Button>
                 </div>
             </div>
         </Container>

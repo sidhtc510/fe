@@ -3,6 +3,7 @@ import Topic from "@/app/models/topic";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
+    console.log('request from route post', request);
     const { title, description } = await request.json();
     await connectMongoDB();
     await Topic.create({ title, description });
@@ -11,7 +12,7 @@ export async function POST(request) {
 
 export async function GET() {
     await connectMongoDB();
-    const topics = await Topic.find();
+    const topics = await Topic.find().sort( { "updatedAt": -1 } );
     return NextResponse.json({ topics });
 }
 
