@@ -1,76 +1,52 @@
 'use client'
-import { useRouter } from 'next/navigation'
+import { deleteTopic, addTopic, updateTopic } from "@/app/functions";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
-export default async function FormTopic({ id }) {
-    const router = useRouter();
-
+export default function FormTopic({ id }) {
     const props = {
         className: "border p-2 rounded",
     };
+    const router = useRouter();
+    const [topic, setTopic] = useState('')
 
-    const addTopic = async (obj) => {
-        try {
-            const res = await fetch('http://localhost:3000/api/topics', {
-                method: 'POST',
-                headers: { "Content-type": "application/json" },
-                body: JSON.stringify(obj)
-            })
 
-            if (!res.ok) {
-                throw new Error('no res ok')
-            }
-            router.push("/");
-            return res.json()
+    id && useEffect(() => {
+        loadTopic(id)
+    }, [])
 
-        } catch (error) {
-            console.log('FormTopic add -component', error);
-        }
-    }
 
-    const updateTopic = async (obj, id) => {
+    const loadTopic = async (id) => {
         try {
             const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
-                method: 'PUT',
-                headers: { "Content-type": "application/json" },
-                body: JSON.stringify(obj)
+                cache: 'no-store'
             })
 
             if (!res.ok) {
                 throw new Error('no res ok')
             }
-            router.push("/");
-            return res.json()
+
+            const result = await res.json()
+            setTopic(result.topic)
 
         } catch (error) {
-            console.log('FormTopic update -component', error);
+            console.log('TopicsList - component', error);
         }
     }
 
-    const handleSubmit = (e) => {
+
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         let data = new FormData(e.target);
         let obj = Object.fromEntries(data);
 
         try {
-            // console.log(id);
-            !id ? addTopic(obj) : updateTopic(obj, id)
-            //  addTopic(obj) 
+            !id ? addTopic(obj) : updateTopic(obj, id);
+            router.refresh();
+            router.push("/");
         } catch (error) {
             console.log('error FormTopic - component', error);
-        }
-    }
-
-    const delHandler = async () => {
-        const confirmed = confirm('delete?')
-
-        if (confirmed) {
-            const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
-                method: 'DELETE'
-            })
-            if (res.ok) {
-                router.push("/");
-                // console.log('deleted');
-            }
         }
     }
 
@@ -79,13 +55,12 @@ export default async function FormTopic({ id }) {
             {id ? <p>topic id is {id}</p> : ""}
 
             {/* <input type="hidden" name="_id" defaultValue={id ? id : null} /> */}
-            <input {...props} type="text" name="title" placeholder="Topic title" /> {/* defaultValue={id ? obj.title : ""} */}
-            <input {...props} type="text" name="description" placeholder="Topic description" />
+            <input {...props} type="text" name="title" placeholder="Topic title" defaultValue={topic?.title} /> {/* defaultValue={id ? obj.title : ""} */}
+            <input {...props} type="text" name="description" placeholder="Topic description" defaultValue={topic?.description} />
             <input className="px-2 cursor-pointer py-1 rounded bg-blue-400 text-white hover:bg-blue-500 w-fit text-sm" type="submit" value={id ? "Save topic" : "Add new topic"} />
         </form>
 
-        {id ? <button onClick={delHandler} className="text-red-700">Delete</button> : ""}
-
+        {id ? <button onClick={() => deleteTopic(id, router)} className="text-red-700">Delete</button> : ""}
     </>
     );
 }

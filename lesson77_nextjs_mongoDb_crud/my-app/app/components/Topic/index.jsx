@@ -5,7 +5,6 @@ import Button from "../Button";
 
 export default function Topic({ topic }) {
 
-
     return (
         <Container>
             <div className="flex justify-between border-b items-center mt-3 hover:bg-slate-50 rounded-lg">
