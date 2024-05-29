@@ -3,10 +3,10 @@ import mongoose, { Schema } from "mongoose";
 const userSchema = new Schema({
     name: String,
     email: String,
-    phone: Number,
+    phone: String,
     address: {
         street: String,
-        zipCode: Number,
+        zipcode: String,
         country: String
     }
 },

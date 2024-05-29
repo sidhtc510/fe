@@ -7,7 +7,7 @@ export default async function TopicsList() {
     const { topics } = await loadTopics();
 
     return (
-        <Container>
+        <Container className=''>
             {topics.map((topic, i)=> <Topic key={i} topic={topic}/>)}
         </Container>
     )

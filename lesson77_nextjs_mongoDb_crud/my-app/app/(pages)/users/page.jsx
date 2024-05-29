@@ -1,5 +1,6 @@
 import Button from '@/app/components/Button';
 import Container from '@/app/components/Container'
+import User from '@/app/components/User';
 import React from 'react'
 
 const loadUsers = async () => {
@@ -24,7 +25,7 @@ export default async function Users() {
     return (
         <Container>
             <Button href='/users/addUser'>Add new user</Button>
-            {users.map((user, i) => <p key={i}> {user} </p>)}
+            {users.map((user, i) => <User key={i} {...user} />)}
         </Container>
     )
 }
