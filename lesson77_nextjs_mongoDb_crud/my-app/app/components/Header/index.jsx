@@ -8,6 +8,7 @@ export default function Header() {
 
     const links = [
         { title: "Main page", path: "/" },
+        { title: "Users page", path: "/users" },
         { title: "Admin page", path: "/admin" },
     ];
 
