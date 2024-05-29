@@ -2,7 +2,7 @@
 
 export const loadTopics = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/topics', {
+        const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'api/topics', {
             cache: 'no-store'
         })
 
@@ -22,7 +22,7 @@ export const deleteTopic = async (e, id, router) => {
     const confirmed = confirm('delete?')
 
     if (confirmed) {
-        const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/topics?id=${id}`, {
             method: 'DELETE'
         })
         if (res.ok) {
@@ -35,7 +35,7 @@ export const deleteTopic = async (e, id, router) => {
 
 export const addTopic = async (obj) => {
     try {
-        const res = await fetch('http://localhost:3000/api/topics', {
+        const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'api/topics', {
             method: 'POST',
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(obj)
@@ -53,7 +53,7 @@ export const addTopic = async (obj) => {
 
 export const updateTopic = async (obj, id) => {
     try {
-        const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/topics/${id}`, {
             method: 'PUT',
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(obj)

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
     const currentPath = usePathname();
 
+
     const links = [
         { title: "Main page", path: "/" },
         { title: "Users page", path: "/users" },
@@ -14,6 +15,7 @@ export default function Header() {
 
     return (
         <nav className="flex gap-3 border py-2 px-3 bg-gray-100">
+
             {links.map(({ title, path }) => {
                 return (
                     <Link className={clsx("text-blue-600 text-xl", {

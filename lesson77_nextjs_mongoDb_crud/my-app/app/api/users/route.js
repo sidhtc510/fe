@@ -8,10 +8,20 @@ export async function GET() {
     return NextResponse.json({ users });
 }
 
-export async function POST(request){
+export async function POST(request) {
     const user = await request.json()
     await connectMongoDB();
-    await User.create({...user});
+    await User.create({ ...user });
     return NextResponse.json({ message: "user created" }, { status: 201 });
+}
 
+export async function DELETE(request) {
+    try {
+        const id = await request.nextUrl.searchParams.get("id");
+        await connectMongoDB();
+        await User.findByIdAndDelete(id);
+        return NextResponse.json({ message: 'user was delete' }, { status: 200 })
+    } catch (error) {
+        console.error(error);
+    }
 }
