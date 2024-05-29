@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useCart } from "../../hooks/useCart.js";
 import { useDispatch, useSelector } from "react-redux";
 import { clearBascketAction, postOrder } from "../../store/slice/cartSlice";
-import {FaAngellist} from 'react-icons/fa'
+import { FaAngellist } from 'react-icons/fa'
 import { toast } from "react-toastify";
 
 import CartItem from "../CartItem";
@@ -29,7 +29,7 @@ export default function CartContainer() {
     const handler = (postData) => {
         dispatch(postOrder(postData));
         dispatch(clearBascketAction(true))
-toast("An order has been placed")
+        toast("An order has been placed")
     };
 
     const amountCart = data.reduce((acc, el) => acc + (el.discont_price ?? el.price) * el.count, 0).toFixed(2);
@@ -70,7 +70,7 @@ toast("An order has been placed")
                             errors={errors}
                         />
 
-                        <Button className="greenBtn">{order_sent.status === "OK" ? <FaAngellist />: "Order"}</Button>
+                        <Button className="greenBtn">{order_sent.status === "OK" ? <FaAngellist /> : "Order"}</Button>
                     </form>
                 </div>
             </div>

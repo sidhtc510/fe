@@ -11,12 +11,17 @@ export default function User({ _id, name, email, phone, address: { street, zipco
         const confirmed = confirm('delete?')
 
         if (confirmed) {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/users?id=${id}`, {
-                method: "DELETE"
-            })
-            if (res.ok) {
-                router.refresh();
-                router.push('/users')
+            try {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/users?id=${id}`, {
+                    method: "DELETE"
+                })
+            
+                if (res.ok) {
+                    router.refresh();
+                    router.push('/users')
+                }
+            } catch (error) {
+                console.error(error)
             }
         }
     }
