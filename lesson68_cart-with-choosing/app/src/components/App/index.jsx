@@ -5,8 +5,8 @@ import s from "./s.module.css";
 import { addItemsAction } from "../../store/slices/cartSlice";
 
 function App() {
-    const products = useSelector((state) => state.products.list);
-    const cart = useSelector((state) => state.cart.list);
+    const products = useSelector(state => state.products.list);
+    const cart = useSelector(state => state.cart.list);
     const dispatch = useDispatch();
 
     const handler = () => {
