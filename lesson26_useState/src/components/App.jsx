@@ -14,7 +14,11 @@ function App() {
   ];
 
   const user = [
-    { id: 1, name: "Tolik", lastname: "Sydorenko", position: "direktor mira" },
+    { id: 1, 
+      name: "Tolik", 
+      lastname: "Sydorenko", 
+      position: "direktor mira",
+    },
     {
       id: 2,
       name: "vasya",
@@ -39,7 +43,7 @@ function App() {
       <p>Words</p>
       <WordsContainer />
 
-      {/* <Test /> */}
+      <Test />
     </>
   );
 }
