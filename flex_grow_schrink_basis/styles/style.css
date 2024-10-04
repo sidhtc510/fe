@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(58, 58, 58);
+    color: rgb(182, 182, 174);
+    font-family: Nunito, sans-serif;
+    /* font-family: Roboto, sans-serif; */
+}
+
+.wrapper{
+    display: flex;
+    background: goldenrod;
+    border: 1px solid black;
+    font-size: 24px;
+}
+.item{
+    padding: 20px;
+    background: rgb(149, 108, 4);
+    border: 1px solid black;
+    border-radius: 8px;
+    flex-basis: 300px;
+}
+
+/* flex: flex-grow | flex-shrink | flex-basis */
+
+.item-1{
+    /* flex-grow: 1; */
+}
+.item-2{
+    /* flex-grow: 1;  */
+    /* flex-shrink: 1; */
+    flex: 1 0 300px;
+}
+.item-3{
+    /* flex-grow: 1; */
+}

@@ -9,7 +9,6 @@ const write = (data) => {
 };
 
 export const postOrder = createAsyncThunk("cart/postOrder", async (postData) => {
-
     try {
         const response = await axios.post("http://localhost:3333/order/send", postData);
         return response.data;

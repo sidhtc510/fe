@@ -17,7 +17,7 @@ export default function ProductPage() {
             .then((json) => callback({ status: "ready", list: json }));
     };
 
-    useEffect(() => {
+    useEffect(() => { 
         getProduct(id, setProduct);
     }, []);
 

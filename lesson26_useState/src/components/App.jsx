@@ -1,4 +1,4 @@
-import Addword from "./AddWord/Addword";
+
 import Product from "./Product/Product";
 import Test from "./Test";
 import User from "./User/User";
