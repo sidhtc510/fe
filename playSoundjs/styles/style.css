@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(58, 58, 58);
+    color: rgb(182, 182, 174);
+    font-family: Nunito, sans-serif;
+    /* font-family: Roboto, sans-serif; */
+}
+
+.oneBlock {
+    background-color: chocolate;
+    color: cornsilk;
+    font-size: 26px;
+    max-width: 3ch;
+    text-wrap: wrap;
+}
