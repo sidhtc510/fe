@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import { useCartStore } from './store';
 
 export default function Home() {
@@ -25,6 +26,10 @@ export default function Home() {
           </li>
         ))}
       </ul>
+
+      {/* <div className='pt-4'>
+        <Link href={`/test/${article}?id=222`}>Test link with qp </Link>
+      </div> */}
     </div>
   );
 }
