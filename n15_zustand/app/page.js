@@ -1,5 +1,5 @@
 "use client"
-import Link from 'next/link';
+
 import { useCartStore } from './store';
 
 export default function Home() {
