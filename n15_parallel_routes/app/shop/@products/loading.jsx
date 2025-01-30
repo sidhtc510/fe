@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function loading() {
   return (
-    <div>loading ...</div>
+    <h1 className='text-red-600 font-bold'>loading</h1>
   )
 }
