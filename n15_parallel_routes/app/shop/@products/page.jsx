@@ -2,7 +2,7 @@
 export default async function ProductsPage() {
 
     const products = await fetchProducts();
-
+    // throw new Error('test')
     return (
         <div>
             <h2 className="text-xl font-bold mb-4">Список товаров</h2>
