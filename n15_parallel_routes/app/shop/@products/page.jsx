@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default async function ProductsPage() {
 
@@ -9,7 +10,7 @@ export default async function ProductsPage() {
             <ul className="grid grid-cols-3 gap-2 ">
                 {products.map((product) => (
                     <li key={product.id} className="border border-gray-800 p-1 rounded-lg">
-                        <p className="text-sm font-semibold mt-2">{product.title}</p>
+                        <Link className="text-sm font-semibold mt-2" href={`/shop/product/${product.id}`}>{product.title}</Link>
                         <p className="text-gray-500">€{product.price}</p>
                     </li>
                 ))}
@@ -26,3 +27,4 @@ async function fetchProducts() {
     console.log('done')
     return res.json();
 }
+
