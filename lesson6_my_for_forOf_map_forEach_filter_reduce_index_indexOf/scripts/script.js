@@ -26,10 +26,10 @@ console.log(
   "---------------------------------forEach---------------------------------"
 );
 // peoples.forEach((person, index, pArray) => {
-//     console.log(person);
-//     console.log(person.name);
-//     console.log(index);
-//     console.log(pArray);
+    // console.log(person);
+    // console.log(person.name);
+    // console.log(index);
+    // console.log(pArray);
 // })
 
 console.log(
