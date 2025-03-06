@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(58, 58, 58);
+    color: rgb(182, 182, 174);
+    font-family: Nunito, sans-serif;
+    /* font-family: Roboto, sans-serif; */
+}
+
+.moving_object {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: -50px;
+    border-radius: 50%;
+    background-color: greenyellow;
+    cursor: move;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black
+}

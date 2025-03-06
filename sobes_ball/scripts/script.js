@@ -3,7 +3,7 @@ const circle = document.querySelector('.circle');
 document.addEventListener('mousemove', (event) => {
     let displayWidth = window.innerWidth
     let displayHeight = window.innerHeight
-    let x = event.pageX
+    let x = event.clientX
 
     if (x < displayWidth / 4) {
         circle.style.left = x + 'px';
