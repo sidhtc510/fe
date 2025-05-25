@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Links() {
   return (
-    <h1 className="flex text-blue-600 gap-2 text-2xl font-bold mb-8 font-[family-name:var(--font-geist-sans)]">
+    <h1 className="flex text-blue-600 gap-2 text-2xl font-bold mb-8">
         <Link href={"/"}>User page</Link>
         <Link href={"/post"}>Post page</Link>
       </h1>

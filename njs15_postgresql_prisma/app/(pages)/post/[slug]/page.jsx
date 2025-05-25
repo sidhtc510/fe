@@ -1,6 +1,3 @@
-import Links from '@/app/components/links'
-import React from 'react'
-
 export default async function individual_post({ params }) {
     const post = await prisma.post.findUnique({
         where: {
