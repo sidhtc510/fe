@@ -1,4 +1,5 @@
 import prisma from '@/lib/prisma'
+import Links from './components/links';
 
 
 export default async function Home() {
@@ -6,11 +7,8 @@ export default async function Home() {
   console.log(users);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center -mt-16">
-      <h1 className="text-4xl font-bold mb-8 font-[family-name:var(--font-geist-sans)] text-[#333333]">
-        Supabase:
-      </h1>
-      <ol className="font-[family-name:var(--font-geist-sans)]">
+    <div className="">
+      <ol className="">
         {users.map((user) => (
           <li key={user.id} className="mb-2">
             id - {user.id} |
@@ -18,7 +16,7 @@ export default async function Home() {
             email - {user.email} |
             dateOfBirth - {user.dateOfBirth
               ? new Date(user.dateOfBirth).toLocaleDateString()
-              : 'не указана'} | 
+              : 'не указана'} |
             crated_at - {new Date(user.created_at).toLocaleDateString()}
           </li>
         ))}
