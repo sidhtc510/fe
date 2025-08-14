@@ -7,9 +7,10 @@ export default function Home() {
   const addItem = useCartStore((state) => state.addItem);
   const removeItem = useCartStore((state) => state.removeItem);
   const clearCart = useCartStore((state) => state.clearCart);
+  const incrementItem = useCartStore((state) => state.incrementItem);
 
   const handleAddItem = () => {
-    const newItem = { id: Date.now(), name: 'Продукт', price: 100 };
+    const newItem = { id: Date.now(), name: 'product 1', quantity: 1, price: 100 };
     addItem(newItem);
   };
 
@@ -20,8 +21,11 @@ export default function Home() {
       <button onClick={clearCart}>Очистить корзину</button>
       <ul>
         {items.map((item) => (
-          <li key={item.id}>
+          <li className='flex gap-8' key={item.id}>
             {item.name} — {item.price} ₽
+            <p>{item.quantity}</p>
+
+            <button onClick={() => incrementItem(item.id)}>increment</button>
             <button onClick={() => removeItem(item.id)}>Удалить</button>
           </li>
         ))}

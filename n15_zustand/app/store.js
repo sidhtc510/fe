@@ -2,6 +2,7 @@ import { create } from 'zustand';
 
 // Функция для загрузки данных из localStorage
 const loadFromLocalStorage = (key) => {
+    if (typeof window === 'undefined') return [];
     try {
         const storedData = localStorage.getItem(key);
         return storedData ? JSON.parse(storedData) : [];
@@ -43,4 +44,25 @@ export const useCartStore = create((set, get) => ({
         set({ items: [] });
         saveToLocalStorage('cartItems', []);
     },
+
+    // incrementItem: (id) => {
+    //     const targetItem = get().items.find(item => item.id === id);
+    //     targetItem.quantity++
+    //     // const updatedItems = [...get().items, targetItem];
+    //     set({ items: targetItem });
+    //     saveToLocalStorage('cartItems', updatedItems);
+    // }
+
+    incrementItem: (id) => {
+        const items = get().items;
+        const updatedItems = items.map(item => {
+            if (item.id === id) {
+                return { ...item, quantity: item.quantity + 1 };
+            }
+            return item;
+        });
+
+        set({ items: updatedItems });
+        saveToLocalStorage('cartItems', updatedItems);
+    }
 }));

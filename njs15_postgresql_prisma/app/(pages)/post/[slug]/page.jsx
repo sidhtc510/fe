@@ -4,7 +4,7 @@ export default async function individual_post({ params }) {
             slug: params.slug
         }
     })
-    console.log(post);
+    // console.log(post);
 
 
     return (
