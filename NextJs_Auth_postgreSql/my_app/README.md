@@ -5,14 +5,18 @@
 npm install
 
 # 2. Настройка переменных окружения
-Создай файл .env.local:
-env# Database
+Создай файл .env:
+
+* Database
+
 DATABASE_URL="postgresql://username:password@localhost:5432/auth_project"
+
 
 * NextAuth
 AUTH_SECRET="your-secret-key-32-chars-minimum"
 
 AUTH_URL="http://localhost:3000"
+
 
 * Google OAuth
 "https://console.cloud.google.com/"
@@ -20,6 +24,7 @@ AUTH_URL="http://localhost:3000"
 AUTH_GOOGLE_ID="your-google-client-id"
 
 AUTH_GOOGLE_SECRET="your-google-client-secret"
+
 
 * Email (опционально)
 EMAIL_SERVER_USER="your-email@gmail.com"
