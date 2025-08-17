@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useState } from 'react'
@@ -21,13 +20,15 @@ export default function SignInForm() {
             const result = await signIn('credentials', {
                 email,
                 password,
-                redirect: false,
+                redirect: false, // отключаем авто-редирект
+                callbackUrl: "/", // куда перенаправлять
             })
 
             if (result?.error) {
                 setError('Неверный email или пароль')
             } else {
-                router.push('/dashboard')
+            router.replace(result?.url || "/"); // url вернется из signIn
+            router.refresh() 
             }
         } catch (error) {
             setError('Произошла ошибка при входе')
@@ -37,7 +38,7 @@ export default function SignInForm() {
     }
 
     const handleGoogleSignIn = () => {
-        signIn('google', { callbackUrl: '/dashboard' })
+        signIn('google', { callbackUrl: '/' })
     }
 
     return (

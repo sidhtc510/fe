@@ -4,8 +4,8 @@ import { NextResponse } from "next/server"
 // Определяем защищенные маршруты и требуемые роли
 const protectedRoutes = {
     '/dashboard': ['USER', 'MODERATOR', 'ADMIN'],
-    '/admin': ['ADMIN'],
     '/moderator': ['MODERATOR', 'ADMIN'],
+    '/admin': ['ADMIN'],
 }
 
 export async function middleware(request) {
