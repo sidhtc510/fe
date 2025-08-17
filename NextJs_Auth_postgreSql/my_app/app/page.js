@@ -14,20 +14,7 @@ export default async function HomePage() {
           <p className="mt-2 text-center text-sm text-gray-600">
             Система управления пользователями с ролями
           </p>
-          <div className="mt-8 flex justify-center space-x-4">
-            <Link
-              href="/auth/signin"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
-            >
-              Войти
-            </Link>
-            <Link
-              href="/auth/signup"
-              className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
-            >
-              Регистрация
-            </Link>
-          </div>
+       
         </div>
         :
         <div>

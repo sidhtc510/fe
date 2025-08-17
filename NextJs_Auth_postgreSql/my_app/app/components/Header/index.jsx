@@ -14,8 +14,8 @@ export default async function Header({ session }) {
                             <h1 className="text-xl font-semibold">Dashboard</h1>
                         </Link>
                     </div>
-                    {(session?.user.email || session?.user.name) &&
-                        <div className="flex items-center space-x-4">
+                    {(session?.user.email || session?.user.name) ?
+                        <div className="flex items-center gap-4">
                             <span className="text-gray-700">
                                 Привет, {session?.user.name || session?.user.email}
                             </span>
@@ -23,6 +23,20 @@ export default async function Header({ session }) {
                                 {session?.user.role}
                             </span>
                             <SignOutButton />
+                        </div> :
+                        <div className="flex justify-center items-center gap-4">
+                            <Link
+                                href="/auth/signin"
+                                className="font-bold cursor-pointer"
+                            >
+                                Войти
+                            </Link>
+                            <Link
+                                href="/auth/signup"
+                                className="font-bold cursor-pointer"
+                            >
+                                Регистрация
+                            </Link>
                         </div>
                     }
                 </div>

@@ -15,11 +15,11 @@ export default function UserManagement() {
     try {
       const response = await fetch('/api/admin/users')
       const data = await response.json()
-      
+
       if (!response.ok) {
         throw new Error(data.error || 'Ошибка загрузки пользователей')
       }
-      
+
       setUsers(data)
     } catch (error) {
       setError(error.message)
@@ -30,6 +30,7 @@ export default function UserManagement() {
 
   const updateUserRole = async (userId, newRole) => {
     try {
+      setLoading(true)
       const response = await fetch(`/api/admin/users/${userId}`, {
         method: 'PATCH',
         headers: {
@@ -45,9 +46,10 @@ export default function UserManagement() {
       }
 
       // Обновляем локальное состояние
-      setUsers(users.map(user => 
+      setUsers(users.map(user =>
         user.id === userId ? { ...user, role: newRole } : user
       ))
+      setLoading(false)
     } catch (error) {
       setError(error.message)
     }
@@ -94,7 +96,7 @@ export default function UserManagement() {
         <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
           Управление пользователями
         </h3>
-        
+
         <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg">
           <table className="min-w-full divide-y divide-gray-300">
             <thead className="bg-gray-50">
