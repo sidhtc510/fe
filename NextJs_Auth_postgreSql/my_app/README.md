@@ -7,13 +7,14 @@ npm install
 # 2. Настройка переменных окружения
 Создай файл .env:
 
-* Database
+* Database -  ключи тут(например) "https://neon.tech"
 
 DATABASE_URL="postgresql://username:password@localhost:5432/auth_project"
 
 
 * NextAuth
-AUTH_SECRET="your-secret-key-32-chars-minimum"
+AUTH_SECRET="abcdefghijklmnopqrstuvwxyz123456"  
+<!-- любые 32 символа -->
 
 AUTH_URL="http://localhost:3000"
 

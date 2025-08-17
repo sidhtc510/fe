@@ -16,7 +16,7 @@ export async function PATCH(request, { params }) {
       )
     }
 
-    const { userId } = params
+    const { userId } = await params
     const { role } = await request.json()
 
     if (!['USER', 'MODERATOR', 'ADMIN'].includes(role)) {
