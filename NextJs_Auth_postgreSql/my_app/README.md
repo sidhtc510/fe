@@ -27,6 +27,7 @@ AUTH_GOOGLE_SECRET="your-google-client-secret"
 
 
 * Email (опционально)
+
 EMAIL_SERVER_USER="your-email@gmail.com"
 
 EMAIL_SERVER_PASSWORD="your-app-password"
@@ -41,6 +42,8 @@ EMAIL_FROM="your-email@gmail.com"
 
 # 3. База данных "https://neon.tech"
 
+Основные команды Prisma
+
 * Генерация Prisma клиента
 npx prisma generate
 
@@ -50,6 +53,5 @@ npx prisma db push
 * Просмотр данных (опционально)
 npx prisma studio
 
-Основные команды Prisma
 * Инициализация Prisma
 npx prisma init
