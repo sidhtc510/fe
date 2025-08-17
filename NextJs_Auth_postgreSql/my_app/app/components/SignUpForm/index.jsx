@@ -29,7 +29,7 @@ export default function SignUpForm() {
         setSuccess('')
 
         if (formData.password !== formData.confirmPassword) {
-            setError('Пароли не совпадают')
+            setError('Passwords didn`t match')
             setIsLoading(false)
             return
         }
@@ -50,15 +50,15 @@ export default function SignUpForm() {
             const data = await response.json()
 
             if (!response.ok) {
-                setError(data.error || 'Произошла ошибка при регистрации')
+                setError(data.error || 'An error occurred during registration.')
             } else {
-                setSuccess('Регистрация успешна! Теперь вы можете войти в систему.')
+                setSuccess('Registration successful! You can now log in to the system.')
                 setTimeout(() => {
                     router.push('/auth/signin')
                 }, 2000)
             }
         } catch (error) {
-            setError('Произошла ошибка при регистрации')
+            setError('An error occurred during registration.')
         } finally {
             setIsLoading(false)
         }
@@ -66,7 +66,7 @@ export default function SignUpForm() {
 
     return (
         <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-6 text-center">Регистрация</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Registration</h2>
 
             {error && (
                 <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
@@ -83,7 +83,7 @@ export default function SignUpForm() {
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                     <label className="block text-sm font-medium text-gray-700">
-                        Имя
+                        Name
                     </label>
                     <input
                         type="text"
@@ -111,7 +111,7 @@ export default function SignUpForm() {
 
                 <div>
                     <label className="block text-sm font-medium text-gray-700">
-                        Пароль
+                        Password
                     </label>
                     <input
                         type="password"
@@ -125,7 +125,7 @@ export default function SignUpForm() {
 
                 <div>
                     <label className="block text-sm font-medium text-gray-700">
-                        Подтверждение пароля
+                        Confirm password
                     </label>
                     <input
                         type="password"
@@ -142,14 +142,14 @@ export default function SignUpForm() {
                     disabled={isLoading}
                     className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
                 >
-                    {isLoading ? 'Регистрация...' : 'Зарегистрироваться'}
+                    {isLoading ? 'Proccess...' : 'Registration'}
                 </button>
             </form>
 
             <p className="mt-4 text-center text-sm text-gray-600">
-                Уже есть аккаунт?{' '}
+                Already have an account?{' '}
                 <a href="/auth/signin" className="font-medium text-indigo-600 hover:text-indigo-500">
-                    Войти
+                    Enter
                 </a>
             </p>
         </div>

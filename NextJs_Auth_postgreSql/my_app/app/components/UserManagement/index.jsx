@@ -17,7 +17,7 @@ export default function UserManagement() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || 'Ошибка загрузки пользователей')
+        throw new Error(data.error || 'Loading user failed')
       }
 
       setUsers(data)
@@ -42,7 +42,7 @@ export default function UserManagement() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || 'Ошибка обновления роли')
+        throw new Error(data.error || 'Updating role failed')
       }
 
       // Обновляем локальное состояние
@@ -56,7 +56,7 @@ export default function UserManagement() {
   }
 
   const deleteUser = async (userId) => {
-    if (!confirm('Вы уверены, что хотите удалить этого пользователя?')) {
+    if (!confirm('Are you sure to remove user?')) {
       return
     }
 
@@ -68,7 +68,7 @@ export default function UserManagement() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || 'Ошибка удаления пользователя')
+        throw new Error(data.error || 'Deleting user failed')
       }
 
       // Обновляем локальное состояние
@@ -79,7 +79,7 @@ export default function UserManagement() {
   }
 
   if (loading) {
-    return <div className="text-center py-4">Загрузка пользователей...</div>
+    return <div className="text-center py-4">Loading users...</div>
   }
 
   if (error) {
@@ -94,7 +94,7 @@ export default function UserManagement() {
     <div className="bg-white shadow rounded-lg">
       <div className="px-4 py-5 sm:p-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
-          Управление пользователями
+          Manage users
         </h3>
 
         <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg">
@@ -102,19 +102,19 @@ export default function UserManagement() {
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Пользователь
+                  User
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Email
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Роль
+                  Role
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Дата регистрации
+                  Registered
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Действия
+                  Actions
                 </th>
               </tr>
             </thead>
@@ -122,7 +122,7 @@ export default function UserManagement() {
               {users.map((user) => (
                 <tr key={user.id}>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {user.name || 'Без имени'}
+                    {user.name || 'No Name'}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {user.email}
@@ -146,7 +146,7 @@ export default function UserManagement() {
                       onClick={() => deleteUser(user.id)}
                       className="text-red-600 hover:text-red-900"
                     >
-                      Удалить
+                      Remove
                     </button>
                   </td>
                 </tr>

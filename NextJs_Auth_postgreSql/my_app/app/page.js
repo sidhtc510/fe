@@ -9,10 +9,10 @@ export default async function HomePage() {
       {(!session?.user.email || !session?.user.name) ?
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Добро пожаловать
+            Welcome
           </h1>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Система управления пользователями с ролями
+            User management system with roles
           </p>
        
         </div>

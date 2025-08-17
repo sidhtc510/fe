@@ -17,7 +17,7 @@ export default async function Header({ session }) {
                     {(session?.user.email || session?.user.name) ?
                         <div className="flex items-center gap-4">
                             <span className="text-gray-700">
-                                Привет, {session?.user.name || session?.user.email}
+                                Hi, {session?.user.name || session?.user.email}
                             </span>
                             <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm">
                                 {session?.user.role}
@@ -29,13 +29,13 @@ export default async function Header({ session }) {
                                 href="/auth/signin"
                                 className="font-bold cursor-pointer"
                             >
-                                Войти
+                                Log In
                             </Link>
                             <Link
                                 href="/auth/signup"
                                 className="font-bold cursor-pointer"
                             >
-                                Регистрация
+                                Sign Up
                             </Link>
                         </div>
                     }

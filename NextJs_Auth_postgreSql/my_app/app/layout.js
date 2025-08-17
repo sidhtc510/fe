@@ -15,13 +15,13 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await auth()
-  console.log('session', session)
+  // console.log('session', session)
   // if (!session?.user) {
   //   redirect('/auth/signin')
   // }
 
   return (
-    <html lang="ru">
+    <html lang="en">
       <body className={inter.className}>
         <SessionProvider session={session}>
           <Header session={session} />
