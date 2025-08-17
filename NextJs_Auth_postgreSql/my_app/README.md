@@ -1,8 +1,6 @@
 
 Проект с аутентификацией через Google OAuth, email/пароль и ролевой системой пользователей.
 
-🚀 Быстрый старт
-
 1. Установка зависимостей
 npm install
 
@@ -13,21 +11,28 @@ DATABASE_URL="postgresql://username:password@localhost:5432/auth_project"
 
 # NextAuth
 AUTH_SECRET="your-secret-key-32-chars-minimum"
+
 AUTH_URL="http://localhost:3000"
 
 # Google OAuth
 AUTH_GOOGLE_ID="your-google-client-id"
+
 AUTH_GOOGLE_SECRET="your-google-client-secret"
 
 # Email (опционально)
 EMAIL_SERVER_USER="your-email@gmail.com"
+
 EMAIL_SERVER_PASSWORD="your-app-password"
+
 EMAIL_SERVER_HOST="smtp.gmail.com"
+
 EMAIL_SERVER_PORT=587
+
 EMAIL_FROM="your-email@gmail.com"
 
 
-3. База данных
+
+3. База данных "https://neon.tech"
 # Генерация Prisma клиента
 npx prisma generate
 
