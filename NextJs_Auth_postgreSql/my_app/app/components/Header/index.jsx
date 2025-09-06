@@ -16,12 +16,12 @@ export default async function Header({ session }) {
                     </div>
                     {(session?.user.email || session?.user.name) ?
                         <div className="flex items-center gap-4">
-                            <span className="text-gray-700">
+                            <div className="text-gray-700 cursor-default">
                                 Hi, {session?.user.name || session?.user.email}
-                            </span>
-                            <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm">
+                            </div>
+                            <div className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm cursor-default">
                                 {session?.user.role}
-                            </span>
+                            </div>
                             <SignOutButton />
                         </div> :
                         <div className="flex justify-center items-center gap-4">
