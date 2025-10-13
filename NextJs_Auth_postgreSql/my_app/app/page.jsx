@@ -31,10 +31,10 @@ export default async function HomePage() {
               Dashboard
             </Link>
             <Link
-              href="/moderator"
+              href="/seller"
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
             >
-              Moderator
+              Seller
             </Link>
             <Link
               href="/admin"

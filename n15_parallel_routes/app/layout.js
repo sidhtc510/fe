@@ -22,7 +22,9 @@ export default function RootLayout({ children}) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <p className="flex min-h-full h-10 justify-center items-center border-b border-gray-700"> ХЕДЕР из app/layout.js</p>
         {children}
+        <p>компонент со всякой хренью из app/layout.js</p>
       </body>
     </html>
   );

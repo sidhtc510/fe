@@ -19,7 +19,7 @@ export async function PATCH(request, { params }) {
     const { userId } = await params
     const { role } = await request.json()
 
-    if (!['USER', 'MODERATOR', 'ADMIN'].includes(role)) {
+    if (!['USER', 'SELLER', 'ADMIN'].includes(role)) {
       return NextResponse.json(
         { error: 'Недопустимая роль' },
         { status: 400 }

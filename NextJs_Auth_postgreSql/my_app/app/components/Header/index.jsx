@@ -1,5 +1,5 @@
 
-import { signOut } from '@/lib/auth'
+// import { signOut } from '@/lib/auth'
 import Link from 'next/link'
 import SignOutButton from '../SignOutButton'
 
@@ -31,12 +31,12 @@ export default async function Header({ session }) {
                             >
                                 Log In
                             </Link>
-                            <Link
+                            {/* <Link
                                 href="/auth/signup"
                                 className="font-bold cursor-pointer"
                             >
                                 Sign Up
-                            </Link>
+                            </Link> */}
                         </div>
                     }
                 </div>

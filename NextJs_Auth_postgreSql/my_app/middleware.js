@@ -3,8 +3,8 @@ import { NextResponse } from "next/server"
 
 // Определяем защищенные маршруты и требуемые роли
 const protectedRoutes = {
-    '/dashboard': ['USER', 'MODERATOR', 'ADMIN'],
-    '/moderator': ['MODERATOR', 'ADMIN'],
+    '/dashboard': ['USER', 'SELLER', 'ADMIN'],
+    '/seller': ['SELLER', 'ADMIN'],
     '/admin': ['ADMIN'],
 }
 
@@ -33,7 +33,7 @@ export async function middleware(request) {
 export const config = {
     matcher: [
         '/dashboard/:path*',
-        '/admin/:path*',
-        '/moderator/:path*'
+        '/seller/:path*',
+        '/admin/:path*'
     ]
 }

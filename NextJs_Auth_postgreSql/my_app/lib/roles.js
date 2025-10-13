@@ -2,13 +2,13 @@ import { auth } from '@/lib/auth'
 
 export const ROLES = {
     USER: 'USER',
-    MODERATOR: 'MODERATOR',
+    SELLER: 'SELLER',
     ADMIN: 'ADMIN'
 }
 
 export const ROLE_HIERARCHY = {
     [ROLES.USER]: 1,
-    [ROLES.MODERATOR]: 2,
+    [ROLES.SELLER]: 2,
     [ROLES.ADMIN]: 3
 }
 
@@ -58,7 +58,7 @@ export function useRole() {
         hasRole,
         hasAnyRole,
         isAdmin: hasRole(ROLES.ADMIN),
-        isModerator: hasRole(ROLES.MODERATOR),
+        isSeller: hasRole(ROLES.SELLER),
         isUser: hasRole(ROLES.USER)
     }
 }
